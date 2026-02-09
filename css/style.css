@@ -1,0 +1,434 @@
+/* ========================================
+   かんじれんしゅう - 2ねんせい
+   iPad + Apple Pencil 最適化 PWA
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  background: #f5f0eb;
+  color: #333;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ========== 画面切替 ========== */
+.screen {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+}
+.screen.active {
+  display: flex;
+}
+
+/* ========== 漢字選択画面 ========== */
+.app-header {
+  text-align: center;
+  padding: 24px 16px 8px;
+  background: linear-gradient(135deg, #4A90D9, #6BB5E0);
+  color: white;
+}
+.app-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.subtitle {
+  font-size: 16px;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* モード選択 */
+.mode-selector {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e0d8d0;
+}
+.mode-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #4A90D9;
+  border-radius: 12px;
+  background: white;
+  color: #4A90D9;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.mode-btn.active {
+  background: #4A90D9;
+  color: white;
+}
+
+/* 検索バー */
+.search-bar {
+  padding: 8px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e0d8d0;
+}
+.search-bar input {
+  width: 100%;
+  padding: 10px 16px;
+  border: 2px solid #e0d8d0;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  background: #faf8f5;
+}
+.search-bar input:focus {
+  border-color: #4A90D9;
+}
+
+/* 漢字グリッド */
+.kanji-grid {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 8px;
+  align-content: start;
+}
+.kanji-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  background: white;
+  border: 2px solid #e0d8d0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.kanji-cell:hover {
+  border-color: #4A90D9;
+  transform: scale(1.05);
+}
+.kanji-cell:active {
+  transform: scale(0.95);
+  background: #EBF3FB;
+}
+.kanji-cell.completed {
+  border-color: #5CB85C;
+  background: #f0faf0;
+}
+.kanji-cell.completed::after {
+  content: "✓";
+  position: absolute;
+  font-size: 14px;
+  color: #5CB85C;
+  top: 2px;
+  right: 6px;
+}
+.kanji-cell {
+  position: relative;
+}
+
+/* ========== 練習画面 ========== */
+.practice-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: white;
+  border-bottom: 2px solid #e0d8d0;
+  gap: 8px;
+  min-height: 56px;
+}
+.practice-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.current-kanji-label {
+  font-size: 24px;
+  font-weight: 700;
+}
+.stroke-progress {
+  font-size: 14px;
+  color: #888;
+}
+.reading-label {
+  font-size: 13px;
+  color: #4A90D9;
+}
+.practice-actions {
+  display: flex;
+  gap: 6px;
+}
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.icon-btn:active {
+  background: #f0f0f0;
+  transform: scale(0.9);
+}
+
+/* キャンバスコンテナ */
+.canvas-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  margin: 12px;
+  border-radius: 16px;
+  border: 3px solid #d0c8c0;
+  overflow: hidden;
+}
+.guide-svg {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  pointer-events: none;
+  z-index: 1;
+}
+.draw-canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  touch-action: none;
+}
+.grid-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ========== ストロークガイドスタイル ========== */
+
+/* 完了した画 */
+.stroke-done {
+  fill: none;
+  stroke: #333;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.3s;
+}
+
+/* 現在の画（ナビゲーション対象） */
+.stroke-current {
+  fill: none;
+  stroke: #E74C3C;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: pulse-stroke 1.2s ease-in-out infinite;
+}
+
+/* 未来の画 */
+.stroke-future {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.3;
+}
+
+/* 始点マーカー */
+.start-marker {
+  fill: #E74C3C;
+  animation: pulse-marker 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse-stroke {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes pulse-marker {
+  0%, 100% { r: 5; opacity: 0.7; }
+  50% { r: 8; opacity: 1; }
+}
+
+/* ========== フィードバック ========== */
+.feedback {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  z-index: 10;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.feedback.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(20px);
+}
+.feedback.success {
+  background: #D4EDDA;
+  color: #155724;
+  border: 2px solid #5CB85C;
+}
+.feedback.warning {
+  background: #FFF3CD;
+  color: #856404;
+  border: 2px solid #FFC107;
+}
+.feedback.error {
+  background: #F8D7DA;
+  color: #721C24;
+  border: 2px solid #E74C3C;
+}
+
+/* 方向矢印アニメーション */
+.direction-arrow {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+}
+.direction-arrow svg {
+  animation: arrow-move 1s ease-in-out infinite;
+}
+@keyframes arrow-move {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+/* ========== 完成オーバーレイ ========== */
+.completion-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: opacity 0.3s;
+}
+.completion-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.completion-content {
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes pop-in {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.completion-kanji {
+  font-size: 80px;
+  animation: rainbow 2s linear infinite;
+}
+@keyframes rainbow {
+  0% { color: #E74C3C; }
+  16% { color: #F39C12; }
+  33% { color: #2ECC71; }
+  50% { color: #3498DB; }
+  66% { color: #9B59B6; }
+  83% { color: #E91E63; }
+  100% { color: #E74C3C; }
+}
+.completion-message {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+.btn-primary {
+  padding: 14px 32px;
+  background: #4A90D9;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-primary:active {
+  transform: scale(0.95);
+  background: #3A7BC8;
+}
+
+/* ========== お手本アニメーション ========== */
+.stroke-demo {
+  fill: none;
+  stroke: #4A90D9;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: var(--stroke-length);
+  stroke-dashoffset: var(--stroke-length);
+  animation: draw-stroke 0.8s ease forwards;
+}
+@keyframes draw-stroke {
+  to { stroke-dashoffset: 0; }
+}
+
+/* ========== レスポンシブ（iPad最適化） ========== */
+@media (min-width: 768px) {
+  .kanji-grid {
+    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+    gap: 10px;
+    padding: 16px;
+  }
+  .kanji-cell {
+    font-size: 44px;
+  }
+  .app-header h1 {
+    font-size: 36px;
+  }
+  .canvas-container {
+    margin: 16px 40px;
+  }
+  .feedback {
+    font-size: 24px;
+    padding: 16px 32px;
+  }
+}
+
+/* Safe area (ノッチ対応) */
+@supports (padding: env(safe-area-inset-top)) {
+  .app-header {
+    padding-top: calc(24px + env(safe-area-inset-top));
+  }
+  .practice-header {
+    padding-top: calc(8px + env(safe-area-inset-top));
+  }
+}

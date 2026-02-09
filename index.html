@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#4A90D9">
+  <title>かんじれんしゅう - 2ねんせい</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 漢字選択画面 -->
+  <div id="screen-select" class="screen active">
+    <header class="app-header">
+      <h1>かんじれんしゅう</h1>
+      <p class="subtitle">2ねんせい</p>
+    </header>
+
+    <div class="mode-selector">
+      <button class="mode-btn active" data-mode="easy">かんたん</button>
+      <button class="mode-btn" data-mode="normal">ふつう</button>
+      <button class="mode-btn" data-mode="hard">むずかしい</button>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="kanji-search" placeholder="かんじをさがす...">
+    </div>
+
+    <div id="kanji-grid" class="kanji-grid">
+      <!-- 漢字ボタンがJSで生成される -->
+    </div>
+  </div>
+
+  <!-- 練習画面 -->
+  <div id="screen-practice" class="screen">
+    <header class="practice-header">
+      <button id="btn-back" class="icon-btn" aria-label="もどる">←</button>
+      <div class="practice-info">
+        <span id="current-kanji-label" class="current-kanji-label">字</span>
+        <span id="stroke-progress" class="stroke-progress">1/6 かくめ</span>
+        <span id="reading-label" class="reading-label"></span>
+      </div>
+      <div class="practice-actions">
+        <button id="btn-demo" class="icon-btn" aria-label="おてほん">▶</button>
+        <button id="btn-undo" class="icon-btn" aria-label="もどす">↩</button>
+        <button id="btn-clear" class="icon-btn" aria-label="けす">🗑</button>
+      </div>
+    </header>
+
+    <div class="canvas-container">
+      <!-- ガイド表示用SVG -->
+      <svg id="guide-svg" class="guide-svg" viewBox="0 0 109 109"></svg>
+      <!-- 描画用キャンバス -->
+      <canvas id="draw-canvas" class="draw-canvas"></canvas>
+      <!-- グリッド線（田字格） -->
+      <svg class="grid-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <line x1="50" y1="0" x2="50" y2="100" stroke="#ddd" stroke-width="0.5" stroke-dasharray="2,2"/>
+        <line x1="0" y1="50" x2="100" y2="50" stroke="#ddd" stroke-width="0.5" stroke-dasharray="2,2"/>
+        <line x1="0" y1="0" x2="100" y2="100" stroke="#eee" stroke-width="0.3" stroke-dasharray="2,2"/>
+        <line x1="100" y1="0" x2="0" y2="100" stroke="#eee" stroke-width="0.3" stroke-dasharray="2,2"/>
+      </svg>
+    </div>
+
+    <!-- フィードバック表示 -->
+    <div id="feedback" class="feedback hidden">
+      <span id="feedback-text"></span>
+    </div>
+
+    <!-- 完成アニメーション -->
+    <div id="completion-overlay" class="completion-overlay hidden">
+      <div class="completion-content">
+        <span class="completion-kanji" id="completion-kanji"></span>
+        <span class="completion-message">すごい！かんせい！</span>
+        <button id="btn-next-kanji" class="btn-primary">つぎのかんじ →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/kanji-data.js"></script>
+  <script src="js/stroke-validator.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Service Worker登録
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js');
+    }
+  </script>
+</body>
+</html>
