@@ -25,6 +25,17 @@
       <button class="mode-btn" data-mode="hard">むずかしい</button>
     </div>
 
+    <div class="grid-controls">
+      <div class="sort-group">
+        <button class="sort-btn active" data-sort="default">じゅんばん</button>
+        <button class="sort-btn" data-sort="random">ランダム</button>
+      </div>
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">ぜんぶ</button>
+        <button class="filter-btn" data-filter="mistake">にがて</button>
+      </div>
+    </div>
+
     <div class="search-bar">
       <input type="text" id="kanji-search" placeholder="かんじをさがす...">
     </div>
@@ -69,12 +80,15 @@
       <span id="feedback-text"></span>
     </div>
 
-    <!-- 完成アニメーション -->
+    <!-- パーティクルキャンバス -->
+    <canvas id="particle-canvas" class="particle-canvas hidden"></canvas>
+
+    <!-- 完成表示（右端配置） -->
     <div id="completion-overlay" class="completion-overlay hidden">
       <div class="completion-content">
         <span class="completion-kanji" id="completion-kanji"></span>
-        <span class="completion-message">すごい！かんせい！</span>
-        <button id="btn-next-kanji" class="btn-primary">つぎのかんじ →</button>
+        <span class="completion-message">すごい！<br>かんせい！</span>
+        <button id="btn-next-kanji" class="btn-primary">つぎ →</button>
       </div>
     </div>
   </div>

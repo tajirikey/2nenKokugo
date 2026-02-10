@@ -5,15 +5,25 @@
 (function () {
   'use strict';
 
+  // ========== 永続データ ==========
+  function loadJSON(key, fallback) {
+    try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch { return fallback; }
+  }
+  function saveJSON(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
+
   // ========== 状態管理 ==========
   const state = {
-    mode: 'easy',          // easy | normal | hard
-    currentKanji: null,    // 現在の漢字データ
-    currentKanjiChar: '',  // 現在の漢字文字
-    currentStrokeIndex: 0, // 今書くべき画のインデックス
+    mode: 'easy',
+    currentKanji: null,
+    currentKanjiChar: '',
+    currentStrokeIndex: 0,
     totalStrokes: 0,
-    completedKanji: new Set(JSON.parse(localStorage.getItem('completedKanji') || '[]')),
-    kanjiList: [],         // フィルタ後の漢字リスト
+    completedKanji: new Set(loadJSON('completedKanji', [])),
+    mistakeKanji: new Set(loadJSON('mistakeKanji', [])),   // 苦手漢字
+    attemptCounts: loadJSON('attemptCounts', {}),           // 取り組み回数
+    kanjiList: [],
+    sortOrder: localStorage.getItem('sortOrder') || 'default', // default | random
+    filterMode: 'all', // all | mistake
   };
 
   // ========== DOM要素 ==========
@@ -37,27 +47,27 @@
     btnClear: document.getElementById('btn-clear'),
     btnNextKanji: document.getElementById('btn-next-kanji'),
     modeBtns: document.querySelectorAll('.mode-btn'),
+    sortBtns: document.querySelectorAll('.sort-btn'),
+    filterBtns: document.querySelectorAll('.filter-btn'),
+    particleCanvas: document.getElementById('particle-canvas'),
   };
 
-  // ========== モジュール初期化 ==========
   let drawingCanvas;
   let validator;
 
   function init() {
     validator = new StrokeValidator();
     drawingCanvas = new DrawingCanvas(els.drawCanvas);
-
-    // ストローク完了時のコールバック
     drawingCanvas.onStrokeComplete = onUserStrokeComplete;
 
     setupEventListeners();
     renderKanjiGrid();
     restoreMode();
+    restoreSort();
   }
 
   // ========== イベントリスナー ==========
   function setupEventListeners() {
-    // モード切替
     els.modeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         els.modeBtns.forEach(b => b.classList.remove('active'));
@@ -68,24 +78,32 @@
       });
     });
 
-    // 検索
-    els.kanjiSearch.addEventListener('input', () => {
-      renderKanjiGrid(els.kanjiSearch.value);
+    // 並び順
+    els.sortBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        els.sortBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.sortOrder = btn.dataset.sort;
+        localStorage.setItem('sortOrder', state.sortOrder);
+        renderKanjiGrid(els.kanjiSearch.value);
+      });
     });
 
-    // 戻るボタン
+    // フィルタ（にがて）
+    els.filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        els.filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.filterMode = btn.dataset.filter;
+        renderKanjiGrid(els.kanjiSearch.value);
+      });
+    });
+
+    els.kanjiSearch.addEventListener('input', () => renderKanjiGrid(els.kanjiSearch.value));
     els.btnBack.addEventListener('click', goToSelect);
-
-    // お手本ボタン
     els.btnDemo.addEventListener('click', playDemo);
-
-    // 元に戻すボタン
     els.btnUndo.addEventListener('click', undoStroke);
-
-    // 消去ボタン
     els.btnClear.addEventListener('click', clearAndReset);
-
-    // 次の漢字ボタン
     els.btnNextKanji.addEventListener('click', goToNextKanji);
   }
 
@@ -94,17 +112,25 @@
     if (saved && ['easy', 'normal', 'hard'].includes(saved)) {
       state.mode = saved;
       validator.setMode(saved);
-      els.modeBtns.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.mode === saved);
-      });
+      els.modeBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.mode === saved));
     }
+  }
+
+  function restoreSort() {
+    els.sortBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.sort === state.sortOrder));
   }
 
   // ========== 漢字グリッド表示 ==========
   function renderKanjiGrid(filter = '') {
     els.kanjiGrid.innerHTML = '';
-    const allKanji = Object.keys(KANJI_DATA);
+    let allKanji = Object.keys(KANJI_DATA);
 
+    // にがてフィルタ
+    if (state.filterMode === 'mistake') {
+      allKanji = allKanji.filter(k => state.mistakeKanji.has(k));
+    }
+
+    // テキスト検索
     state.kanjiList = filter
       ? allKanji.filter(k => {
           const data = KANJI_DATA[k];
@@ -114,13 +140,31 @@
         })
       : allKanji;
 
+    // 並び替え
+    if (state.sortOrder === 'random') {
+      state.kanjiList = [...state.kanjiList].sort(() => Math.random() - 0.5);
+    }
+
     for (const kanji of state.kanjiList) {
       const cell = document.createElement('button');
       cell.className = 'kanji-cell';
-      if (state.completedKanji.has(kanji)) {
-        cell.classList.add('completed');
+      if (state.completedKanji.has(kanji)) cell.classList.add('completed');
+
+      // 漢字テキスト
+      const kanjiText = document.createElement('span');
+      kanjiText.className = 'kanji-text';
+      kanjiText.textContent = kanji;
+      cell.appendChild(kanjiText);
+
+      // 取り組み回数バッジ
+      const count = state.attemptCounts[kanji] || 0;
+      if (count > 0) {
+        const badge = document.createElement('span');
+        badge.className = 'attempt-badge';
+        badge.textContent = count;
+        cell.appendChild(badge);
       }
-      cell.textContent = kanji;
+
       cell.addEventListener('click', () => startPractice(kanji));
       els.kanjiGrid.appendChild(cell);
     }
@@ -136,22 +180,21 @@
     state.currentStrokeIndex = 0;
     state.totalStrokes = data.strokes.length;
 
-    // 画面切替
+    // 取り組み回数を記録
+    state.attemptCounts[kanjiChar] = (state.attemptCounts[kanjiChar] || 0) + 1;
+    saveJSON('attemptCounts', state.attemptCounts);
+
     els.screenSelect.classList.remove('active');
     els.screenPractice.classList.add('active');
 
-    // UI更新
     els.currentKanjiLabel.textContent = kanjiChar;
     updateReadingLabel();
     updateStrokeProgress();
     hideCompletion();
     hideFeedback();
 
-    // キャンバスクリア
     drawingCanvas.clear();
     drawingCanvas.resize();
-
-    // ガイド描画
     renderGuide();
   }
 
@@ -175,32 +218,29 @@
     svg.innerHTML = '';
 
     const strokes = state.currentKanji.strokes;
+    const allDone = state.currentStrokeIndex >= strokes.length;
 
     for (let i = 0; i < strokes.length; i++) {
       const stroke = strokes[i];
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       path.setAttribute('d', stroke.path);
 
-      if (i < state.currentStrokeIndex) {
-        // 完了した画
+      if (allDone) {
+        // 全画完了: お手本を極薄に
+        path.setAttribute('class', 'stroke-all-done');
+      } else if (i < state.currentStrokeIndex) {
         path.setAttribute('class', 'stroke-done');
       } else if (i === state.currentStrokeIndex) {
-        // 現在の画
-        if (state.mode === 'hard') {
-          path.setAttribute('class', 'stroke-future');
-        } else {
-          path.setAttribute('class', 'stroke-current');
-        }
+        path.setAttribute('class', state.mode === 'hard' ? 'stroke-future' : 'stroke-current');
       } else {
-        // 未来の画
         path.setAttribute('class', 'stroke-future');
       }
 
       svg.appendChild(path);
     }
 
-    // 始点マーカー（かんたん・ふつうモード）
-    if (state.mode !== 'hard' && state.currentStrokeIndex < strokes.length) {
+    // 始点マーカー
+    if (state.mode !== 'hard' && !allDone && state.currentStrokeIndex < strokes.length) {
       const currentStroke = strokes[state.currentStrokeIndex];
       if (currentStroke.start) {
         const marker = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
@@ -211,9 +251,6 @@
         svg.appendChild(marker);
       }
     }
-
-    // かんたんモード：画番号をSVG外（上部ラベル横）に表示
-    // 文字に被らないよう、ヘッダーのstroke-progressに統合済み
   }
 
   // ========== ストローク完了時の処理 ==========
@@ -221,39 +258,35 @@
     if (state.currentStrokeIndex >= state.totalStrokes) return;
 
     const expectedStroke = state.currentKanji.strokes[state.currentStrokeIndex];
-
-    // キャンバスサイズとマッピング情報を取得
     const mapping = drawingCanvas.getMapping();
 
-    // ユーザーの点をSVG座標系に変換して判定
     const mappedPoints = userPoints.map(p => ({
       x: (p.x - mapping.offsetX) / mapping.scale,
       y: (p.y - mapping.offsetY) / mapping.scale,
     }));
 
-    // 判定は109x109のSVG座標系で行う
     const result = validator.validate(mappedPoints, expectedStroke, 109);
 
     if (result.valid) {
-      // 正解！
       state.currentStrokeIndex++;
       showFeedback(result.message || 'いいね！', 'success');
       renderGuide();
       updateStrokeProgress();
 
-      // 全画完了チェック
       if (state.currentStrokeIndex >= state.totalStrokes) {
         setTimeout(() => showCompletion(), 500);
       }
     } else {
-      // 不正解
       handleIncorrectStroke(result);
     }
   }
 
   function handleIncorrectStroke(result) {
-    // 直前のストロークを消す（不正解なので）
     drawingCanvas.undoLastStroke();
+
+    // 苦手漢字として記録
+    state.mistakeKanji.add(state.currentKanjiChar);
+    saveJSON('mistakeKanji', [...state.mistakeKanji]);
 
     switch (result.reason) {
       case 'wrong_start':
@@ -279,13 +312,11 @@
     }
   }
 
-  // ========== 始点ハイライト ==========
   function highlightStartPoint() {
     const svg = els.guideSvg;
     const stroke = state.currentKanji.strokes[state.currentStrokeIndex];
     if (!stroke || !stroke.start) return;
 
-    // 大きなパルスマーカーを追加
     const pulse = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
     pulse.setAttribute('cx', stroke.start[0]);
     pulse.setAttribute('cy', stroke.start[1]);
@@ -293,24 +324,16 @@
     pulse.setAttribute('fill', 'rgba(231, 76, 60, 0.3)');
     pulse.setAttribute('class', 'start-marker');
     svg.appendChild(pulse);
-
-    setTimeout(() => {
-      if (pulse.parentNode) pulse.parentNode.removeChild(pulse);
-    }, 2000);
+    setTimeout(() => { if (pulse.parentNode) pulse.remove(); }, 2000);
   }
 
-  // ========== 方向ヒントアニメーション ==========
   function playDirectionHint() {
     if (state.currentStrokeIndex >= state.totalStrokes) return;
 
     const stroke = state.currentKanji.strokes[state.currentStrokeIndex];
     const svg = els.guideSvg;
-
-    // 既存のデモ要素を削除
     svg.querySelectorAll('.hint-anim').forEach(el => el.remove());
 
-    // パスに沿って動くアニメーション（mpath参照で正確な位置に）
-    // まず参照用の非表示パスを追加
     const refPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     refPath.setAttribute('d', stroke.path);
     refPath.setAttribute('id', 'hint-ref-path');
@@ -330,49 +353,33 @@
     animateMotion.setAttribute('repeatCount', '2');
     animateMotion.setAttribute('fill', 'freeze');
 
-    // mpath参照を使い、SVG内の実際のパス座標に沿って動かす
     const mpath = document.createElementNS('http://www.w3.org/2000/svg', 'mpath');
     mpath.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#hint-ref-path');
     animateMotion.appendChild(mpath);
-
     animCircle.appendChild(animateMotion);
     svg.appendChild(animCircle);
 
-    setTimeout(() => {
-      svg.querySelectorAll('.hint-anim').forEach(el => el.remove());
-    }, 2200);
+    setTimeout(() => { svg.querySelectorAll('.hint-anim').forEach(el => el.remove()); }, 2200);
   }
 
-  // ========== お手本再生 ==========
   function playDemo() {
     if (state.currentStrokeIndex >= state.totalStrokes) return;
-
     const stroke = state.currentKanji.strokes[state.currentStrokeIndex];
     const svg = els.guideSvg;
-
-    // 既存のデモパスを削除
     const existing = svg.querySelector('.stroke-demo');
     if (existing) existing.remove();
 
-    // お手本パスを描画
     const demoPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     demoPath.setAttribute('d', stroke.path);
     demoPath.setAttribute('class', 'stroke-demo');
-
-    // パスの長さを取得してアニメーション設定
     svg.appendChild(demoPath);
     const length = demoPath.getTotalLength();
     demoPath.style.setProperty('--stroke-length', length);
     demoPath.setAttribute('stroke-dasharray', length);
     demoPath.setAttribute('stroke-dashoffset', length);
-
-    // アニメーション後に削除
-    setTimeout(() => {
-      if (demoPath.parentNode) demoPath.parentNode.removeChild(demoPath);
-    }, 1500);
+    setTimeout(() => { if (demoPath.parentNode) demoPath.remove(); }, 1500);
   }
 
-  // ========== 元に戻す ==========
   function undoStroke() {
     if (state.currentStrokeIndex > 0) {
       state.currentStrokeIndex--;
@@ -383,7 +390,6 @@
     }
   }
 
-  // ========== クリア ==========
   function clearAndReset() {
     state.currentStrokeIndex = 0;
     drawingCanvas.clear();
@@ -392,12 +398,9 @@
     hideFeedback();
   }
 
-  // ========== フィードバック表示 ==========
   function showFeedback(message, type) {
     els.feedbackText.textContent = message;
     els.feedback.className = `feedback ${type}`;
-
-    // 自動非表示
     clearTimeout(state.feedbackTimer);
     state.feedbackTimer = setTimeout(hideFeedback, 2000);
   }
@@ -406,21 +409,103 @@
     els.feedback.className = 'feedback hidden';
   }
 
-  // ========== 完成表示 ==========
+  // ========== 完成表示 + パーティクル ==========
   function showCompletion() {
     els.completionKanji.textContent = state.currentKanjiChar;
     els.completionOverlay.classList.remove('hidden');
 
-    // 完了記録
     state.completedKanji.add(state.currentKanjiChar);
-    localStorage.setItem('completedKanji', JSON.stringify([...state.completedKanji]));
+    saveJSON('completedKanji', [...state.completedKanji]);
+
+    // ガイドを極薄に（筆跡が目立つ）
+    renderGuide();
+
+    // パーティクル発射
+    launchParticles();
   }
 
   function hideCompletion() {
     els.completionOverlay.classList.add('hidden');
+    stopParticles();
   }
 
-  // ========== 次の漢字 ==========
+  // ========== パーティクルシステム ==========
+  let particleAnimId = null;
+
+  function launchParticles() {
+    const canvas = els.particleCanvas;
+    if (!canvas) return;
+    canvas.classList.remove('hidden');
+    const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
+    ctx.scale(dpr, dpr);
+    const W = window.innerWidth;
+    const H = window.innerHeight;
+
+    const colors = ['#E74C3C', '#F39C12', '#2ECC71', '#3498DB', '#9B59B6', '#E91E63', '#FF6B6B', '#4ECDC4'];
+    const particles = [];
+    for (let i = 0; i < 80; i++) {
+      particles.push({
+        x: W * 0.5 + (Math.random() - 0.5) * W * 0.3,
+        y: H * 0.4,
+        vx: (Math.random() - 0.5) * 12,
+        vy: -Math.random() * 14 - 4,
+        size: Math.random() * 8 + 4,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        life: 1,
+        decay: Math.random() * 0.015 + 0.008,
+        shape: Math.random() > 0.5 ? 'circle' : 'rect',
+        rotation: Math.random() * Math.PI * 2,
+        rotSpeed: (Math.random() - 0.5) * 0.2,
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, W, H);
+      let alive = false;
+      for (const p of particles) {
+        if (p.life <= 0) continue;
+        alive = true;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.25; // gravity
+        p.life -= p.decay;
+        p.rotation += p.rotSpeed;
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.fillStyle = p.color;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
+        if (p.shape === 'circle') {
+          ctx.beginPath();
+          ctx.arc(0, 0, p.size, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          ctx.fillRect(-p.size, -p.size / 2, p.size * 2, p.size);
+        }
+        ctx.restore();
+      }
+      ctx.globalAlpha = 1;
+      if (alive) {
+        particleAnimId = requestAnimationFrame(animate);
+      } else {
+        canvas.classList.add('hidden');
+      }
+    }
+    animate();
+  }
+
+  function stopParticles() {
+    if (particleAnimId) {
+      cancelAnimationFrame(particleAnimId);
+      particleAnimId = null;
+    }
+    if (els.particleCanvas) els.particleCanvas.classList.add('hidden');
+  }
+
+  // ========== ナビゲーション ==========
   function goToNextKanji() {
     hideCompletion();
     const currentIndex = state.kanjiList.indexOf(state.currentKanjiChar);
@@ -428,7 +513,6 @@
     startPractice(state.kanjiList[nextIndex]);
   }
 
-  // ========== 選択画面に戻る ==========
   function goToSelect() {
     els.screenPractice.classList.remove('active');
     els.screenSelect.classList.add('active');

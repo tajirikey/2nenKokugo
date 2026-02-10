@@ -74,6 +74,45 @@ html, body {
   color: white;
 }
 
+/* 並び替え・フィルタ */
+.grid-controls {
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e0d8d0;
+}
+.sort-group, .filter-group {
+  display: flex;
+  gap: 4px;
+}
+.sort-btn, .filter-btn {
+  padding: 6px 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background: white;
+  color: #888;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.sort-btn.active {
+  border-color: #4A90D9;
+  background: #EBF3FB;
+  color: #4A90D9;
+}
+.filter-btn.active {
+  border-color: #E74C3C;
+  background: #FDE8E8;
+  color: #E74C3C;
+}
+.filter-btn[data-filter="all"].active {
+  border-color: #4A90D9;
+  background: #EBF3FB;
+  color: #4A90D9;
+}
+
 /* 検索バー */
 .search-bar {
   padding: 8px 16px;
@@ -129,7 +168,7 @@ html, body {
   background: #f0faf0;
 }
 .kanji-cell.completed::after {
-  content: "✓";
+  content: "\2713";
   position: absolute;
   font-size: 14px;
   color: #5CB85C;
@@ -138,6 +177,28 @@ html, body {
 }
 .kanji-cell {
   position: relative;
+}
+.kanji-text {
+  font-size: inherit;
+}
+.attempt-badge {
+  position: absolute;
+  bottom: 2px;
+  left: 4px;
+  font-size: 10px;
+  color: #fff;
+  background: #999;
+  border-radius: 8px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  line-height: 1;
+}
+.kanji-cell.completed .attempt-badge {
+  background: #5CB85C;
 }
 
 /* ========== 練習画面 ========== */
@@ -257,6 +318,16 @@ html, body {
   opacity: 0.3;
 }
 
+/* 全画完了時（極薄にしてユーザー筆跡を目立たせる） */
+.stroke-all-done {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.1;
+}
+
 /* 始点マーカー */
 .start-marker {
   fill: #E74C3C;
@@ -322,38 +393,54 @@ html, body {
   50% { transform: translateX(10px); }
 }
 
-/* ========== 完成オーバーレイ ========== */
-.completion-overlay {
+/* ========== パーティクルキャンバス ========== */
+.particle-canvas {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 150;
+  pointer-events: none;
+}
+.particle-canvas.hidden {
+  display: none;
+}
+
+/* ========== 完成オーバーレイ（右端配置） ========== */
+.completion-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  background: rgba(255, 255, 255, 0.92);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  border-left: 3px solid #4A90D9;
 }
 .completion-overlay.hidden {
   opacity: 0;
   pointer-events: none;
+  transform: translateX(100%);
 }
 .completion-content {
-  background: white;
-  border-radius: 24px;
-  padding: 40px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  gap: 12px;
+  padding: 16px 8px;
+  animation: slide-in-right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-@keyframes pop-in {
-  0% { transform: scale(0.5); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+@keyframes slide-in-right {
+  0% { transform: translateX(40px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
 }
 .completion-kanji {
-  font-size: 80px;
+  font-size: 56px;
   animation: rainbow 2s linear infinite;
 }
 @keyframes rainbow {
@@ -366,17 +453,18 @@ html, body {
   100% { color: #E74C3C; }
 }
 .completion-message {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 700;
   color: #333;
+  line-height: 1.4;
 }
 .btn-primary {
-  padding: 14px 32px;
+  padding: 10px 16px;
   background: #4A90D9;
   color: white;
   border: none;
-  border-radius: 16px;
-  font-size: 18px;
+  border-radius: 12px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.15s;
