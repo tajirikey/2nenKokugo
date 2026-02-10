@@ -1,2477 +1,2120 @@
 const KANJI_DATA = {
-"引": {
-    readings: { on: ["イン"], kun: ["ひ.く", "ひ.ける"] },
+  "引": {
+    readings: { on: ["イン"], kun: ["ひ.く"] },
     strokes: [
-      { path: "M 18,23 L 45,23", start: [18, 23], end: [45, 23], direction: "left-right" },
-      { path: "M 18,23 L 18,80", start: [18, 23], end: [18, 80], direction: "top-bottom" },
-      { path: "M 18,52 L 45,52", start: [18, 52], end: [45, 52], direction: "left-right" },
-      { path: "M 75,15 L 75,95", start: [75, 15], end: [75, 95], direction: "top-bottom" }
+      { path: "M20.5,17.25c1.5,0.88,3.73,0.9,5,0.75c5.12-0.62,15.62-2.5,21-3.75c2.54-0.59,4.53,0.85,3.75,3.75c-0.88,3.25-2.88,10.25-4,14", start: [20.5, 17.2], end: [46.2, 32.0], direction: "top-left-to-bottom-right" },
+      { path: "M24,35c1,0.5,2.45,0.51,3.62,0.44c4.88-0.31,12.62-1.69,15.62-2.19c1.74-0.29,3.62-0.5,5.25-0.25", start: [24.0, 35.0], end: [48.5, 33.0], direction: "left-right" },
+      { path: "M24.75,35.5c0.88,1.25,0.62,2.25-0.25,4c-0.65,1.3-5.07,10.06-5.5,11c-1.25,2.75,0,3.5,3,3c2.03-0.34,19.5-3.25,23.5-4c3.55-0.67,6.23,1.45,5.52,5c-1.97,9.78-9.4,29.42-13.02,36c-2.75,5-7.5,3.25-11-1", start: [24.8, 35.5], end: [27.0, 89.5], direction: "top-bottom" },
+      { path: "M82,11.75c1.31,1.31,1.75,3,1.75,4.75c0,0.89,0.09,58.38,0.09,75.5c0,3.17-0.06,5.38-0.09,6.25", start: [82.0, 11.8], end: [83.8, 98.2], direction: "top-bottom" }
     ]
   },
   "羽": {
     readings: { on: ["ウ"], kun: ["は", "はね"] },
     strokes: [
-      { path: "M 15,25 C 15,25 25,55 20,75", start: [15, 25], end: [20, 75], direction: "top-bottom" },
-      { path: "M 25,20 L 50,20 L 50,45", start: [25, 20], end: [50, 45], direction: "complex" },
-      { path: "M 25,45 L 50,45", start: [25, 45], end: [50, 45], direction: "left-right" },
-      { path: "M 58,25 C 58,25 68,55 63,75", start: [58, 25], end: [63, 75], direction: "top-bottom" },
-      { path: "M 68,20 L 93,20 L 93,45", start: [68, 20], end: [93, 45], direction: "complex" },
-      { path: "M 68,45 L 93,45", start: [68, 45], end: [93, 45], direction: "left-right" }
+      { path: "M18.5,25.25c1.75,0.75,3.75,0.75,6.32,0.34c5.22-0.84,14.87-2.97,16.46-3.1c3.58-0.29,4.48,0.39,4.48,3.55c0,3.6-0.17,48.23-0.17,60.15c0,9.08-7.72,1.06-8.61,0.32", start: [18.5, 25.2], end: [37.0, 86.5], direction: "top-bottom" },
+      { path: "M21.77,41.08c3.02,1.3,6.48,4.29,8.54,7.38", start: [21.8, 41.1], end: [30.3, 48.5], direction: "top-left-to-bottom-right" },
+      { path: "M17,72c2.12,0.62,3.25,0.25,4.75-1.25c0.88-0.88,7.5-7.75,11.25-12", start: [17.0, 72.0], end: [33.0, 58.8], direction: "top-left-to-bottom-right" },
+      { path: "M56.75,22.25C58.5,22.88,60,23,62.57,22.59c5.22-0.84,18.89-3.55,20.46-3.85c2.47-0.48,4.48,1.27,4.48,3.55c0,3.85-0.17,51.73-0.17,63.65c0,8.58-7.72,1.06-8.61,0.32", start: [56.8, 22.2], end: [78.7, 86.3], direction: "top-bottom" },
+      { path: "M61.77,39.58c3.02,1.3,6.98,4.92,8.54,7.38", start: [61.8, 39.6], end: [70.3, 47.0], direction: "top-left-to-bottom-right" },
+      { path: "M56.75,71c1.88,0.5,3.25,0.25,4.75-1.25c1.51-1.51,8.7-9.55,12.25-13.75", start: [56.8, 71.0], end: [73.8, 56.0], direction: "top-left-to-bottom-right" }
     ]
   },
   "雲": {
     readings: { on: ["ウン"], kun: ["くも"] },
     strokes: [
-      { path: "M 15,10 L 95,10", start: [15, 10], end: [95, 10], direction: "left-right" },
-      { path: "M 25,10 L 25,45", start: [25, 10], end: [25, 45], direction: "top-bottom" },
-      { path: "M 55,10 L 55,45 C 55,50 50,50 45,45", start: [55, 10], end: [45, 45], direction: "complex" },
-      { path: "M 85,10 L 85,45", start: [85, 10], end: [85, 45], direction: "top-bottom" },
-      { path: "M 25,45 L 85,45", start: [25, 45], end: [85, 45], direction: "left-right" },
-      { path: "M 35,22 L 38,30", start: [35, 22], end: [38, 30], direction: "top-bottom" },
-      { path: "M 47,22 L 44,30", start: [47, 22], end: [44, 30], direction: "top-bottom" },
-      { path: "M 65,22 L 68,30", start: [65, 22], end: [68, 30], direction: "top-bottom" },
-      { path: "M 77,22 L 74,30", start: [77, 22], end: [74, 30], direction: "top-bottom" },
-      { path: "M 20,58 L 90,58", start: [20, 58], end: [90, 58], direction: "left-right" },
-      { path: "M 30,72 L 80,72", start: [30, 72], end: [80, 72], direction: "left-right" },
-      { path: "M 55,72 C 55,80 40,95 20,98", start: [55, 72], end: [20, 98], direction: "curve-left" }
+      { path: "M34.21,18.07c1.59,0.18,3.65,0.3,5.08,0.14c0.35-0.04,0.72-0.08,1.1-0.12c6.92-0.75,18.73-2.14,27.81-2.95c2.01-0.18,3.69-0.15,5.54,0.1", start: [34.2, 18.1], end: [73.7, 15.2], direction: "left-right" },
+      { path: "M24.54,29c-0.17,5.3-1.64,10.11-2.73,15.47", start: [24.5, 29.0], end: [21.8, 44.5], direction: "top-bottom" },
+      { path: "M26.02,31.17c16.23-2.04,39.36-4.54,56.48-5.42c11.49-0.59,3.75,5.75,0.75,8", start: [26.0, 31.2], end: [83.2, 33.8], direction: "left-right" },
+      { path: "M52.48,19.59c0.91,0.91,1.57,2.41,1.57,3.82c0,0.3,0.04,13.99,0.05,21.84c0,2.18,0.01,3.93,0.01,4.84", start: [52.5, 19.6], end: [54.1, 50.1], direction: "top-bottom" },
+      { path: "M34.72,36.98c2.67,0.69,6.32,3,7.78,4.15", start: [34.7, 37.0], end: [42.5, 41.1], direction: "top-left-to-bottom-right" },
+      { path: "M32.72,46.88c2.5,0.75,6.12,3.01,7.49,4.26", start: [32.7, 46.9], end: [40.2, 51.1], direction: "top-left-to-bottom-right" },
+      { path: "M65.93,33.77c3.53,1.3,7.53,3.9,8.94,4.98", start: [65.9, 33.8], end: [74.9, 38.8], direction: "top-left-to-bottom-right" },
+      { path: "M65.7,45.19c2.85,0.8,6.74,3.22,8.3,4.56", start: [65.7, 45.2], end: [74.0, 49.8], direction: "top-left-to-bottom-right" },
+      { path: "M36.5,59.2c1.42,0.27,3.8,0.4,5.21,0.27c9.21-0.84,15.69-1.84,25.2-2.31c2.36-0.12,4.03,0.13,5.21,0.26", start: [36.5, 59.2], end: [72.1, 57.4], direction: "left-right" },
+      { path: "M17.5,72.41c3.6,0.44,7.19,0.47,10.76,0.05c16.62-1.96,36.6-3.48,53.89-4.17c4.75-0.19,7.6-0.06,9.98,0.13", start: [17.5, 72.4], end: [92.1, 68.4], direction: "left-right" },
+      { path: "M51.43,73.28c0.07,1.22-0.47,2.87-1.36,3.87C45.75,82,40.5,87,34.78,91.61c-1.97,1.59-2.11,3.21,1.01,2.48C42.5,92.5,61.58,89,72.5,87.5", start: [51.4, 73.3], end: [72.5, 87.5], direction: "top-left-to-bottom-right" },
+      { path: "M66.46,79.93C71,82.58,76.88,89.62,79.31,95", start: [66.5, 79.9], end: [79.3, 95.0], direction: "top-left-to-bottom-right" }
     ]
   },
   "園": {
     readings: { on: ["エン"], kun: ["その"] },
     strokes: [
-      { path: "M 12,12 L 97,12", start: [12, 12], end: [97, 12], direction: "left-right" },
-      { path: "M 12,12 L 12,97", start: [12, 12], end: [12, 97], direction: "top-bottom" },
-      { path: "M 97,12 L 97,97", start: [97, 12], end: [97, 97], direction: "top-bottom" },
-      { path: "M 12,97 L 97,97", start: [12, 97], end: [97, 97], direction: "left-right" },
-      { path: "M 35,28 L 75,28", start: [35, 28], end: [75, 28], direction: "left-right" },
-      { path: "M 25,40 L 55,28", start: [25, 40], end: [55, 28], direction: "top-right-to-bottom-left" },
-      { path: "M 55,28 L 85,45", start: [55, 28], end: [85, 45], direction: "top-left-to-bottom-right" },
-      { path: "M 30,50 L 80,50", start: [30, 50], end: [80, 50], direction: "left-right" },
-      { path: "M 55,50 L 55,70", start: [55, 50], end: [55, 70], direction: "top-bottom" },
-      { path: "M 30,65 L 80,65", start: [30, 65], end: [80, 65], direction: "left-right" },
-      { path: "M 30,50 L 30,65", start: [30, 50], end: [30, 65], direction: "top-bottom" },
-      { path: "M 80,50 L 80,65", start: [80, 50], end: [80, 65], direction: "top-bottom" },
-      { path: "M 35,78 C 45,90 65,90 75,78", start: [35, 78], end: [75, 78], direction: "curve-right" }
+      { path: "M18,18.79c1.29,1.29,1.61,2.94,1.61,4.78c0,12.45,0.07,46.78,0.08,66.05c0,2.27,0,4.33,0,6.12", start: [18.0, 18.8], end: [19.7, 95.7], direction: "top-bottom" },
+      { path: "M20.74,21.21c19.04-1.59,54.71-3.96,65.51-3.96c2.75,0,3.55,2.42,3.5,5.35C89.52,36.75,88.86,66.5,89.16,88c0.02,1.75,0.05,3.44,0.09,5.07", start: [20.7, 21.2], end: [89.2, 93.1], direction: "top-left-to-bottom-right" },
+      { path: "M37.07,30.57c1.25,0.26,3.52,0.34,4.77,0.26C50.25,30.25,60,29,65.82,28.47c2.07-0.19,3.32-0.13,4.36,0", start: [37.1, 30.6], end: [70.2, 28.5], direction: "left-right" },
+      { path: "M52.99,21.87c0.64,0.64,1.25,1.76,1.25,2.69c0,2.95-0.14,13.16-0.14,14.01", start: [53.0, 21.9], end: [54.1, 38.6], direction: "top-bottom" },
+      { path: "M29.39,40.62c1.62,0.43,4.3,0.34,5.91,0.18c11.94-1.18,29.44-2.8,39.52-3.69c2.68-0.24,4.32,0.2,5.67,0.42", start: [29.4, 40.6], end: [80.5, 37.5], direction: "left-right" },
+      { path: "M38.31,47.95c0.68,0.68,1.19,1.42,1.34,2.23c0.61,3.29,0.96,5.69,1.67,9.55c0.26,1.42,0.26,1.78,0.49,2.94", start: [38.3, 48.0], end: [41.8, 62.7], direction: "top-bottom" },
+      { path: "M40.76,49.08c7.81-1.1,21.3-2.51,26.24-2.68c1.9-0.07,2.18,1.39,2.02,2.13c-0.35,1.58-2.31,6.52-2.98,8.39", start: [40.8, 49.1], end: [66.0, 56.9], direction: "left-right" },
+      { path: "M42.65,60.58c5.01-0.69,15.1-1.7,22.12-2.24c1.29-0.1,2.54-0.2,3.69-0.31", start: [42.6, 60.6], end: [68.5, 58.0], direction: "left-right" },
+      { path: "M49.13,62.5c0.21,1.56-0.56,3.02-1.58,4.14c-4.67,5.11-9.92,9.11-18.49,13.86", start: [49.1, 62.5], end: [29.1, 80.5], direction: "top-right-to-bottom-left" },
+      { path: "M51.09,66.7c0.98,0.98,1.43,1.67,1.43,3.08c0,3.46-0.01,8.12-0.01,12.09c0,1.16,0,2.25,0,3.25", start: [51.1, 66.7], end: [52.5, 85.1], direction: "top-bottom" },
+      { path: "M71.59,63.21C71.5,64.12,71,65,69.97,66.04c-1.29,1.3-3.97,3.21-7.88,4.89", start: [71.6, 63.2], end: [62.1, 70.9], direction: "top-right-to-bottom-left" },
+      { path: "M55.38,68c8.25,3.29,15.07,7.67,19.62,14.25", start: [55.4, 68.0], end: [75.0, 82.2], direction: "top-left-to-bottom-right" },
+      { path: "M21,93.1c13.75-0.35,48.71-2.29,66.75-2.69", start: [21.0, 93.1], end: [87.8, 90.4], direction: "left-right" }
     ]
   },
   "遠": {
     readings: { on: ["エン", "オン"], kun: ["とお.い"] },
     strokes: [
-      { path: "M 35,15 L 85,15", start: [35, 15], end: [85, 15], direction: "left-right" },
-      { path: "M 40,28 L 55,15", start: [40, 28], end: [55, 15], direction: "top-right-to-bottom-left" },
-      { path: "M 55,15 L 80,32", start: [55, 15], end: [80, 32], direction: "top-left-to-bottom-right" },
-      { path: "M 40,38 L 80,38", start: [40, 38], end: [80, 38], direction: "left-right" },
-      { path: "M 60,38 L 60,55", start: [60, 38], end: [60, 55], direction: "top-bottom" },
-      { path: "M 40,52 L 80,52", start: [40, 52], end: [80, 52], direction: "left-right" },
-      { path: "M 40,38 L 40,52", start: [40, 38], end: [40, 52], direction: "top-bottom" },
-      { path: "M 80,38 L 80,52", start: [80, 38], end: [80, 52], direction: "top-bottom" },
-      { path: "M 42,65 C 55,78 70,78 82,65", start: [42, 65], end: [82, 65], direction: "curve-right" },
-      { path: "M 12,30 L 12,70", start: [12, 30], end: [12, 70], direction: "top-bottom" },
-      { path: "M 12,30 L 30,30", start: [12, 30], end: [30, 30], direction: "left-right" },
-      { path: "M 12,70 L 30,58", start: [12, 70], end: [30, 58], direction: "complex" },
-      { path: "M 8,85 C 30,80 60,88 95,75", start: [8, 85], end: [95, 75], direction: "curve-right" }
+      { path: "M45.82,23.35c1.16,0.32,3.27,0.47,4.43,0.32c6.16-0.8,16.04-2.18,22.01-2.9c1.92-0.23,3.08,0.16,4.04,0.32", start: [45.8, 23.4], end: [76.3, 21.1], direction: "left-right" },
+      { path: "M59.23,10.62c0.89,0.89,1.61,2.38,1.61,4.07c0,9.57-0.06,16.66-0.06,17.81", start: [59.2, 10.6], end: [60.8, 32.5], direction: "top-bottom" },
+      { path: "M36.89,35.45c1.67,0.46,4.5,0.41,6.15,0.21C54.88,34.25,67,32.88,82.4,31.44c2.77-0.26,4.45,0.22,5.84,0.45", start: [36.9, 35.5], end: [88.2, 31.9], direction: "left-right" },
+      { path: "M46.56,43.29c0.76,0.76,1.19,1.84,1.34,2.54c0.4,1.86,1.29,4.33,2.16,8.42c0.28,1.33,0.54,2.12,0.75,3.27", start: [46.6, 43.3], end: [50.8, 57.5], direction: "top-bottom" },
+      { path: "M48.53,44.19c6.72-1.06,20.53-3.37,25.47-3.55c1.9-0.07,3.25,0.99,2.77,2.79c-0.48,1.77-2.39,5.97-3.1,8.13", start: [48.5, 44.2], end: [73.7, 51.6], direction: "left-right" },
+      { path: "M51.65,55.3c4.76-0.7,12.6-1.37,19.15-2.18c1.62-0.2,3.2-0.5,4.42-0.27", start: [51.6, 55.3], end: [75.2, 52.8], direction: "left-right" },
+      { path: "M59.6,56.21c0.15,1.17-0.21,2.4-1.38,3.79c-4.47,5.25-10.72,10.63-18.91,16.22", start: [59.6, 56.2], end: [39.3, 76.2], direction: "top-right-to-bottom-left" },
+      { path: "M59.51,62.57c0.74,0.93,1,2.06,1,3.43c0,4.73-0.01,10.15-0.01,14.63c0,1.55,0,2.99,0,4.25", start: [59.5, 62.6], end: [60.5, 84.9], direction: "top-bottom" },
+      { path: "M78.35,58.42c-0.1,0.95-0.35,1.83-1.38,2.91c-1.48,1.56-3.6,3.3-7.64,6.1", start: [78.3, 58.4], end: [69.3, 67.4], direction: "top-right-to-bottom-left" },
+      { path: "M64.75,66.6C70.72,68.69,80.24,75.04,84.5,81", start: [64.8, 66.6], end: [84.5, 81.0], direction: "top-left-to-bottom-right" },
+      { path: "M20.71,19.25c3.63,1.74,9.38,7.17,10.29,9.88", start: [20.7, 19.2], end: [31.0, 29.1], direction: "top-left-to-bottom-right" },
+      { path: "M13.25,50.5c1.62,0.5,3.76,0.53,4.75,0.25c2.62-0.75,6.62-2.38,9.75-3.5c3.38-1.22,4.95,0.06,2.61,3.74C24,61,24,61.25,29.75,67.13c2.85,2.92,2.5,4,0,6.37c-1.42,1.34-8.75,7.5-10.25,8", start: [13.2, 50.5], end: [19.5, 81.5], direction: "top-bottom" },
+      { path: "M15.25,83c3-0.5,9-1.75,13.5-0.75s30.07,7.71,34.5,9c12,3.5,21.25,4.5,30.25,2.75", start: [15.2, 83.0], end: [93.5, 94.0], direction: "left-right" }
     ]
   },
   "何": {
     readings: { on: ["カ"], kun: ["なに", "なん"] },
     strokes: [
-      { path: "M 18,20 L 18,95", start: [18, 20], end: [18, 95], direction: "top-bottom" },
-      { path: "M 18,25 L 30,55", start: [18, 25], end: [30, 55], direction: "top-left-to-bottom-right" },
-      { path: "M 40,15 L 40,80 C 40,90 35,95 30,95", start: [40, 15], end: [30, 95], direction: "complex" },
-      { path: "M 40,15 L 95,15", start: [40, 15], end: [95, 15], direction: "left-right" },
-      { path: "M 50,35 L 85,35", start: [50, 35], end: [85, 35], direction: "left-right" },
-      { path: "M 50,55 L 85,55", start: [50, 55], end: [85, 55], direction: "left-right" },
-      { path: "M 68,35 L 68,55", start: [68, 35], end: [68, 55], direction: "top-bottom" }
+      { path: "M32.5,13.75c0.23,2.1-0.19,3.81-0.8,5.66c-3.95,11.84-9.67,23.37-20.45,37.34", start: [32.5, 13.8], end: [11.2, 56.8], direction: "top-right-to-bottom-left" },
+      { path: "M26.76,36.5c1.24,1.5,1.54,3.04,1.54,5.5c0,9.46-0.13,30.79-0.17,44.62c-0.01,2.6-0.01,4.94-0.01,6.88", start: [26.8, 36.5], end: [28.1, 93.5], direction: "top-bottom" },
+      { path: "M38.88,26.64c1.74,0.5,4.68,0.67,6.41,0.5c13.21-1.27,33.84-4.77,46.26-5.86c2.88-0.25,4.63,0.24,6.08,0.49", start: [38.9, 26.6], end: [97.6, 21.8], direction: "left-right" },
+      { path: "M40.87,44c0.75,0.75,1.26,1.62,1.36,2.21c0.67,4.06,1.44,10.16,2.25,16.3c0.27,2.04,0.26,2.01,0.47,3.75", start: [40.9, 44.0], end: [44.9, 66.3], direction: "top-bottom" },
+      { path: "M43.27,45.6c6.28-1.17,15.14-2.97,19.73-3.72c3.13-0.51,4.4,0.31,3.68,3.51c-0.86,3.86-2.49,10.33-3.28,14.14", start: [43.3, 45.6], end: [63.4, 59.5], direction: "top-left-to-bottom-right" },
+      { path: "M45.59,63.17c3.71-0.39,9.45-1.24,14.45-1.85c1.89-0.23,3.82-0.47,5.75-0.69", start: [45.6, 63.2], end: [65.8, 60.6], direction: "left-right" },
+      { path: "M83.25,24.75c1,1,1.74,2.18,1.81,4.99c0.33,13.52-0.21,56.44-0.21,61.04c0,10.71-6.35,2.71-9.18-0.77", start: [83.2, 24.8], end: [75.7, 90.0], direction: "top-bottom" }
     ]
   },
   "科": {
     readings: { on: ["カ"], kun: [] },
     strokes: [
-      { path: "M 15,18 L 45,18", start: [15, 18], end: [45, 18], direction: "left-right" },
-      { path: "M 30,18 L 30,50", start: [30, 18], end: [30, 50], direction: "top-bottom" },
-      { path: "M 15,50 L 50,50", start: [15, 50], end: [50, 50], direction: "left-right" },
-      { path: "M 10,68 L 50,68", start: [10, 68], end: [50, 68], direction: "left-right" },
-      { path: "M 30,68 L 30,95", start: [30, 68], end: [30, 95], direction: "top-bottom" },
-      { path: "M 10,95 L 50,95", start: [10, 95], end: [50, 95], direction: "left-right" },
-      { path: "M 70,15 L 70,40", start: [70, 15], end: [70, 40], direction: "top-bottom" },
-      { path: "M 60,40 Q 70,80 95,50", start: [60, 40], end: [95, 50], direction: "complex" },
-      { path: "M 60,55 C 65,85 70,95 80,95", start: [60, 55], end: [80, 95], direction: "curve-right" }
+      { path: "M41.5,13.75c0.15,1.14-0.46,2.36-1.32,3.14C37.23,20.43,29.51,26,18.75,29.75", start: [41.5, 13.8], end: [18.8, 29.8], direction: "top-right-to-bottom-left" },
+      { path: "M11.07,41.45c0.77,0.23,2.84,0.53,4.9,0.43c7.51-0.38,19.55-2.63,28.91-3.78c2.04-0.25,3.08-0.23,4.37,0", start: [11.1, 41.5], end: [49.2, 38.1], direction: "left-right" },
+      { path: "M34.64,25.62c1.12,1.12,1.51,2.38,1.51,4.08c0.1,1.06,0.03,43.06-0.06,59.54c-0.02,3-0.03,5.13-0.05,6", start: [34.6, 25.6], end: [36.0, 95.2], direction: "top-bottom" },
+      { path: "M35.53,41.63c0,1.62-1.18,4.33-1.89,5.8c-5.39,11.24-15.02,24.53-22.39,32.19", start: [35.5, 41.6], end: [11.2, 79.6], direction: "top-right-to-bottom-left" },
+      { path: "M38.25,46.75c3.46,1.67,8.94,6.87,9.81,9.47", start: [38.2, 46.8], end: [48.1, 56.2], direction: "top-left-to-bottom-right" },
+      { path: "M59.5,21.5c3.18,1.5,8.2,6.17,9,8.5", start: [59.5, 21.5], end: [68.5, 30.0], direction: "top-left-to-bottom-right" },
+      { path: "M56.25,41.25c3.62,1.23,9.34,5.08,10.25,7", start: [56.2, 41.2], end: [66.5, 48.2], direction: "top-left-to-bottom-right" },
+      { path: "M45.88,64.25c1.53,0.5,3.58,0.8,6.14,0.5c11.73-1.38,26.73-4.5,41.16-5.5c2.58-0.18,4.45-0.25,6.07,0", start: [45.9, 64.2], end: [99.2, 59.2], direction: "left-right" },
+      { path: "M77.87,13.25c1.13,1.13,1.96,3,1.96,4.75c0,0.87,0.05,53.4-0.12,73.5c-0.03,3.57-0.06,6.06-0.1,7", start: [77.9, 13.2], end: [79.6, 98.5], direction: "top-bottom" }
     ]
   },
   "夏": {
     readings: { on: ["カ", "ゲ"], kun: ["なつ"] },
     strokes: [
-      { path: "M 25,12 L 85,12", start: [25, 12], end: [85, 12], direction: "left-right" },
-      { path: "M 55,12 L 55,35", start: [55, 12], end: [55, 35], direction: "top-bottom" },
-      { path: "M 30,28 L 80,28", start: [30, 28], end: [80, 28], direction: "left-right" },
-      { path: "M 30,28 L 30,55", start: [30, 28], end: [30, 55], direction: "top-bottom" },
-      { path: "M 80,28 L 80,55", start: [80, 28], end: [80, 55], direction: "top-bottom" },
-      { path: "M 35,42 L 75,42", start: [35, 42], end: [75, 42], direction: "left-right" },
-      { path: "M 30,55 L 80,55", start: [30, 55], end: [80, 55], direction: "left-right" },
-      { path: "M 40,62 L 70,62", start: [40, 62], end: [70, 62], direction: "left-right" },
-      { path: "M 55,55 L 25,95", start: [55, 55], end: [25, 95], direction: "top-right-to-bottom-left" },
-      { path: "M 55,55 C 65,75 80,90 90,95", start: [55, 55], end: [90, 95], direction: "top-left-to-bottom-right" }
+      { path: "M19.75,17.56c2.06,0.37,5.85,0.54,7.9,0.37c16.1-1.31,35.23-3.18,51.51-3.76c3.43-0.12,5.5,0.18,7.21,0.36", start: [19.8, 17.6], end: [86.4, 14.5], direction: "left-right" },
+      { path: "M51.24,18.88c0.26,1,0.13,2-0.12,2.58C50,24.04,49,25.66,46.25,28", start: [51.2, 18.9], end: [46.2, 28.0], direction: "top-right-to-bottom-left" },
+      { path: "M35.25,29.57c0.96,0.96,1.46,1.8,1.46,2.98c0,0.6-0.1,13.36-0.09,21.19c0,3.31,0.03,5.75,0.09,6", start: [35.2, 29.6], end: [36.7, 59.7], direction: "top-bottom" },
+      { path: "M37.77,31.62c7.99-1.02,29.58-3.88,31.4-3.95c2.55-0.11,4.33,0.83,4.34,3.39c0,0.9,0.01,12.2,0.01,21.69c0,1.49,0,2.95,0,4.32", start: [37.8, 31.6], end: [73.5, 57.1], direction: "top-left-to-bottom-right" },
+      { path: "M37.89,39.64c7.86-0.76,28.11-2.76,34.79-3.17", start: [37.9, 39.6], end: [72.7, 36.5], direction: "left-right" },
+      { path: "M37.91,47.78c10.21-1.03,25.21-2.41,34.37-3.1", start: [37.9, 47.8], end: [72.3, 44.7], direction: "left-right" },
+      { path: "M38.23,57.09c9.27-0.84,25.52-2.59,33.82-3.02", start: [38.2, 57.1], end: [72.0, 54.1], direction: "left-right" },
+      { path: "M47.01,59.25c0.24,1.5-0.01,2.75-1,4.14c-3.62,5.1-12.51,15.11-24.34,20.55", start: [47.0, 59.2], end: [21.7, 83.9], direction: "top-right-to-bottom-left" },
+      { path: "M48.22,66.14c1.28,0.24,2.26,0.12,3.37-0.08c4.42-0.81,6.75-1.76,12.31-2.58c3.81-0.57,3.9,1.65,2.92,3.18C61.47,75.07,40.75,92.5,17.25,98.5", start: [48.2, 66.1], end: [17.2, 98.5], direction: "top-right-to-bottom-left" },
+      { path: "M40.75,73.72c5.25-0.22,31,16.91,41.72,20.99c2.58,0.98,4.57,1.66,7.03,1.99", start: [40.8, 73.7], end: [89.5, 96.7], direction: "top-left-to-bottom-right" }
     ]
   },
   "家": {
     readings: { on: ["カ", "ケ"], kun: ["いえ", "や"] },
     strokes: [
-      { path: "M 55,5 L 55,30", start: [55, 5], end: [55, 30], direction: "top-bottom" },
-      { path: "M 55,5 L 10,35", start: [55, 5], end: [10, 35], direction: "top-right-to-bottom-left" },
-      { path: "M 55,5 L 100,35", start: [55, 5], end: [100, 35], direction: "top-left-to-bottom-right" },
-      { path: "M 30,40 L 80,40", start: [30, 40], end: [80, 40], direction: "left-right" },
-      { path: "M 35,52 L 75,52", start: [35, 52], end: [75, 52], direction: "left-right" },
-      { path: "M 55,40 L 55,65", start: [55, 40], end: [55, 65], direction: "top-bottom" },
-      { path: "M 38,65 C 35,72 30,78 22,82", start: [38, 65], end: [22, 82], direction: "curve-left" },
-      { path: "M 72,65 C 78,72 82,78 88,82", start: [72, 65], end: [88, 82], direction: "curve-right" },
-      { path: "M 45,70 C 40,85 30,95 15,98", start: [45, 70], end: [15, 98], direction: "curve-left" },
-      { path: "M 65,70 C 70,85 80,95 95,98", start: [65, 70], end: [95, 98], direction: "curve-right" }
+      { path: "M52.44,11c0.97,0.97,1.69,2.25,1.69,3.68c0,3.42-0.08,4.99-0.08,8.1", start: [52.4, 11.0], end: [54.0, 22.8], direction: "top-bottom" },
+      { path: "M27.09,23.28c0,3.73-2.77,13.98-4.03,16.47", start: [27.1, 23.3], end: [23.1, 39.8], direction: "top-bottom" },
+      { path: "M27.99,27.18C41.88,25,72.75,21.5,79.81,21.2c12.19-0.52,1.14,7.87-0.34,8.63", start: [28.0, 27.2], end: [79.5, 29.8], direction: "left-right" },
+      { path: "M32.76,40.23c1.38,0.4,3.92,0.57,5.29,0.4c8.08-1,19.7-3.38,25.59-3.84c2.29-0.18,3.41-0.04,4.83-0.11", start: [32.8, 40.2], end: [68.5, 36.7], direction: "left-right" },
+      { path: "M51.26,41.5c0.18,1.1-0.06,2.08-0.72,2.94C47.84,48.63,38.92,55.58,26.5,60.5", start: [51.3, 41.5], end: [26.5, 60.5], direction: "top-right-to-bottom-left" },
+      { path: "M48.07,48.96c8.31,7.92,14.18,25.04,6.92,43.51c-2.42,6.16-8.12,0.9-9.3,0.05", start: [48.1, 49.0], end: [45.7, 92.5], direction: "top-bottom" },
+      { path: "M49,56c0.17,1.16-0.14,2.17-0.92,3.04c-2.78,3.84-10.78,9.86-22.33,14.21", start: [49.0, 56.0], end: [25.8, 73.2], direction: "top-right-to-bottom-left" },
+      { path: "M52.5,65.5c0.21,1.3-0.06,2.45-0.84,3.44c-3.27,5.04-13.97,13.61-29.91,19.56", start: [52.5, 65.5], end: [21.7, 88.5], direction: "top-right-to-bottom-left" },
+      { path: "M76.8,45.3c0.14,1.12-0.2,2.09-1.02,2.91c-2.55,3.35-9.29,8.72-18.05,12.19", start: [76.8, 45.3], end: [57.7, 60.4], direction: "top-right-to-bottom-left" },
+      { path: "M58.79,62.82c3.72,2.92,18.27,15.42,25.25,20.69c2.49,1.88,4.18,3.12,7.08,3.87", start: [58.8, 62.8], end: [91.1, 87.4], direction: "top-left-to-bottom-right" }
     ]
   },
   "歌": {
     readings: { on: ["カ"], kun: ["うた", "うた.う"] },
     strokes: [
-      { path: "M 12,15 L 48,15", start: [12, 15], end: [48, 15], direction: "left-right" },
-      { path: "M 18,15 L 18,45 C 18,50 15,52 12,52", start: [18, 15], end: [12, 52], direction: "complex" },
-      { path: "M 25,30 L 42,30", start: [25, 30], end: [42, 30], direction: "left-right" },
-      { path: "M 42,15 L 42,45", start: [42, 15], end: [42, 45], direction: "top-bottom" },
-      { path: "M 12,55 L 48,55", start: [12, 55], end: [48, 55], direction: "left-right" },
-      { path: "M 18,55 L 18,85 C 18,90 15,92 12,92", start: [18, 55], end: [12, 92], direction: "complex" },
-      { path: "M 25,70 L 42,70", start: [25, 70], end: [42, 70], direction: "left-right" },
-      { path: "M 42,55 L 42,85", start: [42, 55], end: [42, 85], direction: "top-bottom" },
-      { path: "M 60,15 L 60,55", start: [60, 15], end: [60, 55], direction: "top-bottom" },
-      { path: "M 60,30 L 90,15", start: [60, 30], end: [90, 15], direction: "complex" },
-      { path: "M 60,55 L 85,40", start: [60, 55], end: [85, 40], direction: "complex" },
-      { path: "M 68,60 L 68,95", start: [68, 60], end: [68, 95], direction: "top-bottom" },
-      { path: "M 75,70 C 80,80 88,90 95,95", start: [75, 70], end: [95, 95], direction: "top-left-to-bottom-right" },
-      { path: "M 85,65 C 90,75 95,85 98,90", start: [85, 65], end: [98, 90], direction: "top-left-to-bottom-right" }
+      { path: "M12.87,22.32c1.62,0.38,4.57,0.57,6.21,0.38c8.42-0.95,18.04-2.45,27.39-3.16c2.68-0.2,4.32,0.18,5.67,0.37", start: [12.9, 22.3], end: [52.1, 19.9], direction: "left-right" },
+      { path: "M16.65,32.85c0.56,0.41,0.88,0.96,0.97,1.65c0.62,2.03,1.31,5.53,1.85,8.42c0.19,1,0.35,1.96,0.49,2.84", start: [16.6, 32.9], end: [20.0, 45.8], direction: "top-bottom" },
+      { path: "M18.75,34.28c4.65-0.96,11.62-2.38,14.17-2.62c1.1-0.1,1.76,0.61,1.6,1.22c-0.5,1.92-1.31,5.39-1.98,7.88", start: [18.8, 34.3], end: [32.5, 40.8], direction: "top-left-to-bottom-right" },
+      { path: "M20.83,43.36c2.68-0.24,5.82-0.99,9.42-1.31c1.15-0.1,2.32-0.21,3.49-0.33", start: [20.8, 43.4], end: [33.7, 41.7], direction: "left-right" },
+      { path: "M44,21.37c0.03,0.26,0.98,1.35,1.01,3c0.12,5.81,0.06,14.91-0.02,20.39c-0.03,1.96-0.06,3.46-0.08,4.17", start: [44.0, 21.4], end: [44.9, 48.9], direction: "top-bottom" },
+      { path: "M9.63,54.68c1.45,0.39,4.92,0.56,6.39,0.39C25.38,54,36.5,52,47.8,50.96c2.4-0.22,3.87,0.19,5.08,0.39", start: [9.6, 54.7], end: [52.9, 51.4], direction: "left-right" },
+      { path: "M13.93,64.82c0.61,0.45,0.97,1.05,1.08,1.8c0.67,2.09,1.17,5.73,1.75,8.83c0.2,1.06,0.37,2.08,0.52,3.01", start: [13.9, 64.8], end: [17.3, 78.5], direction: "top-bottom" },
+      { path: "M16.31,66.05c5-1.02,12.81-2.25,15.54-2.51c1.2-0.11,1.91,0.66,1.74,1.32c-0.52,2-1.86,6.32-2.56,8.9", start: [16.3, 66.0], end: [31.0, 73.8], direction: "top-left-to-bottom-right" },
+      { path: "M18.16,76.42c3.18-0.29,7.53-1.08,11.84-1.48c0.89-0.08,1.79-0.17,2.69-0.26", start: [18.2, 76.4], end: [32.7, 74.7], direction: "left-right" },
+      { path: "M43.91,54.26c0.06,0.26,0.79,1.35,0.85,3c0.27,7.9-0.17,31.89-0.17,34.59c0,4.66-4.25-0.98-6.35-2.12", start: [43.9, 54.3], end: [38.2, 89.7], direction: "top-bottom" },
+      { path: "M66.24,13c0.5,1.67,0.52,3.33,0.09,4.95C64.43,25.07,61,36.25,56.45,44", start: [66.2, 13.0], end: [56.5, 44.0], direction: "top-bottom" },
+      { path: "M62.88,37.4c0.81,0.35,2.59,0.37,3.82,0.1c7.3-1.62,13.36-2.99,19.42-4.35c7.82-1.76-0.89,10.41-2.12,12.1", start: [62.9, 37.4], end: [84.0, 45.2], direction: "left-right" },
+      { path: "M68,44.38c0.37,1.12,0.53,2.34,0.41,3.96C67.6,58.43,63.5,80.33,51.25,91", start: [68.0, 44.4], end: [51.2, 91.0], direction: "top-bottom" },
+      { path: "M68.5,61c3.45,4.84,14.8,18.55,21.86,25.13c1.64,1.53,3.42,3.24,5.64,3.87", start: [68.5, 61.0], end: [96.0, 90.0], direction: "top-left-to-bottom-right" }
     ]
   },
   "画": {
     readings: { on: ["ガ", "カク"], kun: [] },
     strokes: [
-      { path: "M 15,15 L 95,15", start: [15, 15], end: [95, 15], direction: "left-right" },
-      { path: "M 25,15 L 25,80", start: [25, 15], end: [25, 80], direction: "top-bottom" },
-      { path: "M 85,15 L 85,80", start: [85, 15], end: [85, 80], direction: "top-bottom" },
-      { path: "M 40,30 L 70,30", start: [40, 30], end: [70, 30], direction: "left-right" },
-      { path: "M 40,30 L 40,65", start: [40, 30], end: [40, 65], direction: "top-bottom" },
-      { path: "M 70,30 L 70,65", start: [70, 30], end: [70, 65], direction: "top-bottom" },
-      { path: "M 40,65 L 70,65", start: [40, 65], end: [70, 65], direction: "left-right" },
-      { path: "M 15,80 L 95,80", start: [15, 80], end: [95, 80], direction: "left-right" }
+      { path: "M26.13,23.42c1.98,0.38,4.51,0.58,6.49,0.38c12.89-1.3,29.64-3.55,42.7-4.63c3.29-0.27,5.13-0.04,6.94,0.37", start: [26.1, 23.4], end: [82.3, 19.5], direction: "left-right" },
+      { path: "M30.75,39.44c0.97,0.97,1.46,1.57,1.78,3.27c1.21,6.36,2.51,18.29,3.34,28.78c0.1,1.27,0.19,2.53,0.28,3.76", start: [30.8, 39.4], end: [36.2, 75.3], direction: "top-bottom" },
+      { path: "M33.25,41.27c12.25-2.02,32.09-4.15,39.43-4.71c3.12-0.24,4.71,1.67,4.54,3.43c-0.52,5.36-2,18.54-3.76,27.49c-0.36,1.85-0.74,3.54-1.12,4.97", start: [33.2, 41.3], end: [72.3, 72.5], direction: "top-left-to-bottom-right" },
+      { path: "M52.65,24.07c0.84,0.85,1.34,2.09,1.34,3.21c0,10.84-0.09,37.09-0.09,42.8", start: [52.6, 24.1], end: [53.9, 70.1], direction: "top-bottom" },
+      { path: "M35.63,56.14c8.25-1.39,32.87-3.89,38.7-3.96", start: [35.6, 56.1], end: [74.3, 52.2], direction: "left-right" },
+      { path: "M37.25,72.82C48.5,71.75,59.75,70,71.94,69.7", start: [37.2, 72.8], end: [71.9, 69.7], direction: "left-right" },
+      { path: "M18.06,46.13c1.34,1.34,1.77,3.48,1.72,5.12c-0.28,8.63-0.5,21.08-0.93,34.25c0,2.75,0.42,3.73,3.51,3.37c11.95-1.39,52.28-3.55,66.89-4.26", start: [18.1, 46.1], end: [89.2, 84.6], direction: "top-left-to-bottom-right" },
+      { path: "M91.86,36.88c1,1,1.5,2.33,1.4,4.38c-0.53,11.45-1.3,25.21-2.48,41.7c-0.15,2.06-0.3,4.16-0.45,6.3", start: [91.9, 36.9], end: [90.3, 89.3], direction: "top-bottom" }
     ]
   },
   "回": {
-    readings: { on: ["カイ", "エ"], kun: ["まわ.る", "まわ.す"] },
+    readings: { on: ["カイ"], kun: ["まわ.る"] },
     strokes: [
-      { path: "M 15,15 L 95,15", start: [15, 15], end: [95, 15], direction: "left-right" },
-      { path: "M 15,15 L 15,95", start: [15, 15], end: [15, 95], direction: "top-bottom" },
-      { path: "M 95,15 L 95,95", start: [95, 15], end: [95, 95], direction: "top-bottom" },
-      { path: "M 40,40 L 70,40 L 70,70 L 40,70 L 40,40", start: [40, 40], end: [40, 40], direction: "complex" },
-      { path: "M 40,40 L 40,70", start: [40, 40], end: [40, 70], direction: "top-bottom" },
-      { path: "M 15,95 L 95,95", start: [15, 95], end: [95, 95], direction: "left-right" }
+      { path: "M17.5,26.25c1.06,1.06,1.9,3.09,2.11,4.98c1.27,11.64,2.42,29.54,4.16,51.27c0.17,2.12,0.34,2.78,0.53,5", start: [17.5, 26.2], end: [24.3, 87.5], direction: "top-bottom" },
+      { path: "M20.54,28.66c20.23-2.59,57.72-6.91,68.71-6.91c2.75,0,3.82,2.51,3.5,5.5c-1.35,12.85-3.11,34.06-5.64,51.98c-0.28,1.95-0.56,2.88-0.86,4.77", start: [20.5, 28.7], end: [86.2, 84.0], direction: "top-left-to-bottom-right" },
+      { path: "M37.75,45.14c0.8,0.64,1.29,1.45,1.47,2.45c1.2,3.61,2.35,10.46,3.54,16.12c0.28,1.32,0.53,2.1,0.74,3.3", start: [37.8, 45.1], end: [43.5, 67.0], direction: "top-bottom" },
+      { path: "M40.03,46.4c7.97-1.53,22.18-3.48,26.41-3.91c1.8-0.19,2.89,1.11,2.63,2.21c-0.88,3.74-3.13,11.37-4.34,16.3", start: [40.0, 46.4], end: [64.7, 61.0], direction: "top-left-to-bottom-right" },
+      { path: "M44.25,64.5c5.23-0.84,12.05-1.6,18.8-2.43c1.31-0.16,2.62-0.32,3.92-0.46", start: [44.2, 64.5], end: [67.0, 61.6], direction: "left-right" },
+      { path: "M25.25,84.76c15.54-1.45,41.13-3.14,60.75-4.51", start: [25.2, 84.8], end: [86.0, 80.2], direction: "left-right" }
     ]
   },
   "会": {
     readings: { on: ["カイ", "エ"], kun: ["あ.う"] },
     strokes: [
-      { path: "M 55,8 L 30,30", start: [55, 8], end: [30, 30], direction: "top-right-to-bottom-left" },
-      { path: "M 55,8 L 80,30", start: [55, 8], end: [80, 30], direction: "top-left-to-bottom-right" },
-      { path: "M 20,42 L 90,42", start: [20, 42], end: [90, 42], direction: "left-right" },
-      { path: "M 35,55 L 75,55", start: [35, 55], end: [75, 55], direction: "left-right" },
-      { path: "M 55,42 L 55,95", start: [55, 42], end: [55, 95], direction: "top-bottom" },
-      { path: "M 55,70 C 40,85 25,90 15,95", start: [55, 70], end: [15, 95], direction: "curve-left" }
+      { path: "M52.25,14c0.25,2.28-0.52,3.59-1.8,5.62c-5.76,9.14-17.9,27-39.2,39.88", start: [52.2, 14.0], end: [11.2, 59.5], direction: "top-right-to-bottom-left" },
+      { path: "M54.5,19.25c6.73,7.3,24.09,24.81,32.95,31.91c2.73,2.18,5.61,3.8,9.05,4.59", start: [54.5, 19.2], end: [96.5, 55.8], direction: "top-left-to-bottom-right" },
+      { path: "M37.36,50.16c1.64,0.34,4.04,0.36,4.98,0.25c6.79-0.79,14.29-1.91,19.66-2.4c1.56-0.14,3.25-0.39,4.66,0", start: [37.4, 50.2], end: [66.7, 48.0], direction: "left-right" },
+      { path: "M23,65.98c2.12,0.52,4.25,0.64,7.01,0.3c13.77-1.71,30.99-3.66,46.35-3.74c3.04-0.02,4.87,0.14,6.4,0.29", start: [23.0, 66.0], end: [82.8, 62.8], direction: "left-right" },
+      { path: "M47.16,66.38c0.62,1.65-0.03,2.93-0.92,4.28c-5.17,7.8-8.02,11.38-14.99,18.84c-2.11,2.25-1.5,4.18,2,3.75c7.35-0.91,28.19-5.83,40.16-7.95", start: [47.2, 66.4], end: [73.4, 85.3], direction: "top-left-to-bottom-right" },
+      { path: "M66.62,77.39c4.52,3.23,11,12.73,13.06,18.82", start: [66.6, 77.4], end: [79.7, 96.2], direction: "top-left-to-bottom-right" }
     ]
   },
   "海": {
     readings: { on: ["カイ"], kun: ["うみ"] },
     strokes: [
-      { path: "M 10,20 L 10,30", start: [10, 20], end: [10, 30], direction: "top-bottom" },
-      { path: "M 10,42 L 10,52", start: [10, 42], end: [10, 52], direction: "top-bottom" },
-      { path: "M 10,62 L 10,72", start: [10, 62], end: [10, 72], direction: "top-bottom" },
-      { path: "M 30,15 L 95,15", start: [30, 15], end: [95, 15], direction: "left-right" },
-      { path: "M 30,15 L 30,90", start: [30, 15], end: [30, 90], direction: "top-bottom" },
-      { path: "M 40,35 L 85,35", start: [40, 35], end: [85, 35], direction: "left-right" },
-      { path: "M 62,15 L 62,55", start: [62, 15], end: [62, 55], direction: "top-bottom" },
-      { path: "M 40,55 L 85,55", start: [40, 55], end: [85, 55], direction: "left-right" },
-      { path: "M 35,75 C 50,65 70,65 90,75", start: [35, 75], end: [90, 75], direction: "curve-right" }
+      { path: "M20.38,14.75c3.31,1.47,8.54,6.05,9.37,8.34", start: [20.4, 14.8], end: [29.8, 23.1], direction: "top-left-to-bottom-right" },
+      { path: "M14.75,39.5c3.79,1.15,9.8,4.72,10.75,6.5", start: [14.8, 39.5], end: [25.5, 46.0], direction: "top-left-to-bottom-right" },
+      { path: "M13.75,89.21C16,90,17.06,89.57,18,87.95c2.75-4.7,5.5-10.45,8-16.45", start: [13.8, 89.2], end: [26.0, 71.5], direction: "top-left-to-bottom-right" },
+      { path: "M53,11c0.12,1.68-0.19,3.03-0.83,4.57C49.7,21.44,43.05,31.26,37.75,37", start: [53.0, 11.0], end: [37.8, 37.0], direction: "top-right-to-bottom-left" },
+      { path: "M51.13,24.03c0.94,0.29,3.67,0.41,4.6,0.29c7.65-0.94,18.52-3.07,26.02-4.84c1.51-0.36,3.5-0.36,4.29-0.21", start: [51.1, 24.0], end: [86.0, 19.3], direction: "left-right" },
+      { path: "M48.96,36.12C50,37,50.5,38.25,49.75,42.25C47.86,52.35,42.98,67.88,40,73c-1.75,3-0.5,4.43,1.5,4.5c14.75,0.5,31.22,2.68,44.24,10c2.04,1.15,3.97,2.39,5.76,3.75", start: [49.0, 36.1], end: [91.5, 91.2], direction: "top-left-to-bottom-right" },
+      { path: "M50.78,37.57c6.97-0.07,24.47-2.7,30.7-3.57c2.51-0.35,3.96,0.99,3.79,3.12C84,52.75,77.33,84.33,73.95,92.43c-2.95,7.07-6.12,0.35-7.12-0.77", start: [50.8, 37.6], end: [66.8, 91.7], direction: "top-bottom" },
+      { path: "M64.75,39.75c0.88,0.88,1.22,2.74,1,4c-1.5,8.5-5.5,25.75-8.25,33.75", start: [64.8, 39.8], end: [57.5, 77.5], direction: "top-bottom" },
+      { path: "M30.63,58.98c1.85,0.45,5.24,0.61,7.09,0.45c16.91-1.43,37.36-3.68,55.69-4.15c3.08-0.08,4.93,0.21,6.47,0.44", start: [30.6, 59.0], end: [99.9, 55.7], direction: "left-right" }
     ]
   },
   "絵": {
     readings: { on: ["カイ", "エ"], kun: [] },
     strokes: [
-      { path: "M 15,22 L 22,35", start: [15, 22], end: [22, 35], direction: "top-left-to-bottom-right" },
-      { path: "M 10,40 L 40,40", start: [10, 40], end: [40, 40], direction: "left-right" },
-      { path: "M 25,40 L 25,60", start: [25, 40], end: [25, 60], direction: "top-bottom" },
-      { path: "M 15,55 L 12,65", start: [15, 55], end: [12, 65], direction: "top-right-to-bottom-left" },
-      { path: "M 25,60 L 38,70", start: [25, 60], end: [38, 70], direction: "top-left-to-bottom-right" },
-      { path: "M 10,80 L 15,95", start: [10, 80], end: [15, 95], direction: "top-left-to-bottom-right" },
-      { path: "M 55,12 L 55,35", start: [55, 12], end: [55, 35], direction: "top-bottom" },
-      { path: "M 55,12 L 95,35", start: [55, 12], end: [95, 35], direction: "top-left-to-bottom-right" },
-      { path: "M 50,42 L 95,42", start: [50, 42], end: [95, 42], direction: "left-right" },
-      { path: "M 55,55 L 90,55", start: [55, 55], end: [90, 55], direction: "left-right" },
-      { path: "M 73,42 L 73,80", start: [73, 42], end: [73, 80], direction: "top-bottom" },
-      { path: "M 50,80 L 95,80", start: [50, 80], end: [95, 80], direction: "left-right" }
+      { path: "M29.9,14.25c0.31,1.21,0.01,2.7-0.66,3.94C26,24.25,20.53,32.65,17.42,35.49c-0.64,0.58-0.62,2.81,0,3.04c3.26,1.21,6.84,2.74,9.64,4.97", start: [29.9, 14.2], end: [27.1, 43.5], direction: "top-bottom" },
+      { path: "M38.53,28.69C39,30,38.64,31.49,37.9,32.6c-5.59,8.36-14.43,17.44-21.75,25.01c-1.74,1.8,0.43,2.83,1.57,2.47c4.75-1.53,12.62-2.77,18.73-4.24", start: [38.5, 28.7], end: [36.5, 55.8], direction: "top-bottom" },
+      { path: "M34.75,49.25c2.38,2.12,6.15,9.21,6.75,12.5", start: [34.8, 49.2], end: [41.5, 61.8], direction: "top-left-to-bottom-right" },
+      { path: "M26.33,60.26c0.64,0.64,1.28,1.99,1.28,3.28c0,6.41,0.01,20.11-0.1,27.47c-0.04,2.57-0.06,4.49-0.06,5.25", start: [26.3, 60.3], end: [27.4, 96.3], direction: "top-bottom" },
+      { path: "M18,70.25c0.2,1.28,0.04,2.45-0.47,3.62c-1.62,3.7-4.88,9.8-6.78,12.63", start: [18.0, 70.2], end: [10.8, 86.5], direction: "top-right-to-bottom-left" },
+      { path: "M36,68.75c2.25,2.75,5.25,10,5.5,13.75", start: [36.0, 68.8], end: [41.5, 82.5], direction: "top-bottom" },
+      { path: "M67.28,14c0.13,1.76,0.07,2.9-0.62,4.57C63.14,27.07,57,40,46,51.06", start: [67.3, 14.0], end: [46.0, 51.1], direction: "top-right-to-bottom-left" },
+      { path: "M67.97,19.81C74.25,28.25,87,42.5,93.17,47.23c1.53,1.17,3.01,2.1,4.33,2.52", start: [68.0, 19.8], end: [97.5, 49.8], direction: "top-left-to-bottom-right" },
+      { path: "M56.6,52.22c0.7,0.2,3.01,0.29,3.7,0.2c5.57-0.67,11.57-2.05,15.69-2.33c1.16-0.08,2.89,0.1,3.47,0.2", start: [56.6, 52.2], end: [79.5, 50.3], direction: "left-right" },
+      { path: "M47.75,67.36c1.5,0.25,4.27,0.41,5.75,0.25c10.37-1.11,23.5-2.86,33.77-3.3c2.5-0.11,4,0.12,5.25,0.25", start: [47.8, 67.4], end: [92.5, 64.6], direction: "left-right" },
+      { path: "M65.12,69.57c0.57,1.59,0.18,3.19-0.75,4.52c-2.33,3.31-5.46,7.64-10.84,13.68c-1.68,1.89-1.19,3.21,1.59,2.85c5.86-0.76,18.47-4.88,28.01-6.66", start: [65.1, 69.6], end: [83.1, 84.0], direction: "top-left-to-bottom-right" },
+      { path: "M78.5,76.25c3.44,2.96,8.89,12.15,9.75,16.75", start: [78.5, 76.2], end: [88.2, 93.0], direction: "top-left-to-bottom-right" }
     ]
   },
   "外": {
     readings: { on: ["ガイ", "ゲ"], kun: ["そと", "ほか", "はず.す"] },
     strokes: [
-      { path: "M 28,12 L 28,75", start: [28, 12], end: [28, 75], direction: "top-bottom" },
-      { path: "M 28,12 L 50,12 L 50,55", start: [28, 12], end: [50, 55], direction: "complex" },
-      { path: "M 28,55 L 50,55", start: [28, 55], end: [50, 55], direction: "left-right" },
-      { path: "M 65,15 L 65,95", start: [65, 15], end: [65, 95], direction: "top-bottom" },
-      { path: "M 65,50 L 95,25", start: [65, 50], end: [95, 25], direction: "complex" }
+      { path: "M35.44,15.75c0.53,1.77,0.62,3.56,0.13,5.33C33.25,29.5,26.75,44.75,16.5,55", start: [35.4, 15.8], end: [16.5, 55.0], direction: "top-right-to-bottom-left" },
+      { path: "M36.72,28.81c1.47,0.25,3.12,0.16,4.56-0.14c3.52-0.72,5.83-1.04,9.45-2.2c3.61-1.17,4.39,1.7,3.77,3.54c-5.46,16.06-22.18,50.32-39.75,58.5", start: [36.7, 28.8], end: [14.8, 88.5], direction: "top-bottom" },
+      { path: "M27.5,47c3.71,1.68,9.57,6.89,10.5,9.5", start: [27.5, 47.0], end: [38.0, 56.5], direction: "top-left-to-bottom-right" },
+      { path: "M65.56,12.13c1.09,1.09,1.76,2.87,1.76,5.25c0,0.78-0.07,54.62-0.19,73.62c-0.02,3.16-0.04,5.33-0.06,6.13", start: [65.6, 12.1], end: [67.1, 97.1], direction: "top-bottom" },
+      { path: "M71.5,42.5c7.85,3.75,20.29,15.42,22.25,21.25", start: [71.5, 42.5], end: [93.8, 63.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "角": {
     readings: { on: ["カク"], kun: ["かど", "つの"] },
     strokes: [
-      { path: "M 40,10 L 25,25", start: [40, 10], end: [25, 25], direction: "top-right-to-bottom-left" },
-      { path: "M 55,10 L 55,35", start: [55, 10], end: [55, 35], direction: "top-bottom" },
-      { path: "M 20,35 L 90,35", start: [20, 35], end: [90, 35], direction: "left-right" },
-      { path: "M 30,35 L 30,90", start: [30, 35], end: [30, 90], direction: "top-bottom" },
-      { path: "M 80,35 L 80,90", start: [80, 35], end: [80, 90], direction: "top-bottom" },
-      { path: "M 30,60 L 80,60", start: [30, 60], end: [80, 60], direction: "left-right" },
-      { path: "M 30,90 L 80,90", start: [30, 90], end: [80, 90], direction: "left-right" }
+      { path: "M46.75,12c0.17,1.49-0.3,2.79-1.03,4.05c-2.8,4.87-10.7,12.82-20.47,17.95", start: [46.8, 12.0], end: [25.2, 34.0], direction: "top-right-to-bottom-left" },
+      { path: "M49,16c5,0.25,14.12-1,19-2.25c3.06-0.79,3.88,1.41,2.5,3.25c-4.5,6-9.25,11.75-14,17.5", start: [49.0, 16.0], end: [56.5, 34.5], direction: "top-bottom" },
+      { path: "M30.38,36.5c0.8,0.81,1.1,2.2,1.1,4.43c0,29.32,0.27,43.57-10.73,57.32", start: [30.4, 36.5], end: [20.8, 98.2], direction: "top-bottom" },
+      { path: "M31.75,38.7c15.62-1.45,37.25-3.08,42.47-3.46c5.01-0.37,5.75,2.63,5.75,6.21c0,1.34-0.19,32.3-0.19,49.18c0,12.62-5.79,5.37-8.54,2.12", start: [31.8, 38.7], end: [71.2, 92.8], direction: "top-left-to-bottom-right" },
+      { path: "M53.29,38.87c0.08,0.24,1.1,1.24,1.1,2.77c0,7.49,0.03,23.87,0.03,27.62", start: [53.3, 38.9], end: [54.4, 69.3], direction: "top-bottom" },
+      { path: "M32.25,54.6c8.12-0.6,35.75-2.85,47-3.1", start: [32.2, 54.6], end: [79.2, 51.5], direction: "left-right" },
+      { path: "M31.74,71.5c10.01-0.75,35.51-2.5,46.85-3", start: [31.7, 71.5], end: [78.6, 68.5], direction: "left-right" }
     ]
   },
   "楽": {
     readings: { on: ["ガク", "ラク"], kun: ["たの.しい"] },
     strokes: [
-      { path: "M 30,10 L 30,35", start: [30, 10], end: [30, 35], direction: "top-bottom" },
-      { path: "M 80,10 L 80,35", start: [80, 10], end: [80, 35], direction: "top-bottom" },
-      { path: "M 20,22 L 90,22", start: [20, 22], end: [90, 22], direction: "left-right" },
-      { path: "M 55,10 L 55,35", start: [55, 10], end: [55, 35], direction: "top-bottom" },
-      { path: "M 20,35 L 90,35", start: [20, 35], end: [90, 35], direction: "left-right" },
-      { path: "M 42,15 L 38,22", start: [42, 15], end: [38, 22], direction: "top-right-to-bottom-left" },
-      { path: "M 68,15 L 72,22", start: [68, 15], end: [72, 22], direction: "top-left-to-bottom-right" },
-      { path: "M 25,48 L 85,48", start: [25, 48], end: [85, 48], direction: "left-right" },
-      { path: "M 55,48 L 55,95", start: [55, 48], end: [55, 95], direction: "top-bottom" },
-      { path: "M 55,48 L 20,75", start: [55, 48], end: [20, 75], direction: "top-right-to-bottom-left" },
-      { path: "M 55,48 L 90,75", start: [55, 48], end: [90, 75], direction: "top-left-to-bottom-right" },
-      { path: "M 40,70 C 35,80 25,90 15,95", start: [40, 70], end: [15, 95], direction: "curve-left" },
-      { path: "M 70,70 C 75,80 85,90 95,95", start: [70, 70], end: [95, 95], direction: "curve-right" }
+      { path: "M52.99,11c0.01,1-0.13,1.85-0.49,2.5c-0.96,2.28-4.06,5.8-6.91,8.18", start: [53.0, 11.0], end: [45.6, 21.7], direction: "top-right-to-bottom-left" },
+      { path: "M40.25,22.82c1.02,1.2,1.52,2.13,1.59,3.43c0.18,3.66,0.58,14.52,0.93,21.23c0.1,1.93,0.18,3.01,0.21,3.94", start: [40.2, 22.8], end: [43.0, 51.4], direction: "top-bottom" },
+      { path: "M42.02,23.77c0.46-0.02,19.25-2.12,20.85-2.23c1.68-0.12,2.64,1.22,2.64,2.27c0,1.24-0.89,14.65-1.22,23.45c-0.06,1.57-0.1,2.48-0.14,3.64", start: [42.0, 23.8], end: [64.2, 50.9], direction: "top-left-to-bottom-right" },
+      { path: "M43.41,36.12c3,0,17.27-1.75,20.66-1.75", start: [43.4, 36.1], end: [64.1, 34.4], direction: "left-right" },
+      { path: "M44.13,49.6c4.43,0,13.11-1.01,18.85-1.01", start: [44.1, 49.6], end: [63.0, 48.6], direction: "left-right" },
+      { path: "M20.22,20c3.89,1.72,10.05,7.07,11.03,9.75", start: [20.2, 20.0], end: [31.2, 29.8], direction: "top-left-to-bottom-right" },
+      { path: "M16.92,54.38c1.46,0.87,2.81,0.38,3.89-0.5c1.05-0.85,7.42-7.56,11.44-11.88", start: [16.9, 54.4], end: [32.2, 42.0], direction: "top-left-to-bottom-right" },
+      { path: "M87.2,17.13c0.02,0.99-0.24,1.86-0.76,2.61c-1.67,2.73-6.03,7.12-9.69,9.26", start: [87.2, 17.1], end: [76.8, 29.0], direction: "top-right-to-bottom-left" },
+      { path: "M77,40.5c5.12,2.03,12,7.25,14.5,11.5", start: [77.0, 40.5], end: [91.5, 52.0], direction: "top-left-to-bottom-right" },
+      { path: "M17.28,67.66c1.48,0.19,5.44,0.92,9.36,0.57c15.23-1.35,38.23-3.6,56.2-4.19c3.93-0.13,6.61-0.04,9.11,0.5", start: [17.3, 67.7], end: [92.0, 64.5], direction: "left-right" },
+      { path: "M52.45,54.75c1.05,1,1.63,2.66,1.65,3.74c0.09,4.69,0,25.11-0.12,34.76c-0.03,2.4-0.06,4.12-0.09,4.74", start: [52.5, 54.8], end: [53.9, 98.0], direction: "top-bottom" },
+      { path: "M49.25,66.75c0,1.25-1.14,2.74-1.81,3.63C40.9,79.16,28.88,89.01,18,93.75", start: [49.2, 66.8], end: [18.0, 93.8], direction: "top-right-to-bottom-left" },
+      { path: "M56.76,67.11C62.25,72,82.25,86,88.79,89.82c1.85,1.08,3.38,1.61,5.21,1.93", start: [56.8, 67.1], end: [94.0, 91.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "活": {
     readings: { on: ["カツ"], kun: [] },
     strokes: [
-      { path: "M 10,20 L 10,30", start: [10, 20], end: [10, 30], direction: "top-bottom" },
-      { path: "M 10,42 L 10,52", start: [10, 42], end: [10, 52], direction: "top-bottom" },
-      { path: "M 10,62 L 10,72", start: [10, 62], end: [10, 72], direction: "top-bottom" },
-      { path: "M 40,15 L 40,95 C 40,98 35,98 30,95", start: [40, 15], end: [30, 95], direction: "complex" },
-      { path: "M 40,15 L 95,15", start: [40, 15], end: [95, 15], direction: "left-right" },
-      { path: "M 50,35 L 85,35", start: [50, 35], end: [85, 35], direction: "left-right" },
-      { path: "M 50,55 L 85,55", start: [50, 55], end: [85, 55], direction: "left-right" },
-      { path: "M 68,15 L 68,55", start: [68, 15], end: [68, 55], direction: "top-bottom" },
-      { path: "M 50,75 L 90,75", start: [50, 75], end: [90, 75], direction: "left-right" }
+      { path: "M21.88,18.5c3.75,1.43,9.69,5.87,10.62,8.09", start: [21.9, 18.5], end: [32.5, 26.6], direction: "top-left-to-bottom-right" },
+      { path: "M15.38,45.62c4.37,1.34,11.28,5.53,12.38,7.62", start: [15.4, 45.6], end: [27.8, 53.2], direction: "top-left-to-bottom-right" },
+      { path: "M16,88.02c3.12,0.36,4.3-0.37,5.45-2.3c3.37-5.64,5.73-10.52,8.8-17.71", start: [16.0, 88.0], end: [30.2, 68.0], direction: "top-left-to-bottom-right" },
+      { path: "M78.25,15.25c-0.25,1.38-0.85,2.48-2.43,3.36c-6.57,3.64-15.33,7.53-33.29,11.38", start: [78.2, 15.2], end: [42.5, 30.0], direction: "top-right-to-bottom-left" },
+      { path: "M36.63,48.9c1.91,0.39,5.51,0.31,7.4,0.14c12.84-1.16,30.34-3.29,44.4-3.78c3.18-0.11,5.1,0.18,6.69,0.38", start: [36.6, 48.9], end: [95.1, 45.6], direction: "left-right" },
+      { path: "M63.54,27.31c0.62,0.43,2.07,1.69,2.07,4.09c0,1.34,0.2,24.94,0.11,34.61", start: [63.5, 27.3], end: [65.7, 66.0], direction: "top-bottom" },
+      { path: "M46.53,66.86c1.2,1.02,1.32,1.28,1.61,2.91c0.95,5.39,1.69,14.7,2.37,22.46c0.12,1.38,0.23,2.73,0.31,4.03", start: [46.5, 66.9], end: [50.8, 96.3], direction: "top-bottom" },
+      { path: "M48.75,68.3c12.12-0.92,29.02-2.18,35.67-2.75c2.64-0.22,3.83,1.2,3.27,3.34c-1.25,4.75-3.75,14.54-4.98,21.36", start: [48.8, 68.3], end: [82.7, 90.2], direction: "top-left-to-bottom-right" },
+      { path: "M51.81,93.3c7.69-0.3,16.69-1.05,27.2-1.78c1.9-0.13,3.73-0.15,5.46-0.18", start: [51.8, 93.3], end: [84.5, 91.3], direction: "left-right" }
     ]
   },
   "間": {
     readings: { on: ["カン", "ケン"], kun: ["あいだ", "ま"] },
     strokes: [
-      { path: "M 10,10 L 10,95", start: [10, 10], end: [10, 95], direction: "top-bottom" },
-      { path: "M 10,10 L 45,10", start: [10, 10], end: [45, 10], direction: "left-right" },
-      { path: "M 45,10 L 45,95", start: [45, 10], end: [45, 95], direction: "top-bottom" },
-      { path: "M 65,10 L 65,95", start: [65, 10], end: [65, 95], direction: "top-bottom" },
-      { path: "M 65,10 L 98,10", start: [65, 10], end: [98, 10], direction: "left-right" },
-      { path: "M 98,10 L 98,95", start: [98, 10], end: [98, 95], direction: "top-bottom" },
-      { path: "M 10,95 L 45,95", start: [10, 95], end: [45, 95], direction: "left-right" },
-      { path: "M 65,95 L 98,95", start: [65, 95], end: [98, 95], direction: "left-right" },
-      { path: "M 72,25 L 92,25", start: [72, 25], end: [92, 25], direction: "left-right" },
-      { path: "M 72,45 L 92,45", start: [72, 45], end: [92, 45], direction: "left-right" },
-      { path: "M 82,25 L 82,45", start: [82, 25], end: [82, 45], direction: "top-bottom" },
-      { path: "M 72,65 L 92,65", start: [72, 65], end: [92, 65], direction: "left-right" }
+      { path: "M18.64,15.3c0.71,0.71,1.18,1.82,1.18,3.43c0,3.89-0.05,56.65-0.19,72.77c-0.02,1.92-0.03,4.03-0.05,4.65", start: [18.6, 15.3], end: [19.6, 96.2], direction: "top-bottom" },
+      { path: "M21.01,16.81c5.75-0.6,18.73-2.74,20.5-2.84c1.85-0.1,2.86,0.28,2.9,2.02c0.06,2.75-0.5,16.1-0.85,20.76c-0.12,1.55-0.19,2.57-0.19,2.7", start: [21.0, 16.8], end: [43.4, 39.5], direction: "top-left-to-bottom-right" },
+      { path: "M20.95,27.27c5.99-0.61,14.92-2.02,21.88-2.6", start: [20.9, 27.3], end: [42.8, 24.7], direction: "left-right" },
+      { path: "M21.02,39.04c8.11-1.19,14.14-2.1,21.31-2.64", start: [21.0, 39.0], end: [42.3, 36.4], direction: "left-right" },
+      { path: "M63.19,13.1c0.98,0.98,1.34,2.15,1.34,2.97c0,5.8-0.08,12.65-0.06,18.93c0.01,2.01,0.02,3.4,0.06,3.58", start: [63.2, 13.1], end: [64.5, 38.6], direction: "top-bottom" },
+      { path: "M65.32,14.77c5.97-0.68,20.69-3.19,22.38-3.28c1.8-0.09,2.81,0.88,2.81,2.82c0,17-0.22,66.12-0.22,78.44c0,10.5-6.35,1.36-7.72,0.23", start: [65.3, 14.8], end: [82.6, 93.0], direction: "top-bottom" },
+      { path: "M65.63,24.79c4.49-0.42,19.73-1.99,23.35-1.99", start: [65.6, 24.8], end: [89.0, 22.8], direction: "left-right" },
+      { path: "M65.22,36.07c6.41-0.32,16.53-1.32,23.49-1.81", start: [65.2, 36.1], end: [88.7, 34.3], direction: "left-right" },
+      { path: "M40.56,50.95c0.74,0.74,1.04,1.93,1.04,2.99c0,0.83-0.08,20.84-0.05,29.06c0.01,2.25,0.02,2.77,0.05,3", start: [40.6, 51.0], end: [41.6, 86.0], direction: "top-bottom" },
+      { path: "M42.26,52.09c5.56-0.48,19.71-1.98,21.3-2.1c1.68-0.13,2.76,1.46,2.63,2.24c-0.21,1.24-0.41,20.66-0.48,29.02c-0.02,2.29-0.03,3.8-0.03,3.97", start: [42.3, 52.1], end: [65.7, 85.2], direction: "top-left-to-bottom-right" },
+      { path: "M42.64,66.6c5.11-0.48,17.36-1.73,21.88-2.07", start: [42.6, 66.6], end: [64.5, 64.5], direction: "left-right" },
+      { path: "M42.25,82.8c5.13-0.3,17-1.55,22.26-2.05", start: [42.2, 82.8], end: [64.5, 80.8], direction: "left-right" }
     ]
   },
   "丸": {
     readings: { on: ["ガン"], kun: ["まる", "まる.い"] },
     strokes: [
-      { path: "M 30,20 L 70,20", start: [30, 20], end: [70, 20], direction: "left-right" },
-      { path: "M 30,20 C 30,50 55,75 55,95", start: [30, 20], end: [55, 95], direction: "complex" },
-      { path: "M 80,30 L 80,55 C 80,65 75,70 65,72", start: [80, 30], end: [65, 72], direction: "complex" }
+      { path: "M44.38,17.38c1.32,1.32,1.5,2.86,1.52,4.63c0.4,39.04-9.39,57.25-28.52,68.25", start: [44.4, 17.4], end: [17.4, 90.3], direction: "top-bottom" },
+      { path: "M20.5,43.75c2.88,0.12,4.55-0.06,7.04-0.75c7.21-2,31.46-9,36.49-10.75c2.28-0.79,4.84,0.95,4.1,3.75c-1.09,4.12-4.39,24-5.14,35.5c-0.77,11.82,0.75,18.45,15.72,18.45c14.53,0,15.26-1.45,15.26-11.7", start: [20.5, 43.8], end: [94.0, 78.2], direction: "top-left-to-bottom-right" },
+      { path: "M30.75,57.5C39.5,60.25,47,68,50.06,72.72", start: [30.8, 57.5], end: [50.1, 72.7], direction: "top-left-to-bottom-right" }
     ]
   },
   "岩": {
     readings: { on: ["ガン"], kun: ["いわ"] },
     strokes: [
-      { path: "M 55,8 L 25,35", start: [55, 8], end: [25, 35], direction: "top-right-to-bottom-left" },
-      { path: "M 55,8 L 85,35", start: [55, 8], end: [85, 35], direction: "top-left-to-bottom-right" },
-      { path: "M 35,35 L 75,35", start: [35, 35], end: [75, 35], direction: "left-right" },
-      { path: "M 20,50 L 90,50", start: [20, 50], end: [90, 50], direction: "left-right" },
-      { path: "M 30,50 L 30,95", start: [30, 50], end: [30, 95], direction: "top-bottom" },
-      { path: "M 80,50 L 80,95", start: [80, 50], end: [80, 95], direction: "top-bottom" },
-      { path: "M 40,72 L 70,72", start: [40, 72], end: [70, 72], direction: "left-right" },
-      { path: "M 30,95 L 80,95", start: [30, 95], end: [80, 95], direction: "left-right" }
+      { path: "M54.84,12.5c0.91,0.75,1.71,2,1.71,3.9c0,0.45-0.04,14.01-0.09,20.35", start: [54.8, 12.5], end: [56.5, 36.8], direction: "top-bottom" },
+      { path: "M30.03,21.6c0.72,0.9,0.97,1.65,1.03,3.22c0.11,2.75-1.32,8.87-2.89,14.37c-0.55,1.94,0.37,2.55,2.34,2.16c14.73-2.97,38.9-4.25,50.98-4.48", start: [30.0, 21.6], end: [81.5, 36.9], direction: "left-right" },
+      { path: "M84.65,17.67c0.85,1.08,1.1,1.83,0.86,3.63c-0.36,2.72-1.28,9.25-2.39,14.78c-0.31,1.56-0.64,3.09-0.98,4.48", start: [84.7, 17.7], end: [82.1, 40.6], direction: "top-bottom" },
+      { path: "M17.57,55.43c3.43,0.57,6.14,0.38,9.08,0.14c13.6-1.08,41.48-3.83,58.98-4.06c2.71-0.04,5.44-0.05,8.12,0.37", start: [17.6, 55.4], end: [93.8, 51.9], direction: "left-right" },
+      { path: "M40.86,57.86c0.26,0.89,0.14,2.64-0.66,4.27c-3.41,6.99-10.82,21.77-25.95,31.12", start: [40.9, 57.9], end: [14.3, 93.2], direction: "top-right-to-bottom-left" },
+      { path: "M38.27,69.52c1.25,1.02,1.55,1.29,1.78,2.94c0.66,4.74,1.16,12.99,2.01,20.79c0.14,1.24,0.28,2.47,0.43,3.67", start: [38.3, 69.5], end: [42.5, 96.9], direction: "top-bottom" },
+      { path: "M40.99,71.41c10.79-1.2,32.55-3.81,38.37-3.95c2.76-0.07,4.33,1.96,4,3.45c-1.24,5.58-2.97,12.76-4.1,19.38", start: [41.0, 71.4], end: [79.3, 90.3], direction: "top-left-to-bottom-right" },
+      { path: "M43.02,94.1c6.58-0.43,23.48-1.85,34.23-2.68c1.96-0.15,2.28-0.15,3.84-0.17", start: [43.0, 94.1], end: [81.1, 91.2], direction: "left-right" }
     ]
   },
   "顔": {
     readings: { on: ["ガン"], kun: ["かお"] },
     strokes: [
-      { path: "M 10,15 L 50,15", start: [10, 15], end: [50, 15], direction: "left-right" },
-      { path: "M 15,15 L 15,45", start: [15, 15], end: [15, 45], direction: "top-bottom" },
-      { path: "M 15,28 L 45,28", start: [15, 28], end: [45, 28], direction: "left-right" },
-      { path: "M 30,15 L 30,45", start: [30, 15], end: [30, 45], direction: "top-bottom" },
-      { path: "M 45,15 L 45,45", start: [45, 15], end: [45, 45], direction: "top-bottom" },
-      { path: "M 15,45 L 45,45", start: [15, 45], end: [45, 45], direction: "left-right" },
-      { path: "M 12,55 C 15,65 18,75 10,90", start: [12, 55], end: [10, 90], direction: "complex" },
-      { path: "M 12,65 L 48,55", start: [12, 65], end: [48, 55], direction: "complex" },
-      { path: "M 25,72 C 30,82 35,92 45,95", start: [25, 72], end: [45, 95], direction: "curve-right" },
-      { path: "M 58,12 L 58,95", start: [58, 12], end: [58, 95], direction: "top-bottom" },
-      { path: "M 58,12 L 98,12", start: [58, 12], end: [98, 12], direction: "left-right" },
-      { path: "M 65,30 L 92,30", start: [65, 30], end: [92, 30], direction: "left-right" },
-      { path: "M 65,30 L 65,55", start: [65, 30], end: [65, 55], direction: "top-bottom" },
-      { path: "M 92,30 L 92,55", start: [92, 30], end: [92, 55], direction: "top-bottom" },
-      { path: "M 75,38 L 75,48", start: [75, 38], end: [75, 48], direction: "top-bottom" },
-      { path: "M 85,38 L 85,48", start: [85, 38], end: [85, 48], direction: "top-bottom" },
-      { path: "M 65,55 L 92,55", start: [65, 55], end: [92, 55], direction: "left-right" },
-      { path: "M 60,72 L 95,72 L 95,90 L 60,90", start: [60, 72], end: [60, 90], direction: "complex" }
+      { path: "M34.25,13.47c0.58,0.58,1.21,1.78,1.21,3.03c0,1.25,0,3.96,0,7.34", start: [34.2, 13.5], end: [35.5, 23.8], direction: "top-bottom" },
+      { path: "M19.08,25.79c1.15,0.29,2.48,0.43,3.63,0.29c7.04-0.83,18.17-2.58,23.81-3.13c1.9-0.19,3.06,0.14,4.01,0.29", start: [19.1, 25.8], end: [50.5, 23.2], direction: "left-right" },
+      { path: "M25.43,29.98C28.22,34.75,29.75,39.85,30,43", start: [25.4, 30.0], end: [30.0, 43.0], direction: "top-bottom" },
+      { path: "M45.02,26.88c0.35,0.88,0.4,2,0.06,3.08c-1.33,4.29-3.64,8.72-5.46,11.67", start: [45.0, 26.9], end: [39.6, 41.6], direction: "top-bottom" },
+      { path: "M17.9,46.27c0.85,0.23,4.62,0.32,5.46,0.23c10.28-1,13.4-1.75,25.42-2.98c1.39-0.14,3.64,0.11,4.35,0.23", start: [17.9, 46.3], end: [53.1, 43.8], direction: "left-right" },
+      { path: "M20,47c0.56,0.56,0.83,1.88,0.83,3.59c0,17.91-4.22,36.21-10.08,41.91", start: [20.0, 47.0], end: [10.7, 92.5], direction: "top-bottom" },
+      { path: "M44.38,51.38c0.11,0.81-0.11,1.77-0.66,2.38c-1.97,2.73-7.7,7.31-15.21,10.25", start: [44.4, 51.4], end: [28.5, 64.0], direction: "top-right-to-bottom-left" },
+      { path: "M46.32,63.76c-0.07,0.86-0.17,1.86-0.88,2.58c-2.35,3.1-8.8,8.15-17.21,11.41", start: [46.3, 63.8], end: [28.2, 77.8], direction: "top-right-to-bottom-left" },
+      { path: "M48.75,76.12c0,1.09-0.28,2.24-1.09,3.04C43.75,83,35.62,88.88,25.75,93.25", start: [48.8, 76.1], end: [25.8, 93.2], direction: "top-right-to-bottom-left" },
+      { path: "M57.88,20.23c1.28,0.31,3.62,0.44,4.89,0.31c8.85-0.86,18.73-2.4,26.14-2.9c2.12-0.14,3.4,0.15,4.47,0.31", start: [57.9, 20.2], end: [93.4, 17.9], direction: "left-right" },
+      { path: "M74.37,21.62c0.13,0.75-0.07,2.09-0.41,2.86c-0.92,2.36-2.62,5.14-4.8,7.71", start: [74.4, 21.6], end: [69.2, 32.2], direction: "top-right-to-bottom-left" },
+      { path: "M61.78,33.8c0.41,0.99,1.02,1.72,1.02,3.04c0,1.13,0,25.27,0,34.92c0,1.56,0,2.74,0,3.38", start: [61.8, 33.8], end: [62.8, 75.1], direction: "top-bottom" },
+      { path: "M63.54,35.19c6.07-0.85,20.97-2.96,22.66-3.11c1.78-0.16,3.28,0.92,3.28,3.04c0,1.44-0.17,19.7-0.19,33.88c0,1.16,0,2.29,0,3.38", start: [63.5, 35.2], end: [89.3, 72.4], direction: "top-left-to-bottom-right" },
+      { path: "M64.2,46.59c6.3-0.84,19.08-2.22,24.1-2.58", start: [64.2, 46.6], end: [88.3, 44.0], direction: "left-right" },
+      { path: "M64.14,58.44c8.11-1.19,17.37-1.67,23.77-2.13", start: [64.1, 58.4], end: [87.9, 56.3], direction: "left-right" },
+      { path: "M64.24,72c6.01-0.62,16.7-1.79,23.52-2.29", start: [64.2, 72.0], end: [87.8, 69.7], direction: "left-right" },
+      { path: "M68.87,78c0.25,1.5-0.15,2.55-0.91,3.6c-2.59,3.52-9.55,8.96-13.46,11.9", start: [68.9, 78.0], end: [54.5, 93.5], direction: "top-right-to-bottom-left" },
+      { path: "M82.5,78.25c4.28,4.02,9.35,11.31,10.52,14.83", start: [82.5, 78.2], end: [93.0, 93.1], direction: "top-left-to-bottom-right" }
     ]
   },
   "汽": {
     readings: { on: ["キ"], kun: [] },
     strokes: [
-      { path: "M 10,20 L 10,30", start: [10, 20], end: [10, 30], direction: "top-bottom" },
-      { path: "M 10,42 L 10,52", start: [10, 42], end: [10, 52], direction: "top-bottom" },
-      { path: "M 10,62 L 10,72", start: [10, 62], end: [10, 72], direction: "top-bottom" },
-      { path: "M 40,12 L 40,30", start: [40, 12], end: [40, 30], direction: "top-bottom" },
-      { path: "M 40,12 L 90,12", start: [40, 12], end: [90, 12], direction: "left-right" },
-      { path: "M 45,38 L 90,38", start: [45, 38], end: [90, 38], direction: "left-right" },
-      { path: "M 65,50 C 65,70 60,85 55,95", start: [65, 50], end: [55, 95], direction: "complex" }
+      { path: "M17.75,18.82c3.71,1.43,9.57,5.87,10.5,8.09", start: [17.8, 18.8], end: [28.2, 26.9], direction: "top-left-to-bottom-right" },
+      { path: "M13.62,41.44c3.93,1.43,10.14,5.9,11.12,8.12", start: [13.6, 41.4], end: [24.7, 49.6], direction: "top-left-to-bottom-right" },
+      { path: "M14.25,88.27c1.75,0.79,3.31,0.36,4.25-1.25c2.75-4.7,5-9.95,7.5-15.95", start: [14.2, 88.3], end: [26.0, 71.1], direction: "top-left-to-bottom-right" },
+      { path: "M49.91,11.25c0.47,1.44,0.22,3.06-0.61,4.83C46.99,21,40.88,31.69,34,38.57", start: [49.9, 11.2], end: [34.0, 38.6], direction: "top-right-to-bottom-left" },
+      { path: "M48.23,24.94c0.77,0.12,2.45-0.02,3.42-0.18c7.01-1.14,16.87-3.24,24.97-4.98c1.48-0.32,2.88-0.59,4.38-0.47", start: [48.2, 24.9], end: [81.0, 19.3], direction: "left-right" },
+      { path: "M45.06,37.09c1.61,0.39,2.94,0.4,4.57,0.2c8.37-0.99,15.3-2.36,22.25-3.79c1.67-0.34,3.61-0.69,5.04-0.54", start: [45.1, 37.1], end: [76.9, 33.0], direction: "left-right" },
+      { path: "M37.89,51.74c2.31,0.56,4.03,0.56,6.37,0.15c12.09-2.11,23.99-4.68,32.99-6.58c2.55-0.54,3.47,1.02,3.2,2.78c-3.45,22.73,1.8,35.6,11.89,45.17c5.27,5,5.66,4.3,5.16-6.21", start: [37.9, 51.7], end: [97.5, 87.1], direction: "top-left-to-bottom-right" }
     ]
   },
   "記": {
     readings: { on: ["キ"], kun: ["しる.す"] },
     strokes: [
-      { path: "M 15,15 L 40,15", start: [15, 15], end: [40, 15], direction: "left-right" },
-      { path: "M 15,15 L 15,40", start: [15, 15], end: [15, 40], direction: "top-bottom" },
-      { path: "M 15,40 L 40,40", start: [15, 40], end: [40, 40], direction: "left-right" },
-      { path: "M 40,15 L 40,40", start: [40, 15], end: [40, 40], direction: "top-bottom" },
-      { path: "M 15,55 L 40,55", start: [15, 55], end: [40, 55], direction: "left-right" },
-      { path: "M 28,55 L 28,90", start: [28, 55], end: [28, 90], direction: "top-bottom" },
-      { path: "M 15,90 L 40,90", start: [15, 90], end: [40, 90], direction: "left-right" },
-      { path: "M 60,12 C 60,50 55,80 55,95", start: [60, 12], end: [55, 95], direction: "complex" },
-      { path: "M 60,25 L 95,25", start: [60, 25], end: [95, 25], direction: "left-right" },
-      { path: "M 60,50 L 95,50", start: [60, 50], end: [95, 50], direction: "left-right" }
+      { path: "M25.5,14.25c3,1.59,7.75,6.53,8.5,9", start: [25.5, 14.2], end: [34.0, 23.2], direction: "top-left-to-bottom-right" },
+      { path: "M13.37,33.72c0.67,0.28,3.21,0.33,3.88,0.28c8.25-0.52,16.75-1.75,24-3c1.1-0.19,3.79-0.36,4.34-0.22", start: [13.4, 33.7], end: [45.6, 30.8], direction: "left-right" },
+      { path: "M21.23,47.01c1.14,0.37,2.02,0.24,3.1,0.18c3.97-0.23,10.1-1.54,13.96-2.06C39.25,45,40.75,45,41.65,45.3", start: [21.2, 47.0], end: [41.6, 45.3], direction: "left-right" },
+      { path: "M21.73,59.64C22.62,60,24,59.91,25.08,59.8c4.17-0.42,8.79-1.17,14.09-2.29c0.82-0.17,2.45-0.26,3.36-0.1", start: [21.7, 59.6], end: [42.5, 57.4], direction: "left-right" },
+      { path: "M19.64,72.65c0.86,0.6,1.25,1.66,1.36,2.15c0.82,3.5,1.32,8.43,2.2,14.17c0.19,1.23,0.38,2.42,0.55,3.53", start: [19.6, 72.7], end: [23.8, 92.5], direction: "top-bottom" },
+      { path: "M22,73.74c5.78-0.95,14.6-2.33,19.74-3.12c1.49-0.22,2.39,1.05,2.18,2.08c-0.72,3.47-2.53,9.95-3.5,14.38", start: [22.0, 73.7], end: [40.4, 87.1], direction: "top-left-to-bottom-right" },
+      { path: "M24.47,90.27c4.16-0.48,9.44-1.12,15.06-1.77c0.87-0.1,1.75-0.21,2.63-0.32", start: [24.5, 90.3], end: [42.2, 88.2], direction: "left-right" },
+      { path: "M53.21,26.84c1.91,0.66,3.76,0.87,5.98,0.61C65,26.75,81.63,24.09,83,24c3.46-0.23,4.53,2.2,3.61,5.45C85.75,32.5,84,40.5,83.05,46.07", start: [53.2, 26.8], end: [83.0, 46.1], direction: "top-left-to-bottom-right" },
+      { path: "M54.62,50c1.25,0.5,2.28,0.62,3.77,0.44c6.73-0.82,15.11-2.23,21.38-3.04c1.84-0.24,3.55-0.44,5.07-0.57", start: [54.6, 50.0], end: [84.8, 46.8], direction: "left-right" },
+      { path: "M56.5,51c0.88,1,0.76,2.38,0.76,4.09c0,4.24-0.43,14.73-0.43,18.97c0,17.19-0.08,17.2,19.65,17.2c15.27,0,17.02-1.51,17.02-10.68", start: [56.5, 51.0], end: [93.5, 80.6], direction: "top-left-to-bottom-right" }
     ]
   },
   "帰": {
-    readings: { on: ["キ"], kun: ["かえ.る", "かえ.す"] },
+    readings: { on: ["キ"], kun: ["かえ.る"] },
     strokes: [
-      { path: "M 15,15 L 42,15", start: [15, 15], end: [42, 15], direction: "left-right" },
-      { path: "M 28,15 L 28,50", start: [28, 15], end: [28, 50], direction: "top-bottom" },
-      { path: "M 15,50 L 42,50", start: [15, 50], end: [42, 50], direction: "left-right" },
-      { path: "M 28,50 L 28,95", start: [28, 50], end: [28, 95], direction: "top-bottom" },
-      { path: "M 15,70 L 42,70", start: [15, 70], end: [42, 70], direction: "left-right" },
-      { path: "M 55,12 L 55,95 C 55,98 50,98 48,95", start: [55, 12], end: [48, 95], direction: "complex" },
-      { path: "M 55,12 L 95,12", start: [55, 12], end: [95, 12], direction: "left-right" },
-      { path: "M 60,35 L 90,35", start: [60, 35], end: [90, 35], direction: "left-right" },
-      { path: "M 60,55 L 90,55", start: [60, 55], end: [90, 55], direction: "left-right" },
-      { path: "M 75,12 L 75,55", start: [75, 12], end: [75, 55], direction: "top-bottom" }
+      { path: "M16.46,35.12c0.71,0.71,1.26,1.65,1.26,2.99c0,5.61-0.08,13.76-0.12,19.77c-0.01,1.77-0.02,3.35-0.02,4.63", start: [16.5, 35.1], end: [17.6, 62.5], direction: "top-bottom" },
+      { path: "M26.46,17.62c0.84,0.84,1.23,2.1,1.26,3.74c0.66,43.52-0.21,51.27-10.21,62.89", start: [26.5, 17.6], end: [17.5, 84.2], direction: "top-bottom" },
+      { path: "M45.75,15.5c1.01,0.24,2.51,0.63,4.18,0.43C57.5,15,71.38,13.38,78,12.25c1.52-0.26,3.42,0.75,3.05,2.44c-1.03,4.73-2.29,13.19-3.06,18.34c-0.22,1.49-0.41,2.74-0.54,3.62", start: [45.8, 15.5], end: [77.4, 36.6], direction: "top-left-to-bottom-right" },
+      { path: "M44.89,26.32c1.47,0.38,3.01,0.52,4.49,0.38c10.59-1,21.15-1.96,29.47-2.4", start: [44.9, 26.3], end: [78.8, 24.3], direction: "left-right" },
+      { path: "M43.68,37.85c1.65,0.5,3.41,0.49,5.08,0.27c8.74-1.13,19.84-2.66,27.98-3.19", start: [43.7, 37.9], end: [76.7, 34.9], direction: "left-right" },
+      { path: "M40.88,48.75c-0.09,3.63-2.32,9.83-3.12,12", start: [40.9, 48.8], end: [37.8, 60.8], direction: "top-bottom" },
+      { path: "M41.49,51.15c11.51-1.9,35.42-5.38,45.63-5.93C96,44.75,89.25,51,85.65,53.7", start: [41.5, 51.1], end: [85.7, 53.7], direction: "left-right" },
+      { path: "M45.88,60.25c0.87,1,1.31,2.45,1.4,2.97c0.07,0.4,0,8.27-0.08,13.8c-0.02,1.64-0.04,2.48-0.06,3.22", start: [45.9, 60.2], end: [47.1, 80.2], direction: "top-bottom" },
+      { path: "M48.28,61.54c7.47-0.86,27.74-3.55,29.36-3.64c2.31-0.13,3.73,0.48,3.73,2.72c0,6.76-0.37,12.13-0.81,17.47c-0.51,6.28-4.2,0.04-5.08-0.87", start: [48.3, 61.5], end: [75.5, 77.2], direction: "top-left-to-bottom-right" },
+      { path: "M61.84,50.88c0.91,1.12,1.15,2.12,1.15,3.47c0,0.44-0.01,27.54-0.08,38.66c-0.01,2.19-0.03,3.72-0.04,4.25", start: [61.8, 50.9], end: [62.9, 97.3], direction: "top-bottom" }
     ]
   },
   "弓": {
     readings: { on: ["キュウ"], kun: ["ゆみ"] },
     strokes: [
-      { path: "M 25,15 L 80,15 L 80,50", start: [25, 15], end: [80, 50], direction: "complex" },
-      { path: "M 25,50 L 80,50", start: [25, 50], end: [80, 50], direction: "left-right" },
-      { path: "M 25,15 C 25,40 25,70 35,95", start: [25, 15], end: [35, 95], direction: "complex" }
+      { path: "M30.12,17.68c1.75,0.69,4.14,0.87,6.22,0.72c8.65-0.65,32.36-3.67,36.51-4.41c4.15-0.73,5.27,1.01,4.3,3.71c-0.85,2.37-3.43,9.69-4.31,13.31", start: [30.1, 17.7], end: [72.8, 31.0], direction: "left-right" },
+      { path: "M32.88,35c1.72,0.49,3.26,0.61,5,0.46c8.37-0.71,26.62-2.59,31.16-3.21c1.84-0.25,4.09-0.5,5.96,0", start: [32.9, 35.0], end: [75.0, 32.2], direction: "left-right" },
+      { path: "M33.68,35.3c0.57,0.57,0.93,2.32,0.24,3.93c-1.18,2.77-5.39,11.18-7.37,14.46c-1.55,2.57-0.22,3.83,3.07,3.18c14-2.74,37.8-6.15,47.25-7.66c5.26-0.84,5.5,2.16,4.54,6.67c-2.29,10.75-10.27,29.08-15.74,36.67C61.75,98,55.64,92.39,53.75,90.5", start: [33.7, 35.3], end: [53.8, 90.5], direction: "top-bottom" }
     ]
   },
   "牛": {
     readings: { on: ["ギュウ"], kun: ["うし"] },
     strokes: [
-      { path: "M 35,20 L 75,15", start: [35, 20], end: [75, 15], direction: "left-right" },
-      { path: "M 15,45 L 95,45", start: [15, 45], end: [95, 45], direction: "left-right" },
-      { path: "M 55,10 L 55,95", start: [55, 10], end: [55, 95], direction: "top-bottom" },
-      { path: "M 55,62 L 85,55", start: [55, 62], end: [85, 55], direction: "left-right" }
+      { path: "M35.12,21.88c0.09,1.35-0.18,2.63-0.72,3.89c-2.43,5.73-7.64,15.99-14.16,21.99", start: [35.1, 21.9], end: [20.2, 47.8], direction: "top-right-to-bottom-left" },
+      { path: "M31.13,38.67c2.08,0.21,3.96,0.02,5.35-0.12c12.02-1.17,27.02-3.67,38.51-5.88c2.27-0.44,4.72-0.57,5.88-0.38", start: [31.1, 38.7], end: [80.9, 32.3], direction: "left-right" },
+      { path: "M13.63,63.23c2.39,0.54,5.96,0.92,9.18,0.54c21.66-2.52,36.43-5.39,62.93-6.73c3.98-0.2,6.39,0.01,8.38,0.28", start: [13.6, 63.2], end: [94.1, 57.3], direction: "left-right" },
+      { path: "M53.31,11.88c1.19,1.12,2.01,2.87,2.01,4.75c0,0.78-0.07,56.95-0.19,76.12c-0.02,3.09-0.04,5.22-0.06,6", start: [53.3, 11.9], end: [55.1, 98.8], direction: "top-bottom" }
     ]
   },
   "魚": {
     readings: { on: ["ギョ"], kun: ["うお", "さかな"] },
     strokes: [
-      { path: "M 30,8 L 30,45", start: [30, 8], end: [30, 45], direction: "top-bottom" },
-      { path: "M 80,8 L 80,45", start: [80, 8], end: [80, 45], direction: "top-bottom" },
-      { path: "M 30,8 L 80,8", start: [30, 8], end: [80, 8], direction: "left-right" },
-      { path: "M 30,25 L 80,25", start: [30, 25], end: [80, 25], direction: "left-right" },
-      { path: "M 30,45 L 80,45", start: [30, 45], end: [80, 45], direction: "left-right" },
-      { path: "M 55,8 L 55,45", start: [55, 8], end: [55, 45], direction: "top-bottom" },
-      { path: "M 15,55 L 95,55", start: [15, 55], end: [95, 55], direction: "left-right" },
-      { path: "M 55,55 L 55,75", start: [55, 55], end: [55, 75], direction: "top-bottom" },
-      { path: "M 25,80 L 40,85", start: [25, 80], end: [40, 85], direction: "left-right" },
-      { path: "M 70,80 L 85,85", start: [70, 80], end: [85, 85], direction: "left-right" },
-      { path: "M 30,92 L 80,92", start: [30, 92], end: [80, 92], direction: "left-right" }
+      { path: "M48,13c0.14,1.21-0.07,2.22-0.59,3.32C45.08,21.29,37,30.31,26.25,36", start: [48.0, 13.0], end: [26.2, 36.0], direction: "top-right-to-bottom-left" },
+      { path: "M49,19.13c1.25,0.37,2.35,0.4,3.8,0.24c4.73-0.53,10.95-1.37,14.14-2.13c2.5-0.6,3.69,1.64,2.06,3.51c-4.94,5.7-9.5,11.12-14.25,17.25", start: [49.0, 19.1], end: [54.8, 38.0], direction: "top-bottom" },
+      { path: "M27.49,40.98c1.2,1.2,1.88,2.4,2.11,3.82c0.85,5.2,2.43,14.61,3.41,22.71c0.17,1.36,0.32,2.69,0.47,3.96", start: [27.5, 41.0], end: [33.5, 71.5], direction: "top-bottom" },
+      { path: "M30.27,42.78C45.25,40.62,67,37.75,78.41,37.3c3.85-0.15,5.83,1.46,5.59,3.95c-0.5,5.12-1.85,15.04-3.39,23.73c-0.2,1.15-0.41,2.25-0.61,3.27", start: [30.3, 42.8], end: [80.0, 68.2], direction: "top-left-to-bottom-right" },
+      { path: "M53.75,41.5c1,0.75,1.12,1.88,1.16,2.98C55.13,50.39,55,65.45,55,66.25", start: [53.8, 41.5], end: [55.0, 66.2], direction: "top-bottom" },
+      { path: "M32.47,55.61C43.5,54.38,69.88,52,81.21,51.64", start: [32.5, 55.6], end: [81.2, 51.6], direction: "left-right" },
+      { path: "M34.2,69.54c12.92-1.29,30.42-3.04,45.8-3.79", start: [34.2, 69.5], end: [80.0, 65.8], direction: "left-right" },
+      { path: "M26.25,81c0,5.25-5.75,13-7.25,14.5", start: [26.2, 81.0], end: [19.0, 95.5], direction: "top-right-to-bottom-left" },
+      { path: "M42.52,79.08c3.15,2.76,6.15,10.84,6.94,15.13", start: [42.5, 79.1], end: [49.5, 94.2], direction: "top-left-to-bottom-right" },
+      { path: "M62.37,77.83c3.15,2.76,8.15,11.34,8.93,15.63", start: [62.4, 77.8], end: [71.3, 93.5], direction: "top-left-to-bottom-right" },
+      { path: "M84.27,78.58c4.16,2.63,10.75,10.8,11.79,14.88", start: [84.3, 78.6], end: [96.1, 93.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "京": {
     readings: { on: ["キョウ", "ケイ"], kun: [] },
     strokes: [
-      { path: "M 55,8 L 55,25", start: [55, 8], end: [55, 25], direction: "top-bottom" },
-      { path: "M 20,25 L 90,25", start: [20, 25], end: [90, 25], direction: "left-right" },
-      { path: "M 30,38 L 80,38", start: [30, 38], end: [80, 38], direction: "left-right" },
-      { path: "M 55,38 L 55,95", start: [55, 38], end: [55, 95], direction: "top-bottom" },
-      { path: "M 35,50 L 25,70", start: [35, 50], end: [25, 70], direction: "top-right-to-bottom-left" },
-      { path: "M 75,50 L 85,70", start: [75, 50], end: [85, 70], direction: "top-left-to-bottom-right" },
-      { path: "M 45,72 C 38,85 25,95 15,98", start: [45, 72], end: [15, 98], direction: "curve-left" },
-      { path: "M 65,72 C 72,85 85,95 95,98", start: [65, 72], end: [95, 98], direction: "curve-right" }
+      { path: "M51.44,10.92c1.26,1.26,2.06,2.71,2.06,4.81c0,2.95-0.14,7.52-0.14,9.32", start: [51.4, 10.9], end: [53.4, 25.1], direction: "top-bottom" },
+      { path: "M15.5,29.55c3.14,0.45,6.19,0.83,9.45,0.35c21.67-3.15,42.67-5.78,58.93-6.57c3.66-0.18,5.53-0.04,8.26,0.5", start: [15.5, 29.6], end: [92.1, 23.8], direction: "left-right" },
+      { path: "M30.3,41.57c1.06,1.06,1.73,2.17,1.87,2.7c0.84,3.2,1.83,9.56,2.92,15.71c0.21,1.18,0.43,1.85,0.66,3.01", start: [30.3, 41.6], end: [35.8, 63.0], direction: "top-bottom" },
+      { path: "M33.27,43.15c12.23-1.9,31.7-4.88,37.48-5.4C73.54,37.5,76.12,40.08,75,43c-0.95,2.47-2.79,8.86-4.03,12.08", start: [33.3, 43.1], end: [71.0, 55.1], direction: "left-right" },
+      { path: "M36.21,60.53c8.92-1.28,21.37-2.65,32.54-4.03c1.37-0.17,3.25-0.38,4.5-0.25", start: [36.2, 60.5], end: [73.2, 56.2], direction: "left-right" },
+      { path: "M53.52,65.33c0.98,1.17,1.51,2.79,1.51,4.77c0,4.9-0.26,17.4-0.26,21.62c0,9.03-6.71,1-8.21-0.25", start: [53.5, 65.3], end: [46.6, 91.5], direction: "top-bottom" },
+      { path: "M31.75,73.25c0.12,0.91-0.01,1.79-0.39,2.62c-1.54,3.89-6.74,10.21-13.86,15.38", start: [31.8, 73.2], end: [17.5, 91.2], direction: "top-right-to-bottom-left" },
+      { path: "M76.12,73.5c5.14,4.19,11.06,10.83,13.38,16.25", start: [76.1, 73.5], end: [89.5, 89.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "強": {
-    readings: { on: ["キョウ", "ゴウ"], kun: ["つよ.い", "し.いる"] },
+    readings: { on: ["キョウ", "ゴウ"], kun: ["つよ.い"] },
     strokes: [
-      { path: "M 15,15 L 50,15 L 50,50", start: [15, 15], end: [50, 50], direction: "complex" },
-      { path: "M 15,38 L 50,38", start: [15, 38], end: [50, 38], direction: "left-right" },
-      { path: "M 15,15 C 15,35 15,60 20,80", start: [15, 15], end: [20, 80], direction: "complex" },
-      { path: "M 60,10 L 60,45", start: [60, 10], end: [60, 45], direction: "top-bottom" },
-      { path: "M 60,10 L 95,10", start: [60, 10], end: [95, 10], direction: "left-right" },
-      { path: "M 60,28 L 95,28", start: [60, 28], end: [95, 28], direction: "left-right" },
-      { path: "M 60,45 L 95,45", start: [60, 45], end: [95, 45], direction: "left-right" },
-      { path: "M 78,10 L 78,45", start: [78, 10], end: [78, 45], direction: "top-bottom" },
-      { path: "M 15,62 L 95,62", start: [15, 62], end: [95, 62], direction: "left-right" },
-      { path: "M 40,62 C 35,78 25,90 15,95", start: [40, 62], end: [15, 95], direction: "curve-left" },
-      { path: "M 70,62 C 75,78 85,90 95,95", start: [70, 62], end: [95, 95], direction: "curve-right" }
+      { path: "M17.5,19.84c1,0.66,3.5,0.95,4.69,0.79c5.81-0.76,13.69-2.51,18.27-3.79c2.42-0.67,4.29,0.78,3.24,3.39c-0.61,1.53-3.39,9.93-4.37,13.78", start: [17.5, 19.8], end: [39.3, 34.0], direction: "top-left-to-bottom-right" },
+      { path: "M18.38,37.25c0.75,0.25,2.03,0.43,3.26,0.32c5.34-0.49,14.24-2.32,15.87-2.32c2,0,2.75-0.25,4,0", start: [18.4, 37.2], end: [41.5, 35.2], direction: "left-right" },
+      { path: "M18.88,37.43c0.84,0.84,0.71,2.31,0.36,3.83C18.83,43,16.35,50.03,16,50.94c-1,2.56-0.53,3.75,2.75,3.06c3-0.62,12.25-2.3,16.46-2.69c2.04-0.19,3.29,1.56,3.04,4.19c-0.85,8.9-5.22,29.45-9,35.75c-3.75,6.25-6.36-0.31-7.19-2.17", start: [18.9, 37.4], end: [22.1, 89.1], direction: "top-bottom" },
+      { path: "M67.75,12.75c0.38,1.75-0.25,4-1.25,5.25c-5.49,6.86-7.25,8.5-13.32,15.09C51.39,35.05,52,36.63,55,36c9.5-2,21.25-4.25,32.85-6.25", start: [67.8, 12.8], end: [87.8, 29.8], direction: "top-left-to-bottom-right" },
+      { path: "M79.88,20.5c4.46,2.6,11.51,10.7,12.62,14.75", start: [79.9, 20.5], end: [92.5, 35.2], direction: "top-left-to-bottom-right" },
+      { path: "M48.25,51.62c0.5,0.19,1.67,1.53,1.8,2.1c0.75,3.36,1.54,7.11,2.52,12.81c0.23,1.32,0.47,2.72,0.72,4.2", start: [48.2, 51.6], end: [53.3, 70.7], direction: "top-bottom" },
+      { path: "M50.99,52.97c11.63-2.34,27.88-4.72,36.57-5.39c2.74-0.21,4.5,2.38,4.18,3.67c-0.91,3.67-2.48,7.26-3.53,11.24", start: [51.0, 53.0], end: [88.2, 62.5], direction: "left-right" },
+      { path: "M53.62,69c6.93-1.31,21.4-3.19,32.15-4.76c1.29-0.19,2.53-0.37,3.7-0.55", start: [53.6, 69.0], end: [89.5, 63.7], direction: "left-right" },
+      { path: "M66.97,37c1.28,1,2.07,2.5,2.07,4.26c0,3.99,0.05,32.54-0.08,45.24", start: [67.0, 37.0], end: [69.0, 86.5], direction: "top-bottom" },
+      { path: "M45.98,91.04c1.02,1.21,2.87,1.16,3.88,0.97s37.61-8.34,40.65-9.26", start: [46.0, 91.0], end: [90.5, 82.8], direction: "left-right" },
+      { path: "M87,75.5c3.53,3.18,9.12,13.06,10,18", start: [87.0, 75.5], end: [97.0, 93.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "教": {
     readings: { on: ["キョウ"], kun: ["おし.える", "おそ.わる"] },
     strokes: [
-      { path: "M 15,12 L 48,12", start: [15, 12], end: [48, 12], direction: "left-right" },
-      { path: "M 30,12 L 30,42", start: [30, 12], end: [30, 42], direction: "top-bottom" },
-      { path: "M 15,42 L 48,42", start: [15, 42], end: [48, 42], direction: "left-right" },
-      { path: "M 30,42 L 30,55", start: [30, 42], end: [30, 55], direction: "top-bottom" },
-      { path: "M 30,55 L 12,90", start: [30, 55], end: [12, 90], direction: "top-right-to-bottom-left" },
-      { path: "M 30,55 C 35,75 42,88 50,95", start: [30, 55], end: [50, 95], direction: "curve-right" },
-      { path: "M 60,12 L 60,55", start: [60, 12], end: [60, 55], direction: "top-bottom" },
-      { path: "M 60,30 L 95,15", start: [60, 30], end: [95, 15], direction: "complex" },
-      { path: "M 60,55 L 92,38", start: [60, 55], end: [92, 38], direction: "complex" },
-      { path: "M 70,60 L 70,95", start: [70, 60], end: [70, 95], direction: "top-bottom" },
-      { path: "M 78,68 C 85,80 92,90 98,95", start: [78, 68], end: [98, 95], direction: "top-left-to-bottom-right" }
+      { path: "M15.82,30.26c0.99,0.23,2.81,0.37,3.8,0.23c6.25-0.86,14.63-2.11,21.03-2.96c1.63-0.22,2.65,0.11,3.47,0.22", start: [15.8, 30.3], end: [44.1, 27.8], direction: "left-right" },
+      { path: "M29.8,13.37c1.1,1.1,1.7,2.53,1.7,4.4c0,7.61,0.12,18.3,0.08,24.14", start: [29.8, 13.4], end: [31.6, 41.9], direction: "top-bottom" },
+      { path: "M11.5,45.02c1.38,0.37,3.9,0.56,5.31,0.37c9.19-1.26,23.44-4.01,31.85-4.8c2.29-0.22,3.69,0.17,4.84,0.36", start: [11.5, 45.0], end: [53.5, 41.0], direction: "left-right" },
+      { path: "M50.62,20.75c0.11,1.15-0.39,2.74-1.21,4.1C38.94,42.29,27.54,54.68,10.5,67.75", start: [50.6, 20.8], end: [10.5, 67.8], direction: "top-right-to-bottom-left" },
+      { path: "M29.5,54.75c0.56,0.24,1.88,0.11,2.75,0c3-0.38,7.87-0.91,11-1.75c3.25-0.88,4,0.25,1.56,3c-2.79,3.14-5.53,6.11-8.62,8.81", start: [29.5, 54.8], end: [36.2, 64.8], direction: "top-left-to-bottom-right" },
+      { path: "M33.05,65.99c4.33,4.39,8.77,16.18,3.33,26.86c-2.63,5.15-5.13,1.4-7.2-1.24", start: [33.0, 66.0], end: [29.2, 91.6], direction: "top-bottom" },
+      { path: "M19.35,78.33c1.15,0.92,2.27,1.05,3.89,0.51c3.72-1.23,16.68-6.15,26.84-10.53", start: [19.4, 78.3], end: [50.1, 68.3], direction: "left-right" },
+      { path: "M70.25,15.38c0.25,1.25,0.04,2.44-0.36,3.73c-2.77,8.9-8.4,24.07-18.15,35.4", start: [70.2, 15.4], end: [51.7, 54.5], direction: "top-right-to-bottom-left" },
+      { path: "M64.77,40.23c1.48,0.15,2.35,0.15,3.48,0.02c5.62-0.62,14.14-2.8,20.93-4C90.62,36,92,36,93.24,36.34", start: [64.8, 40.2], end: [93.2, 36.3], direction: "left-right" },
+      { path: "M81.07,44.07c0.53,1.23,0.6,2.62,0.02,4.86C76.5,66.5,66.62,85.25,48,94.25", start: [81.1, 44.1], end: [48.0, 94.2], direction: "top-right-to-bottom-left" },
+      { path: "M57.5,54.25c5.12,3.5,21.57,26.06,31.68,35.08c2.15,1.92,4.57,3.67,6.69,4.17", start: [57.5, 54.2], end: [95.9, 93.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "近": {
-    readings: { on: ["キン", "コン"], kun: ["ちか.い"] },
+    readings: { on: ["キン"], kun: ["ちか.い"] },
     strokes: [
-      { path: "M 45,15 L 90,15", start: [45, 15], end: [90, 15], direction: "left-right" },
-      { path: "M 55,15 L 55,40", start: [55, 15], end: [55, 40], direction: "top-bottom" },
-      { path: "M 50,40 L 90,40", start: [50, 40], end: [90, 40], direction: "left-right" },
-      { path: "M 70,40 L 70,65", start: [70, 40], end: [70, 65], direction: "top-bottom" },
-      { path: "M 12,30 L 12,70", start: [12, 30], end: [12, 70], direction: "top-bottom" },
-      { path: "M 12,30 L 30,30", start: [12, 30], end: [30, 30], direction: "left-right" },
-      { path: "M 8,85 C 30,80 60,88 95,75", start: [8, 85], end: [95, 75], direction: "curve-right" }
+      { path: "M77.75,13.25c-0.25,1.5-1.74,2.71-2.86,3.4C70.25,19.5,62.5,23,51.81,26.72", start: [77.8, 13.2], end: [51.8, 26.7], direction: "top-right-to-bottom-left" },
+      { path: "M48.54,25.5c0.96,1.25,1.45,2.93,1.45,4.56c0,18.44,0.14,31.94-9.18,44.15", start: [48.5, 25.5], end: [40.8, 74.2], direction: "top-bottom" },
+      { path: "M52.75,40.9c0.58,0.12,3.06,0.31,4.6,0.12C65.62,40,78.72,37.99,87.9,37.2c1.54-0.13,4.25-0.12,5.22,0", start: [52.8, 40.9], end: [93.1, 37.2], direction: "left-right" },
+      { path: "M72.87,41.75c1.19,1.19,1.71,2.38,1.71,3.75c0,2.08-0.07,22.38-0.09,35c0,1.75,0,3.36,0,4.75", start: [72.9, 41.8], end: [74.5, 85.2], direction: "top-bottom" },
+      { path: "M20.96,19.25c3.63,1.74,9.38,7.17,10.29,9.88", start: [21.0, 19.2], end: [31.2, 29.1], direction: "top-left-to-bottom-right" },
+      { path: "M13.11,50.5c2.25,1,3.75,0.5,4.75,0.25S26.61,47.5,28.11,47c3-1,4.83,0.21,1.75,4.75c-6.11,9-5.86,9.25,0.25,15.5c3.04,3.11,1.64,4.5-0.75,6.5c-1.5,1.25-8.5,7.25-10,7.75", start: [13.1, 50.5], end: [19.4, 81.5], direction: "top-bottom" },
+      { path: "M15.25,83c3-0.5,9-1.75,13.5-0.75s30.07,7.71,34.5,9c12,3.5,21.25,4.5,30.25,2.75", start: [15.2, 83.0], end: [93.5, 94.0], direction: "left-right" }
     ]
   },
   "兄": {
     readings: { on: ["ケイ", "キョウ"], kun: ["あに"] },
     strokes: [
-      { path: "M 25,15 L 85,15", start: [25, 15], end: [85, 15], direction: "left-right" },
-      { path: "M 25,15 L 25,50", start: [25, 15], end: [25, 50], direction: "top-bottom" },
-      { path: "M 85,15 L 85,50", start: [85, 15], end: [85, 50], direction: "top-bottom" },
-      { path: "M 25,50 L 85,50", start: [25, 50], end: [85, 50], direction: "left-right" },
-      { path: "M 55,50 C 55,70 45,85 30,95", start: [55, 50], end: [30, 95], direction: "curve-left" }
+      { path: "M28.24,20.33c0.96,0.96,1.51,2.17,1.72,3.33c0.73,4.23,2.35,13.89,3.5,22.34c0.16,1.16,0.32,2.29,0.48,3.38", start: [28.2, 20.3], end: [33.9, 49.4], direction: "top-bottom" },
+      { path: "M31.29,22.29C43.75,20.38,61,18.12,72,17c2.62-0.27,5,2.25,4.5,4.67c-0.99,4.8-4.27,14.16-5.61,19.85", start: [31.3, 22.3], end: [70.9, 41.5], direction: "top-left-to-bottom-right" },
+      { path: "M34.5,45.88c6.96-0.45,23.37-2.05,34.45-3.18c1.48-0.15,2.8-0.07,4.17-0.13", start: [34.5, 45.9], end: [73.1, 42.6], direction: "left-right" },
+      { path: "M43.49,53.25c0.26,1.38,0.2,2.51-0.15,4.1C41.56,65.48,32.5,84.25,17.75,94", start: [43.5, 53.2], end: [17.8, 94.0], direction: "top-right-to-bottom-left" },
+      { path: "M55.99,48.12c0.88,0.88,1.74,2.63,1.74,4.64c0,6.72-0.12,16.9-0.12,25.23c0,14.25,0.63,15.23,16.89,15.23c16.87,0,17.63-1.72,17.63-11.85", start: [56.0, 48.1], end: [92.1, 81.4], direction: "top-left-to-bottom-right" }
     ]
   },
   "形": {
     readings: { on: ["ケイ", "ギョウ"], kun: ["かたち", "かた"] },
     strokes: [
-      { path: "M 12,15 L 50,15", start: [12, 15], end: [50, 15], direction: "left-right" },
-      { path: "M 30,15 L 30,50", start: [30, 15], end: [30, 50], direction: "top-bottom" },
-      { path: "M 12,50 L 50,50", start: [12, 50], end: [50, 50], direction: "left-right" },
-      { path: "M 12,80 L 50,80", start: [12, 80], end: [50, 80], direction: "left-right" },
-      { path: "M 65,15 L 65,95", start: [65, 15], end: [65, 95], direction: "top-bottom" },
-      { path: "M 80,25 L 80,50", start: [80, 25], end: [80, 50], direction: "top-bottom" },
-      { path: "M 95,40 L 95,70", start: [95, 40], end: [95, 70], direction: "top-bottom" }
+      { path: "M19.63,23.42c1.2,0.38,3.39,0.46,4.59,0.38c4.66-0.3,16.61-2.55,25.33-3.88c1.96-0.3,3.83-0.32,4.83-0.13", start: [19.6, 23.4], end: [54.4, 19.8], direction: "left-right" },
+      { path: "M10.88,51.92c1.82,0.38,4.24,0.39,6.04,0.13c13.24-1.92,31.41-5.55,39.38-6.3c3.01-0.28,4.85-0.07,6.36,0.12", start: [10.9, 51.9], end: [62.7, 45.9], direction: "left-right" },
+      { path: "M28.52,36.64c0.98,0.98,1.19,2.31,1.19,4.02C29.71,57,30.38,74.5,19,88", start: [28.5, 36.6], end: [19.0, 88.0], direction: "top-bottom" },
+      { path: "M45.87,27.25c1,1,1.46,2.38,1.46,3.5c0,0.87-0.12,43.25-0.12,58.26c0,2.92-0.06,5.04-0.1,5.99", start: [45.9, 27.2], end: [47.1, 95.0], direction: "top-bottom" },
+      { path: "M85.5,17.5c0.13,1.15-0.23,2.18-0.89,3.13C81.25,25.46,76,31.75,67.38,36.75", start: [85.5, 17.5], end: [67.4, 36.8], direction: "top-right-to-bottom-left" },
+      { path: "M90.51,41.5c0.15,1.2-0.03,2.02-0.64,3.07C86.63,50.11,78.28,57.44,66.88,64", start: [90.5, 41.5], end: [66.9, 64.0], direction: "top-right-to-bottom-left" },
+      { path: "M96.8,64.71c0.2,1.4-0.39,2.9-1.21,4.04c-4.76,6.62-15.5,17.3-31.85,24.38", start: [96.8, 64.7], end: [63.7, 93.1], direction: "top-right-to-bottom-left" }
     ]
   },
   "計": {
-    readings: { on: ["ケイ"], kun: ["はか.る", "はか.らう"] },
+    readings: { on: ["ケイ"], kun: ["はか.る"] },
     strokes: [
-      { path: "M 15,15 L 40,15", start: [15, 15], end: [40, 15], direction: "left-right" },
-      { path: "M 15,15 L 15,42", start: [15, 15], end: [15, 42], direction: "top-bottom" },
-      { path: "M 15,42 L 40,42", start: [15, 42], end: [40, 42], direction: "left-right" },
-      { path: "M 40,15 L 40,42", start: [40, 15], end: [40, 42], direction: "top-bottom" },
-      { path: "M 15,58 L 40,58", start: [15, 58], end: [40, 58], direction: "left-right" },
-      { path: "M 28,58 L 28,95", start: [28, 58], end: [28, 95], direction: "top-bottom" },
-      { path: "M 15,95 L 40,95", start: [15, 95], end: [40, 95], direction: "left-right" },
-      { path: "M 55,12 L 95,12", start: [55, 12], end: [95, 12], direction: "left-right" },
-      { path: "M 75,12 L 75,95", start: [75, 12], end: [75, 95], direction: "top-bottom" }
+      { path: "M29.56,16c2.45,1.59,6.32,6.53,6.94,9", start: [29.6, 16.0], end: [36.5, 25.0], direction: "top-left-to-bottom-right" },
+      { path: "M12.25,36.16c2.23,0.34,3.73,0.33,6,0.03c8.88-1.19,17.01-2.69,24.93-3.69c1.71-0.22,4.31-0.12,5.17,0.02", start: [12.2, 36.2], end: [48.4, 32.5], direction: "left-right" },
+      { path: "M21.05,47.19c0.7,0.19,1.67,0.24,3.19,0.18c4.09-0.2,10.74-1.69,15.14-2.53c1.23-0.23,2-0.34,3.22-0.08", start: [21.1, 47.2], end: [42.6, 44.8], direction: "left-right" },
+      { path: "M21.48,58.42c0.76,0.29,1.77,0.2,3.19,0.15c4.1-0.15,9.83-0.82,14.29-1.76c1.77-0.37,3.04-0.44,4.22-0.1", start: [21.5, 58.4], end: [43.2, 56.7], direction: "left-right" },
+      { path: "M21.8,71.87c0.6,0.6,1.05,1.61,1.18,2.08c1.01,3.46,2.11,9.36,3.29,15.25c0.23,1.13,0.45,2.21,0.66,3.19", start: [21.8, 71.9], end: [26.9, 92.4], direction: "top-bottom" },
+      { path: "M23.78,72.91c5.91-0.99,14.56-2.63,19.69-3.67c2.41-0.49,3.79,0.76,3.33,2.44c-0.86,3.17-2.19,9.42-2.94,13.34", start: [23.8, 72.9], end: [43.9, 85.0], direction: "top-left-to-bottom-right" },
+      { path: "M26.57,88.66c4.21-0.67,10.05-1.66,16.92-2.46c0.98-0.12,1.88-0.32,2.92-0.22", start: [26.6, 88.7], end: [46.4, 86.0], direction: "left-right" },
+      { path: "M52.23,47.88c1.45,0.42,3.71,0.74,5.93,0.42c10.6-1.54,24.1-3.67,34.61-4.83c2.23-0.25,4.23,0,5.36,0.28", start: [52.2, 47.9], end: [98.1, 43.8], direction: "left-right" },
+      { path: "M74.16,12.5c1.09,1,1.95,2.5,1.95,4.15c0,4.35,0.07,55.64-0.16,75.6c-0.04,3.23-0.07,5.52-0.11,6.5", start: [74.2, 12.5], end: [75.8, 98.8], direction: "top-bottom" }
     ]
   },
   "元": {
     readings: { on: ["ゲン", "ガン"], kun: ["もと"] },
     strokes: [
-      { path: "M 20,20 L 90,20", start: [20, 20], end: [90, 20], direction: "left-right" },
-      { path: "M 20,50 L 90,50", start: [20, 50], end: [90, 50], direction: "left-right" },
-      { path: "M 35,50 C 32,70 25,85 15,95", start: [35, 50], end: [15, 95], direction: "curve-left" },
-      { path: "M 70,50 L 70,95", start: [70, 50], end: [70, 95], direction: "top-bottom" }
+      { path: "M28.59,21.36c1.78,0.33,5.04,0.48,6.82,0.33c10.84-0.94,21.52-2.57,32.08-3.03c2.96-0.13,4.75,0.16,6.23,0.32", start: [28.6, 21.4], end: [73.7, 19.0], direction: "left-right" },
+      { path: "M16.13,44.06c2.16,0.47,5.88,0.62,8.04,0.47c18.08-1.27,36.71-3.9,56.39-4.5c3.6-0.11,5.77,0.22,7.57,0.46", start: [16.1, 44.1], end: [88.1, 40.5], direction: "left-right" },
+      { path: "M41.29,46.69c0.59,1.18,0.74,2.97,0.36,4.44c-2.9,11.36-8.78,27.99-25.4,41.36", start: [41.3, 46.7], end: [16.2, 92.5], direction: "top-right-to-bottom-left" },
+      { path: "M56.7,44.12c1.53,1.53,2,3.11,2,5.66c0,9.59,0.01,19.49,0.01,27.97c0,14.38,1.03,15.62,18.28,15.62c14.88,0,16.14-1.12,16.14-12.69", start: [56.7, 44.1], end: [93.1, 80.7], direction: "top-left-to-bottom-right" }
     ]
   },
   "言": {
     readings: { on: ["ゲン", "ゴン"], kun: ["い.う", "こと"] },
     strokes: [
-      { path: "M 30,10 L 80,10", start: [30, 10], end: [80, 10], direction: "left-right" },
-      { path: "M 20,28 L 90,28", start: [20, 28], end: [90, 28], direction: "left-right" },
-      { path: "M 25,28 L 25,55", start: [25, 28], end: [25, 55], direction: "top-bottom" },
-      { path: "M 85,28 L 85,55", start: [85, 28], end: [85, 55], direction: "top-bottom" },
-      { path: "M 25,42 L 85,42", start: [25, 42], end: [85, 42], direction: "left-right" },
-      { path: "M 25,55 L 85,55", start: [25, 55], end: [85, 55], direction: "left-right" },
-      { path: "M 15,75 L 95,75", start: [15, 75], end: [95, 75], direction: "left-right" }
+      { path: "M48.38,11.25c4.38,2.5,8.88,7.75,10.38,11.5", start: [48.4, 11.2], end: [58.8, 22.8], direction: "top-left-to-bottom-right" },
+      { path: "M14.88,33.98c2.52,0.54,6.91,0.76,9.42,0.54c22.95-2.02,40.82-4.02,59.99-4.73c4.2-0.16,6.73,0.26,8.83,0.53", start: [14.9, 34.0], end: [93.1, 30.3], direction: "left-right" },
+      { path: "M38.63,46.65C40,47,41,47,42.45,46.88c7.06-0.6,18.6-2.27,22.81-2.6c1.86-0.15,3.36-0.15,4.74,0.22", start: [38.6, 46.6], end: [70.0, 44.5], direction: "left-right" },
+      { path: "M37.88,61.4c1.5,0.23,2.75,0.35,4.16,0.23c7.68-0.67,20.23-2.28,24.8-2.85c2.16-0.27,3.66-0.15,5.17,0.22", start: [37.9, 61.4], end: [72.0, 59.0], direction: "left-right" },
+      { path: "M37,74.75c0.81,0.81,1.4,1.76,1.53,2.77c0.85,6.73,1.9,11.43,2.89,18.45c0.18,1.24,0.35,2.43,0.54,3.53", start: [37.0, 74.8], end: [42.0, 99.5], direction: "top-bottom" },
+      { path: "M39.53,76.74c9.24-1.7,22.59-3.37,30.29-4.25c2.21-0.25,3.55,1.17,3.24,2.32c-0.69,2.52-3.74,12.7-4.94,16.98", start: [39.5, 76.7], end: [68.1, 91.8], direction: "top-left-to-bottom-right" },
+      { path: "M42.2,95.16c6.19-0.53,16.55-1.39,25.32-2.22c1.33-0.13,2.73-0.12,3.95-0.12", start: [42.2, 95.2], end: [71.5, 92.8], direction: "left-right" }
     ]
   },
   "原": {
     readings: { on: ["ゲン"], kun: ["はら"] },
     strokes: [
-      { path: "M 20,10 L 20,95", start: [20, 10], end: [20, 95], direction: "top-bottom" },
-      { path: "M 20,10 L 95,10", start: [20, 10], end: [95, 10], direction: "left-right" },
-      { path: "M 35,28 L 85,28", start: [35, 28], end: [85, 28], direction: "left-right" },
-      { path: "M 35,28 L 35,55", start: [35, 28], end: [35, 55], direction: "top-bottom" },
-      { path: "M 85,28 L 85,55", start: [85, 28], end: [85, 55], direction: "top-bottom" },
-      { path: "M 35,42 L 85,42", start: [35, 42], end: [85, 42], direction: "left-right" },
-      { path: "M 35,55 L 85,55", start: [35, 55], end: [85, 55], direction: "left-right" },
-      { path: "M 60,42 L 60,55", start: [60, 42], end: [60, 55], direction: "top-bottom" },
-      { path: "M 42,68 L 78,68", start: [42, 68], end: [78, 68], direction: "left-right" },
-      { path: "M 60,68 C 60,80 50,90 40,95", start: [60, 68], end: [40, 95], direction: "curve-left" }
+      { path: "M25.02,17.86c2.57,0.56,6.76,0.54,9.31,0.31C48.75,16.88,65.5,15,79.88,14.29c4.27-0.21,6.85,0.02,9,0.3", start: [25.0, 17.9], end: [88.9, 14.6], direction: "left-right" },
+      { path: "M27.75,18.98c0.5,1.02,0.69,2.02,0.65,3.46C27.75,43,25.5,67.5,10.75,83", start: [27.8, 19.0], end: [10.8, 83.0], direction: "top-bottom" },
+      { path: "M60.15,18.88c0.24,0.93,0.2,1.82-0.13,2.68c-0.76,2.36-2.56,5.94-4.27,8.2", start: [60.1, 18.9], end: [55.8, 29.8], direction: "top-bottom" },
+      { path: "M38.25,33.25c0.81,0.81,1.63,2.15,1.75,3c0.38,2.62,1.94,13.11,3.04,20.5c0.33,2.2,0.59,3.99,0.7,4.96", start: [38.2, 33.2], end: [43.7, 61.7], direction: "top-bottom" },
+      { path: "M40.53,34.54c11.97-1.66,32.85-4.41,39.45-4.96c3.89-0.33,5.14,1.92,4.52,4.92c-0.78,3.75-1.97,11.27-4.39,19.34c-0.46,1.53-0.96,3.09-1.5,4.65", start: [40.5, 34.5], end: [78.6, 58.5], direction: "top-left-to-bottom-right" },
+      { path: "M42.82,46.52c11.18-1.65,33.05-3.97,38.85-4.33", start: [42.8, 46.5], end: [81.7, 42.2], direction: "left-right" },
+      { path: "M44.54,58.7c11.46-1.33,23.21-2.2,33.98-2.95", start: [44.5, 58.7], end: [78.5, 55.8], direction: "left-right" },
+      { path: "M60.27,59.98c1,1,1.66,2.52,1.66,4.05c0,7.39-0.19,24.98-0.19,27.5c0,7.72-5.62,1.72-7.84-0.62", start: [60.3, 60.0], end: [53.9, 90.9], direction: "top-bottom" },
+      { path: "M42.39,70.85c0.14,1.13-0.24,2.37-0.92,3.3c-2.72,3.8-7.23,9.6-17.48,16.35", start: [42.4, 70.8], end: [24.0, 90.5], direction: "top-right-to-bottom-left" },
+      { path: "M79.75,72c4.45,2.98,11.01,12.25,12.12,16.88", start: [79.8, 72.0], end: [91.9, 88.9], direction: "top-left-to-bottom-right" }
     ]
   },
   "戸": {
     readings: { on: ["コ"], kun: ["と"] },
     strokes: [
-      { path: "M 55,10 L 55,30", start: [55, 10], end: [55, 30], direction: "top-bottom" },
-      { path: "M 20,30 L 90,30", start: [20, 30], end: [90, 30], direction: "left-right" },
-      { path: "M 20,30 L 20,95", start: [20, 30], end: [20, 95], direction: "top-bottom" },
-      { path: "M 20,60 L 80,60", start: [20, 60], end: [80, 60], direction: "left-right" }
+      { path: "M28.5,19.26c1.59,0.3,5.35,0.4,6.94,0.3c13.97-0.93,25.81-2.56,39.36-3.15c2.65-0.12,5.37,0.14,6.69,0.29", start: [28.5, 19.3], end: [81.5, 16.7], direction: "left-right" },
+      { path: "M30.85,36.13C32,36.5,33.73,36.87,36,36.65c10.62-1.03,31.64-3.23,39-3.9c1.99-0.18,4,1.25,3.25,4c-1.05,3.85-2.66,11.55-3.94,17.02", start: [30.9, 36.1], end: [74.3, 53.8], direction: "left-right" },
+      { path: "M35.5,57.25c6.5-0.38,23.02-1.64,35.5-2.12c2.15-0.08,4.03-0.13,5.5-0.13", start: [35.5, 57.2], end: [76.5, 55.0], direction: "left-right" },
+      { path: "M33.44,37.18c1.06,1.32,1.13,2.49,1.15,4.45C34.75,66.25,24.75,89,15.25,94.75", start: [33.4, 37.2], end: [15.2, 94.8], direction: "top-bottom" }
     ]
   },
   "古": {
     readings: { on: ["コ"], kun: ["ふる.い"] },
     strokes: [
-      { path: "M 20,20 L 90,20", start: [20, 20], end: [90, 20], direction: "left-right" },
-      { path: "M 55,10 L 55,50", start: [55, 10], end: [55, 50], direction: "top-bottom" },
-      { path: "M 20,50 L 90,50", start: [20, 50], end: [90, 50], direction: "left-right" },
-      { path: "M 20,50 L 20,90", start: [20, 50], end: [20, 90], direction: "top-bottom" },
-      { path: "M 20,90 L 90,90", start: [20, 90], end: [90, 90], direction: "left-right" }
+      { path: "M11.25,43.25c2.75,0.62,5.54,0.83,9.53,0.5c23.85-2,49.47-4.12,67.35-4.75c4.02-0.14,6.87,0,9.12,0.5", start: [11.2, 43.2], end: [97.2, 39.5], direction: "left-right" },
+      { path: "M52.41,12.5c1.42,1.42,2.13,3.25,2.13,5.06c0,17.05-0.14,39.31-0.14,48.94", start: [52.4, 12.5], end: [54.4, 66.5], direction: "top-bottom" },
+      { path: "M31,67.77c1.12,1.12,2,2.73,2.24,4.48c0.61,4.43,1.87,12.12,3.22,20.93c0.2,1.31,0.39,2.59,0.57,3.83", start: [31.0, 67.8], end: [37.0, 97.0], direction: "top-bottom" },
+      { path: "M33.77,69.3c11.97-1.17,36.4-3.39,42.99-3.81c3.74-0.24,5.11,1.39,4.26,4.71c-1.18,4.63-3.81,13.6-5.23,20.06", start: [33.8, 69.3], end: [75.8, 90.3], direction: "top-left-to-bottom-right" },
+      { path: "M37.88,94.42c7.81-0.36,23.99-1.88,35.14-2.65c1.87-0.13,3.61-0.24,5.18-0.32", start: [37.9, 94.4], end: [78.2, 91.5], direction: "left-right" }
     ]
   },
-"午": {
+  "午": {
     readings: { on: ["ゴ"], kun: [] },
     strokes: [
-      { path: "M 25,20 L 80,20", start: [25, 20], end: [80, 20], direction: "left-right" },
-      { path: "M 54,10 L 54,50", start: [54, 10], end: [54, 50], direction: "top-bottom" },
-      { path: "M 15,50 L 95,50", start: [15, 50], end: [95, 50], direction: "left-right" },
-      { path: "M 54,50 L 54,95", start: [54, 50], end: [54, 95], direction: "top-bottom" }
+      { path: "M37.5,9.14c0.06,0.7,0.22,1.85-0.11,2.83C35.25,18.25,27,29.62,17.5,39", start: [37.5, 9.1], end: [17.5, 39.0], direction: "top-right-to-bottom-left" },
+      { path: "M32.13,27.28c2.75,0.09,4.3-0.07,5.82-0.21c12.92-1.2,20.78-2.82,33.1-4.68c2.49-0.38,4.69-0.24,5.95,0.03", start: [32.1, 27.3], end: [77.0, 22.4], direction: "left-right" },
+      { path: "M13.88,54.53c3,0.72,7.23,0.71,9.74,0.46c19.64-1.99,42.64-4.99,63-6.16c4.22-0.24,6.77,0.22,8.89,0.45", start: [13.9, 54.5], end: [95.5, 49.3], direction: "left-right" },
+      { path: "M53.06,28.13c1.03,1.03,1.79,2.37,1.79,4.33c0,0.88-0.02,44.17-0.13,61.04c-0.02,2.88-0.03,4.96-0.05,5.88", start: [53.1, 28.1], end: [54.7, 99.4], direction: "top-bottom" }
     ]
   },
   "後": {
     readings: { on: ["ゴ", "コウ"], kun: ["のち", "うし.ろ", "あと"] },
     strokes: [
-      { path: "M 18,18 L 18,92", start: [18, 18], end: [18, 92], direction: "top-bottom" },
-      { path: "M 18,18 L 28,28", start: [18, 18], end: [28, 28], direction: "top-left-to-bottom-right" },
-      { path: "M 18,55 L 28,55", start: [18, 55], end: [28, 55], direction: "left-right" },
-      { path: "M 40,12 L 40,50", start: [40, 12], end: [40, 50], direction: "top-bottom" },
-      { path: "M 40,25 L 90,25", start: [40, 25], end: [90, 25], direction: "left-right" },
-      { path: "M 55,12 L 55,50", start: [55, 12], end: [55, 50], direction: "top-bottom" },
-      { path: "M 40,50 L 90,50", start: [40, 50], end: [90, 50], direction: "left-right" },
-      { path: "M 45,62 L 90,62", start: [45, 62], end: [90, 62], direction: "left-right" },
-      { path: "M 65,62 C 65,75 55,90 40,97", start: [65, 62], end: [40, 97], direction: "curve-left" }
+      { path: "M34.25,18.38c0,1.3-0.24,2.26-0.93,3.05c-3.57,4.07-8.94,8.7-15.91,13.39", start: [34.2, 18.4], end: [17.4, 34.8], direction: "top-right-to-bottom-left" },
+      { path: "M38.75,36.62c0.14,1.32-0.42,2.67-1.13,3.79c-3.45,5.4-11.43,14.17-22.37,22.71", start: [38.8, 36.6], end: [15.2, 63.1], direction: "top-right-to-bottom-left" },
+      { path: "M28.4,54.36c0.81,0.81,1.38,2.02,1.38,3.28c0,0.68,0.03,25.57-0.07,35.86c-0.02,1.74-0.04,3.05-0.05,3.75", start: [28.4, 54.4], end: [29.7, 97.2], direction: "top-bottom" },
+      { path: "M61.16,12.62c0.29,1.07,0.21,2.43-0.39,3.54c-2.52,4.6-6.1,9.01-9.88,12.93c-1.01,1.05-1.26,2.17,0,2.68c2.96,1.19,6.3,3.11,8.88,5.07", start: [61.2, 12.6], end: [59.8, 36.8], direction: "top-bottom" },
+      { path: "M76.35,20.12c0.27,1.25-0.3,2.56-1,3.31c-7.6,8.19-16.6,16.57-26.61,25.32c-1.25,1.1-0.74,1.76,0.74,1.41C55.72,48.69,74.5,44.4,82.5,43", start: [76.3, 20.1], end: [82.5, 43.0], direction: "top-bottom" },
+      { path: "M77.88,36.25c3.66,2.21,9.46,9.07,10.38,12.5", start: [77.9, 36.2], end: [88.3, 48.8], direction: "top-left-to-bottom-right" },
+      { path: "M57.75,53c0.09,1.13,0.02,2.27-0.4,3.33c-2.2,5.51-7.08,13.22-15.6,20.92", start: [57.8, 53.0], end: [41.8, 77.2], direction: "top-right-to-bottom-left" },
+      { path: "M59.31,59.82c1.17,0.13,2.31,0.02,3.29-0.09c2.65-0.29,9.84-1.39,13.62-2.29c2.59-0.62,3.24,0.68,2.67,2.4C75.25,70.75,59.25,88.88,43.02,96.5", start: [59.3, 59.8], end: [43.0, 96.5], direction: "top-right-to-bottom-left" },
+      { path: "M54.75,67.5c2.52,0,19.5,15.75,31.17,24.23c2.31,1.68,4.74,3.38,7.58,4.01", start: [54.8, 67.5], end: [93.5, 95.7], direction: "top-left-to-bottom-right" }
     ]
   },
   "語": {
-    readings: { on: ["ゴ"], kun: ["かた.る", "かた.らう"] },
+    readings: { on: ["ゴ"], kun: ["かた.る"] },
     strokes: [
-      { path: "M 10,15 L 10,45", start: [10, 15], end: [10, 45], direction: "top-bottom" },
-      { path: "M 10,15 L 40,15", start: [10, 15], end: [40, 15], direction: "left-right" },
-      { path: "M 25,15 L 25,45", start: [25, 15], end: [25, 45], direction: "top-bottom" },
-      { path: "M 10,30 L 40,30", start: [10, 30], end: [40, 30], direction: "left-right" },
-      { path: "M 10,45 L 40,45", start: [10, 45], end: [40, 45], direction: "left-right" },
-      { path: "M 10,62 L 40,62", start: [10, 62], end: [40, 62], direction: "left-right" },
-      { path: "M 25,62 L 25,95", start: [25, 62], end: [25, 95], direction: "top-bottom" },
-      { path: "M 55,10 L 55,30", start: [55, 10], end: [55, 30], direction: "top-bottom" },
-      { path: "M 50,30 L 100,30", start: [50, 30], end: [100, 30], direction: "left-right" },
-      { path: "M 55,42 L 95,42", start: [55, 42], end: [95, 42], direction: "left-right" },
-      { path: "M 55,42 L 55,95", start: [55, 42], end: [55, 95], direction: "top-bottom" },
-      { path: "M 55,60 L 95,60", start: [55, 60], end: [95, 60], direction: "left-right" },
-      { path: "M 95,42 L 95,78", start: [95, 42], end: [95, 78], direction: "top-bottom" },
-      { path: "M 55,78 L 95,78", start: [55, 78], end: [95, 78], direction: "left-right" }
+      { path: "M26,15.25c2.82,1.41,7.29,5.8,8,8", start: [26.0, 15.2], end: [34.0, 23.2], direction: "top-left-to-bottom-right" },
+      { path: "M12.37,32.97c1.25,0.28,2.88,0.66,4.36,0.53c7.02-0.59,17.78-1.75,25.95-3c1.52-0.23,3.57-0.38,5.16,0.03", start: [12.4, 33.0], end: [47.8, 30.5], direction: "left-right" },
+      { path: "M18.73,45.76c0.38,0.18,2.71,0.2,3.1,0.18c3.97-0.21,9.79-1.19,14.46-2.31c1.67-0.4,2.71-0.38,3.86-0.08", start: [18.7, 45.8], end: [40.2, 43.5], direction: "left-right" },
+      { path: "M18.73,58.89c0.89,0.23,1.89,0.36,3.35,0.15c3.89-0.54,10.71-1.51,14.85-2.29c0.7-0.13,1.82-0.26,2.61-0.1", start: [18.7, 58.9], end: [39.5, 56.6], direction: "left-right" },
+      { path: "M17.14,71.9c0.63,0.62,1.12,1.65,1.23,2.57c0.63,5.03,1.51,10.28,2.23,15.59c0.14,1.03,0.27,2.02,0.41,2.93", start: [17.1, 71.9], end: [21.0, 93.0], direction: "top-bottom" },
+      { path: "M19.37,73.6c5.67-0.94,15.47-2.73,20.36-3.48c1.49-0.22,2.39,1.05,2.18,2.08c-0.71,3.44-2.27,9.75-3.23,13.89", start: [19.4, 73.6], end: [38.7, 86.1], direction: "top-left-to-bottom-right" },
+      { path: "M21.47,89.02c3.95-0.45,10.71-1.19,16.28-1.61c1.21-0.09,2.36-0.17,3.41-0.22", start: [21.5, 89.0], end: [41.2, 87.2], direction: "left-right" },
+      { path: "M51.79,17.49c1.38,0.26,3.91,0.28,5.27,0.15C63.88,17,72.62,15.62,80,15.32c2.3-0.1,3.67,0.04,4.81,0.15", start: [51.8, 17.5], end: [84.8, 15.5], direction: "left-right" },
+      { path: "M67.75,20.25c0.37,1.25,0.5,2.38,0.23,3.75c-0.75,3.78-6.03,23.83-7.96,31.58", start: [67.8, 20.2], end: [60.0, 55.6], direction: "top-bottom" },
+      { path: "M52.18,36.96c1.82,0.66,4.17,0.95,5.84,0.66c8.48-1.5,16.13-3.06,22.74-4.1c2.49-0.39,4.05,1.27,3.71,2.93c-0.6,2.93-2.48,11.43-3.74,17.86", start: [52.2, 37.0], end: [80.7, 54.3], direction: "top-left-to-bottom-right" },
+      { path: "M46.33,58.46c1.13,0.24,3.94,0.2,5.07,0.08c12.34-1.29,19.11-2.39,40.88-4.02c1.88-0.14,3.75-0.02,4.69,0.09", start: [46.3, 58.5], end: [97.0, 54.6], direction: "left-right" },
+      { path: "M52.5,69.88c0.93,0.93,1.42,2.28,1.54,3.31c0.71,6.06,1.42,12.65,2.06,19.3c0.15,1.5,0.28,2.44,0.4,3.75", start: [52.5, 69.9], end: [56.5, 96.2], direction: "top-bottom" },
+      { path: "M54.99,71.67c9.47-1.45,23.75-3.41,28.85-3.9c2.14-0.21,3.28,0.98,2.86,2.93c-0.84,3.88-3.08,12.57-4.39,17.58", start: [55.0, 71.7], end: [82.3, 88.3], direction: "top-left-to-bottom-right" },
+      { path: "M57.2,91.49c5.94-0.55,14.67-1.24,23.54-1.76c1.3-0.08,2.63-0.13,3.97-0.2", start: [57.2, 91.5], end: [84.7, 89.5], direction: "left-right" }
     ]
   },
   "工": {
     readings: { on: ["コウ", "ク"], kun: [] },
     strokes: [
-      { path: "M 18,20 L 90,20", start: [18, 20], end: [90, 20], direction: "left-right" },
-      { path: "M 54,20 L 54,88", start: [54, 20], end: [54, 88], direction: "top-bottom" },
-      { path: "M 18,88 L 90,88", start: [18, 88], end: [90, 88], direction: "left-right" }
+      { path: "M28.25,31.97c2.28,0.53,4.93,0.8,7.34,0.53c12.41-1.38,27.81-4,41.59-4.54c2.4-0.09,4.58,0.1,6.56,0.54", start: [28.2, 32.0], end: [83.7, 28.5], direction: "left-right" },
+      { path: "M52.87,32.75c1.25,1.25,1.77,3.03,1.77,5.3c0,7.2-0.07,32.83-0.07,41.45", start: [52.9, 32.8], end: [54.6, 79.5], direction: "top-bottom" },
+      { path: "M15.5,83.05c2.26,0.33,5.6,0.75,8.84,0.51c17.03-1.3,43.16-4.3,60.65-5.03c3.84-0.16,8.46,0.53,10.38,1.03", start: [15.5, 83.0], end: [95.4, 79.6], direction: "left-right" }
     ]
   },
   "公": {
-    readings: { on: ["コウ", "ク"], kun: ["おおやけ"] },
+    readings: { on: ["コウ"], kun: ["おおやけ"] },
     strokes: [
-      { path: "M 38,15 C 38,15 30,35 22,45", start: [38, 15], end: [22, 45], direction: "top-right-to-bottom-left" },
-      { path: "M 54,12 C 58,30 68,42 82,48", start: [54, 12], end: [82, 48], direction: "top-left-to-bottom-right" },
-      { path: "M 35,55 C 35,55 30,78 18,95", start: [35, 55], end: [18, 95], direction: "curve-left" },
-      { path: "M 55,55 C 55,60 65,82 90,95", start: [55, 55], end: [90, 95], direction: "curve-right" }
+      { path: "M38,21.5c0.25,1.38-0.17,2.77-0.71,3.88C33.47,33.1,27.75,43,16,51.75", start: [38.0, 21.5], end: [16.0, 51.8], direction: "top-right-to-bottom-left" },
+      { path: "M56.25,16c4.5,0.38,22.38,23.62,30.89,30.49c3.19,2.57,4.86,2.89,7.61,4.01", start: [56.2, 16.0], end: [94.8, 50.5], direction: "top-left-to-bottom-right" },
+      { path: "M50.8,49.5c0.45,1.5,0.38,3.04-0.77,5.05c-6.41,11.2-10.79,17.7-20.09,29.36c-2.27,2.84-1.45,5.66,2.18,4.58C42.25,85.5,60,81.12,73.25,78.25", start: [50.8, 49.5], end: [73.2, 78.2], direction: "top-left-to-bottom-right" },
+      { path: "M65.88,67.5c5.43,4.46,14.02,18.32,15.38,25.25", start: [65.9, 67.5], end: [81.3, 92.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "広": {
-    readings: { on: ["コウ"], kun: ["ひろ.い", "ひろ.まる", "ひろ.める", "ひろ.がる", "ひろ.げる"] },
+    readings: { on: ["コウ"], kun: ["ひろ.い", "ひろ.げる"] },
     strokes: [
-      { path: "M 18,10 L 18,95", start: [18, 10], end: [18, 95], direction: "top-bottom" },
-      { path: "M 18,10 L 50,10", start: [18, 10], end: [50, 10], direction: "left-right" },
-      { path: "M 35,35 L 85,35", start: [35, 35], end: [85, 35], direction: "left-right" },
-      { path: "M 55,35 C 55,55 50,70 35,85", start: [55, 35], end: [35, 85], direction: "curve-left" },
-      { path: "M 18,95 C 40,88 65,82 95,90", start: [18, 95], end: [95, 90], direction: "left-right" }
+      { path: "M55.1,15.28c1.12,1.12,1.58,2.47,1.58,4.14c0,2.46-0.07,5.21-0.07,9.28", start: [55.1, 15.3], end: [56.6, 28.7], direction: "top-bottom" },
+      { path: "M25.38,31.24c2.05,0.5,5.56,0.66,7.6,0.5c13.01-1,33.26-3.37,49.47-3.67c3.41-0.06,5.46,0.24,7.17,0.49", start: [25.4, 31.2], end: [89.6, 28.6], direction: "left-right" },
+      { path: "M27.64,32.32c0.48,1.18,0.54,2.27,0.41,4.09C27.25,47.62,24.12,71.5,12,87.25", start: [27.6, 32.3], end: [12.0, 87.2], direction: "top-bottom" },
+      { path: "M59.48,44.99c0.39,1.51,0.14,3.51-0.73,5.26c-6.05,12.1-14,25-22.17,38.22c-1.83,2.95-1.31,4.35,1.97,3.67c9.7-2.01,29.33-6.26,42.83-8.86", start: [59.5, 45.0], end: [81.4, 83.3], direction: "top-left-to-bottom-right" },
+      { path: "M72.56,69.34C77.75,74,85.25,85.5,88,93.75", start: [72.6, 69.3], end: [88.0, 93.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "交": {
-    readings: { on: ["コウ"], kun: ["まじ.わる", "ま.じる", "ま.ぜる", "か.う", "か.わす"] },
+    readings: { on: ["コウ"], kun: ["まじ.わる", "ま.ぜる"] },
     strokes: [
-      { path: "M 25,12 L 85,12", start: [25, 12], end: [85, 12], direction: "left-right" },
-      { path: "M 54,12 L 54,35", start: [54, 12], end: [54, 35], direction: "top-bottom" },
-      { path: "M 38,35 C 38,35 35,50 20,60", start: [38, 35], end: [20, 60], direction: "curve-left" },
-      { path: "M 72,35 C 72,35 75,50 90,60", start: [72, 35], end: [90, 60], direction: "curve-right" },
-      { path: "M 85,55 L 15,97", start: [85, 55], end: [15, 97], direction: "top-right-to-bottom-left" },
-      { path: "M 20,55 L 92,97", start: [20, 55], end: [92, 97], direction: "top-left-to-bottom-right" }
+      { path: "M51.62,11.75c1.06,1.06,1.73,2.38,1.73,4.01c0,4.32-0.11,8.74-0.11,12.15", start: [51.6, 11.8], end: [53.2, 27.9], direction: "top-bottom" },
+      { path: "M21.5,30.76c2.49,0.61,5.29,0.81,8.48,0.5c15.27-1.51,32.64-3.51,49.25-4.35c3.4-0.17,5.39,0.04,7.92,0.63", start: [21.5, 30.8], end: [87.2, 27.5], direction: "left-right" },
+      { path: "M38.65,39.33c0.35,1.17,0.23,2.47-0.58,3.81C34.86,48.41,28,55.38,22,59.5", start: [38.6, 39.3], end: [22.0, 59.5], direction: "top-right-to-bottom-left" },
+      { path: "M67.51,37.73c7.84,4.31,14.32,9.28,18.24,14.52", start: [67.5, 37.7], end: [85.8, 52.2], direction: "top-left-to-bottom-right" },
+      { path: "M67.43,51c0.44,1.5,0.17,2.92-0.69,4.74C58.82,72.27,40.22,88.14,19,95.25", start: [67.4, 51.0], end: [19.0, 95.2], direction: "top-right-to-bottom-left" },
+      { path: "M35,59c4.45,0.12,29.53,21.55,46.53,32.58c3.81,2.47,6.72,4.17,11.47,5.07", start: [35.0, 59.0], end: [93.0, 96.7], direction: "top-left-to-bottom-right" }
     ]
   },
   "光": {
     readings: { on: ["コウ"], kun: ["ひかり", "ひか.る"] },
     strokes: [
-      { path: "M 35,10 L 54,35", start: [35, 10], end: [54, 35], direction: "top-left-to-bottom-right" },
-      { path: "M 75,10 L 54,35", start: [75, 10], end: [54, 35], direction: "top-right-to-bottom-left" },
-      { path: "M 18,45 L 90,45", start: [18, 45], end: [90, 45], direction: "left-right" },
-      { path: "M 38,45 L 38,72", start: [38, 45], end: [38, 72], direction: "top-bottom" },
-      { path: "M 68,45 L 68,72", start: [68, 45], end: [68, 72], direction: "top-bottom" },
-      { path: "M 15,75 C 30,85 45,95 54,97 C 62,95 78,85 95,75", start: [15, 75], end: [95, 75], direction: "complex" }
+      { path: "M51.72,15.37c1.14,1.14,1.93,3.06,1.93,5.27c0,6.12,0.05,20.6-0.03,26.62", start: [51.7, 15.4], end: [53.6, 47.3], direction: "top-bottom" },
+      { path: "M26.5,26.25c4.01,2.63,10.36,10.84,11.37,14.94", start: [26.5, 26.2], end: [37.9, 41.2], direction: "top-left-to-bottom-right" },
+      { path: "M77.5,20.5c0.06,0.86,0.01,1.7-0.21,2.54c-1.08,4.25-5.38,12.46-11.17,17.59", start: [77.5, 20.5], end: [66.1, 40.6], direction: "top-right-to-bottom-left" },
+      { path: "M16.13,51.48c2.19,0.54,5,0.65,8.38,0.29c15.8-1.67,41.61-4.89,58.84-5.73c3.64-0.18,5.83,0.26,7.65,0.53", start: [16.1, 51.5], end: [91.0, 46.6], direction: "left-right" },
+      { path: "M45.5,53.5c0.25,1.25,0.23,2.35-0.13,3.62C42.38,67.62,37.75,81.25,22,91.75", start: [45.5, 53.5], end: [22.0, 91.8], direction: "top-right-to-bottom-left" },
+      { path: "M58.74,51.37c0.68,1.19,1.21,2.59,1.25,4.43c0.11,4.82-0.02,13.81-0.02,21.2c0,13,1.28,14.53,17.78,14.53c14.5,0,15.89-2.03,15.89-8.62", start: [58.7, 51.4], end: [93.6, 82.9], direction: "top-left-to-bottom-right" }
     ]
   },
   "考": {
     readings: { on: ["コウ"], kun: ["かんが.える"] },
     strokes: [
-      { path: "M 18,18 L 85,18", start: [18, 18], end: [85, 18], direction: "left-right" },
-      { path: "M 45,18 L 45,48", start: [45, 18], end: [45, 48], direction: "top-bottom" },
-      { path: "M 15,48 L 90,48", start: [15, 48], end: [90, 48], direction: "left-right" },
-      { path: "M 45,48 C 42,65 35,75 20,85", start: [45, 48], end: [20, 85], direction: "curve-left" },
-      { path: "M 55,60 C 55,60 75,55 90,58", start: [55, 60], end: [90, 58], direction: "left-right" },
-      { path: "M 70,55 C 70,65 65,80 55,95", start: [70, 55], end: [55, 95], direction: "curve-left" }
+      { path: "M35,24.52c1.5,0.27,4.25,0.38,5.76,0.27c9.12-0.64,17.37-2.13,24.11-2.52c2.49-0.14,4.01,0.13,5.26,0.26", start: [35.0, 24.5], end: [70.1, 22.5], direction: "left-right" },
+      { path: "M52.17,10.87c0.98,0.98,1.77,2.38,1.77,3.89c0,6.96,0.13,18.42,0.08,23.5", start: [52.2, 10.9], end: [54.0, 38.3], direction: "top-bottom" },
+      { path: "M13.25,42.28c2.79,0.69,7.32,0.7,10.11,0.44c22.93-2.1,39.09-4.6,63.81-5.43c4.63-0.16,7.14,0.08,9.46,0.43", start: [13.2, 42.3], end: [96.6, 37.7], direction: "left-right" },
+      { path: "M81.59,14.23c0.19,1.38-0.08,3.39-1.47,5.03C63,39.62,46.88,55.25,14.62,72.75", start: [81.6, 14.2], end: [14.6, 72.8], direction: "top-right-to-bottom-left" },
+      { path: "M76.26,48.75c-0.26,1.12-0.94,2.24-2.61,3.04C68.75,54.12,62,56.38,54.5,58.5", start: [76.3, 48.8], end: [54.5, 58.5], direction: "top-right-to-bottom-left" },
+      { path: "M53.25,50.25c0.5,1.25-0.22,3.1-1.73,5.58c-1.77,2.92-4.76,6.83-5.26,7.45c-2.01,2.47-1.51,4.36,1.14,4.25c3.47-0.15,23.72-2.52,29.51-3.24c3.35-0.42,4.84,1.97,3.93,4.6c-2.3,6.72-7.79,21.33-12.08,26.38c-2.52,2.98-5.27,0.73-7.54-2.57", start: [53.2, 50.2], end: [61.2, 92.7], direction: "top-bottom" }
     ]
   },
   "行": {
-    readings: { on: ["コウ", "ギョウ", "アン"], kun: ["い.く", "ゆ.く", "おこな.う"] },
+    readings: { on: ["コウ", "ギョウ"], kun: ["い.く", "おこな.う"] },
     strokes: [
-      { path: "M 22,12 L 22,55", start: [22, 12], end: [22, 55], direction: "top-bottom" },
-      { path: "M 22,12 L 38,18", start: [22, 12], end: [38, 18], direction: "left-right" },
-      { path: "M 12,42 L 42,42", start: [12, 42], end: [42, 42], direction: "left-right" },
-      { path: "M 60,12 L 95,12", start: [60, 12], end: [95, 12], direction: "left-right" },
-      { path: "M 75,12 L 75,95", start: [75, 12], end: [75, 95], direction: "top-bottom" },
-      { path: "M 12,95 C 30,88 55,85 75,95", start: [12, 95], end: [75, 95], direction: "complex" }
+      { path: "M32.49,12c-0.12,1-0.45,1.9-1.1,2.62C28.29,18.06,22.2,22.6,12.5,28", start: [32.5, 12.0], end: [12.5, 28.0], direction: "top-right-to-bottom-left" },
+      { path: "M36.5,31.75c0.07,0.73,0.08,2.28-0.39,3.18C32.12,42.5,23.83,52.5,11,62.75", start: [36.5, 31.8], end: [11.0, 62.8], direction: "top-right-to-bottom-left" },
+      { path: "M25.57,51.75c0.9,0.9,1.23,2.25,1.23,3.26c0,0.72,0.04,24.47-0.07,35.49c-0.02,2.19-0.04,3.87-0.07,4.75", start: [25.6, 51.8], end: [26.7, 95.2], direction: "top-bottom" },
+      { path: "M50.5,18.45c1.44,0.35,3.81,0.52,5.23,0.35c7.14-0.8,16.01-2.43,24.49-3.06c2.38-0.18,3.83-0.06,5.02,0.11", start: [50.5, 18.4], end: [85.2, 15.8], direction: "left-right" },
+      { path: "M43.13,41.42c1.5,0.38,4.27,0.58,5.76,0.38c12.86-1.67,28.86-4.05,41.85-5.38c2.49-0.26,4.01,0.18,5.26,0.37", start: [43.1, 41.4], end: [96.0, 36.8], direction: "left-right" },
+      { path: "M71.52,41.33c1.26,1.26,1.76,2.79,1.76,5.27c0,14.56-0.26,38.66-0.26,43.62c0,8.03-7.21-0.5-8.71-1.75", start: [71.5, 41.3], end: [64.3, 88.5], direction: "top-bottom" }
     ]
   },
   "高": {
-    readings: { on: ["コウ"], kun: ["たか.い", "たか", "たか.まる", "たか.める"] },
+    readings: { on: ["コウ"], kun: ["たか.い"] },
     strokes: [
-      { path: "M 15,15 L 95,15", start: [15, 15], end: [95, 15], direction: "left-right" },
-      { path: "M 54,5 L 54,15", start: [54, 5], end: [54, 15], direction: "top-bottom" },
-      { path: "M 22,15 L 22,38", start: [22, 15], end: [22, 38], direction: "top-bottom" },
-      { path: "M 88,15 L 88,38", start: [88, 15], end: [88, 38], direction: "top-bottom" },
-      { path: "M 22,38 L 88,38", start: [22, 38], end: [88, 38], direction: "left-right" },
-      { path: "M 30,50 L 30,92", start: [30, 50], end: [30, 92], direction: "top-bottom" },
-      { path: "M 80,50 L 80,92", start: [80, 50], end: [80, 92], direction: "top-bottom" },
-      { path: "M 30,50 L 80,50", start: [30, 50], end: [80, 50], direction: "left-right" },
-      { path: "M 38,70 L 72,70", start: [38, 70], end: [72, 70], direction: "left-right" },
-      { path: "M 30,92 L 80,92", start: [30, 92], end: [80, 92], direction: "left-right" }
+      { path: "M52.47,11.75c1.08,1.08,1.48,2.25,1.48,4.22c0,1.53-0.12,4.28-0.12,5.45", start: [52.5, 11.8], end: [53.8, 21.4], direction: "top-bottom" },
+      { path: "M22.9,25.7c2.68,0.3,4.96,0.26,7.47-0.04c14.76-1.78,35.83-4.16,49.3-5.17c2.89-0.22,4.99-0.12,6.81,0.33", start: [22.9, 25.7], end: [86.5, 20.8], direction: "left-right" },
+      { path: "M36.25,34.75c1,0.63,1.5,1.5,1.78,2.89c0.72,3.59,1.36,7.37,2.05,11.85c0.2,1.3,0.17,1.82,0.44,3.01", start: [36.2, 34.8], end: [40.5, 52.5], direction: "top-bottom" },
+      { path: "M39.05,36.33c9.95-1.71,23.99-3.65,29.61-4.1c2.96-0.23,3.83,1.02,3.14,3.31c-0.88,2.93-2.17,7.01-3.32,10.2", start: [39.0, 36.3], end: [68.5, 45.7], direction: "left-right" },
+      { path: "M41.28,49.94c6.57-0.42,16.36-1.87,25.72-2.71c1.3-0.12,2.59-0.22,3.85-0.31", start: [41.3, 49.9], end: [70.8, 46.9], direction: "left-right" },
+      { path: "M21,60.25c1.31,1.31,1.9,2.76,2.21,5c0.79,5.62,2.21,18.19,3.16,26.99c0.15,1.39,0.28,2.67,0.38,3.76", start: [21.0, 60.2], end: [26.8, 96.0], direction: "top-bottom" },
+      { path: "M24.06,64c16.08-1.51,58.63-6.55,60.19-6.75c3.75-0.5,6,1.5,5.25,6.25c-1.49,9.45-2.62,19.62-5.25,28.25c-2.05,6.75-5.38,2.5-7.8,0", start: [24.1, 64.0], end: [76.5, 91.8], direction: "top-left-to-bottom-right" },
+      { path: "M41.5,71.68c0.66,0.66,1.16,1.63,1.31,2.47c0.89,2.82,1.58,7.24,2.39,11.81c0.21,1.16,0.4,1.78,0.56,2.79", start: [41.5, 71.7], end: [45.8, 88.8], direction: "top-bottom" },
+      { path: "M44.02,73.08c6.79-1.36,17.1-2.86,20.92-3.35c1.81-0.23,3.31,1.02,3.13,2.5c-0.35,2.92-1.96,8.31-3.12,11.75", start: [44.0, 73.1], end: [64.9, 84.0], direction: "top-left-to-bottom-right" },
+      { path: "M46.44,87.05c4.61-0.4,11.01-1.31,17.32-1.94c0.88-0.09,1.77-0.17,2.65-0.26", start: [46.4, 87.0], end: [66.4, 84.8], direction: "left-right" }
     ]
   },
   "黄": {
     readings: { on: ["コウ", "オウ"], kun: ["き", "こ"] },
     strokes: [
-      { path: "M 18,10 L 90,10", start: [18, 10], end: [90, 10], direction: "left-right" },
-      { path: "M 54,10 L 54,30", start: [54, 10], end: [54, 30], direction: "top-bottom" },
-      { path: "M 25,30 L 82,30", start: [25, 30], end: [82, 30], direction: "left-right" },
-      { path: "M 25,30 L 25,55", start: [25, 30], end: [25, 55], direction: "top-bottom" },
-      { path: "M 82,30 L 82,55", start: [82, 30], end: [82, 55], direction: "top-bottom" },
-      { path: "M 35,42 L 72,42", start: [35, 42], end: [72, 42], direction: "left-right" },
-      { path: "M 25,55 L 82,55", start: [25, 55], end: [82, 55], direction: "left-right" },
-      { path: "M 15,68 L 95,68", start: [15, 68], end: [95, 68], direction: "left-right" },
-      { path: "M 54,55 L 54,68", start: [54, 55], end: [54, 68], direction: "top-bottom" },
-      { path: "M 54,68 L 18,97", start: [54, 68], end: [18, 97], direction: "top-right-to-bottom-left" },
-      { path: "M 54,68 L 92,97", start: [54, 68], end: [92, 97], direction: "top-left-to-bottom-right" }
+      { path: "M28.38,27.18c1.64,0.37,4.65,0.54,6.28,0.37c12.34-1.3,29.84-3.43,41.36-4.26c2.72-0.2,4.37,0.18,5.73,0.36", start: [28.4, 27.2], end: [81.8, 23.6], direction: "left-right" },
+      { path: "M39.54,12.38c0.85,0.41,2.46,1.87,2.7,3.84c0.68,5.49,1.6,15.39,2.5,25.03", start: [39.5, 12.4], end: [44.7, 41.2], direction: "top-bottom" },
+      { path: "M65.06,10.13c0.76,0.45,1.69,2.37,1.51,4.25c-0.52,5.53-2,14.75-3.25,25", start: [65.1, 10.1], end: [63.3, 39.4], direction: "top-bottom" },
+      { path: "M14.88,43.73c2.22,0.54,6.3,0.75,8.5,0.54c18.5-1.77,45.62-4.89,63.62-5.23c3.69-0.07,5.91,0.26,7.76,0.53", start: [14.9, 43.7], end: [94.8, 39.6], direction: "left-right" },
+      { path: "M30.22,53.37c1.2,1.2,1.78,2.25,2.13,3.65c0.91,3.61,2.1,10.5,3.13,17.76c0.27,1.91,0.51,3.83,0.7,5.71", start: [30.2, 53.4], end: [36.2, 80.5], direction: "top-bottom" },
+      { path: "M32.76,54.61c14.11-1.74,35.96-3.77,42.16-3.87c3.29-0.06,5.08,1.51,4.52,4.31c-0.72,3.62-1.94,9.95-3.99,17.62c-0.55,2.08-1.08,3.83-1.72,5.57", start: [32.8, 54.6], end: [73.7, 78.2], direction: "top-left-to-bottom-right" },
+      { path: "M52.72,44.59c0.91,0.91,1.5,2.16,1.5,3.91c0,5.86,0.08,20.74,0.13,27.25", start: [52.7, 44.6], end: [54.4, 75.8], direction: "top-bottom" },
+      { path: "M35.63,66.57c3.9-0.24,37.81-3.69,41.03-3.69", start: [35.6, 66.6], end: [76.7, 62.9], direction: "left-right" },
+      { path: "M37.55,78.72c11.07-1.22,22.49-2.4,35.78-3", start: [37.5, 78.7], end: [73.3, 75.7], direction: "left-right" },
+      { path: "M42.63,84.62c0.18,1.03,0.18,1.8-1.56,3.47c-3.09,2.96-8.72,6.42-20.56,10.41", start: [42.6, 84.6], end: [20.5, 98.5], direction: "top-right-to-bottom-left" },
+      { path: "M65.25,84.25c6.53,2.56,15.75,9.25,19,14.5", start: [65.2, 84.2], end: [84.2, 98.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "合": {
     readings: { on: ["ゴウ", "ガッ", "カッ"], kun: ["あ.う", "あ.わせる"] },
     strokes: [
-      { path: "M 54,8 L 20,38", start: [54, 8], end: [20, 38], direction: "top-right-to-bottom-left" },
-      { path: "M 54,8 L 88,38", start: [54, 8], end: [88, 38], direction: "top-left-to-bottom-right" },
-      { path: "M 15,45 L 95,45", start: [15, 45], end: [95, 45], direction: "left-right" },
-      { path: "M 28,45 L 28,92", start: [28, 45], end: [28, 92], direction: "top-bottom" },
-      { path: "M 82,45 L 82,92", start: [82, 45], end: [82, 92], direction: "top-bottom" },
-      { path: "M 28,92 L 82,92", start: [28, 92], end: [82, 92], direction: "left-right" }
+      { path: "M48.5,10.5c0.37,1.75,0.01,3.14-0.71,4.73C42.75,26.25,32.5,45.12,11,60", start: [48.5, 10.5], end: [11.0, 60.0], direction: "top-right-to-bottom-left" },
+      { path: "M50.25,14.75c5.41,6.77,25.92,26.39,35.46,34.92c3.33,2.98,6.37,5.04,10.79,6.08", start: [50.2, 14.8], end: [96.5, 55.8], direction: "top-left-to-bottom-right" },
+      { path: "M31.38,53.77c1.93,0.48,3.65,0.5,6.88,0.25c6.37-0.51,15.19-1.64,24.02-2.3c1.89-0.14,3.82-0.21,5.6,0.24", start: [31.4, 53.8], end: [67.9, 52.0], direction: "left-right" },
+      { path: "M27.5,72.08c0.84,0.84,1.77,1.84,1.94,2.64c1.93,8.81,2.6,14.74,3.67,21.26c0.21,1.28,0.44,2.11,0.69,3.55", start: [27.5, 72.1], end: [33.8, 99.5], direction: "top-bottom" },
+      { path: "M30.5,74.23c10.5-1.98,33-4.86,39.76-5.27c2.95-0.18,4.74,1.16,4.04,4.2c-1.42,6.12-3.17,11.21-5.5,19.45", start: [30.5, 74.2], end: [68.8, 92.6], direction: "top-left-to-bottom-right" },
+      { path: "M33.63,96.19c9.65-0.61,21.14-1.61,33.13-2.35c1.51-0.09,3.05-0.18,4.61-0.25", start: [33.6, 96.2], end: [71.4, 93.6], direction: "left-right" }
     ]
   },
   "谷": {
     readings: { on: ["コク"], kun: ["たに"] },
     strokes: [
-      { path: "M 38,10 C 38,10 30,25 18,35", start: [38, 10], end: [18, 35], direction: "top-right-to-bottom-left" },
-      { path: "M 72,10 C 72,10 78,25 90,35", start: [72, 10], end: [90, 35], direction: "top-left-to-bottom-right" },
-      { path: "M 54,25 L 20,55", start: [54, 25], end: [20, 55], direction: "top-right-to-bottom-left" },
-      { path: "M 54,25 L 88,55", start: [54, 25], end: [88, 55], direction: "top-left-to-bottom-right" },
-      { path: "M 30,60 L 30,92", start: [30, 60], end: [30, 92], direction: "top-bottom" },
-      { path: "M 78,60 L 78,92", start: [78, 60], end: [78, 92], direction: "top-bottom" },
-      { path: "M 30,92 L 78,92", start: [30, 92], end: [78, 92], direction: "left-right" }
+      { path: "M36.76,16.48c0.12,1.35-0.01,2.47-0.71,3.66C33.5,24.5,27.88,31,21.33,35.75", start: [36.8, 16.5], end: [21.3, 35.8], direction: "top-right-to-bottom-left" },
+      { path: "M67.75,15.88c7.23,4.04,16.03,11.75,18.5,15.88", start: [67.8, 15.9], end: [86.2, 31.8], direction: "top-left-to-bottom-right" },
+      { path: "M52.91,29.75c0.22,1.87,0.06,3.24-0.85,4.9C46.62,44.5,33.25,58,15.67,67.5", start: [52.9, 29.8], end: [15.7, 67.5], direction: "top-right-to-bottom-left" },
+      { path: "M53.67,35.33c9.83,8.42,23.1,18.25,32.61,24.27c3.37,2.13,6.76,4.01,10.72,4.79", start: [53.7, 35.3], end: [97.0, 64.4], direction: "top-left-to-bottom-right" },
+      { path: "M31.56,67.91c1.02,0.99,1.29,1.59,1.69,3.02c1.32,4.67,2.88,13.76,4.04,21.02c0.21,1.32,0.4,2.59,0.56,3.75", start: [31.6, 67.9], end: [37.9, 95.7], direction: "top-bottom" },
+      { path: "M33.75,69.2c12.58-1.22,30.04-2.91,37.35-3.74c2.77-0.32,4.66,1.54,4.04,3.77c-1.43,5.19-3.57,14.4-4.92,20.07", start: [33.8, 69.2], end: [70.2, 89.3], direction: "top-left-to-bottom-right" },
+      { path: "M38.65,92.84c10.47-0.96,18.55-1.55,28.85-2.46c1.47-0.13,2.96-0.26,4.49-0.38", start: [38.6, 92.8], end: [72.0, 90.0], direction: "left-right" }
     ]
   },
   "国": {
     readings: { on: ["コク"], kun: ["くに"] },
     strokes: [
-      { path: "M 15,10 L 95,10", start: [15, 10], end: [95, 10], direction: "left-right" },
-      { path: "M 15,10 L 15,97", start: [15, 10], end: [15, 97], direction: "top-bottom" },
-      { path: "M 95,10 L 95,97", start: [95, 10], end: [95, 97], direction: "top-bottom" },
-      { path: "M 38,30 L 72,30", start: [38, 30], end: [72, 30], direction: "left-right" },
-      { path: "M 54,30 L 54,55", start: [54, 30], end: [54, 55], direction: "top-bottom" },
-      { path: "M 38,55 L 72,55", start: [38, 55], end: [72, 55], direction: "left-right" },
-      { path: "M 54,68 L 58,75", start: [54, 68], end: [58, 75], direction: "top-left-to-bottom-right" },
-      { path: "M 15,97 L 95,97", start: [15, 97], end: [95, 97], direction: "left-right" }
+      { path: "M19,16.82c1.09,1.09,1.61,2.51,1.61,4.41c0,14.65-0.22,44.9-0.22,71.53c0,1.95-0.06,3.86-0.09,5.75", start: [19.0, 16.8], end: [20.3, 98.5], direction: "top-bottom" },
+      { path: "M21.52,18.67C41.38,16.75,74.03,13.5,85,13.5c3.38,0,5,1.85,5,5.25c0,15.36-0.04,47.89-0.08,70.62c0,1.68,0,3.31,0,4.88", start: [21.5, 18.7], end: [89.9, 94.2], direction: "top-left-to-bottom-right" },
+      { path: "M35.12,33.88c1.32,0.28,4.2,0.44,5.51,0.28c10.47-1.29,20.62-2.54,28.62-3.13c2.02-0.15,3.88-0.19,5.56,0.04", start: [35.1, 33.9], end: [74.8, 31.1], direction: "left-right" },
+      { path: "M52.8,34.89c0.96,0.97,1.47,2.48,1.47,3.81c0,3.99-0.13,24.74-0.09,33.55", start: [52.8, 34.9], end: [54.2, 72.2], direction: "top-bottom" },
+      { path: "M37.58,52.16c1.79,0.22,3.41,0.14,5.36-0.08c7.56-0.83,17.56-1.99,25.38-2.8c1.25-0.13,4.02-0.15,5.89,0.17", start: [37.6, 52.2], end: [74.2, 49.5], direction: "left-right" },
+      { path: "M31.08,75.14c1.54,0.36,3.85,0.28,5.19,0.16c9.98-0.92,25.85-2.67,37.03-3.54c2.15-0.17,5.04-0.18,6.12,0.13", start: [31.1, 75.1], end: [79.4, 71.9], direction: "left-right" },
+      { path: "M67.75,56.62c3,1.75,6.12,5.12,8,8.38", start: [67.8, 56.6], end: [75.8, 65.0], direction: "top-left-to-bottom-right" },
+      { path: "M21.5,93.01c14.25-0.51,48.38-1.89,67-2.51", start: [21.5, 93.0], end: [88.5, 90.5], direction: "left-right" }
     ]
   },
   "黒": {
     readings: { on: ["コク"], kun: ["くろ", "くろ.い"] },
     strokes: [
-      { path: "M 28,10 L 82,10", start: [28, 10], end: [82, 10], direction: "left-right" },
-      { path: "M 28,10 L 28,55", start: [28, 10], end: [28, 55], direction: "top-bottom" },
-      { path: "M 82,10 L 82,55", start: [82, 10], end: [82, 55], direction: "top-bottom" },
-      { path: "M 38,25 L 72,25", start: [38, 25], end: [72, 25], direction: "left-right" },
-      { path: "M 38,40 L 72,40", start: [38, 40], end: [72, 40], direction: "left-right" },
-      { path: "M 28,55 L 82,55", start: [28, 55], end: [82, 55], direction: "left-right" },
-      { path: "M 15,68 L 95,68", start: [15, 68], end: [95, 68], direction: "left-right" },
-      { path: "M 54,55 L 54,68", start: [54, 55], end: [54, 68], direction: "top-bottom" },
-      { path: "M 30,80 L 34,88", start: [30, 80], end: [34, 88], direction: "top-left-to-bottom-right" },
-      { path: "M 78,80 L 74,88", start: [78, 80], end: [74, 88], direction: "top-right-to-bottom-left" },
-      { path: "M 15,97 C 35,90 75,90 95,97", start: [15, 97], end: [95, 97], direction: "complex" }
+      { path: "M29.11,18.41c0.8,0.8,1.14,1.84,1.4,3.33c1.05,6.1,2.44,15.14,3.45,22.03c0.2,1.34,0.38,2.59,0.54,3.73", start: [29.1, 18.4], end: [34.5, 47.5], direction: "top-bottom" },
+      { path: "M31.26,20.14c14.95-1.85,32.51-3.41,46.55-4.69c3.6-0.33,4.93,2.06,4.76,3.76c-0.35,3.51-2.57,13.12-4.73,20.58c-0.5,1.74-0.77,2.63-1.27,4.07", start: [31.3, 20.1], end: [76.6, 43.9], direction: "top-left-to-bottom-right" },
+      { path: "M33.82,32.24c6.81-0.74,37.68-3.74,45.65-3.91", start: [33.8, 32.2], end: [79.5, 28.3], direction: "left-right" },
+      { path: "M35.47,43.91c11.53-1.16,28.06-3.11,41.12-3.86", start: [35.5, 43.9], end: [76.6, 40.0], direction: "left-right" },
+      { path: "M53.29,19.56c0.98,0.93,1.45,1.98,1.49,3.11C55.14,32.86,55.05,57.6,55,67.75", start: [53.3, 19.6], end: [55.0, 67.8], direction: "top-bottom" },
+      { path: "M33.88,57.14c1.48,0.28,4.2,0.38,5.68,0.28c9.66-0.67,21.01-2.54,32.19-3.22c2.46-0.15,3.95,0.13,5.19,0.27", start: [33.9, 57.1], end: [76.9, 54.5], direction: "left-right" },
+      { path: "M20.63,70.47c2.16,0.4,6.14,0.56,8.29,0.4c18.27-1.37,34.62-3,52.13-3.34c3.6-0.07,5.77,0.19,7.57,0.39", start: [20.6, 70.5], end: [88.6, 67.9], direction: "left-right" },
+      { path: "M24.75,81.88c-1.27,6.05-7.36,13.11-9,14.62", start: [24.8, 81.9], end: [15.8, 96.5], direction: "top-right-to-bottom-left" },
+      { path: "M42,79.5c1.71,2.87,4.25,10.5,3.76,15.25", start: [42.0, 79.5], end: [45.8, 94.8], direction: "top-bottom" },
+      { path: "M62.75,78.5c2.65,2.69,6.5,10.5,6.5,15.25", start: [62.8, 78.5], end: [69.2, 93.8], direction: "top-left-to-bottom-right" },
+      { path: "M83.71,79.08c4.27,2.63,11.03,10.8,12.1,14.88", start: [83.7, 79.1], end: [95.8, 94.0], direction: "top-left-to-bottom-right" }
     ]
   },
   "今": {
     readings: { on: ["コン", "キン"], kun: ["いま"] },
     strokes: [
-      { path: "M 54,8 L 18,45", start: [54, 8], end: [18, 45], direction: "top-right-to-bottom-left" },
-      { path: "M 54,8 L 92,45", start: [54, 8], end: [92, 45], direction: "top-left-to-bottom-right" },
-      { path: "M 42,50 C 42,55 38,72 28,88", start: [42, 50], end: [28, 88], direction: "curve-left" },
-      { path: "M 66,50 C 66,65 62,82 58,95", start: [66, 50], end: [58, 95], direction: "top-bottom" }
+      { path: "M49.42,14.25c0.1,1.11-0.11,2.93-0.71,4.47C44.5,29.5,32,47.25,11.5,61.75", start: [49.4, 14.2], end: [11.5, 61.8], direction: "top-right-to-bottom-left" },
+      { path: "M50.66,18.99c6.1,7.28,32.37,31.03,39.1,36.36c2.28,1.81,5.21,2.58,7.49,3.09", start: [50.7, 19.0], end: [97.2, 58.4], direction: "top-left-to-bottom-right" },
+      { path: "M39.23,50.26c1.27,0.24,2.64,0.37,4.13,0.18c5.39-0.68,11.02-1.69,15.86-2.31c1.8-0.23,3.66-0.38,4.8-0.08", start: [39.2, 50.3], end: [64.0, 48.0], direction: "left-right" },
+      { path: "M33.25,67.75c2.12,0.38,3.57,0.61,6,0.25c6.31-0.93,18.5-3.25,25.24-4.44C68.48,62.85,70,65,68,68.75C63.33,77.5,58.75,85,53,94.5", start: [33.2, 67.8], end: [53.0, 94.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "才": {
     readings: { on: ["サイ"], kun: [] },
     strokes: [
-      { path: "M 15,50 L 95,50", start: [15, 50], end: [95, 50], direction: "left-right" },
-      { path: "M 54,15 L 54,50", start: [54, 15], end: [54, 50], direction: "top-bottom" },
-      { path: "M 54,50 C 50,65 40,80 25,95", start: [54, 50], end: [25, 95], direction: "curve-left" }
+      { path: "M 18.62,38.5 c 2.62,0.62 4.54,0.53 7.82,0.25 C 41.25,37.5 67.62,35 84.75,34 c 3.28,-0.19 5.86,0 8,0.5", start: [18.6, 38.5], end: [92.8, 34.5], direction: "left-right" },
+      { path: "M 60.77,13.58 c 1.39,1.39 2.26,2.99 2.26,6.02 0,15.4 -0.01,66.41 -0.01,71.37 0,8.78 -7.21,0.5 -8.71,-0.75", start: [60.8, 13.6], end: [54.3, 90.2], direction: "top-bottom" },
+      { path: "M 73.043742,46.367587 C 62.856133,57.87424 32.711367,80.494361 23.641472,85.467096", start: [73.0, 46.4], end: [23.6, 85.5], direction: "top-right-to-bottom-left" }
     ]
   },
   "細": {
-    readings: { on: ["サイ"], kun: ["ほそ.い", "ほそ.る", "こま.かい"] },
+    readings: { on: ["サイ"], kun: ["ほそ.い", "こま.かい"] },
     strokes: [
-      { path: "M 18,15 L 18,95", start: [18, 15], end: [18, 95], direction: "top-bottom" },
-      { path: "M 12,25 L 42,18", start: [12, 25], end: [42, 18], direction: "complex" },
-      { path: "M 12,50 L 42,42", start: [12, 50], end: [42, 42], direction: "complex" },
-      { path: "M 12,78 L 42,68", start: [12, 78], end: [42, 68], direction: "complex" },
-      { path: "M 55,12 L 55,35", start: [55, 12], end: [55, 35], direction: "top-bottom" },
-      { path: "M 50,35 L 100,35", start: [50, 35], end: [100, 35], direction: "left-right" },
-      { path: "M 55,48 L 95,48", start: [55, 48], end: [95, 48], direction: "left-right" },
-      { path: "M 55,48 L 55,92", start: [55, 48], end: [55, 92], direction: "top-bottom" },
-      { path: "M 55,65 L 95,65", start: [55, 65], end: [95, 65], direction: "left-right" },
-      { path: "M 95,48 L 95,92", start: [95, 48], end: [95, 92], direction: "top-bottom" },
-      { path: "M 55,92 L 95,92", start: [55, 92], end: [95, 92], direction: "left-right" }
+      { path: "M30.47,16.5c0.29,1.27,0.3,2.6-0.4,3.85c-3.03,5.51-7.49,12.35-11.23,16.54c-1.1,1.23-0.85,2.36,0.5,2.93c3.03,1.28,5.11,2.64,7.71,4.97", start: [30.5, 16.5], end: [27.1, 44.8], direction: "top-bottom" },
+      { path: "M40.29,27.75c0.34,1.25,0.32,2.11-0.5,3.19c-7.41,9.81-14.41,17.93-23.7,27.85c-1.14,1.21-0.13,3,1.13,2.6c5.28-1.67,18.46-4.69,25.25-6.29", start: [40.3, 27.8], end: [42.5, 55.1], direction: "top-bottom" },
+      { path: "M38.5,48.25c2.65,2.34,6.34,9.11,7,12.75", start: [38.5, 48.2], end: [45.5, 61.0], direction: "top-left-to-bottom-right" },
+      { path: "M30.19,60.45c0.68,0.68,1.14,1.74,1.19,3.26c0.16,5.28,0.01,17.33-0.08,25.04c-0.03,2.92-0.06,5.07-0.06,5.75", start: [30.2, 60.5], end: [31.2, 94.5], direction: "top-bottom" },
+      { path: "M20.89,69.5c0.37,1.03,0.46,2.17-0.16,3.91c-1.89,5.33-5.31,12.12-7.73,15.51", start: [20.9, 69.5], end: [13.0, 88.9], direction: "top-bottom" },
+      { path: "M39.25,69c2.2,3.05,5.96,11.19,6.75,14.25", start: [39.2, 69.0], end: [46.0, 83.2], direction: "top-left-to-bottom-right" },
+      { path: "M52.5,36.59c1.02,1.02,1.75,2.42,1.86,3.61c1.02,11.92,1.02,26.96,1.58,41.55c0.06,1.64,0.13,3.23,0.2,4.75", start: [52.5, 36.6], end: [56.1, 86.5], direction: "top-bottom" },
+      { path: "M55.02,38.49c10.16-0.97,27.78-3.28,34.38-4c2.8-0.31,4.22,2.17,4.07,4.47c-0.5,7.61-1.33,27.22-1.9,40.55c-0.06,1.4-0.12,2.73-0.17,3.98", start: [55.0, 38.5], end: [91.4, 83.5], direction: "top-left-to-bottom-right" },
+      { path: "M71.27,39.4c0.92,0.92,1.46,2.35,1.46,4.35c0,8.59,0.18,35.76,0.18,36.48", start: [71.3, 39.4], end: [72.9, 80.2], direction: "top-bottom" },
+      { path: "M56.43,59.6c9.57-1.23,26.2-2.85,35-3.16", start: [56.4, 59.6], end: [91.4, 56.4], direction: "left-right" },
+      { path: "M57.18,82.78c9.32-0.65,22.57-1.78,33.06-2.14", start: [57.2, 82.8], end: [90.2, 80.6], direction: "left-right" }
     ]
   },
   "作": {
     readings: { on: ["サク", "サ"], kun: ["つく.る"] },
     strokes: [
-      { path: "M 22,18 L 22,95", start: [22, 18], end: [22, 95], direction: "top-bottom" },
-      { path: "M 22,18 L 35,25", start: [22, 18], end: [35, 25], direction: "left-right" },
-      { path: "M 38,12 L 50,22", start: [38, 12], end: [50, 22], direction: "top-left-to-bottom-right" },
-      { path: "M 40,30 L 95,30", start: [40, 30], end: [95, 30], direction: "left-right" },
-      { path: "M 40,48 L 95,48", start: [40, 48], end: [95, 48], direction: "left-right" },
-      { path: "M 65,48 L 65,75", start: [65, 48], end: [65, 75], direction: "top-bottom" },
-      { path: "M 40,75 L 95,75", start: [40, 75], end: [95, 75], direction: "left-right" }
+      { path: "M35.5,14c0.23,2.23-0.06,4.15-0.8,6.06C30,32.24,24.03,43.68,13.25,58.5", start: [35.5, 14.0], end: [13.2, 58.5], direction: "top-right-to-bottom-left" },
+      { path: "M27.66,40.75c1.09,1.12,1.78,3.48,1.78,4.73c0,12.54-0.16,30.2-0.31,42.02c-0.03,2.58-0.05,4.87-0.05,6.75", start: [27.7, 40.8], end: [29.1, 94.2], direction: "top-bottom" },
+      { path: "M60.75,12c0.37,1.5,0.19,3.75-0.37,5.27C57.25,25.75,52.29,38.23,44.31,47", start: [60.8, 12.0], end: [44.3, 47.0], direction: "top-right-to-bottom-left" },
+      { path: "M56.86,32.42c2.21,0.08,4.42,0.04,5.97-0.13c8.04-0.91,15.67-2.29,25.6-4.09c2.81-0.51,5.28-0.45,7.4-0.08", start: [56.9, 32.4], end: [95.8, 28.1], direction: "left-right" },
+      { path: "M68.35,34.21c1.1,1.1,1.62,2.73,1.62,4.09c0,6.33-0.17,37.69-0.22,53.95c-0.01,2.99-0.02,5.41-0.02,7", start: [68.3, 34.2], end: [69.7, 99.2], direction: "top-bottom" },
+      { path: "M72.75,52.78c5.12-0.59,10.5-1.4,15.75-2.29c1.61-0.27,3.4-0.12,4.22,0.02", start: [72.8, 52.8], end: [92.7, 50.5], direction: "left-right" },
+      { path: "M73.04,72.51c6.55-0.75,11.75-1.42,18.9-2.27c1.87-0.22,3.07-0.12,4.03,0.02", start: [73.0, 72.5], end: [96.0, 70.3], direction: "left-right" }
     ]
   },
   "算": {
     readings: { on: ["サン"], kun: [] },
     strokes: [
-      { path: "M 15,8 L 48,8", start: [15, 8], end: [48, 8], direction: "left-right" },
-      { path: "M 60,8 L 95,8", start: [60, 8], end: [95, 8], direction: "left-right" },
-      { path: "M 30,8 L 30,40", start: [30, 8], end: [30, 40], direction: "top-bottom" },
-      { path: "M 78,8 L 78,40", start: [78, 8], end: [78, 40], direction: "top-bottom" },
-      { path: "M 15,40 L 95,40", start: [15, 40], end: [95, 40], direction: "left-right" },
-      { path: "M 54,40 L 54,55", start: [54, 40], end: [54, 55], direction: "top-bottom" },
-      { path: "M 18,55 L 90,55", start: [18, 55], end: [90, 55], direction: "left-right" },
-      { path: "M 28,55 L 28,80", start: [28, 55], end: [28, 80], direction: "top-bottom" },
-      { path: "M 80,55 L 80,80", start: [80, 55], end: [80, 80], direction: "top-bottom" },
-      { path: "M 40,68 L 68,68", start: [40, 68], end: [68, 68], direction: "left-right" },
-      { path: "M 54,68 L 54,80", start: [54, 68], end: [54, 80], direction: "top-bottom" },
-      { path: "M 28,80 L 80,80", start: [28, 80], end: [80, 80], direction: "left-right" },
-      { path: "M 54,80 L 54,97", start: [54, 80], end: [54, 97], direction: "top-bottom" },
-      { path: "M 15,97 L 95,97", start: [15, 97], end: [95, 97], direction: "left-right" }
+      { path: "M30,9.75c0.08,1.13,0.02,2.14-0.45,3.18C27.38,17.88,23.12,24.38,17.25,30", start: [30.0, 9.8], end: [17.2, 30.0], direction: "top-right-to-bottom-left" },
+      { path: "M29.73,19.79c3.05,0,11.49-1.94,16.96-2.72c1.38-0.2,2.57-0.32,3.44-0.32", start: [29.7, 19.8], end: [50.1, 16.8], direction: "left-right" },
+      { path: "M36.38,21.62c1.48,1.38,3.81,5.69,4.18,7.84", start: [36.4, 21.6], end: [40.6, 29.5], direction: "top-left-to-bottom-right" },
+      { path: "M62.13,7.88c0.1,0.88-0.01,2.24-0.35,3.04c-1.24,3.84-3.99,8.41-7.53,12.83", start: [62.1, 7.9], end: [54.2, 23.8], direction: "top-right-to-bottom-left" },
+      { path: "M62.48,17.66c6.07,0.34,17.26-2.48,24.72-3.31c1.49-0.17,2.76-0.26,3.67-0.26", start: [62.5, 17.7], end: [90.9, 14.1], direction: "left-right" },
+      { path: "M72.88,19.38c0.05,0.59-0.05,1.15-0.29,1.67c-0.74,1.97-2.74,5.15-5.34,7.2", start: [72.9, 19.4], end: [67.2, 28.2], direction: "top-right-to-bottom-left" },
+      { path: "M34.21,33.98c0.9,0.9,1.18,1.96,1.18,3.28c0,4.74-0.16,19.76-0.3,26.74c-0.03,1.56-0.05,2.54-0.05,2.63", start: [34.2, 34.0], end: [35.0, 66.6], direction: "top-bottom" },
+      { path: "M36.51,35.65c7.57-0.71,29.44-3.03,31.98-3.26c2.5-0.22,3.76,1.11,3.76,3.29c0,0.99,0,14.98,0.02,25.06c0,1.25,0,2.44,0.01,3.53", start: [36.5, 35.6], end: [72.3, 64.3], direction: "top-left-to-bottom-right" },
+      { path: "M36.57,44.92c7.68-0.67,28.89-2.61,34.17-2.83", start: [36.6, 44.9], end: [70.7, 42.1], direction: "left-right" },
+      { path: "M36,54.25c8.72-0.75,25.9-2.08,34.37-2.43", start: [36.0, 54.2], end: [70.4, 51.8], direction: "left-right" },
+      { path: "M36.66,63.57c8.09-0.57,26-2.03,34.47-2.39", start: [36.7, 63.6], end: [71.1, 61.2], direction: "left-right" },
+      { path: "M14.38,77.86c2.39,0.66,6.29,0.82,8.68,0.66c17.82-1.15,47.32-3.65,63.57-4.25c3.99-0.15,6.38,0.32,8.38,0.65", start: [14.4, 77.9], end: [95.0, 74.9], direction: "left-right" },
+      { path: "M42.5,68.5c0.62,0.88,0.93,2.13,0.93,3.3c0,11.82-4.31,23.07-20.93,29.08", start: [42.5, 68.5], end: [22.5, 100.9], direction: "top-right-to-bottom-left" },
+      { path: "M65.75,66.5c0.88,0.88,1.5,2.19,1.5,3.21c-0.01,1.88,0.06,17.92-0.02,26.56c-0.02,1.93-0.05,3.5-0.09,4.49", start: [65.8, 66.5], end: [67.1, 100.8], direction: "top-bottom" }
     ]
   },
   "止": {
     readings: { on: ["シ"], kun: ["と.まる", "と.める"] },
     strokes: [
-      { path: "M 35,15 L 35,90", start: [35, 15], end: [35, 90], direction: "top-bottom" },
-      { path: "M 35,45 L 75,45", start: [35, 45], end: [75, 45], direction: "left-right" },
-      { path: "M 75,15 L 75,90", start: [75, 15], end: [75, 90], direction: "top-bottom" },
-      { path: "M 15,90 L 95,90", start: [15, 90], end: [95, 90], direction: "left-right" }
+      { path: "M53.43,16.25c1.22,1.22,2.08,3.25,2.08,4.62c0,5.26,0.11,47.51,0.11,65.88", start: [53.4, 16.2], end: [55.6, 86.8], direction: "top-bottom" },
+      { path: "M55.88,49.75c8.92-0.75,15.63-2,24.4-2.75c2.17-0.19,2.73-0.25,4.09,0", start: [55.9, 49.8], end: [84.4, 47.0], direction: "left-right" },
+      { path: "M31.43,47.5c1.1,1.1,1.83,3,1.83,4.36c0,4.51,0.32,25.66,0.12,36.64", start: [31.4, 47.5], end: [33.4, 88.5], direction: "top-bottom" },
+      { path: "M14,90c1.75,0.62,3.87,0.95,6.66,0.75c17.21-1.25,47.96-4,63.81-4.25c2.81-0.04,6.65,0.12,8.78,0.75", start: [14.0, 90.0], end: [93.2, 87.2], direction: "left-right" }
     ]
   },
   "市": {
     readings: { on: ["シ"], kun: ["いち"] },
     strokes: [
-      { path: "M 54,5 L 54,25", start: [54, 5], end: [54, 25], direction: "top-bottom" },
-      { path: "M 15,25 L 95,25", start: [15, 25], end: [95, 25], direction: "left-right" },
-      { path: "M 30,25 L 30,90 C 30,97 28,98 20,98", start: [30, 25], end: [20, 98], direction: "complex" },
-      { path: "M 54,40 L 54,95", start: [54, 40], end: [54, 95], direction: "top-bottom" },
-      { path: "M 80,25 L 80,90 C 80,97 82,98 90,98", start: [80, 25], end: [90, 98], direction: "complex" }
+      { path: "M52.86,12c1.26,1.26,1.48,2.5,1.48,4.66c0,4.84-0.15,6.46-0.15,8.9", start: [52.9, 12.0], end: [54.2, 25.6], direction: "top-bottom" },
+      { path: "M15.5,28.96c3.65,0.76,7.24,0.69,9.36,0.46c16.74-1.8,45.31-4.8,60.95-5.6c3.62-0.19,5.48,0.04,8.18,0.59", start: [15.5, 29.0], end: [94.0, 24.4], direction: "left-right" },
+      { path: "M27.31,46c1.22,1.22,1.6,2.75,1.6,4.61c0,3.34-0.06,19.8-0.16,28.65c-0.02,2.13-0.05,3.8-0.08,4.72", start: [27.3, 46.0], end: [28.7, 84.0], direction: "top-bottom" },
+      { path: "M30.28,48.5c12.28-1.24,45.6-4.38,48.37-4.38c3.6,0,5.35,0.87,5.35,5.09c0,9.3-0.25,21.16-1.4,29.97c-1.06,8.11-6.24,0.06-7.73-1.27", start: [30.3, 48.5], end: [74.9, 77.9], direction: "top-left-to-bottom-right" },
+      { path: "M53.53,32.88c1.17,1.17,1.85,2.87,1.85,4.36c0,5.51-0.27,35.65-0.32,54.26c-0.01,2.28-0.01,4.31-0.01,6", start: [53.5, 32.9], end: [55.1, 97.5], direction: "top-bottom" }
     ]
   },
   "矢": {
     readings: { on: ["シ"], kun: ["や"] },
     strokes: [
-      { path: "M 25,18 L 85,18", start: [25, 18], end: [85, 18], direction: "left-right" },
-      { path: "M 42,18 L 42,48", start: [42, 18], end: [42, 48], direction: "top-bottom" },
-      { path: "M 15,48 L 95,48", start: [15, 48], end: [95, 48], direction: "left-right" },
-      { path: "M 54,48 L 20,90", start: [54, 48], end: [20, 90], direction: "top-right-to-bottom-left" },
-      { path: "M 54,48 C 60,65 72,82 95,95", start: [54, 48], end: [95, 95], direction: "top-left-to-bottom-right" }
+      { path: "M39.55,11.75c0.11,1.35,0.01,2.63-0.39,3.92c-2.04,6.63-10.37,20.42-18.66,25.7", start: [39.5, 11.8], end: [20.5, 41.4], direction: "top-right-to-bottom-left" },
+      { path: "M34.92,31.39c1.83,0.11,3.39-0.16,4.66-0.31c6.04-0.71,20.92-3.33,29.16-5.29c2.08-0.49,3.63-0.54,5.26-0.29", start: [34.9, 31.4], end: [74.0, 25.5], direction: "left-right" },
+      { path: "M18.95,54.02c2.2,0.48,5.05,0.73,7.46,0.46c20.43-2.24,38.35-4.61,54.2-5.3c1.83-0.08,5.47,0.07,7.68,0.7", start: [18.9, 54.0], end: [88.3, 49.9], direction: "left-right" },
+      { path: "M52.32,32.29c0.43,0.96,0.9,1.86,0.85,3.72c-0.92,32.5-14.54,48.87-36.42,59.12", start: [52.3, 32.3], end: [16.8, 95.1], direction: "top-right-to-bottom-left" },
+      { path: "M53.25,53c9.5,12.25,21.9,27.44,30.96,35.6c2.33,2.09,5.17,4.4,8.67,5.78", start: [53.2, 53.0], end: [92.9, 94.4], direction: "top-left-to-bottom-right" }
     ]
   },
   "姉": {
     readings: { on: ["シ"], kun: ["あね"] },
     strokes: [
-      { path: "M 18,20 C 18,20 22,30 15,40", start: [18, 20], end: [15, 40], direction: "top-bottom" },
-      { path: "M 25,15 L 25,90", start: [25, 15], end: [25, 90], direction: "top-bottom" },
-      { path: "M 25,50 L 10,80", start: [25, 50], end: [10, 80], direction: "top-right-to-bottom-left" },
-      { path: "M 55,10 L 55,32", start: [55, 10], end: [55, 32], direction: "top-bottom" },
-      { path: "M 48,32 L 95,32", start: [48, 32], end: [95, 32], direction: "left-right" },
-      { path: "M 48,50 L 95,50", start: [48, 50], end: [95, 50], direction: "left-right" },
-      { path: "M 68,32 L 68,50", start: [68, 32], end: [68, 50], direction: "top-bottom" },
-      { path: "M 68,55 C 65,70 58,85 50,95", start: [68, 55], end: [50, 95], direction: "curve-left" }
+      { path: "M28.12,20.37c0.38,1.13,0.57,2.99,0.38,4.63c-0.97,8.06-4.99,28-9.27,37.43c-0.88,1.94,0.37,2.8,0.88,2.87c6.05,0.78,13.68,5.27,19.13,12.22c1.21,1.54,2.32,3.21,3.27,4.98", start: [28.1, 20.4], end: [42.5, 82.5], direction: "top-bottom" },
+      { path: "M40.5,38.75c0.38,1.75,0.36,2.98,0.08,4.67C38.12,58.25,30,78.88,12.75,87.75", start: [40.5, 38.8], end: [12.8, 87.8], direction: "top-right-to-bottom-left" },
+      { path: "M10.25,48.71c1,0.92,2.53,1.24,4.5,0.79c7.12-1.62,19.5-5.25,30-7.78", start: [10.2, 48.7], end: [44.8, 41.7], direction: "left-right" },
+      { path: "M69.23,13c1.32,1.32,1.65,2.75,1.65,4.77c0,4.3-0.11,4.98-0.11,8.58", start: [69.2, 13.0], end: [70.8, 26.4], direction: "top-bottom" },
+      { path: "M44.5,29.22c3.09,0.48,5.97,0.51,7.72,0.33c11.4-1.18,30.28-3.43,40.66-4.05c2.98-0.18,4.52,0.03,6.75,0.42", start: [44.5, 29.2], end: [99.6, 25.9], direction: "left-right" },
+      { path: "M53.38,46.06c0.78,0.78,1.16,2.19,1.16,3.98c0,4.71,0,13.1-0.09,20.96c-0.03,2.29-0.05,3.66-0.07,4.69", start: [53.4, 46.1], end: [54.4, 75.7], direction: "top-bottom" },
+      { path: "M55.52,47.9c8.95-1.14,30.63-4.27,32.52-4.4c3.59-0.25,4.49,0.75,4.49,4.91c0,8.97-0.3,15.52-0.81,23.17c-0.47,6.93-3.47,3.68-5.95-0.23", start: [55.5, 47.9], end: [85.8, 71.3], direction: "top-left-to-bottom-right" },
+      { path: "M70.57,34.12c1.21,1.21,1.41,2.93,1.41,4.58c0,0.63-0.06,37.87-0.09,53.16c0,3.21-0.02,3.95-0.03,4.77", start: [70.6, 34.1], end: [71.9, 96.6], direction: "top-bottom" }
     ]
   },
   "思": {
     readings: { on: ["シ"], kun: ["おも.う"] },
     strokes: [
-      { path: "M 20,10 L 88,10", start: [20, 10], end: [88, 10], direction: "left-right" },
-      { path: "M 20,10 L 20,55", start: [20, 10], end: [20, 55], direction: "top-bottom" },
-      { path: "M 88,10 L 88,55", start: [88, 10], end: [88, 55], direction: "top-bottom" },
-      { path: "M 35,28 L 72,28", start: [35, 28], end: [72, 28], direction: "left-right" },
-      { path: "M 54,10 L 54,55", start: [54, 10], end: [54, 55], direction: "top-bottom" },
-      { path: "M 20,55 L 88,55", start: [20, 55], end: [88, 55], direction: "left-right" },
-      { path: "M 18,70 C 18,70 22,82 28,82 C 32,82 30,75 28,70", start: [18, 70], end: [28, 70], direction: "curve-right" },
-      { path: "M 45,62 C 45,62 43,78 42,85 C 42,90 45,92 50,88", start: [45, 62], end: [50, 88], direction: "complex" },
-      { path: "M 82,62 C 82,68 85,78 88,82 C 90,85 88,78 82,72", start: [82, 62], end: [82, 72], direction: "complex" }
+      { path: "M26.25,19.11c1.26,1.26,2.03,2.95,2.29,4.64c1.21,8.13,2.4,17.99,3.26,26.47c0.15,1.45,0.29,2.81,0.42,4.03", start: [26.2, 19.1], end: [32.2, 54.2], direction: "top-bottom" },
+      { path: "M28.75,21c18.13-2.25,36-4,48.68-4.52c3.81-0.16,4.75,2.83,4.54,4.23c-0.65,4.39-2.25,17.38-3.9,26.31c-0.28,1.5-0.57,2.9-0.86,4.15", start: [28.8, 21.0], end: [77.2, 51.2], direction: "top-left-to-bottom-right" },
+      { path: "M53.32,19.5c0.84,0.84,1.3,2.42,1.29,3.6c-0.07,6.5,0.06,22.72,0.06,24.65", start: [53.3, 19.5], end: [54.7, 47.8], direction: "top-bottom" },
+      { path: "M31.5,35.75c10.25-1.12,36.75-3.75,47.35-3.97", start: [31.5, 35.8], end: [78.8, 31.8], direction: "left-right" },
+      { path: "M33.25,51.25C44.06,49.86,67.5,48,77.33,47.59", start: [33.2, 51.2], end: [77.3, 47.6], direction: "left-right" },
+      { path: "M23.11,69.79C22.62,76,20.83,83.92,19,88.42", start: [23.1, 69.8], end: [19.0, 88.4], direction: "top-bottom" },
+      { path: "M34.35,64.42c5.15,15.83,21.36,30.41,47.26,28.12c8.89-0.79,8.39-2.79,3.2-8.1", start: [34.4, 64.4], end: [84.8, 84.4], direction: "left-right" },
+      { path: "M55.47,61.5c2.15,4.88,5.87,9.87,7.01,4.47", start: [55.5, 61.5], end: [62.5, 66.0], direction: "top-left-to-bottom-right" },
+      { path: "M83,60.75c3.62,2.5,7.75,6.62,10.25,11.72", start: [83.0, 60.8], end: [93.2, 72.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "紙": {
     readings: { on: ["シ"], kun: ["かみ"] },
     strokes: [
-      { path: "M 18,20 L 18,88", start: [18, 20], end: [18, 88], direction: "top-bottom" },
-      { path: "M 10,30 L 40,22", start: [10, 30], end: [40, 22], direction: "complex" },
-      { path: "M 10,55 L 40,48", start: [10, 55], end: [40, 48], direction: "complex" },
-      { path: "M 10,80 L 40,72", start: [10, 80], end: [40, 72], direction: "complex" },
-      { path: "M 55,10 L 55,38", start: [55, 10], end: [55, 38], direction: "top-bottom" },
-      { path: "M 55,38 L 95,38", start: [55, 38], end: [95, 38], direction: "left-right" },
-      { path: "M 55,55 L 95,55", start: [55, 55], end: [95, 55], direction: "left-right" },
-      { path: "M 72,38 L 72,55", start: [72, 38], end: [72, 55], direction: "top-bottom" },
-      { path: "M 72,55 C 68,68 60,80 50,90", start: [72, 55], end: [50, 90], direction: "curve-left" },
-      { path: "M 72,55 C 78,70 88,82 98,92", start: [72, 55], end: [98, 92], direction: "top-left-to-bottom-right" }
+      { path: "M25.75,17.75c0.3,1.18,0.15,2.34-0.4,3.59c-2.6,5.91-5.6,11.41-9.34,16.6c-0.49,0.68-0.59,2.73,0,2.95c3.13,1.18,7.06,1.65,9.75,3.81", start: [25.8, 17.8], end: [25.8, 44.7], direction: "top-bottom" },
+      { path: "M37.79,26.83C38,28,38,29.25,37.04,30.68c-5.53,8.23-13.81,21.36-21.11,29c-1.67,1.75,0.42,3.75,1.5,3.4c4.56-1.49,16.11-5.69,21.97-7.12", start: [37.8, 26.8], end: [39.4, 56.0], direction: "top-bottom" },
+      { path: "M36.02,48.81c2.29,2.06,6.9,8.46,7.48,11.66", start: [36.0, 48.8], end: [43.5, 60.5], direction: "top-left-to-bottom-right" },
+      { path: "M27.65,61.81c0.83,0.83,1.45,2.19,1.5,3.93c0.18,6.16,0.01,18.31-0.09,25.75C29.03,94.21,29,96.24,29,97", start: [27.6, 61.8], end: [29.0, 97.0], direction: "top-bottom" },
+      { path: "M18.38,71.97c0.49,1.28,0.52,2.41,0.22,3.7c-0.98,4.21-3.35,9.33-6.85,14.83", start: [18.4, 72.0], end: [11.7, 90.5], direction: "top-bottom" },
+      { path: "M38.12,69.12c2.56,2.75,4.53,9.13,5.12,11.62", start: [38.1, 69.1], end: [43.2, 80.7], direction: "top-left-to-bottom-right" },
+      { path: "M79.5,15c0,1.12-0.73,2.38-1.64,3.04C71.62,22.5,61.38,28,52.41,31.75", start: [79.5, 15.0], end: [52.4, 31.8], direction: "top-right-to-bottom-left" },
+      { path: "M50.16,32c1.42,1.42,2.25,3.25,2.25,5.5s-0.66,46.25-0.66,49.75s-0.25,4.5,3,2S67.41,80,69.41,78.5", start: [50.2, 32.0], end: [69.4, 78.5], direction: "top-bottom" },
+      { path: "M55.04,51.38c1.71,0.24,4.01-0.03,5.58-0.34c8.5-1.67,15.5-3.17,26.29-4.8c2.66-0.4,4.32-0.05,5.66,0.15", start: [55.0, 51.4], end: [92.6, 46.4], direction: "left-right" },
+      { path: "M67.91,27.75c1.34,1.69,1.86,3.7,2.02,5.74C71.75,56.25,79.31,80.13,93.25,91c6.2,4.83,4.53-4.81,4.53-7.84", start: [67.9, 27.8], end: [97.8, 83.2], direction: "top-left-to-bottom-right" }
     ]
   },
   "寺": {
     readings: { on: ["ジ"], kun: ["てら"] },
     strokes: [
-      { path: "M 18,18 L 90,18", start: [18, 18], end: [90, 18], direction: "left-right" },
-      { path: "M 18,40 L 90,40", start: [18, 40], end: [90, 40], direction: "left-right" },
-      { path: "M 54,40 L 54,95", start: [54, 40], end: [54, 95], direction: "top-bottom" },
-      { path: "M 30,55 L 80,55", start: [30, 55], end: [80, 55], direction: "left-right" },
-      { path: "M 30,70 L 80,70", start: [30, 70], end: [80, 70], direction: "left-right" },
-      { path: "M 30,70 C 30,80 28,90 20,97", start: [30, 70], end: [20, 97], direction: "curve-left" }
+      { path: "M29.88,28.28c1.66,0.31,3.87,0.6,6.37,0.31c10.23-1.18,24.38-2.59,37.19-3.31c2.76-0.16,4.43,0.15,5.82,0.3", start: [29.9, 28.3], end: [79.3, 25.6], direction: "left-right" },
+      { path: "M52.55,10.37c1.2,1.13,1.82,2.62,1.82,4.6c0,8.45,0.13,26.9,0.13,27.79", start: [52.5, 10.4], end: [54.5, 42.8], direction: "top-bottom" },
+      { path: "M13.38,45.54c2.71,0.64,7.69,0.85,10.39,0.64c20.86-1.56,45.36-3.47,61.38-3.94c4.51-0.13,7.22,0.31,9.48,0.63", start: [13.4, 45.5], end: [94.6, 42.9], direction: "left-right" },
+      { path: "M21.13,64.99c1.9,0.46,5.39,0.54,7.3,0.46c16.2-0.7,40.2-3.2,55.42-3.64c3.17-0.09,5.07,0.22,6.66,0.44", start: [21.1, 65.0], end: [90.5, 62.2], direction: "left-right" },
+      { path: "M66.07,49.33c0.99,0.99,1.65,2.79,1.65,4.81c0,12.04-0.15,34.92-0.15,39.02c0,9.83-5.96,1.47-7.96,0.21", start: [66.1, 49.3], end: [59.6, 93.4], direction: "top-bottom" },
+      { path: "M36,74.25c3.18,1.9,8.21,7.8,9,10.75", start: [36.0, 74.2], end: [45.0, 85.0], direction: "top-left-to-bottom-right" }
     ]
   },
   "自": {
     readings: { on: ["ジ", "シ"], kun: ["みずか.ら"] },
     strokes: [
-      { path: "M 54,5 L 54,18", start: [54, 5], end: [54, 18], direction: "top-bottom" },
-      { path: "M 22,18 L 85,18", start: [22, 18], end: [85, 18], direction: "left-right" },
-      { path: "M 22,18 L 22,92", start: [22, 18], end: [22, 92], direction: "top-bottom" },
-      { path: "M 85,18 L 85,92", start: [85, 18], end: [85, 92], direction: "top-bottom" },
-      { path: "M 35,52 L 72,52", start: [35, 52], end: [72, 52], direction: "left-right" },
-      { path: "M 22,92 L 85,92", start: [22, 92], end: [85, 92], direction: "left-right" }
+      { path: "M50.44,12.42c0.31,1.42,0.34,2.13-0.24,3.9c-1.45,4.43-3.45,7.55-7.56,13.43", start: [50.4, 12.4], end: [42.6, 29.8], direction: "top-right-to-bottom-left" },
+      { path: "M27.5,31.73c0.8,1.43,1.48,2.99,1.48,4.89c0,1.9-0.29,53.82-0.29,54.78c0,0.95,0.04,2.85,0.04,4.85", start: [27.5, 31.7], end: [28.7, 96.2], direction: "top-bottom" },
+      { path: "M29.77,33.17c11.61-1.29,37.98-4.04,43.35-4.67c4.85-0.57,6.38,1,6.38,4.59c0,2.04-0.69,33.61-0.82,55.16c-0.01,2.4-0.02,4.68-0.02,6.78", start: [29.8, 33.2], end: [78.7, 95.0], direction: "top-left-to-bottom-right" },
+      { path: "M30.23,51.23c11.14-1.1,37.27-3.48,47.79-3.77", start: [30.2, 51.2], end: [78.0, 47.5], direction: "left-right" },
+      { path: "M30.11,70.17C44.5,68.75,62,67.25,77.74,66.31", start: [30.1, 70.2], end: [77.7, 66.3], direction: "left-right" },
+      { path: "M29.79,91.57c12.59-0.69,34.84-2.32,47.46-3.13", start: [29.8, 91.6], end: [77.2, 88.4], direction: "left-right" }
     ]
   },
   "時": {
     readings: { on: ["ジ"], kun: ["とき"] },
     strokes: [
-      { path: "M 10,15 L 10,92", start: [10, 15], end: [10, 92], direction: "top-bottom" },
-      { path: "M 10,15 L 40,15", start: [10, 15], end: [40, 15], direction: "left-right" },
-      { path: "M 40,15 L 40,92", start: [40, 15], end: [40, 92], direction: "top-bottom" },
-      { path: "M 18,52 L 32,52", start: [18, 52], end: [32, 52], direction: "left-right" },
-      { path: "M 10,92 L 40,92", start: [10, 92], end: [40, 92], direction: "left-right" },
-      { path: "M 60,10 L 60,35", start: [60, 10], end: [60, 35], direction: "top-bottom" },
-      { path: "M 55,35 L 95,35", start: [55, 35], end: [95, 35], direction: "left-right" },
-      { path: "M 55,52 L 95,52", start: [55, 52], end: [95, 52], direction: "left-right" },
-      { path: "M 75,35 L 75,52", start: [75, 35], end: [75, 52], direction: "top-bottom" },
-      { path: "M 75,52 C 72,68 65,82 55,95", start: [75, 52], end: [55, 95], direction: "curve-left" }
+      { path: "M16,29.84c0.75,0.66,1.21,1.62,1.21,3.07c0,1.18-0.16,30.08-0.21,40.85c-0.01,2.42-0.02,3.95-0.02,4.08", start: [16.0, 29.8], end: [17.0, 77.8], direction: "top-bottom" },
+      { path: "M17.78,30.74c4.65-0.63,16.12-2.07,17.6-2.25c1.52-0.18,3,1.5,2.88,2.57c-0.24,2.17-0.36,24.9-0.35,40.79c0,1.63-0.12,3.35-0.12,4.43", start: [17.8, 30.7], end: [37.8, 76.3], direction: "top-left-to-bottom-right" },
+      { path: "M18.75,52c4.5-0.75,13.5-2.12,18.22-2.35", start: [18.8, 52.0], end: [37.0, 49.6], direction: "left-right" },
+      { path: "M17.8,74.52c6.2-0.92,11.45-1.89,18.94-2.7", start: [17.8, 74.5], end: [36.7, 71.8], direction: "left-right" },
+      { path: "M51.44,29.03c1.37,0.44,3.63,0.34,5,0.19c9.79-1.09,16.34-2.34,25.62-3.08c2.27-0.18,3.9-0.04,5.04,0.18", start: [51.4, 29.0], end: [87.1, 26.3], direction: "left-right" },
+      { path: "M67.59,11.37c0.89,0.9,1.59,2.24,1.59,3.75c0,8.39,0.03,27.02,0.03,27.6", start: [67.6, 11.4], end: [69.2, 42.7], direction: "top-bottom" },
+      { path: "M45.38,45.35c1.49,0.44,4.21,0.59,5.71,0.44c11.29-1.16,25.66-3.29,39.2-3.99c2.48-0.13,3.97,0.21,5.21,0.43", start: [45.4, 45.4], end: [95.5, 42.2], direction: "left-right" },
+      { path: "M46,60.99c1.43,0.46,4.04,0.58,5.49,0.46c12.01-1.07,26.89-3.07,39.07-3.89c2.38-0.16,4.41,0.22,5.6,0.44", start: [46.0, 61.0], end: [96.2, 58.0], direction: "left-right" },
+      { path: "M78.07,46.08c1.11,1.11,1.66,2.56,1.71,5.06c0.23,12.03-0.09,34.43-0.09,38.52c0,9.83-5.42,2.19-7.66-0.04", start: [78.1, 46.1], end: [72.0, 89.6], direction: "top-bottom" },
+      { path: "M56.75,70.38c2.87,1.76,6.55,6.38,7.27,9.12", start: [56.8, 70.4], end: [64.0, 79.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "室": {
     readings: { on: ["シツ"], kun: ["むろ"] },
     strokes: [
-      { path: "M 54,5 L 54,18", start: [54, 5], end: [54, 18], direction: "top-bottom" },
-      { path: "M 18,18 L 90,18", start: [18, 18], end: [90, 18], direction: "left-right" },
-      { path: "M 22,30 L 85,30", start: [22, 30], end: [85, 30], direction: "left-right" },
-      { path: "M 22,30 L 22,65", start: [22, 30], end: [22, 65], direction: "top-bottom" },
-      { path: "M 85,30 L 85,65", start: [85, 30], end: [85, 65], direction: "top-bottom" },
-      { path: "M 35,48 L 72,48", start: [35, 48], end: [72, 48], direction: "left-right" },
-      { path: "M 22,65 L 85,65", start: [22, 65], end: [85, 65], direction: "left-right" },
-      { path: "M 18,80 L 90,80", start: [18, 80], end: [90, 80], direction: "left-right" },
-      { path: "M 54,65 L 54,95", start: [54, 65], end: [54, 95], direction: "top-bottom" }
+      { path: "M52.4,9.25c1.24,1.24,1.92,2.88,1.92,4.52c0,3.9-0.1,6.54-0.1,10.08", start: [52.4, 9.2], end: [54.2, 23.9], direction: "top-bottom" },
+      { path: "M19.91,24.63c0,4.27-3.03,16.02-4.41,18.87", start: [19.9, 24.6], end: [15.5, 43.5], direction: "top-bottom" },
+      { path: "M21.53,27.37C39.88,26,74.38,22.62,87.7,22.84c10.8,0.17,5.3,4.66-0.45,8.78", start: [21.5, 27.4], end: [87.2, 31.6], direction: "left-right" },
+      { path: "M33.3,39.35c1.41,0.36,3.27,0.54,5.4,0.36C47,39,60,37.62,68.44,36.82c2.33-0.22,3.76,0.17,4.93,0.35", start: [33.3, 39.4], end: [73.4, 37.2], direction: "left-right" },
+      { path: "M49.81,41.34c0.19,1.41-0.31,2.78-1.15,4.01c-2.47,3.58-5.42,7.38-9.88,11.94c-2.9,2.96-2.35,3.53,0.8,2.99c7.36-1.25,20.85-5.07,32.44-7.12", start: [49.8, 41.3], end: [72.0, 53.2], direction: "top-left-to-bottom-right" },
+      { path: "M66.12,46.88c4.47,2.36,9.62,7.88,11.57,12.2", start: [66.1, 46.9], end: [77.7, 59.1], direction: "top-left-to-bottom-right" },
+      { path: "M31.25,78.06c1.75,0.25,4.47,0.39,6.2,0.25c10.18-0.81,24.05-2.69,32.43-3.14c2.91-0.16,4.66,0.12,6.11,0.25", start: [31.2, 78.1], end: [76.0, 75.4], direction: "left-right" },
+      { path: "M52.03,63.25c1.47,1.25,2.3,2.94,2.25,5c-0.2,8.64-0.05,25.35-0.05,26.25", start: [52.0, 63.2], end: [54.2, 94.5], direction: "top-bottom" },
+      { path: "M19.64,96.76c2.05,0.5,4.57,0.65,6.6,0.5c20.14-1.51,41.23-3.3,56.97-3.3c3.41,0,5.46,0.24,7.16,0.49", start: [19.6, 96.8], end: [90.4, 94.5], direction: "left-right" }
     ]
   },
   "社": {
     readings: { on: ["シャ"], kun: ["やしろ"] },
     strokes: [
-      { path: "M 10,18 L 10,55", start: [10, 18], end: [10, 55], direction: "top-bottom" },
-      { path: "M 10,18 L 20,28", start: [10, 18], end: [20, 28], direction: "top-left-to-bottom-right" },
-      { path: "M 10,42 L 20,42", start: [10, 42], end: [20, 42], direction: "left-right" },
-      { path: "M 20,60 L 38,60", start: [20, 60], end: [38, 60], direction: "left-right" },
-      { path: "M 28,60 L 28,97", start: [28, 60], end: [28, 97], direction: "top-bottom" },
-      { path: "M 55,10 L 95,10", start: [55, 10], end: [95, 10], direction: "left-right" },
-      { path: "M 75,10 L 75,97", start: [75, 10], end: [75, 97], direction: "top-bottom" }
+      { path: "M29.5,15.25c3.41,2.06,6.75,4.75,10,8.75", start: [29.5, 15.2], end: [39.5, 24.0], direction: "top-left-to-bottom-right" },
+      { path: "M15.5,39c2,0.75,3.05,0.8,5.55,0.17c6.2-1.55,15.6-4.05,17.7-4.67c2.5-0.75,4.46,1.23,3,3.5c-4.75,7.38-13.88,18.62-25,28.75", start: [15.5, 39.0], end: [16.8, 66.8], direction: "top-bottom" },
+      { path: "M30.82,55.37C32,56.5,32.21,58,32.21,59.94c0,8.57-0.15,21.05-0.3,29.06c-0.06,3.28-0.12,5.81-0.12,7", start: [30.8, 55.4], end: [31.8, 96.0], direction: "top-bottom" },
+      { path: "M36.25,54.5c3.67,2.41,7.6,6.03,10.75,10.25", start: [36.2, 54.5], end: [47.0, 64.8], direction: "top-left-to-bottom-right" },
+      { path: "M52.13,52.03c1.49,0.39,4.23,0.31,5.71,0.14c7.92-0.91,19.17-2.04,28.02-2.68c2.48-0.18,3.97-0.07,5.22,0.13", start: [52.1, 52.0], end: [91.1, 49.6], direction: "left-right" },
+      { path: "M69.31,17.87c1.23,1.23,1.81,3.13,1.81,5.13c0,14.25,0.13,62.57,0.13,63.07", start: [69.3, 17.9], end: [71.2, 86.1], direction: "top-bottom" },
+      { path: "M42.25,88.97c1.92,0.55,5.44,0.76,7.36,0.55c12.39-1.39,28.51-3.64,41.04-4.03c3.2-0.1,6.09,0.14,7.72,0.79", start: [42.2, 89.0], end: [98.4, 86.3], direction: "left-right" }
     ]
   },
   "弱": {
-    readings: { on: ["ジャク"], kun: ["よわ.い", "よわ.る", "よわ.まる"] },
+    readings: { on: ["ジャク"], kun: ["よわ.い"] },
     strokes: [
-      { path: "M 12,12 L 12,85 C 12,92 10,95 8,97", start: [12, 12], end: [8, 97], direction: "complex" },
-      { path: "M 12,12 L 48,12", start: [12, 12], end: [48, 12], direction: "left-right" },
-      { path: "M 30,22 C 30,22 30,45 28,55", start: [30, 22], end: [28, 55], direction: "top-bottom" },
-      { path: "M 25,65 L 42,55", start: [25, 65], end: [42, 55], direction: "complex" },
-      { path: "M 40,70 L 45,82", start: [40, 70], end: [45, 82], direction: "top-left-to-bottom-right" },
-      { path: "M 58,12 L 58,85 C 58,92 56,95 52,97", start: [58, 12], end: [52, 97], direction: "complex" },
-      { path: "M 58,12 L 95,12", start: [58, 12], end: [95, 12], direction: "left-right" },
-      { path: "M 75,22 C 75,22 75,45 72,55", start: [75, 22], end: [72, 55], direction: "top-bottom" },
-      { path: "M 70,65 L 88,55", start: [70, 65], end: [88, 55], direction: "complex" },
-      { path: "M 85,70 L 90,82", start: [85, 70], end: [90, 82], direction: "top-left-to-bottom-right" }
+      { path: "M21.07,18.41c1.68,0.59,3.68,0.7,4.79,0.45c1.11-0.24,15.18-2.95,17.47-3.37c2.67-0.49,4.33,1.24,3.66,3.18c-0.47,1.36-2.43,8.74-2.9,12.34", start: [21.1, 18.4], end: [44.1, 31.0], direction: "top-left-to-bottom-right" },
+      { path: "M21.75,34c0.33,0.33,2.49,0.88,3.75,0.77c4.5-0.4,14.65-2.02,15.89-2.02c1.56,0,3.11-0.5,4.36-0.5", start: [21.8, 34.0], end: [45.8, 32.2], direction: "left-right" },
+      { path: "M23.31,35.12c0.66,0.97,0.81,2.1,0.38,3.63c-0.49,1.76-5.26,9.59-5.93,10.32c-2.01,2.19-0.2,3.41,1.77,2.91c4.72-1.22,19.1-4.23,22.7-4.58c4.02-0.39,4.87,2.82,3.92,6.1c-4.41,15.26-8.81,29.41-15.53,40.08c-2.63,4.17-4.38,2.17-6.22-2.03", start: [23.3, 35.1], end: [24.4, 91.6], direction: "top-bottom" },
+      { path: "M19,60c3.14,0.88,8.11,3.62,8.89,4.99", start: [19.0, 60.0], end: [27.9, 65.0], direction: "top-left-to-bottom-right" },
+      { path: "M12.75,80.61c1.63,0.98,3.73,0.8,4.9,0c3.87-2.66,5.78-4.43,12.35-8.49", start: [12.8, 80.6], end: [30.0, 72.1], direction: "top-left-to-bottom-right" },
+      { path: "M63.32,17.66c1.43,0.59,3.68,0.7,4.79,0.45c1.11-0.24,16.44-2.65,18.72-3.12c2.42-0.49,4.33,1.24,3.66,3.18c-0.44,1.3-2.75,8.14-3.81,11.05", start: [63.3, 17.7], end: [86.7, 29.2], direction: "top-left-to-bottom-right" },
+      { path: "M60.75,33c1.25,0.62,2.35,0.36,3.75,0.17c6.62-0.92,17-2.42,19.39-2.67c1.55-0.16,3.11-0.25,4.36-0.25", start: [60.8, 33.0], end: [88.2, 30.2], direction: "left-right" },
+      { path: "M62.31,33.37c0.79,0.79,1.06,1.85,0.63,3.38c-0.49,1.76-3.01,9.34-3.68,10.07c-2.01,2.19-0.2,3.41,1.77,2.91c4.72-1.22,23.17-4.3,26.7-5.08c6.27-1.39,6.17,3.27,5.42,6.6C89.75,66.5,86,82,79.13,94.83c-2.33,4.35-4.38,2.17-6.22-2.03", start: [62.3, 33.4], end: [72.9, 92.8], direction: "top-bottom" },
+      { path: "M59.74,57.75c3.05,1.13,7.89,5.23,8.65,6.99", start: [59.7, 57.8], end: [68.4, 64.7], direction: "top-left-to-bottom-right" },
+      { path: "M56,80.92c1.89,1.28,4.3,1,5.68,0c3.85-2.8,6.7-5.77,14.32-11.04", start: [56.0, 80.9], end: [76.0, 69.9], direction: "top-left-to-bottom-right" }
     ]
   },
   "首": {
     readings: { on: ["シュ"], kun: ["くび"] },
     strokes: [
-      { path: "M 30,8 L 48,8", start: [30, 8], end: [48, 8], direction: "left-right" },
-      { path: "M 60,8 L 78,8", start: [60, 8], end: [78, 8], direction: "left-right" },
-      { path: "M 54,8 L 54,25", start: [54, 8], end: [54, 25], direction: "top-bottom" },
-      { path: "M 22,32 L 85,32", start: [22, 32], end: [85, 32], direction: "left-right" },
-      { path: "M 22,32 L 22,92", start: [22, 32], end: [22, 92], direction: "top-bottom" },
-      { path: "M 85,32 L 85,92", start: [85, 32], end: [85, 92], direction: "top-bottom" },
-      { path: "M 35,55 L 72,55", start: [35, 55], end: [72, 55], direction: "left-right" },
-      { path: "M 35,72 L 72,72", start: [35, 72], end: [72, 72], direction: "left-right" },
-      { path: "M 22,92 L 85,92", start: [22, 92], end: [85, 92], direction: "left-right" }
+      { path: "M35.25,17.5c2.93,1.85,7.58,7.59,8.31,10.47", start: [35.2, 17.5], end: [43.6, 28.0], direction: "top-left-to-bottom-right" },
+      { path: "M69.97,13.68c0.53,0.82,0.4,2.07-0.14,3.35c-1.42,3.32-4.2,8.22-7.83,12.22", start: [70.0, 13.7], end: [62.0, 29.2], direction: "top-right-to-bottom-left" },
+      { path: "M15.63,36.23c2.06,0.54,5,0.65,7.88,0.29c19.56-2.42,45.12-5.14,62.68-6.23c3.42-0.21,5.48,0.01,7.19,0.28", start: [15.6, 36.2], end: [93.4, 30.6], direction: "left-right" },
+      { path: "M52.77,35.67c0.23,0.83,0.12,2.01-0.05,2.45c-1.22,3.12-2.97,7.1-6.42,10.77", start: [52.8, 35.7], end: [46.3, 48.9], direction: "top-right-to-bottom-left" },
+      { path: "M35.56,49.74c0.85,0.85,1.23,2.02,1.23,3.38c0,1.11-0.03,27.21-0.04,37.26c0,2.25,0,3.69,0,3.88", start: [35.6, 49.7], end: [36.8, 94.3], direction: "top-bottom" },
+      { path: "M37.77,51.46c8.43-1.02,29.5-3.93,32.01-4.09c2.59-0.17,4.41,1.13,4.41,3.45c0,1.62-0.51,22.71-0.5,37.61c0,1.53,0.05,3.07,0.05,4.72", start: [37.8, 51.5], end: [73.7, 93.2], direction: "top-left-to-bottom-right" },
+      { path: "M37.99,64.27c7.76-0.64,27.51-2.64,34.59-2.9", start: [38.0, 64.3], end: [72.6, 61.4], direction: "left-right" },
+      { path: "M38.27,77.93c10.11-1.05,24.61-2.8,34.16-3.28", start: [38.3, 77.9], end: [72.4, 74.7], direction: "left-right" },
+      { path: "M38.34,91.88c8.28-0.5,25.03-2,33.85-2.52", start: [38.3, 91.9], end: [72.2, 89.4], direction: "left-right" }
     ]
   },
   "秋": {
     readings: { on: ["シュウ"], kun: ["あき"] },
     strokes: [
-      { path: "M 15,15 L 50,15", start: [15, 15], end: [50, 15], direction: "left-right" },
-      { path: "M 30,15 L 30,48", start: [30, 15], end: [30, 48], direction: "top-bottom" },
-      { path: "M 15,48 L 50,48", start: [15, 48], end: [50, 48], direction: "left-right" },
-      { path: "M 30,48 L 30,70", start: [30, 48], end: [30, 70], direction: "top-bottom" },
-      { path: "M 30,70 L 12,95", start: [30, 70], end: [12, 95], direction: "top-right-to-bottom-left" },
-      { path: "M 30,70 C 35,82 42,92 50,97", start: [30, 70], end: [50, 97], direction: "top-left-to-bottom-right" },
-      { path: "M 68,15 L 68,50", start: [68, 15], end: [68, 50], direction: "top-bottom" },
-      { path: "M 62,30 L 95,18", start: [62, 30], end: [95, 18], direction: "complex" },
-      { path: "M 68,50 C 65,70 58,85 52,97", start: [68, 50], end: [52, 97], direction: "curve-left" }
+      { path: "M39.62,15.38c-0.12,1.25-0.96,2.35-1.7,2.99c-5.2,4.45-12.22,8.98-23.42,13.39", start: [39.6, 15.4], end: [14.5, 31.8], direction: "top-right-to-bottom-left" },
+      { path: "M8.74,43.6c0.75,0.21,2.75,0.47,4.74,0.37c7.21-0.34,16.66-1.97,27.75-3.64c1.97-0.3,3-0.46,4.24-0.25", start: [8.7, 43.6], end: [45.5, 40.1], direction: "left-right" },
+      { path: "M29.08,28.16c1.01,1.01,1.42,2.59,1.42,4.09c0,6.99-0.05,40.67-0.05,55.5c0,2.25-0.03,4.04-0.04,5", start: [29.1, 28.2], end: [30.4, 92.8], direction: "top-bottom" },
+      { path: "M29.43,42.97c0,1.53-0.82,3.59-1.12,4.4c-3.6,9.6-8.94,20.27-16.31,27.88", start: [29.4, 43.0], end: [12.0, 75.2], direction: "top-right-to-bottom-left" },
+      { path: "M34,52c3.3,1.92,6.1,5.77,7.88,8.25", start: [34.0, 52.0], end: [41.9, 60.2], direction: "top-left-to-bottom-right" },
+      { path: "M51,41c1.92,2.82,4.72,10.81,5.25,13.62", start: [51.0, 41.0], end: [56.2, 54.6], direction: "top-bottom" },
+      { path: "M87,35.75c0.25,1.38-0.09,2.6-0.94,4.18c-1.52,2.81-5.43,9.2-9.56,13.07", start: [87.0, 35.8], end: [76.5, 53.0], direction: "top-right-to-bottom-left" },
+      { path: "M66.46,16.75c1.17,1.12,1.83,2.7,1.86,3.92C69.38,59.88,62,78.5,41.75,91.5", start: [66.5, 16.8], end: [41.8, 91.5], direction: "top-bottom" },
+      { path: "M67.32,55.54c6.72,12.87,16.04,24.3,22.59,30.72c1.95,1.91,3.71,3.68,6.34,4.48", start: [67.3, 55.5], end: [96.2, 90.7], direction: "top-left-to-bottom-right" }
     ]
   },
   "週": {
     readings: { on: ["シュウ"], kun: [] },
     strokes: [
-      { path: "M 28,12 L 28,40", start: [28, 12], end: [28, 40], direction: "top-bottom" },
-      { path: "M 28,12 L 88,12", start: [28, 12], end: [88, 12], direction: "left-right" },
-      { path: "M 58,12 L 58,40", start: [58, 12], end: [58, 40], direction: "top-bottom" },
-      { path: "M 88,12 L 88,40", start: [88, 12], end: [88, 40], direction: "top-bottom" },
-      { path: "M 28,40 L 88,40", start: [28, 40], end: [88, 40], direction: "left-right" },
-      { path: "M 35,50 L 80,50", start: [35, 50], end: [80, 50], direction: "left-right" },
-      { path: "M 58,50 L 58,72", start: [58, 50], end: [58, 72], direction: "top-bottom" },
-      { path: "M 35,72 L 80,72", start: [35, 72], end: [80, 72], direction: "left-right" },
-      { path: "M 12,20 L 12,78", start: [12, 20], end: [12, 78], direction: "top-bottom" },
-      { path: "M 12,78 C 20,85 35,90 55,92 C 75,94 90,90 100,85", start: [12, 78], end: [100, 85], direction: "complex" },
-      { path: "M 12,20 L 22,28", start: [12, 20], end: [22, 28], direction: "top-left-to-bottom-right" }
+      { path: "M45.93,17.66c1.02,1.02,1.67,2.55,1.67,4.3c0,21.04,2.53,45.54-8.1,58.79", start: [45.9, 17.7], end: [39.5, 80.8], direction: "top-bottom" },
+      { path: "M48.49,18.95c9.79-1.25,32.29-4.39,33.41-4.45c4.34-0.24,5.42,1.26,5.42,5.64c0,1.93,0.17,52.16,0.17,56.6c0,9.53-5.28,4.86-8.4,1.69", start: [48.5, 18.9], end: [79.1, 78.4], direction: "top-left-to-bottom-right" },
+      { path: "M55.43,31.42c0.83,0.25,2.88,0.54,3.72,0.51c4.54-0.18,13.51-1.92,16.84-2.23c1.39-0.13,2.22-0.07,2.91,0.03", start: [55.4, 31.4], end: [78.9, 29.7], direction: "left-right" },
+      { path: "M65.84,22.3c0.99,0.99,1.51,2.32,1.51,3.39c0,3.19-0.07,10.44-0.07,16.81", start: [65.8, 22.3], end: [67.3, 42.5], direction: "top-bottom" },
+      { path: "M53.61,44.53c1,0.35,2.64,0.41,4.31,0.23C65,44,70.38,43.38,77.01,42.4c1.84-0.27,3.25-0.4,4.81-0.26", start: [53.6, 44.5], end: [81.8, 42.1], direction: "left-right" },
+      { path: "M56.17,53.75c1.08,0.75,1.6,2.01,1.71,2.97c0.5,4.53,1.05,6.63,1.48,10.27c0.17,1.46,0.3,2.58,0.34,2.94", start: [56.2, 53.8], end: [59.7, 69.9], direction: "top-bottom" },
+      { path: "M58.6,55.4c5.86-1.39,13.69-2.83,16.29-3.02c1.73-0.13,2.48,1,2.28,2.58c-0.38,2.92-1.34,5.94-2.12,9.61", start: [58.6, 55.4], end: [75.0, 64.6], direction: "top-left-to-bottom-right" },
+      { path: "M60.65,67.64c2.32-0.44,8.3-1.1,13.1-1.63c1.43-0.16,2.69-0.28,3.61-0.34", start: [60.6, 67.6], end: [77.4, 65.7], direction: "left-right" },
+      { path: "M20.71,19c3.1,1.41,8.02,5.8,8.79,8", start: [20.7, 19.0], end: [29.5, 27.0], direction: "top-left-to-bottom-right" },
+      { path: "M13.25,54.95c2.25,0.92,4.29,0.84,5.25,0.48c2.5-0.93,8.31-4.06,9.75-4.68c2.88-1.24,4.14,0.9,1.5,3.78c-6.38,6.98-6,8.23-0.75,14.1c1.83,2.04,2.03,3.44-1.5,6.12c-5.25,4-7.5,5.75-10.75,8.5", start: [13.2, 55.0], end: [16.8, 83.2], direction: "top-bottom" },
+      { path: "M13.75,85.75c4.12-0.88,10.41-0.97,15-0.5c7.25,0.75,29.97,5.13,34.5,6c13,2.5,21.25,4.5,30.25,2.75", start: [13.8, 85.8], end: [93.5, 94.0], direction: "left-right" }
     ]
   },
   "春": {
     readings: { on: ["シュン"], kun: ["はる"] },
     strokes: [
-      { path: "M 20,12 L 88,12", start: [20, 12], end: [88, 12], direction: "left-right" },
-      { path: "M 54,12 L 54,30", start: [54, 12], end: [54, 30], direction: "top-bottom" },
-      { path: "M 20,30 L 88,30", start: [20, 30], end: [88, 30], direction: "left-right" },
-      { path: "M 28,42 L 80,42", start: [28, 42], end: [80, 42], direction: "left-right" },
-      { path: "M 54,42 L 22,60", start: [54, 42], end: [22, 60], direction: "top-right-to-bottom-left" },
-      { path: "M 54,42 L 88,60", start: [54, 42], end: [88, 60], direction: "top-left-to-bottom-right" },
-      { path: "M 15,68 L 95,68", start: [15, 68], end: [95, 68], direction: "left-right" },
-      { path: "M 54,68 C 50,78 42,88 30,95", start: [54, 68], end: [30, 95], direction: "curve-left" },
-      { path: "M 54,68 C 60,78 70,88 82,95", start: [54, 68], end: [82, 95], direction: "curve-right" }
+      { path: "M28.31,25.18c1.46,0.37,4.15,0.5,5.61,0.37c12.83-1.18,22.33-2.3,36.29-3.51c2.43-0.21,4.29-0.04,6.12,0.36", start: [28.3, 25.2], end: [76.3, 22.4], direction: "left-right" },
+      { path: "M28.5,38.67c1.54,0.38,4.11,0.3,5.65,0.13c11.6-1.3,22.23-2.92,35.13-4.38c2.7-0.31,4.72-0.16,5.88,0.12", start: [28.5, 38.7], end: [75.2, 34.5], direction: "left-right" },
+      { path: "M15.38,53.48c3.09,1.06,6.46,0.72,9.62,0.27c20.13-2.87,36.38-5.75,54.15-7.79c3.03-0.35,5.97-0.37,8.98,0.11", start: [15.4, 53.5], end: [88.1, 46.1], direction: "left-right" },
+      { path: "M52.75,11.25c1,1.5,1.02,3.53,0.54,5.9C50.12,32.62,39.5,68,12.5,80.75", start: [52.8, 11.2], end: [12.5, 80.8], direction: "top-right-to-bottom-left" },
+      { path: "M53.25,41.25c2.29,0.15,29.6,28.08,35.99,32.9c2.21,1.67,5.05,2.38,7.26,2.85", start: [53.2, 41.2], end: [96.5, 77.0], direction: "top-left-to-bottom-right" },
+      { path: "M37.77,64.94c0.83,0.83,1.28,1.93,1.28,2.97c0,0.87-0.18,22.16-0.24,29.84c-0.01,1.59-0.02,2.59-0.02,2.68", start: [37.8, 64.9], end: [38.8, 100.4], direction: "top-bottom" },
+      { path: "M39.76,67.17c6.94-0.86,24.26-3.55,25.85-3.68c1.67-0.13,3.11,1.38,3.11,2.72c0,1.26-0.16,20.65-0.24,29.04c-0.02,2.16-0.03,3.57-0.03,3.73", start: [39.8, 67.2], end: [68.5, 99.0], direction: "top-left-to-bottom-right" },
+      { path: "M40.08,80.98c4.54-0.35,23.04-1.98,27.22-2.31", start: [40.1, 81.0], end: [67.3, 78.7], direction: "left-right" },
+      { path: "M40.08,96.98c4.29-0.23,22.79-1.73,27.47-1.81", start: [40.1, 97.0], end: [67.5, 95.2], direction: "left-right" }
     ]
   },
   "書": {
     readings: { on: ["ショ"], kun: ["か.く"] },
     strokes: [
-      { path: "M 25,10 L 82,10", start: [25, 10], end: [82, 10], direction: "left-right" },
-      { path: "M 54,10 L 54,30", start: [54, 10], end: [54, 30], direction: "top-bottom" },
-      { path: "M 15,30 L 95,30", start: [15, 30], end: [95, 30], direction: "left-right" },
-      { path: "M 35,42 L 72,42", start: [35, 42], end: [72, 42], direction: "left-right" },
-      { path: "M 22,55 L 85,55", start: [22, 55], end: [85, 55], direction: "left-right" },
-      { path: "M 22,55 L 22,92", start: [22, 55], end: [22, 92], direction: "top-bottom" },
-      { path: "M 85,55 L 85,92", start: [85, 55], end: [85, 92], direction: "top-bottom" },
-      { path: "M 35,70 L 72,70", start: [35, 70], end: [72, 70], direction: "left-right" },
-      { path: "M 54,55 L 54,92", start: [54, 55], end: [54, 92], direction: "top-bottom" },
-      { path: "M 22,92 L 85,92", start: [22, 92], end: [85, 92], direction: "left-right" }
+      { path: "M30.74,20.63c2.01,0.49,3.84,0.58,5.91,0.39c9.45-0.89,28.54-2.97,37.54-3.64c2.92-0.22,4.18,1.24,3.66,3.55c-0.4,1.76-2.56,9.62-3.88,16.56", start: [30.7, 20.6], end: [74.0, 37.5], direction: "left-right" },
+      { path: "M11.89,32.34c3.17,0.66,5.87,0.47,9.58,0.19c20.16-1.52,48.41-3.9,67.91-4.64c4.08-0.16,7.07,0.26,8.91,0.59", start: [11.9, 32.3], end: [98.3, 28.5], direction: "left-right" },
+      { path: "M29.86,41.38c1.64,0.49,3.39,0.52,4.84,0.44c9.67-0.57,27.55-2.07,37.43-2.85c1.93-0.15,3.14-0.08,4.59,0.07", start: [29.9, 41.4], end: [76.7, 39.0], direction: "left-right" },
+      { path: "M30.04,52.06c1.47,0.26,3.65,0.54,5.12,0.43c12.34-0.98,25.59-2.23,36.78-3.31c2.43-0.23,4.41-0.19,5.63-0.07", start: [30.0, 52.1], end: [77.6, 49.1], direction: "left-right" },
+      { path: "M17,63.44c2,0.58,5.67,0.57,7.66,0.41c20.78-1.7,42.92-3.93,61.09-4.48c3.33-0.1,5.33,0.15,6.99,0.42", start: [17.0, 63.4], end: [92.7, 59.8], direction: "left-right" },
+      { path: "M52.69,9.52c1.33,1.33,1.95,2.98,1.95,4.71c0,5.67,0.22,33.72,0.31,45.77", start: [52.7, 9.5], end: [55.0, 60.0], direction: "top-bottom" },
+      { path: "M31.25,71.75c0.43,0.46,1.24,1.44,1.43,2.7c1.11,7.42,2.22,14.33,3.18,20.74c0.18,1.2,0.34,2.38,0.49,3.57", start: [31.2, 71.8], end: [36.4, 98.8], direction: "top-bottom" },
+      { path: "M33.75,73.75c14.98-2.05,36.1-3.71,44.41-4.26c3.33-0.22,5.09,1.76,4.6,4.33c-0.99,5.22-2.01,11.55-3.81,19.41c-0.3,1.31-0.74,2.55-1.15,3.72", start: [33.8, 73.8], end: [77.8, 96.9], direction: "top-left-to-bottom-right" },
+      { path: "M35.5,83.75C46.79,83.03,65.75,81.5,80.25,81", start: [35.5, 83.8], end: [80.2, 81.0], direction: "left-right" },
+      { path: "M37.25,95.25c10.7-0.68,26.5-1.38,40.5-2", start: [37.2, 95.2], end: [77.8, 93.2], direction: "left-right" }
     ]
   },
   "少": {
     readings: { on: ["ショウ"], kun: ["すく.ない", "すこ.し"] },
     strokes: [
-      { path: "M 54,10 L 54,65", start: [54, 10], end: [54, 65], direction: "top-bottom" },
-      { path: "M 30,35 C 28,50 22,65 15,78", start: [30, 35], end: [15, 78], direction: "curve-left" },
-      { path: "M 60,35 C 68,50 80,65 92,78", start: [60, 35], end: [92, 78], direction: "curve-right" },
-      { path: "M 54,65 C 48,78 38,88 25,95", start: [54, 65], end: [25, 95], direction: "curve-left" }
+      { path: "M53.46,14c0.9,0.9,1.76,2.23,1.76,4.33c0,12.04-0.01,37.2-0.01,40.65c0,9.77-6.71,2.04-8.21,1.17", start: [53.5, 14.0], end: [47.0, 60.1], direction: "top-bottom" },
+      { path: "M36.65,29.04c0.12,1.26-0.02,2.17-0.58,3.32c-2.85,5.83-11.53,15.7-18.65,20.56", start: [36.6, 29.0], end: [17.4, 52.9], direction: "top-right-to-bottom-left" },
+      { path: "M77,30c7.23,2.73,16.13,9.04,19.25,14.5", start: [77.0, 30.0], end: [96.2, 44.5], direction: "top-left-to-bottom-right" },
+      { path: "M76.75,41c0.14,1.34,0.06,3.54-0.79,5.39C68.67,62.17,49.7,86.63,24,98", start: [76.8, 41.0], end: [24.0, 98.0], direction: "top-right-to-bottom-left" }
     ]
   },
   "場": {
     readings: { on: ["ジョウ"], kun: ["ば"] },
     strokes: [
-      { path: "M 10,15 L 10,92", start: [10, 15], end: [10, 92], direction: "top-bottom" },
-      { path: "M 10,15 L 22,22", start: [10, 15], end: [22, 22], direction: "top-left-to-bottom-right" },
-      { path: "M 10,50 L 22,50", start: [10, 50], end: [22, 50], direction: "left-right" },
-      { path: "M 38,10 L 95,10", start: [38, 10], end: [95, 10], direction: "left-right" },
-      { path: "M 38,10 L 38,38", start: [38, 10], end: [38, 38], direction: "top-bottom" },
-      { path: "M 95,10 L 95,38", start: [95, 10], end: [95, 38], direction: "top-bottom" },
-      { path: "M 55,10 L 55,38", start: [55, 10], end: [55, 38], direction: "top-bottom" },
-      { path: "M 75,10 L 75,38", start: [75, 10], end: [75, 38], direction: "top-bottom" },
-      { path: "M 38,38 L 95,38", start: [38, 38], end: [95, 38], direction: "left-right" },
-      { path: "M 42,55 L 90,55", start: [42, 55], end: [90, 55], direction: "left-right" },
-      { path: "M 65,55 L 65,80", start: [65, 55], end: [65, 80], direction: "top-bottom" },
-      { path: "M 42,80 L 95,80", start: [42, 80], end: [95, 80], direction: "left-right" }
+      { path: "M14.75,41.17c1.33,0.52,2.75,0.44,4.13,0.29c5.78-0.62,11.92-2.14,17.63-3.21c1.58-0.3,3.33-0.32,4.14-0.13", start: [14.8, 41.2], end: [40.6, 38.1], direction: "left-right" },
+      { path: "M27.8,19.37c1.17,1.17,1.52,2.52,1.52,4.39c0,9.54-0.07,36.54-0.07,38.25", start: [27.8, 19.4], end: [29.2, 62.0], direction: "top-bottom" },
+      { path: "M13.5,68.6c1.75,1.4,3.14,1.36,5.67-0.05c1.49-0.84,15-7.27,21.33-11.29", start: [13.5, 68.6], end: [40.5, 57.3], direction: "top-left-to-bottom-right" },
+      { path: "M51,13.5c0.88,0.88,1.37,1.62,1.59,3.24c0.72,5.29,1.08,10.35,2.23,19.5c0.13,1,0.26,2.05,0.41,3.15", start: [51.0, 13.5], end: [55.2, 39.4], direction: "top-bottom" },
+      { path: "M53.53,14.93c6.23-0.83,18.68-2.8,24.51-3.17c2.22-0.14,4.34,1.33,4.17,3.24c-0.7,7.75-1.17,13.66-2.02,18.83c-0.13,0.83-0.54,1.9-0.54,2.47", start: [53.5, 14.9], end: [79.7, 36.3], direction: "top-left-to-bottom-right" },
+      { path: "M54.82,25.72c6.06-0.84,20.06-2.22,25.38-2.46", start: [54.8, 25.7], end: [80.2, 23.3], direction: "left-right" },
+      { path: "M56.17,36.55c4.1-0.55,17.42-1.97,22.53-2.45", start: [56.2, 36.5], end: [78.7, 34.1], direction: "left-right" },
+      { path: "M43.6,47.75c1.8,0.39,4.56,0.59,6.35,0.39C63,46.62,74,45,89.12,44.02c3-0.19,5.26,0.12,6.76,0.32", start: [43.6, 47.8], end: [95.9, 44.3], direction: "left-right" },
+      { path: "M55,50.38c0.11,1.15-0.23,2.25-0.86,3.26c-3.05,4.94-8.3,10.43-15.39,14.86", start: [55.0, 50.4], end: [38.8, 68.5], direction: "top-right-to-bottom-left" },
+      { path: "M54.87,58.05c2.13,0.33,3.68,0.08,5.42-0.04c6.96-0.5,23.33-3.25,27.59-3.74c3.27-0.37,4.98,1.05,4.45,4.29C91,66.75,86.15,83.96,78.92,92.78c-2.17,2.65-3.4-0.44-5.34-2.37", start: [54.9, 58.0], end: [73.6, 90.4], direction: "top-left-to-bottom-right" },
+      { path: "M61.75,61.12c0.12,1-0.08,1.67-0.51,2.56c-2.74,5.66-9.28,13.58-18.49,18.06", start: [61.8, 61.1], end: [42.8, 81.7], direction: "top-right-to-bottom-left" },
+      { path: "M75.88,59.39c0.1,0.92-0.04,2.36-0.45,3.67C73.04,70.8,63.03,85.12,50,93.5", start: [75.9, 59.4], end: [50.0, 93.5], direction: "top-right-to-bottom-left" }
     ]
   },
-"色": {
+  "色": {
     readings: { on: ["ショク", "シキ"], kun: ["いろ"] },
     strokes: [
-      { path: "M 35,12 C 35,12 45,18 30,30", start: [35, 12], end: [30, 30], direction: "top-right-to-bottom-left" },
-      { path: "M 50,12 L 68,12 C 68,12 68,28 60,35", start: [50, 12], end: [60, 35], direction: "complex" },
-      { path: "M 18,42 L 92,42", start: [18, 42], end: [92, 42], direction: "left-right" },
-      { path: "M 30,42 L 30,72 C 30,85 25,92 18,97", start: [30, 42], end: [18, 97], direction: "complex" },
-      { path: "M 42,55 C 42,55 60,52 70,60 C 70,60 75,68 55,75", start: [42, 55], end: [55, 75], direction: "curve-right" },
-      { path: "M 55,75 C 55,80 65,88 80,82 C 88,78 90,68 82,58", start: [55, 75], end: [82, 58], direction: "complex" }
+      { path: "M45.25,13.25c0.17,1.43-0.1,2.57-0.83,3.84c-3.13,5.47-13.88,15.19-21.17,20.16", start: [45.2, 13.2], end: [23.2, 37.2], direction: "top-right-to-bottom-left" },
+      { path: "M45,18.63c1,0.37,2.33,0.44,4.03,0.25c5.6-0.63,11.85-1.63,15.41-1.89c2.57-0.19,3.31,1.14,1.81,2.76C61.69,24.69,55.75,32.25,51,39", start: [45.0, 18.6], end: [51.0, 39.0], direction: "top-bottom" },
+      { path: "M26.86,42.28c1.64,1.35,5.23,0.67,6.68,0.46c14.93-2.18,31.33-4.39,39.68-5.21c2.79-0.27,3.92,1.73,3.69,3.81c-0.4,3.68-1.02,8.04-1.65,13.54c-0.12,1.09-0.38,2.12-0.38,3.5", start: [26.9, 42.3], end: [74.9, 58.4], direction: "left-right" },
+      { path: "M50.66,42.39c0.91,0.91,1.62,2.37,1.45,3.91c-0.6,5.45-0.85,7.45-1.1,11.7", start: [50.7, 42.4], end: [51.0, 58.0], direction: "top-bottom" },
+      { path: "M30.1,61.37c4.1-0.3,32.05-3.82,43.4-5.11", start: [30.1, 61.4], end: [73.5, 56.3], direction: "left-right" },
+      { path: "M28.11,43.28c0.64,0.72,0.97,1.42,0.97,2.95c0,9.03-0.08,27.91-0.08,33.28c0,14.5,3.25,15.87,29.84,15.87c29.16,0,30.18-2.62,30.18-13.12", start: [28.1, 43.3], end: [89.0, 82.3], direction: "top-left-to-bottom-right" }
     ]
   },
   "食": {
-    readings: { on: ["ショク", "ジキ"], kun: ["た.べる", "く.う"] },
+    readings: { on: ["ショク"], kun: ["た.べる", "く.う"] },
     strokes: [
-      { path: "M 52,8 L 20,35", start: [52, 8], end: [20, 35], direction: "top-right-to-bottom-left" },
-      { path: "M 52,8 L 85,35", start: [52, 8], end: [85, 35], direction: "top-left-to-bottom-right" },
-      { path: "M 18,42 L 90,42", start: [18, 42], end: [90, 42], direction: "left-right" },
-      { path: "M 30,42 L 30,92 C 30,97 28,98 25,98", start: [30, 42], end: [25, 98], direction: "complex" },
-      { path: "M 35,55 L 78,55", start: [35, 55], end: [78, 55], direction: "left-right" },
-      { path: "M 35,68 L 78,68", start: [35, 68], end: [78, 68], direction: "left-right" },
-      { path: "M 35,80 L 78,80", start: [35, 80], end: [78, 80], direction: "left-right" },
-      { path: "M 78,42 L 78,80", start: [78, 42], end: [78, 80], direction: "top-bottom" },
-      { path: "M 78,80 C 78,90 72,98 60,98", start: [78, 80], end: [60, 98], direction: "curve-left" }
+      { path: "M52.75,10.5c0.11,0.98-0.19,2.67-0.97,3.93C45,25.34,31.75,41.19,14,51.5", start: [52.8, 10.5], end: [14.0, 51.5], direction: "top-right-to-bottom-left" },
+      { path: "M52.75,16.25c5.09,4.8,25.71,19.61,33.7,24.9c2.68,1.78,5.37,2.79,8.55,3.35", start: [52.8, 16.2], end: [95.0, 44.5], direction: "top-left-to-bottom-right" },
+      { path: "M52.25,29.25c1,1,1.5,2.25,1.5,3.5c0,2,0,3,0,5.5", start: [52.2, 29.2], end: [53.8, 38.2], direction: "top-bottom" },
+      { path: "M38,40c0.83,0.47,2.19,1,3.86,0.83c9.39-0.96,21.95-2.76,23.25-2.84c1.67-0.1,3.14,0.88,3.11,2.53C68.2,41.8,67,53.25,66.34,62.4c-0.07,0.94-0.13,1.36-0.13,1.99", start: [38.0, 40.0], end: [66.2, 64.4], direction: "top-left-to-bottom-right" },
+      { path: "M40.83,51.73C47.25,51.25,59.5,50,66,49.75", start: [40.8, 51.7], end: [66.0, 49.8], direction: "left-right" },
+      { path: "M40.69,63.9c7.04-0.52,16.55-1.62,24.6-2.04", start: [40.7, 63.9], end: [65.3, 61.9], direction: "left-right" },
+      { path: "M38.25,40.25c1.12,1.12,1.5,2.62,1.5,4c0,9.12,0,43.62,0,47.25c0,4,1,4.88,4.12,2.88c2.93-1.87,6.75-5.25,10.88-8.38", start: [38.2, 40.2], end: [54.8, 86.0], direction: "top-bottom" },
+      { path: "M74,64c0.25,1.25,0.09,2.57-0.75,3.5c-3.5,3.88-4.5,4.88-7.25,7.5", start: [74.0, 64.0], end: [66.0, 75.0], direction: "top-right-to-bottom-left" },
+      { path: "M51.5,71C55.75,71,77,90,81,92.75c2.49,1.71,4.62,2.62,7.5,3.5", start: [51.5, 71.0], end: [88.5, 96.2], direction: "top-left-to-bottom-right" }
     ]
   },
   "心": {
     readings: { on: ["シン"], kun: ["こころ"] },
     strokes: [
-      { path: "M 18,65 C 18,65 20,80 28,80 C 32,80 32,72 30,68", start: [18, 65], end: [30, 68], direction: "curve-right" },
-      { path: "M 42,30 C 42,30 40,60 38,75 C 38,82 42,88 48,80", start: [42, 30], end: [48, 80], direction: "complex" },
-      { path: "M 68,45 L 70,58", start: [68, 45], end: [70, 58], direction: "top-bottom" },
-      { path: "M 82,22 C 82,22 88,50 90,65 C 90,72 85,78 78,72", start: [82, 22], end: [78, 72], direction: "complex" }
+      { path: "M16.88,52.75c0,6.32-1.46,17.69-3.75,23", start: [16.9, 52.8], end: [13.1, 75.8], direction: "top-bottom" },
+      { path: "M31.25,49.25c9,22.75,27,35.5,53.25,32.25c7.75-0.96,7.25-4.75,3-9.5", start: [31.2, 49.2], end: [87.5, 72.0], direction: "left-right" },
+      { path: "M50.25,26c2,5.12,7.5,13.75,8.75,7.75", start: [50.2, 26.0], end: [59.0, 33.8], direction: "top-left-to-bottom-right" },
+      { path: "M85.5,30c4,2.75,7.62,7,10.5,14", start: [85.5, 30.0], end: [96.0, 44.0], direction: "top-left-to-bottom-right" }
     ]
   },
   "新": {
-    readings: { on: ["シン"], kun: ["あたら.しい", "あら.た", "にい"] },
+    readings: { on: ["シン"], kun: ["あたら.しい", "あら.た"] },
     strokes: [
-      { path: "M 8,18 L 42,18", start: [8, 18], end: [42, 18], direction: "left-right" },
-      { path: "M 25,18 L 25,40", start: [25, 18], end: [25, 40], direction: "top-bottom" },
-      { path: "M 8,40 L 42,40", start: [8, 40], end: [42, 40], direction: "left-right" },
-      { path: "M 15,52 L 38,52", start: [15, 52], end: [38, 52], direction: "left-right" },
-      { path: "M 25,52 L 25,70", start: [25, 52], end: [25, 70], direction: "top-bottom" },
-      { path: "M 25,70 L 8,92", start: [25, 70], end: [8, 92], direction: "top-right-to-bottom-left" },
-      { path: "M 25,70 C 30,80 38,90 45,95", start: [25, 70], end: [45, 95], direction: "top-left-to-bottom-right" },
-      { path: "M 58,12 L 95,12", start: [58, 12], end: [95, 12], direction: "left-right" },
-      { path: "M 58,12 L 58,38", start: [58, 12], end: [58, 38], direction: "top-bottom" },
-      { path: "M 58,38 L 68,28", start: [58, 38], end: [68, 28], direction: "complex" },
-      { path: "M 72,18 L 72,55", start: [72, 18], end: [72, 55], direction: "top-bottom" },
-      { path: "M 72,55 L 55,88", start: [72, 55], end: [55, 88], direction: "top-right-to-bottom-left" },
-      { path: "M 72,55 C 78,70 88,85 98,92", start: [72, 55], end: [98, 92], direction: "top-left-to-bottom-right" }
+      { path: "M33.72,12.76c0.88,0.88,1.53,2.49,1.53,4.35c0,2.63,0.01,1.9,0.02,9.04", start: [33.7, 12.8], end: [35.3, 26.1], direction: "top-bottom" },
+      { path: "M18.32,28.69c1.19,0.11,2.61,0.17,3.79,0.03c7.4-0.84,18.02-2.59,25.62-3.22c1.98-0.16,3.19-0.03,4.18,0.02", start: [18.3, 28.7], end: [51.9, 25.5], direction: "left-right" },
+      { path: "M23.62,34.38c3.39,4.82,4.03,8.08,4.34,11.36", start: [23.6, 34.4], end: [28.0, 45.7], direction: "top-bottom" },
+      { path: "M45.59,29.5c0.62,1.09,0.38,2.59-0.08,3.75c-1.65,4.12-4.74,10.59-5.88,12.61", start: [45.6, 29.5], end: [39.6, 45.9], direction: "top-bottom" },
+      { path: "M14.17,50.95c1.78,0.27,3.57,0.27,5.34,0.05c7.96-1.02,21.06-2.74,29.12-3.36c1.96-0.15,3.91-0.03,5.87,0.11", start: [14.2, 51.0], end: [54.5, 47.8], direction: "left-right" },
+      { path: "M16.76,63.42c0.83,0.22,3.05,0.44,5.23,0.18c8.88-1.09,17.01-2.34,26.08-3.01c2.2-0.16,2.76-0.23,4.13,0", start: [16.8, 63.4], end: [52.2, 60.6], direction: "left-right" },
+      { path: "M34.38,51c1.12,1.12,1.5,2.75,1.5,4.22c0,1.31-0.15,24.25-0.25,34.78c-0.02,2.8-0.05,4.69-0.06,5", start: [34.4, 51.0], end: [35.6, 95.0], direction: "top-bottom" },
+      { path: "M34.25,62.84c0,1.41-0.35,2.47-0.87,3.37c-4.25,7.45-12.94,17.12-19.63,21.04", start: [34.2, 62.8], end: [13.8, 87.2], direction: "top-right-to-bottom-left" },
+      { path: "M39.25,68.5c4.71,2.98,7.9,5.97,9.49,8.43", start: [39.2, 68.5], end: [48.7, 76.9], direction: "top-left-to-bottom-right" },
+      { path: "M82.74,17.44c-0.12,0.93-0.46,2.3-1.27,3.21C76.25,26.5,70.5,30.62,61.69,35.7", start: [82.7, 17.4], end: [61.7, 35.7], direction: "top-right-to-bottom-left" },
+      { path: "M59.2,35.14c0.83,0.83,1.53,2.28,1.53,3.96c0,29.15-2.36,38.52-8.98,48.4", start: [59.2, 35.1], end: [51.8, 87.5], direction: "top-bottom" },
+      { path: "M62.89,47.36c1.98-0.11,3.36-0.31,4.54-0.48c7.82-1.13,18.82-2.38,26.29-3.3c1.18-0.15,3.25-0.17,3.99,0", start: [62.9, 47.4], end: [97.7, 43.6], direction: "left-right" },
+      { path: "M80.32,48.54c0.95,0.95,1.59,2.21,1.59,3.8c0,0.93,0.24,27.72,0.16,40.16c-0.02,2.33-0.04,4.17-0.06,5.25", start: [80.3, 48.5], end: [82.0, 97.8], direction: "top-bottom" }
     ]
   },
   "親": {
-    readings: { on: ["シン"], kun: ["おや", "した.しい", "した.しむ"] },
+    readings: { on: ["シン"], kun: ["おや", "した.しい"] },
     strokes: [
-      { path: "M 8,18 L 38,18", start: [8, 18], end: [38, 18], direction: "left-right" },
-      { path: "M 22,18 L 22,35", start: [22, 18], end: [22, 35], direction: "top-bottom" },
-      { path: "M 8,35 L 38,35", start: [8, 35], end: [38, 35], direction: "left-right" },
-      { path: "M 12,48 L 35,48", start: [12, 48], end: [35, 48], direction: "left-right" },
-      { path: "M 22,48 L 22,65", start: [22, 48], end: [22, 65], direction: "top-bottom" },
-      { path: "M 22,65 L 8,88", start: [22, 65], end: [8, 88], direction: "top-right-to-bottom-left" },
-      { path: "M 22,65 C 28,78 35,88 42,95", start: [22, 65], end: [42, 95], direction: "top-left-to-bottom-right" },
-      { path: "M 55,12 L 55,42", start: [55, 12], end: [55, 42], direction: "top-bottom" },
-      { path: "M 52,22 L 95,22", start: [52, 22], end: [95, 22], direction: "left-right" },
-      { path: "M 52,22 L 52,88", start: [52, 22], end: [52, 88], direction: "top-bottom" },
-      { path: "M 95,22 L 95,88", start: [95, 22], end: [95, 88], direction: "top-bottom" },
-      { path: "M 58,42 L 88,42", start: [58, 42], end: [88, 42], direction: "left-right" },
-      { path: "M 58,58 L 88,58", start: [58, 58], end: [88, 58], direction: "left-right" },
-      { path: "M 58,72 L 88,72", start: [58, 72], end: [88, 72], direction: "left-right" },
-      { path: "M 72,42 L 72,72", start: [72, 42], end: [72, 72], direction: "top-bottom" },
-      { path: "M 52,88 L 95,88", start: [52, 88], end: [95, 88], direction: "left-right" }
+      { path: "M31.18,13.51c0.97,0.97,1.62,2.28,1.62,3.71c0,1.44,0.01,4.82,0.01,8.72", start: [31.2, 13.5], end: [32.8, 25.9], direction: "top-bottom" },
+      { path: "M16.82,29.19c1.12,0.11,2.45,0.15,3.55,0.03C25.75,28.62,36,26.62,42.39,26c1.86-0.18,3.24-0.25,4.27,0.02", start: [16.8, 29.2], end: [46.7, 26.0], direction: "left-right" },
+      { path: "M21.81,33.25c2.44,3.38,4.02,7.74,4.35,10.98", start: [21.8, 33.2], end: [26.2, 44.2], direction: "top-bottom" },
+      { path: "M40.93,30.75c0.25,0.67,0.28,1.87,0.11,2.58c-0.4,3.04-2.04,7.79-2.42,9.67", start: [40.9, 30.8], end: [38.6, 43.0], direction: "top-bottom" },
+      { path: "M12.92,48.45c2.08,0.3,3.29,0.33,5.54,0.03c7.29-0.98,21.04-3.98,28.37-4.49c1.43-0.1,3.45-0.04,4.17,0.01", start: [12.9, 48.5], end: [51.0, 44.0], direction: "left-right" },
+      { path: "M13.76,62.95c0.77,0.23,2.48,0.59,4.5,0.34c7.37-0.91,18.57-3.05,26.1-4.48c2.01-0.38,3.14-0.3,4.14-0.3", start: [13.8, 63.0], end: [48.5, 58.5], direction: "left-right" },
+      { path: "M32.75,51c1,1,1.53,2.5,1.53,3.93c0,3.82,0.1,26.35-0.11,37.82c-0.04,2.16-0.08,3.83-0.12,4.75", start: [32.8, 51.0], end: [34.1, 97.5], direction: "top-bottom" },
+      { path: "M32.12,62.38c0,0.96-0.56,2.17-0.89,2.8c-4.2,8.16-12.56,17.69-19.74,22.07", start: [32.1, 62.4], end: [11.5, 87.2], direction: "top-right-to-bottom-left" },
+      { path: "M37.5,66.75c3.72,2.83,6.11,5.67,8.25,8.5", start: [37.5, 66.8], end: [45.8, 75.2], direction: "top-left-to-bottom-right" },
+      { path: "M55.94,18.69c0.75,0.75,1.34,2.08,1.34,3.48c0,1.14-0.1,27.03-0.05,37.57c0.01,2.41,0.03,3.99,0.05,4.25", start: [55.9, 18.7], end: [57.3, 64.0], direction: "top-bottom" },
+      { path: "M58.01,19.83c6.48-0.97,21.25-3.17,23.02-3.33c1.91-0.18,3.76,1.26,3.76,3.03c0,1.35-0.15,28.68-0.32,39.48c-0.04,2.5-0.07,4.11-0.07,4.31", start: [58.0, 19.8], end: [84.4, 63.3], direction: "top-left-to-bottom-right" },
+      { path: "M58.48,32.92c5.27-0.67,20.14-3.04,25.13-3.35", start: [58.5, 32.9], end: [83.6, 29.6], direction: "left-right" },
+      { path: "M58.44,47.32c7.94-0.7,17.31-2.07,24.63-2.6", start: [58.4, 47.3], end: [83.1, 44.7], direction: "left-right" },
+      { path: "M58.59,61.44c6.04-0.44,17.54-1.81,24.63-2.1", start: [58.6, 61.4], end: [83.2, 59.3], direction: "left-right" },
+      { path: "M64,64.5c0.05,0.75,0.12,1.95-0.11,3.03C62.53,73.91,55.5,87.5,44,96.5", start: [64.0, 64.5], end: [44.0, 96.5], direction: "top-right-to-bottom-left" },
+      { path: "M73.36,62.72c0.71,0.71,1.27,1.9,1.3,3.61c0.07,4.77-0.06,12.48-0.06,17.94c0,9.49,1.65,10.87,10.65,10.87c9.75,0,11-0.87,11-8.47", start: [73.4, 62.7], end: [96.2, 86.7], direction: "top-left-to-bottom-right" }
     ]
   },
   "図": {
     readings: { on: ["ズ", "ト"], kun: ["はか.る"] },
     strokes: [
-      { path: "M 12,12 L 97,12", start: [12, 12], end: [97, 12], direction: "left-right" },
-      { path: "M 12,12 L 12,97", start: [12, 12], end: [12, 97], direction: "top-bottom" },
-      { path: "M 97,12 L 97,97", start: [97, 12], end: [97, 97], direction: "top-bottom" },
-      { path: "M 35,32 L 40,48", start: [35, 32], end: [40, 48], direction: "top-left-to-bottom-right" },
-      { path: "M 65,32 L 55,48", start: [65, 32], end: [55, 48], direction: "top-right-to-bottom-left" },
-      { path: "M 25,62 L 82,62", start: [25, 62], end: [82, 62], direction: "left-right" },
-      { path: "M 12,97 L 97,97", start: [12, 97], end: [97, 97], direction: "left-right" }
+      { path: "M19,17.88c1.25,1.25,1.82,2.7,1.82,4.56c0,15.18,0.04,41.06,0.04,67.55c0,2.12-0.06,4.2-0.1,6.25", start: [19.0, 17.9], end: [20.8, 96.2], direction: "top-bottom" },
+      { path: "M21.52,19.73c18.46-1.58,52.47-4.4,63.27-4.4c3.2,0,4.72,1.93,4.68,4.87c-0.22,13.81-0.33,46.02-0.1,67.53c0.03,2.46,0.06,4.83,0.11,7.06", start: [21.5, 19.7], end: [89.5, 94.8], direction: "top-left-to-bottom-right" },
+      { path: "M33,37.12c2.82,1.52,7.29,6.26,8,8.62", start: [33.0, 37.1], end: [41.0, 45.7], direction: "top-left-to-bottom-right" },
+      { path: "M47.38,30.38c2.96,1.88,7.64,7.71,8.38,10.62", start: [47.4, 30.4], end: [55.8, 41.0], direction: "top-left-to-bottom-right" },
+      { path: "M72.02,32.18c0.48,1.32,0.38,2.64-0.43,4.81C65.25,54.12,53.12,70.62,34,80.75", start: [72.0, 32.2], end: [34.0, 80.8], direction: "top-right-to-bottom-left" },
+      { path: "M40.25,54.5C48.33,57.57,63.72,67.3,70.5,76", start: [40.2, 54.5], end: [70.5, 76.0], direction: "top-left-to-bottom-right" },
+      { path: "M22.19,92.08c15.31-0.58,47.64-2.3,65.29-2.71", start: [22.2, 92.1], end: [87.5, 89.4], direction: "left-right" }
     ]
   },
   "数": {
-    readings: { on: ["スウ", "ス"], kun: ["かず", "かぞ.える"] },
+    readings: { on: ["スウ"], kun: ["かず", "かぞ.える"] },
     strokes: [
-      { path: "M 15,12 L 48,12", start: [15, 12], end: [48, 12], direction: "left-right" },
-      { path: "M 30,12 L 30,32", start: [30, 12], end: [30, 32], direction: "top-bottom" },
-      { path: "M 10,32 L 50,32", start: [10, 32], end: [50, 32], direction: "left-right" },
-      { path: "M 22,42 L 10,55", start: [22, 42], end: [10, 55], direction: "top-right-to-bottom-left" },
-      { path: "M 30,42 L 42,55", start: [30, 42], end: [42, 55], direction: "top-left-to-bottom-right" },
-      { path: "M 12,62 L 48,62", start: [12, 62], end: [48, 62], direction: "left-right" },
-      { path: "M 30,62 L 30,78", start: [30, 62], end: [30, 78], direction: "top-bottom" },
-      { path: "M 30,78 L 12,95", start: [30, 78], end: [12, 95], direction: "top-right-to-bottom-left" },
-      { path: "M 30,78 C 35,88 42,95 50,98", start: [30, 78], end: [50, 98], direction: "top-left-to-bottom-right" },
-      { path: "M 68,12 L 68,50", start: [68, 12], end: [68, 50], direction: "top-bottom" },
-      { path: "M 58,30 L 95,15", start: [58, 30], end: [95, 15], direction: "complex" },
-      { path: "M 60,55 L 95,42", start: [60, 55], end: [95, 42], direction: "complex" },
-      { path: "M 68,55 C 65,72 58,88 52,95", start: [68, 55], end: [52, 95], direction: "top-right-to-bottom-left" }
+      { path: "M17.25,21.5c2.36,1.58,5.91,6.04,6.5,8.5", start: [17.2, 21.5], end: [23.8, 30.0], direction: "top-left-to-bottom-right" },
+      { path: "M48.48,17.57c0.06,0.62-0.03,1.2-0.29,1.75c-0.89,2.29-3.56,6.19-7.07,8.68", start: [48.5, 17.6], end: [41.1, 28.0], direction: "top-right-to-bottom-left" },
+      { path: "M13.25,36.5c2,0.38,3.64,0.22,5.61,0c6.89-0.75,21.23-3.02,27.43-3.02c1.98,0,2.48-0.21,3.72,0", start: [13.2, 36.5], end: [50.0, 33.5], direction: "left-right" },
+      { path: "M31.74,14.25c0.88,0.88,1.55,1.88,1.55,3.25c0,0.87-0.1,23.62-0.1,33.25c0,1.59-0.05,2.88-0.07,3.75", start: [31.7, 14.2], end: [33.1, 54.5], direction: "top-bottom" },
+      { path: "M32.5,35c0,1-0.59,1.94-0.93,2.65c-3.29,6.89-9.2,13.04-15.32,17.35", start: [32.5, 35.0], end: [16.2, 55.0], direction: "top-right-to-bottom-left" },
+      { path: "M36.5,41c3.5,1.25,8.75,4.75,11.25,8.25", start: [36.5, 41.0], end: [47.8, 49.2], direction: "top-left-to-bottom-right" },
+      { path: "M30.25,58.25c0.38,0.75,0.57,1.99,0.38,3.08c-0.97,5.36-4.48,12-8.75,18.27c-0.88,1.29,0.37,1.86,0.88,1.91c5.52,0.47,13.59,2.71,18.64,5.77c1.72,1.04,3.15,2.21,4.11,3.48", start: [30.2, 58.2], end: [45.5, 90.8], direction: "top-left-to-bottom-right" },
+      { path: "M44,63.25c0.75,1.25,0.64,3.02,0.33,4.14c-2.52,9.05-9.8,22.38-27.83,29.11", start: [44.0, 63.2], end: [16.5, 96.5], direction: "top-right-to-bottom-left" },
+      { path: "M13.5,70.4c0.75,0.69,1.75,1.13,3.75,0.94c3.75-0.35,23.09-3.49,32-5.25", start: [13.5, 70.4], end: [49.2, 66.1], direction: "left-right" },
+      { path: "M65.75,16.25c0.37,1.12,0.48,2.38,0.17,3.63c-2.42,9.87-5.87,20.7-13.17,31.74", start: [65.8, 16.2], end: [52.8, 51.6], direction: "top-bottom" },
+      { path: "M63.92,37.46c0.83,0.04,2.48,0.01,3.35-0.1c6.98-0.86,13.48-2.61,21.13-3.59c1.55-0.2,2.52-0.02,2.92,0.08", start: [63.9, 37.5], end: [91.3, 33.8], direction: "left-right" },
+      { path: "M79.23,40.01c0.5,1.34,0.52,2.8,0,5.26C74.51,67.58,65.28,86.9,48.76,94", start: [79.2, 40.0], end: [48.8, 94.0], direction: "top-right-to-bottom-left" },
+      { path: "M56.5,54.75c2.66,0,18.91,22.49,28.99,32.75c2.21,2.25,4.47,4.65,7.76,5", start: [56.5, 54.8], end: [93.2, 92.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "西": {
     readings: { on: ["セイ", "サイ"], kun: ["にし"] },
     strokes: [
-      { path: "M 15,15 L 95,15", start: [15, 15], end: [95, 15], direction: "left-right" },
-      { path: "M 22,15 L 22,92", start: [22, 15], end: [22, 92], direction: "top-bottom" },
-      { path: "M 88,15 L 88,92", start: [88, 15], end: [88, 92], direction: "top-bottom" },
-      { path: "M 38,30 C 38,30 38,65 35,80", start: [38, 30], end: [35, 80], direction: "top-bottom" },
-      { path: "M 72,30 C 72,30 72,65 75,80", start: [72, 30], end: [75, 80], direction: "top-bottom" },
-      { path: "M 22,92 L 88,92", start: [22, 92], end: [88, 92], direction: "left-right" }
+      { path: "M20.63,24.22c2.31,0.34,6.05,0.3,8.35,0.09c15.15-1.43,36.18-3.38,49.83-4.02c3.84-0.18,6.66-0.09,8.58,0.08", start: [20.6, 24.2], end: [87.4, 20.4], direction: "left-right" },
+      { path: "M18.25,48.63c1.25,1.25,2.14,3.42,2.33,4.49c1.25,6.77,3.24,20.18,5.12,33.35c0.27,1.87,0.53,3.72,0.77,5.53", start: [18.2, 48.6], end: [26.5, 92.0], direction: "top-bottom" },
+      { path: "M20.75,50.26c17.77-1.6,53.73-5.05,63.68-5.27c4.51-0.1,7.27,2.79,6.55,6.54c-1.6,8.35-4.1,21.97-6.49,32.97c-0.36,1.68-0.61,2.5-1.13,4.6", start: [20.8, 50.3], end: [83.4, 89.1], direction: "top-left-to-bottom-right" },
+      { path: "M42.75,26.75c0.5,1.25,0.81,3.99,0.85,5.73C43.98,48.84,42,64.5,30.64,73.77", start: [42.8, 26.8], end: [30.6, 73.8], direction: "top-bottom" },
+      { path: "M60.6,24.46c0.94,1.12,1.74,2.94,1.74,4.67c0,13.33-0.45,21.61-0.45,27.37c0,10.25,0.62,11.14,11.36,11.14c6.38,0,8.94-0.54,10.55-1.53", start: [60.6, 24.5], end: [83.8, 66.1], direction: "top-left-to-bottom-right" },
+      { path: "M27.34,88.55C40.75,88,66.69,86.2,83,85.97", start: [27.3, 88.5], end: [83.0, 86.0], direction: "left-right" }
     ]
   },
   "声": {
-    readings: { on: ["セイ", "ショウ"], kun: ["こえ"] },
+    readings: { on: ["セイ"], kun: ["こえ"] },
     strokes: [
-      { path: "M 15,12 L 55,12", start: [15, 12], end: [55, 12], direction: "left-right" },
-      { path: "M 35,12 L 35,30", start: [35, 12], end: [35, 30], direction: "top-bottom" },
-      { path: "M 15,30 L 95,30", start: [15, 30], end: [95, 30], direction: "left-right" },
-      { path: "M 20,45 L 88,45", start: [20, 45], end: [88, 45], direction: "left-right" },
-      { path: "M 25,45 L 25,85", start: [25, 45], end: [25, 85], direction: "top-bottom" },
-      { path: "M 55,45 L 55,85", start: [55, 45], end: [55, 85], direction: "top-bottom" },
-      { path: "M 25,85 L 92,85", start: [25, 85], end: [92, 85], direction: "left-right" }
+      { path: "M23,24.5c1.42,0.31,5.02,0.4,7.82,0.14c14.99-1.39,28.63-3.89,47.02-4.91c3.4-0.19,5.44-0.02,7.14,0.16", start: [23.0, 24.5], end: [85.0, 19.9], direction: "left-right" },
+      { path: "M52.75,10c1.06,1.06,1.75,3.25,1.75,4.5c0,0.83-0.18,20.94-0.23,22.15", start: [52.8, 10.0], end: [54.3, 36.6], direction: "top-bottom" },
+      { path: "M30.33,39.41c1.68,0.32,4.76,0.22,6.44,0.06c11.24-1.08,27.49-3.33,39.97-4.6c2.79-0.29,4.48-0.05,5.88,0.08", start: [30.3, 39.4], end: [82.6, 34.9], direction: "left-right" },
+      { path: "M32,50.25c1.75,0.75,3.05,0.62,4.74,0.41c12.38-1.54,28.89-3.8,37.26-4.41c5.12-0.38,6.38,1.12,5.63,4.76c-0.5,2.47-2.05,7.41-3.16,10.32c-0.49,1.28-0.87,1.73-0.97,1.91", start: [32.0, 50.2], end: [75.5, 63.2], direction: "left-right" },
+      { path: "M54.75,49.25c1,0.75,1.01,1.89,1.02,2.75C55.84,55.65,56,61.58,56,63", start: [54.8, 49.2], end: [56.0, 63.0], direction: "top-bottom" },
+      { path: "M33.5,66.75C43.62,65.62,68.75,62.5,75,62", start: [33.5, 66.8], end: [75.0, 62.0], direction: "left-right" },
+      { path: "M33,50.75c0.81,0.81,1.13,2.01,1,3.25c-1.88,17.62-6.38,32.88-15.25,42.75", start: [33.0, 50.8], end: [18.8, 96.8], direction: "top-bottom" }
     ]
   },
   "星": {
-    readings: { on: ["セイ", "ショウ"], kun: ["ほし"] },
+    readings: { on: ["セイ"], kun: ["ほし"] },
     strokes: [
-      { path: "M 20,10 L 88,10", start: [20, 10], end: [88, 10], direction: "left-right" },
-      { path: "M 28,10 L 28,38", start: [28, 10], end: [28, 38], direction: "top-bottom" },
-      { path: "M 80,10 L 80,38", start: [80, 10], end: [80, 38], direction: "top-bottom" },
-      { path: "M 28,38 L 80,38", start: [28, 38], end: [80, 38], direction: "left-right" },
-      { path: "M 15,52 L 95,52", start: [15, 52], end: [95, 52], direction: "left-right" },
-      { path: "M 25,52 L 25,72", start: [25, 52], end: [25, 72], direction: "top-bottom" },
-      { path: "M 80,52 L 80,72", start: [80, 52], end: [80, 72], direction: "top-bottom" },
-      { path: "M 25,72 L 80,72", start: [25, 72], end: [80, 72], direction: "left-right" },
-      { path: "M 15,92 L 95,92", start: [15, 92], end: [95, 92], direction: "left-right" }
+      { path: "M28.28,16.58c1.07,1.07,1.66,2.33,1.8,3.2c0.11,0.7,2.44,16.43,3.4,22.96c0.24,1.62,0.39,2.65,0.4,2.74", start: [28.3, 16.6], end: [33.9, 45.5], direction: "top-bottom" },
+      { path: "M30.54,18.01c11.21-1.51,38.72-4.22,43.08-4.64c3.88-0.37,6.18,1.38,5.62,5.38C78.39,24.96,76.99,31.89,75.5,39c-0.25,1.19-0.5,2.36-0.75,3.5", start: [30.5, 18.0], end: [74.8, 42.5], direction: "top-left-to-bottom-right" },
+      { path: "M33.03,30.73c10.59-1.48,36.58-4.01,43.72-4.23", start: [33.0, 30.7], end: [76.8, 26.5], direction: "left-right" },
+      { path: "M34.9,43.18c8.52-0.85,27.47-2.8,39.35-3.68", start: [34.9, 43.2], end: [74.2, 39.5], direction: "left-right" },
+      { path: "M37.01,51.88c0.36,1,0.07,2.46-0.35,3.51C34.5,60.75,29.75,68.25,23,74.74", start: [37.0, 51.9], end: [23.0, 74.7], direction: "top-right-to-bottom-left" },
+      { path: "M37.75,61.09c1.67,0.37,4.74,0.29,6.41,0.12c14.3-1.46,23.88-2.64,32.94-3.71c2.15-0.25,3.65-0.38,5.65-0.02", start: [37.8, 61.1], end: [82.8, 57.5], direction: "left-right" },
+      { path: "M54.56,47c1.16,1.16,1.76,2.63,1.76,4.42c0,2.83-0.03,27.52-0.17,38.58", start: [54.6, 47.0], end: [56.1, 90.0], direction: "top-bottom" },
+      { path: "M36.01,75.45c1.47,0.34,4.16,0.51,5.62,0.34c10.28-1.16,22.12-2.54,30.13-3.21c2.43-0.2,3.99-0.09,5.24,0.23", start: [36.0, 75.5], end: [77.0, 72.8], direction: "left-right" },
+      { path: "M22.88,93.06c2.15,0.25,5.6,0.38,7.75,0.25c17.62-1.06,38.71-2.81,52.1-3.2c3.57-0.1,6.59,0.21,9.89,0.82", start: [22.9, 93.1], end: [92.6, 90.9], direction: "left-right" }
     ]
   },
   "晴": {
-    readings: { on: ["セイ"], kun: ["は.れる", "は.れ"] },
+    readings: { on: ["セイ"], kun: ["は.れる"] },
     strokes: [
-      { path: "M 10,18 L 38,18", start: [10, 18], end: [38, 18], direction: "left-right" },
-      { path: "M 10,18 L 10,55", start: [10, 18], end: [10, 55], direction: "top-bottom" },
-      { path: "M 38,18 L 38,55", start: [38, 18], end: [38, 55], direction: "top-bottom" },
-      { path: "M 10,55 L 38,55", start: [10, 55], end: [38, 55], direction: "left-right" },
-      { path: "M 50,10 L 50,30", start: [50, 10], end: [50, 30], direction: "top-bottom" },
-      { path: "M 50,10 L 98,10", start: [50, 10], end: [98, 10], direction: "left-right" },
-      { path: "M 75,10 L 75,30", start: [75, 10], end: [75, 30], direction: "top-bottom" },
-      { path: "M 50,30 L 98,30", start: [50, 30], end: [98, 30], direction: "left-right" },
-      { path: "M 50,45 L 98,45", start: [50, 45], end: [98, 45], direction: "left-right" },
-      { path: "M 75,45 L 75,68", start: [75, 45], end: [75, 68], direction: "top-bottom" },
-      { path: "M 50,68 L 98,68", start: [50, 68], end: [98, 68], direction: "left-right" },
-      { path: "M 50,88 L 98,88", start: [50, 88], end: [98, 88], direction: "left-right" }
+      { path: "M13.75,26.83c0.96,0.96,1.7,2.45,1.7,3.73c0,1.29-0.23,35.36-0.23,36c0,0.64,0.12,1.64,0.23,2.93", start: [13.8, 26.8], end: [15.4, 69.5], direction: "top-bottom" },
+      { path: "M15.81,27.88c5.12-0.6,17.72-1.74,19.1-1.89c1.51-0.16,2.47,1.78,2.36,2.73c-0.24,1.93-0.35,21.93-0.35,36.08c0,1.46-0.12,3.09-0.12,4.05", start: [15.8, 27.9], end: [36.8, 68.8], direction: "top-left-to-bottom-right" },
+      { path: "M16.39,46.64c2.68,0,16.56-1.61,19.59-1.61", start: [16.4, 46.6], end: [36.0, 45.0], direction: "left-right" },
+      { path: "M16.04,66.73c3.97,0,14.58-1.29,19.71-1.29", start: [16.0, 66.7], end: [35.8, 65.4], direction: "left-right" },
+      { path: "M50.36,23.41c1.67,0.61,3.55,0.48,5.27,0.28c7.29-0.85,20.21-2.83,27.12-3.54c2.06-0.21,4.13-0.38,6.14,0.26", start: [50.4, 23.4], end: [88.9, 20.4], direction: "left-right" },
+      { path: "M66.9,9.63c1.3,1.3,1.78,2.62,1.78,3.87c0,0.45-0.01,20.47,0.06,30.49", start: [66.9, 9.6], end: [68.7, 44.0], direction: "top-bottom" },
+      { path: "M52.02,34.52c1.21,0.27,3.43,0.17,4.63,0.02c9.57-1.17,17.91-2.42,26.31-3.29c1.99-0.21,4.17-0.25,5.49-0.02", start: [52.0, 34.5], end: [88.5, 31.2], direction: "left-right" },
+      { path: "M44.63,46.64c2.23,0.56,4.53,0.38,6.78,0.13c10.69-1.19,31.35-3.45,40.46-4.16c2.16-0.17,4.95-0.07,6.88,0.51", start: [44.6, 46.6], end: [98.8, 43.1], direction: "left-right" },
+      { path: "M54.65,54.97c1,1,1.44,2.03,1.44,3.29c0,4-0.06,20.62-0.06,35.76c0,1.73,0,3.36,0,4.72", start: [54.6, 55.0], end: [56.0, 98.7], direction: "top-bottom" },
+      { path: "M56.79,56.11c7.06-0.88,25.13-3.24,26.51-3.37c3.18-0.3,3.97,1.01,3.97,3.33c0,2.94-0.6,25.77-0.6,37.83c0,8.61-3.43,3.36-5.75,0.84", start: [56.8, 56.1], end: [80.9, 94.7], direction: "top-left-to-bottom-right" },
+      { path: "M57.28,67.03c5.09-0.53,20.97-1.9,28.6-2.43", start: [57.3, 67.0], end: [85.9, 64.6], direction: "left-right" },
+      { path: "M57.88,79.02c6.12-0.4,19.37-1.77,27.61-2.08", start: [57.9, 79.0], end: [85.5, 76.9], direction: "left-right" }
     ]
   },
   "切": {
-    readings: { on: ["セツ", "サイ"], kun: ["き.る", "き.れる"] },
+    readings: { on: ["セツ", "サイ"], kun: ["き.る"] },
     strokes: [
-      { path: "M 15,22 L 48,22", start: [15, 22], end: [48, 22], direction: "left-right" },
-      { path: "M 30,22 C 30,50 25,75 15,92", start: [30, 22], end: [15, 92], direction: "complex" },
-      { path: "M 65,15 L 65,85 C 65,92 60,97 55,97", start: [65, 15], end: [55, 97], direction: "complex" },
-      { path: "M 92,15 L 92,95", start: [92, 15], end: [92, 95], direction: "top-bottom" }
+      { path: "M11.5,43.98c1.05,0.3,2.98,0.42,4.01,0.3c7.74-0.91,15.49-3.54,22.67-5.54c1.66-0.46,3.45-0.65,4.32-0.5", start: [11.5, 44.0], end: [42.5, 38.2], direction: "left-right" },
+      { path: "M26.75,18.25c1,1,1.67,2.53,1.73,4.5c0.2,7.02-0.48,34.49-0.48,40C28,69.5,29,71,37.75,71c5.5,0,8.75-0.88,11.75-2", start: [26.8, 18.2], end: [49.5, 69.0], direction: "top-left-to-bottom-right" },
+      { path: "M52.75,29.75c2.39,1.02,5.02,0.94,7.48,0.57C70.75,28.75,83.75,26.5,91.5,25c4.45-0.86,6.62,0.88,6.25,5.5C96.68,43.74,92,73,85.5,86c-5.2,10.4-9.88,2.5-12.25,0", start: [52.8, 29.8], end: [73.2, 86.0], direction: "top-bottom" },
+      { path: "M68.25,36.62c0.45,1.33,0.35,3.15,0.11,4.91c-2.15,15.67-10,32.82-25.11,45.97", start: [68.2, 36.6], end: [43.2, 87.5], direction: "top-right-to-bottom-left" }
     ]
   },
   "雪": {
     readings: { on: ["セツ"], kun: ["ゆき"] },
     strokes: [
-      { path: "M 15,10 L 95,10", start: [15, 10], end: [95, 10], direction: "left-right" },
-      { path: "M 22,10 L 22,48", start: [22, 10], end: [22, 48], direction: "top-bottom" },
-      { path: "M 55,10 L 55,48 C 55,52 50,52 45,48", start: [55, 10], end: [45, 48], direction: "complex" },
-      { path: "M 88,10 L 88,48", start: [88, 10], end: [88, 48], direction: "top-bottom" },
-      { path: "M 22,48 L 88,48", start: [22, 48], end: [88, 48], direction: "left-right" },
-      { path: "M 35,22 L 38,32", start: [35, 22], end: [38, 32], direction: "top-bottom" },
-      { path: "M 68,22 L 72,32", start: [68, 22], end: [72, 32], direction: "top-bottom" },
-      { path: "M 78,22 L 75,32", start: [78, 22], end: [75, 32], direction: "top-bottom" },
-      { path: "M 25,62 L 85,62", start: [25, 62], end: [85, 62], direction: "left-right" },
-      { path: "M 25,78 L 85,78", start: [25, 78], end: [85, 78], direction: "left-right" },
-      { path: "M 55,62 L 55,95", start: [55, 62], end: [55, 95], direction: "top-bottom" }
+      { path: "M30.3,17.75c1.99,0.19,4.32,0.06,6.11-0.13C47,16.5,63.12,14.5,73.79,13.82c2.52-0.16,4.62-0.16,6.94,0.11", start: [30.3, 17.8], end: [80.7, 13.9], direction: "left-right" },
+      { path: "M19.13,30.26c-0.21,5.23-2.03,10.97-3.37,16.26", start: [19.1, 30.3], end: [15.8, 46.5], direction: "top-bottom" },
+      { path: "M20.02,32.66c15.86-2.03,51.76-6.3,68.93-7.13c11.07-0.53,1.22,7.12-0.29,8.94", start: [20.0, 32.7], end: [88.7, 34.5], direction: "left-right" },
+      { path: "M52.65,18.92c1.15,1.15,1.61,2.83,1.61,4.57c0,3.62,0.08,17.53,0.11,25.25c0.01,2.43,0.02,4.15,0.02,4.58", start: [52.6, 18.9], end: [54.4, 53.3], direction: "top-bottom" },
+      { path: "M32.73,38.9c3.62,0.74,8.54,2.95,10.52,4.17", start: [32.7, 38.9], end: [43.2, 43.1], direction: "left-right" },
+      { path: "M29.33,47.1c3.77,0.75,9.61,3.5,11.67,4.75", start: [29.3, 47.1], end: [41.0, 51.9], direction: "left-right" },
+      { path: "M66.56,34.1c4.13,1.22,8.75,3.64,10.44,4.68", start: [66.6, 34.1], end: [77.0, 38.8], direction: "top-left-to-bottom-right" },
+      { path: "M66.12,44.62c3.71,0.91,8.77,3.66,10.79,5.19", start: [66.1, 44.6], end: [76.9, 49.8], direction: "top-left-to-bottom-right" },
+      { path: "M29.41,61.93c2.47,1.07,4.77,1.19,7.87,0.77c14.22-1.95,29.22-3,39.71-4.03c3.21-0.32,5.45,1.48,4.96,4.45c-1.11,6.65-2.32,16.37-3.74,26.12", start: [29.4, 61.9], end: [78.2, 89.2], direction: "top-left-to-bottom-right" },
+      { path: "M29.89,76.19c2.11,1.06,4.69,1.23,7.11,0.96c13.56-1.49,33.99-3.4,42.96-3.97", start: [29.9, 76.2], end: [80.0, 73.2], direction: "left-right" },
+      { path: "M27.88,93.44c2.12,0.68,4.38,0.94,6.91,0.72C47,93.11,62.36,91.46,74.25,90.4c2.4-0.21,5.06-0.46,7.46,0.02", start: [27.9, 93.4], end: [81.7, 90.4], direction: "left-right" }
     ]
   },
   "船": {
     readings: { on: ["セン"], kun: ["ふね", "ふな"] },
     strokes: [
-      { path: "M 12,25 L 12,85", start: [12, 25], end: [12, 85], direction: "top-bottom" },
-      { path: "M 12,25 L 42,25", start: [12, 25], end: [42, 25], direction: "left-right" },
-      { path: "M 25,25 L 25,55", start: [25, 25], end: [25, 55], direction: "top-bottom" },
-      { path: "M 42,25 L 42,55", start: [42, 25], end: [42, 55], direction: "top-bottom" },
-      { path: "M 12,55 L 42,55", start: [12, 55], end: [42, 55], direction: "left-right" },
-      { path: "M 12,85 L 48,85", start: [12, 85], end: [48, 85], direction: "left-right" },
-      { path: "M 58,15 L 58,45", start: [58, 15], end: [58, 45], direction: "top-bottom" },
-      { path: "M 55,30 L 95,30", start: [55, 30], end: [95, 30], direction: "left-right" },
-      { path: "M 80,15 C 82,15 82,45 80,50", start: [80, 15], end: [80, 50], direction: "top-bottom" },
-      { path: "M 55,60 L 95,60", start: [55, 60], end: [95, 60], direction: "left-right" },
-      { path: "M 75,60 L 75,95", start: [75, 60], end: [75, 95], direction: "top-bottom" }
+      { path: "M33.2,13.5c0.42,1.12,0.44,2.21,0,3.72c-0.96,3.28-2.46,6.16-4.46,9.78", start: [33.2, 13.5], end: [28.7, 27.0], direction: "top-bottom" },
+      { path: "M19.4,29.72c1.19,1.19,1.69,3,1.75,4.59C22.5,71.5,17.5,87.75,11.5,95", start: [19.4, 29.7], end: [11.5, 95.0], direction: "top-bottom" },
+      { path: "M22.02,31.15c4.96-0.93,14.89-2.67,17.83-3.09c3.02-0.44,4.1,1.19,4.1,4c0,2.22-0.4,55.71-0.4,58.89c0,7.8-4.05,3.3-6.7,1.02", start: [22.0, 31.1], end: [36.8, 92.0], direction: "top-bottom" },
+      { path: "M30.28,39.52C32.25,42,33,44.5,33.62,46.49", start: [30.3, 39.5], end: [33.6, 46.5], direction: "top-left-to-bottom-right" },
+      { path: "M30.55,56.64c1.09,1.09,1.7,3.04,1.7,4.31c0,4.3-0.17,10.67-0.17,16.55c0,1.75,0.02,3,0.02,4.41", start: [30.6, 56.6], end: [32.1, 81.9], direction: "top-bottom" },
+      { path: "M10,56.5c0.88,1.25,2.35,1.31,3.75,1s28.5-7,35.5-8.75", start: [10.0, 56.5], end: [49.2, 48.8], direction: "left-right" },
+      { path: "M64.75,25c0.62,1.12,0.5,2.62-0.03,4.13c-1.89,5.41-7.1,17.24-10.72,22.49", start: [64.8, 25.0], end: [54.0, 51.6], direction: "top-bottom" },
+      { path: "M72.5,19.75c5.37,0.38,12,18.38,19.46,25.45c2.12,2.01,3.66,2.93,5.41,3.8", start: [72.5, 19.8], end: [97.4, 49.0], direction: "top-left-to-bottom-right" },
+      { path: "M57.1,63.97c1.09,1.09,1.66,2.35,1.86,3.72c0.91,6.06,1.91,11.61,2.8,18.73c0.17,1.39,0.34,2.76,0.49,4.07", start: [57.1, 64.0], end: [62.2, 90.5], direction: "top-bottom" },
+      { path: "M59.25,64.99c9.25-1.24,22.91-2.59,28.18-2.76c2.15-0.07,3.45,1.4,3.07,3.22c-0.96,4.71-3.25,12.3-4.87,19.58", start: [59.2, 65.0], end: [85.6, 85.0], direction: "top-left-to-bottom-right" },
+      { path: "M63.33,87.53c7.3-0.53,13.64-0.86,21.43-1.2c1.09-0.05,2.19-0.09,3.3-0.14", start: [63.3, 87.5], end: [88.1, 86.2], direction: "left-right" }
     ]
   },
   "線": {
-    readings: { on: ["セン"], kun: ["すじ"] },
+    readings: { on: ["セン"], kun: [] },
     strokes: [
-      { path: "M 12,18 L 18,28", start: [12, 18], end: [18, 28], direction: "top-left-to-bottom-right" },
-      { path: "M 22,15 L 16,25", start: [22, 15], end: [16, 25], direction: "top-right-to-bottom-left" },
-      { path: "M 8,35 L 32,35", start: [8, 35], end: [32, 35], direction: "left-right" },
-      { path: "M 5,48 L 15,42", start: [5, 48], end: [15, 42], direction: "complex" },
-      { path: "M 18,42 L 28,48", start: [18, 42], end: [28, 48], direction: "top-left-to-bottom-right" },
-      { path: "M 18,52 L 18,92", start: [18, 52], end: [18, 92], direction: "top-bottom" },
-      { path: "M 42,12 L 95,12", start: [42, 12], end: [95, 12], direction: "left-right" },
-      { path: "M 42,12 L 42,35", start: [42, 12], end: [42, 35], direction: "top-bottom" },
-      { path: "M 95,12 L 95,35", start: [95, 12], end: [95, 35], direction: "top-bottom" },
-      { path: "M 42,35 L 95,35", start: [42, 35], end: [95, 35], direction: "left-right" },
-      { path: "M 50,48 L 88,48", start: [50, 48], end: [88, 48], direction: "left-right" },
-      { path: "M 50,48 L 50,72", start: [50, 48], end: [50, 72], direction: "top-bottom" },
-      { path: "M 88,48 L 88,72", start: [88, 48], end: [88, 72], direction: "top-bottom" },
-      { path: "M 50,72 L 88,72", start: [50, 72], end: [88, 72], direction: "left-right" },
-      { path: "M 68,72 L 68,95", start: [68, 72], end: [68, 95], direction: "top-bottom" }
+      { path: "M30.9,14c0.49,1.93,0.1,3.5-0.93,5.15c-4.47,7.1-10.65,15.21-13.54,17.84c-0.64,0.58-0.62,2.81,0,3.04c3.26,1.21,6.84,3.74,9.64,5.97", start: [30.9, 14.0], end: [26.1, 46.0], direction: "top-bottom" },
+      { path: "M40.53,25.44c0.47,1.31-0.11,3.17-0.95,4.27C33,38.25,24.44,50.07,17.15,57.61c-1.74,1.8,0.43,2.83,1.57,2.47c4.75-1.53,13.62-3.77,19.73-5.24", start: [40.5, 25.4], end: [38.5, 54.8], direction: "top-bottom" },
+      { path: "M36.25,47.5c2.47,2.25,6.38,9.25,7,12.75", start: [36.2, 47.5], end: [43.2, 60.2], direction: "top-left-to-bottom-right" },
+      { path: "M26.99,59.75c1,1,1.68,2.02,1.68,4.17c0,9.66-0.1,20.53-0.15,26.83c-0.02,2.56-0.04,4.49-0.04,5.5", start: [27.0, 59.8], end: [28.5, 96.2], direction: "top-bottom" },
+      { path: "M18.63,70.62c0.36,1.76,0.09,2.86-0.36,3.94c-1.5,3.61-3.65,8.06-6.77,12.69", start: [18.6, 70.6], end: [11.5, 87.2], direction: "top-right-to-bottom-left" },
+      { path: "M37.5,69.12c2.85,3.35,4.09,10.09,4.75,13.12", start: [37.5, 69.1], end: [42.2, 82.2], direction: "top-bottom" },
+      { path: "M66.12,12.12c0.32,0.79,0.3,2-0.03,2.75c-0.84,2.6-3.37,6.27-5.71,9.06", start: [66.1, 12.1], end: [60.4, 23.9], direction: "top-right-to-bottom-left" },
+      { path: "M49.09,26.97c0.97,0.97,1.76,2.43,2.03,4.01c1.25,7.15,2.09,12.2,2.88,17.53c0.2,1.34,0.34,2.42,0.38,3.08", start: [49.1, 27.0], end: [54.4, 51.6], direction: "top-bottom" },
+      { path: "M51.28,27.74c9.1-1.24,28.72-3.86,33.77-4.18c2.38-0.15,3.87,1.34,3.43,3.6c-0.2,1.07-1.82,9.53-3.62,17.61c-0.26,1.15-0.52,2.3-0.79,3.41", start: [51.3, 27.7], end: [84.1, 48.2], direction: "top-left-to-bottom-right" },
+      { path: "M53.64,38.24c9.11-1.24,21.98-2.86,32.19-3.67", start: [53.6, 38.2], end: [85.8, 34.6], direction: "left-right" },
+      { path: "M55.44,49.16c9.31-1.41,17.56-2.41,27.95-3.06", start: [55.4, 49.2], end: [83.4, 46.1], direction: "left-right" },
+      { path: "M66.4,52.17c1.1,1.08,1.77,2.71,1.77,5.38c0,12.21-0.16,29.45-0.16,33.6c0,7.85-4.22,1.93-6.59-0.44", start: [66.4, 52.2], end: [61.4, 90.7], direction: "top-bottom" },
+      { path: "M44.75,67.14c1.25,0.61,2.78,0.56,4,0.36c2.38-0.38,7.22-1.76,9.17-2.55c2.33-0.95,3.45,0.3,2.46,2.42c-3.49,7.45-7.26,15.13-20.13,22.88", start: [44.8, 67.1], end: [40.2, 90.2], direction: "top-bottom" },
+      { path: "M87.01,56.25c0.13,0.79-0.12,1.8-0.48,2.45c-2.03,3.75-5.95,7.91-9.16,9.8", start: [87.0, 56.2], end: [77.4, 68.5], direction: "top-right-to-bottom-left" },
+      { path: "M68.88,61.5c5.24,8.21,13.65,19,20.04,24.96c1.82,1.69,3.67,3.19,6.09,3.92", start: [68.9, 61.5], end: [95.0, 90.4], direction: "top-left-to-bottom-right" }
     ]
   },
   "前": {
     readings: { on: ["ゼン"], kun: ["まえ"] },
     strokes: [
-      { path: "M 22,10 L 28,22", start: [22, 10], end: [28, 22], direction: "top-left-to-bottom-right" },
-      { path: "M 35,10 L 30,22", start: [35, 10], end: [30, 22], direction: "top-right-to-bottom-left" },
-      { path: "M 10,32 L 98,32", start: [10, 32], end: [98, 32], direction: "left-right" },
-      { path: "M 22,42 L 22,72", start: [22, 42], end: [22, 72], direction: "top-bottom" },
-      { path: "M 22,42 L 48,42", start: [22, 42], end: [48, 42], direction: "left-right" },
-      { path: "M 48,42 L 48,92", start: [48, 42], end: [48, 92], direction: "top-bottom" },
-      { path: "M 60,42 L 60,82 C 60,92 55,95 50,95", start: [60, 42], end: [50, 95], direction: "complex" },
-      { path: "M 60,42 L 90,42", start: [60, 42], end: [90, 42], direction: "left-right" },
-      { path: "M 90,42 L 90,92", start: [90, 42], end: [90, 92], direction: "top-bottom" }
+      { path: "M33.5,14.5c3.34,2.07,8.64,8.5,9.48,11.72", start: [33.5, 14.5], end: [43.0, 26.2], direction: "top-left-to-bottom-right" },
+      { path: "M72.67,12c0.26,1.14,0.07,2.23-0.52,3.19c-2.12,3.41-6.02,8.65-8.6,11.31", start: [72.7, 12.0], end: [63.6, 26.5], direction: "top-right-to-bottom-left" },
+      { path: "M13.38,33.24c2.63,0.72,7.46,0.94,10.08,0.72c21.67-1.83,39.8-3.58,62.68-4.61c4.37-0.2,7.01,0.34,9.2,0.7", start: [13.4, 33.2], end: [95.3, 30.1], direction: "left-right" },
+      { path: "M24.65,45.46c1.1,1.29,1.63,2.92,1.63,4.17c0,3.05,0.1,28.65,0.08,40.62c0,3.23-0.03,5.46-0.1,6", start: [24.6, 45.5], end: [26.3, 96.2], direction: "top-bottom" },
+      { path: "M27.01,46.8c2.3-0.41,13.37-2.3,17.2-2.9c2.2-0.34,3.51,1.1,3.51,3.24c0,1.02-0.16,30.82-0.16,44.63c0,5.48-3.79,2.98-5.93,0.53", start: [27.0, 46.8], end: [41.6, 92.3], direction: "top-bottom" },
+      { path: "M27.65,60.01c5.72-0.76,13.63-1.81,18.59-2.32", start: [27.6, 60.0], end: [46.2, 57.7], direction: "left-right" },
+      { path: "M27.57,73.47c4.41-0.51,13.3-1.54,18.4-1.89", start: [27.6, 73.5], end: [46.0, 71.6], direction: "left-right" },
+      { path: "M62.27,47.58c1.2,1.2,1.76,2.67,1.76,4.58c0,8.93-0.01,15.1-0.09,18.59c-0.04,1.49-0.09,2.76-0.16,4.05", start: [62.3, 47.6], end: [63.8, 74.8], direction: "top-bottom" },
+      { path: "M78.85,39.25c1.26,1.26,2.01,2.88,2.01,5.02c0,14.56-0.01,42.91-0.01,47.87c0,8.62-5.96,1-7.46-0.25", start: [78.8, 39.2], end: [73.4, 91.9], direction: "top-bottom" }
     ]
   },
   "組": {
     readings: { on: ["ソ"], kun: ["く.む", "くみ"] },
     strokes: [
-      { path: "M 12,18 L 18,28", start: [12, 18], end: [18, 28], direction: "top-left-to-bottom-right" },
-      { path: "M 22,15 L 16,25", start: [22, 15], end: [16, 25], direction: "top-right-to-bottom-left" },
-      { path: "M 8,35 L 32,35", start: [8, 35], end: [32, 35], direction: "left-right" },
-      { path: "M 5,48 L 15,42", start: [5, 48], end: [15, 42], direction: "complex" },
-      { path: "M 18,42 L 28,48", start: [18, 42], end: [28, 48], direction: "top-left-to-bottom-right" },
-      { path: "M 18,52 L 18,92", start: [18, 52], end: [18, 92], direction: "top-bottom" },
-      { path: "M 50,15 L 50,92", start: [50, 15], end: [50, 92], direction: "top-bottom" },
-      { path: "M 50,15 L 92,15", start: [50, 15], end: [92, 15], direction: "left-right" },
-      { path: "M 50,42 L 92,42", start: [50, 42], end: [92, 42], direction: "left-right" },
-      { path: "M 50,68 L 92,68", start: [50, 68], end: [92, 68], direction: "left-right" },
-      { path: "M 50,92 L 92,92", start: [50, 92], end: [92, 92], direction: "left-right" }
+      { path: "M29.36,13.5c0.53,2,0.21,3.32-0.93,5.03C24.81,24,20.5,30.75,16.47,35.03c-0.64,0.68-0.72,2.22,0.5,2.7c3.54,1.39,7.51,2.92,10.58,5.26", start: [29.4, 13.5], end: [27.5, 43.0], direction: "top-bottom" },
+      { path: "M41.28,23.94c0.59,2.06,0.34,3.18-1.2,5.12c-6.78,8.53-16.25,19.61-23.43,27.05c-1.74,1.8-0.65,3.01,1.57,2.47c5.67-1.39,15.12-4.02,21.23-5.49", start: [41.3, 23.9], end: [39.5, 53.1], direction: "top-bottom" },
+      { path: "M37.75,46.5c2.38,2.12,6.15,8.71,6.75,12", start: [37.8, 46.5], end: [44.5, 58.5], direction: "top-left-to-bottom-right" },
+      { path: "M29.85,59.01c0.9,1.24,1.16,3.24,1.16,4.7c0,13.05,0,20.59-0.22,27.55c-0.07,2.26-0.12,4.02-0.12,5", start: [29.9, 59.0], end: [30.7, 96.3], direction: "top-bottom" },
+      { path: "M19.63,69.88c0.19,1.31,0.29,2.26-0.19,3.46c-1.54,3.79-4.88,10.28-6.69,13.17", start: [19.6, 69.9], end: [12.7, 86.5], direction: "top-right-to-bottom-left" },
+      { path: "M39.5,67.5c2.75,3.61,4.86,11.98,5.5,15.25", start: [39.5, 67.5], end: [45.0, 82.8], direction: "top-bottom" },
+      { path: "M54.21,21.59c0.97,0.97,1.43,2.53,1.43,4.06c0,0.89,0.12,45.52,0.12,59.34c0,2.23,0,3.66-0.01,3.97", start: [54.2, 21.6], end: [55.8, 89.0], direction: "top-bottom" },
+      { path: "M56.8,23.76c6.84-0.85,22.52-3.05,23.81-3.19c3.03-0.31,4.81,1.67,4.81,3.73c0,2.82-0.2,36.53-0.27,57.44c0,1.47-0.01,2.87-0.02,4.19", start: [56.8, 23.8], end: [85.1, 85.9], direction: "top-left-to-bottom-right" },
+      { path: "M56.88,45.15c7.76-1,20.45-2.19,27.27-2.5", start: [56.9, 45.1], end: [84.2, 42.6], direction: "left-right" },
+      { path: "M57.34,65.11c7.54-0.86,18.41-1.73,26.33-2.06", start: [57.3, 65.1], end: [83.7, 63.0], direction: "left-right" },
+      { path: "M43.79,90.07c1.99,0.43,5.39,0.32,7.37,0.18c12.34-0.88,27.34-2.13,41.51-2.41c3.31-0.07,5.3,0.21,6.96,0.42", start: [43.8, 90.1], end: [99.6, 88.3], direction: "left-right" }
     ]
   },
   "走": {
     readings: { on: ["ソウ"], kun: ["はし.る"] },
     strokes: [
-      { path: "M 15,15 L 95,15", start: [15, 15], end: [95, 15], direction: "left-right" },
-      { path: "M 55,15 L 55,48", start: [55, 15], end: [55, 48], direction: "top-bottom" },
-      { path: "M 25,48 L 85,48", start: [25, 48], end: [85, 48], direction: "left-right" },
-      { path: "M 55,48 L 55,72", start: [55, 48], end: [55, 72], direction: "top-bottom" },
-      { path: "M 15,72 L 95,72", start: [15, 72], end: [95, 72], direction: "left-right" },
-      { path: "M 55,72 L 20,98", start: [55, 72], end: [20, 98], direction: "top-right-to-bottom-left" },
-      { path: "M 55,72 C 65,82 80,90 95,95", start: [55, 72], end: [95, 95], direction: "top-left-to-bottom-right" }
+      { path: "M30.13,28.92c1.62,0.38,4.6,0.57,6.21,0.38C47.25,28,60.75,26,70.08,25.16c2.69-0.24,4.32,0.18,5.67,0.37", start: [30.1, 28.9], end: [75.8, 25.5], direction: "left-right" },
+      { path: "M52.01,12.37c1.25,1.25,2.05,2.85,2.05,5.01c0,4.58-0.06,25.5-0.06,26.37", start: [52.0, 12.4], end: [54.0, 43.8], direction: "top-bottom" },
+      { path: "M15.13,48.05c2.29,0.69,6.48,0.95,8.77,0.69c24.84-2.74,36-4.24,60.98-6.45c3.79-0.33,6.35,0.08,8.25,0.43", start: [15.1, 48.0], end: [93.1, 42.7], direction: "left-right" },
+      { path: "M53.12,49c1.13,1.13,1.78,3.13,1.78,4.75c0,6.38-0.15,21.5-0.15,27", start: [53.1, 49.0], end: [54.8, 80.8], direction: "top-bottom" },
+      { path: "M56.5,63.5c7.75-1,15.25-2.09,17.84-2.09c1.57,0,2.5,0.18,3.29,0.37", start: [56.5, 63.5], end: [77.6, 61.8], direction: "left-right" },
+      { path: "M36.75,60.25c0.11,1.43-0.01,2.77-0.41,4.15c-2.01,6.95-8.97,19.48-20.84,28.1", start: [36.8, 60.2], end: [15.5, 92.5], direction: "top-right-to-bottom-left" },
+      { path: "M33.75,73.5c10.2,2.44,40.07,16.59,49.72,18.89C86.44,93.1,90.1,93.73,93,94", start: [33.8, 73.5], end: [93.0, 94.0], direction: "left-right" }
     ]
   },
   "多": {
     readings: { on: ["タ"], kun: ["おお.い"] },
     strokes: [
-      { path: "M 35,8 L 20,38", start: [35, 8], end: [20, 38], direction: "top-right-to-bottom-left" },
-      { path: "M 35,15 C 45,22 65,28 80,25", start: [35, 15], end: [80, 25], direction: "curve-right" },
-      { path: "M 55,30 L 58,45", start: [55, 30], end: [58, 45], direction: "top-bottom" },
-      { path: "M 40,52 L 22,82", start: [40, 52], end: [22, 82], direction: "top-right-to-bottom-left" },
-      { path: "M 40,58 C 50,65 70,72 85,68", start: [40, 58], end: [85, 68], direction: "curve-right" },
-      { path: "M 60,72 L 62,90", start: [60, 72], end: [62, 90], direction: "top-bottom" }
+      { path: "M45.82,11.92c0.18,1.08-0.22,2.3-0.66,3.01C42.5,19.25,37,26.33,28.5,31.25", start: [45.8, 11.9], end: [28.5, 31.2], direction: "top-right-to-bottom-left" },
+      { path: "M48.24,16.65c1.38,0.22,3.15,0.08,4.79-0.12c5.59-0.66,9.72-1.28,14.9-2.3c3.15-0.62,4.07,1.15,3.01,3.46c-4.46,9.74-24.82,31.44-44.28,37.66", start: [48.2, 16.6], end: [26.7, 55.3], direction: "top-right-to-bottom-left" },
+      { path: "M40,28.25c2.67,1.56,7,6.5,7.75,9", start: [40.0, 28.2], end: [47.8, 37.2], direction: "top-left-to-bottom-right" },
+      { path: "M58.5,42.25c0.25,1.5-0.11,2.78-0.48,3.6C55.25,52,48.75,59.5,33.75,68.5", start: [58.5, 42.2], end: [33.8, 68.5], direction: "top-right-to-bottom-left" },
+      { path: "M60.42,48.62c1.58,0.13,3.01,0.09,4.6-0.09c5.86-0.66,9.23-1.16,13.48-2.03c3.13-0.64,4.62,1.62,3.48,4.09c-5,10.79-23.61,34.91-54.73,48.16", start: [60.4, 48.6], end: [27.3, 98.7], direction: "top-right-to-bottom-left" },
+      { path: "M48.25,63c2.93,1.73,7.67,7.22,8.5,10", start: [48.2, 63.0], end: [56.8, 73.0], direction: "top-left-to-bottom-right" }
     ]
   },
   "太": {
-    readings: { on: ["タイ", "タ"], kun: ["ふと.い", "ふと.る"] },
+    readings: { on: ["タイ", "タ"], kun: ["ふと.い"] },
     strokes: [
-      { path: "M 15,30 L 95,30", start: [15, 30], end: [95, 30], direction: "left-right" },
-      { path: "M 55,10 L 55,95", start: [55, 10], end: [55, 95], direction: "top-bottom" },
-      { path: "M 55,55 L 12,95", start: [55, 55], end: [12, 95], direction: "top-right-to-bottom-left" },
-      { path: "M 55,55 C 65,70 80,85 95,92", start: [55, 55], end: [95, 92], direction: "top-left-to-bottom-right" }
+      { path: "M19.38,47.86c2.65,0.92,5.89,1.11,8.63,0.7c13.62-2.06,33.87-5.31,48.67-6.23c2.62-0.16,5.62,0.17,8.08,0.92", start: [19.4, 47.9], end: [84.8, 43.2], direction: "left-right" },
+      { path: "M49,18c1,1,1.49,2.41,1.49,4.57C50.49,56.75,37.75,80.5,18,92", start: [49.0, 18.0], end: [18.0, 92.0], direction: "top-right-to-bottom-left" },
+      { path: "M50.75,47.75c8.04,9.38,24.72,30.39,34.53,39.72c2.4,2.28,4.97,4.66,8.22,5.78", start: [50.8, 47.8], end: [93.5, 93.2], direction: "top-left-to-bottom-right" },
+      { path: "M44.5,81.5c3.79,2.16,9.8,8.89,10.75,12.25", start: [44.5, 81.5], end: [55.2, 93.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "体": {
     readings: { on: ["タイ", "テイ"], kun: ["からだ"] },
     strokes: [
-      { path: "M 22,15 L 22,95", start: [22, 15], end: [22, 95], direction: "top-bottom" },
-      { path: "M 22,22 L 10,42", start: [22, 22], end: [10, 42], direction: "top-right-to-bottom-left" },
-      { path: "M 38,10 L 95,10", start: [38, 10], end: [95, 10], direction: "left-right" },
-      { path: "M 65,10 L 65,48", start: [65, 10], end: [65, 48], direction: "top-bottom" },
-      { path: "M 42,35 L 90,35", start: [42, 35], end: [90, 35], direction: "left-right" },
-      { path: "M 65,48 L 38,90", start: [65, 48], end: [38, 90], direction: "top-right-to-bottom-left" },
-      { path: "M 65,48 C 72,65 82,80 95,88", start: [65, 48], end: [95, 88], direction: "top-left-to-bottom-right" }
+      { path: "M31.75,16.25c0.23,2.15-0.05,3.95-0.8,5.78C26.88,32,21,45.88,9.12,60", start: [31.8, 16.2], end: [9.1, 60.0], direction: "top-right-to-bottom-left" },
+      { path: "M23.78,42.75c1.11,1.11,1.23,2.89,1.31,4.49c0.46,10.12-0.23,30.08-0.5,41.01c-0.06,2.38-0.09,4.36-0.09,5.75", start: [23.8, 42.8], end: [24.5, 94.0], direction: "top-bottom" },
+      { path: "M37.28,36.89c0.95,0.24,3.21,0.59,5.72,0.36c11.97-1.12,30.25-4,42.78-4.7c2.52-0.14,4.42,0.01,6,0.25", start: [37.3, 36.9], end: [91.8, 32.8], direction: "left-right" },
+      { path: "M61.88,12c1.06,1.06,1.6,2.75,1.6,4.38c0,0.85,0.05,55.5-0.12,74.13c-0.03,2.9-0.05,4.93-0.08,5.74", start: [61.9, 12.0], end: [63.3, 96.2], direction: "top-bottom" },
+      { path: "M61.88,36.37c0,1.38-0.51,2.64-0.94,3.49C55.07,51.39,42.61,66.29,32.5,72.5", start: [61.9, 36.4], end: [32.5, 72.5], direction: "top-right-to-bottom-left" },
+      { path: "M64.38,36.75c3.77,7.25,17.11,24.4,23.75,30.78c1.71,1.64,3.85,3.76,6.13,4.47", start: [64.4, 36.8], end: [94.3, 72.0], direction: "top-left-to-bottom-right" },
+      { path: "M46.54,74.65c1.23,0.29,3.48,0.39,4.71,0.29c10.8-0.93,17.26-2.18,24.7-2.46c2.05-0.08,3.28,0.14,4.3,0.28", start: [46.5, 74.7], end: [80.2, 72.8], direction: "left-right" }
     ]
   },
   "台": {
     readings: { on: ["ダイ", "タイ"], kun: [] },
     strokes: [
-      { path: "M 30,15 C 35,25 45,32 55,25", start: [30, 15], end: [55, 25], direction: "curve-right" },
-      { path: "M 55,10 L 55,42", start: [55, 10], end: [55, 42], direction: "top-bottom" },
-      { path: "M 20,52 L 88,52", start: [20, 52], end: [88, 52], direction: "left-right" },
-      { path: "M 35,52 L 35,90 C 35,95 33,98 28,98", start: [35, 52], end: [28, 98], direction: "complex" },
-      { path: "M 75,52 L 75,95", start: [75, 52], end: [75, 95], direction: "top-bottom" }
+      { path: "M50.25,14.5c0.5,2-0.25,3.5-1.75,5.21c-9.59,10.93-15,16.79-23.75,26.36c-3.45,3.77-3.13,4.67,1.5,3.48C36.25,47,60.5,41.75,77,38.5", start: [50.2, 14.5], end: [77.0, 38.5], direction: "top-left-to-bottom-right" },
+      { path: "M69,29.75C75.18,33.32,84.71,44.44,86.25,50", start: [69.0, 29.8], end: [86.2, 50.0], direction: "top-left-to-bottom-right" },
+      { path: "M28.75,64.48c1.2,1.2,1.9,2.7,2.22,4.27c1.4,6.87,2.81,13.67,4.08,21.99c0.27,1.76,0.52,3.45,0.74,5.01", start: [28.8, 64.5], end: [35.8, 95.8], direction: "top-bottom" },
+      { path: "M31,65.55c16.02-1.56,36.34-3.15,45.3-4.14c3.34-0.37,5.32,1.08,4.38,4.59c-1.76,6.58-3.5,16.65-5.02,23.28", start: [31.0, 65.5], end: [75.7, 89.3], direction: "top-left-to-bottom-right" },
+      { path: "M36.37,92.75c11.39-0.66,24.26-1.37,35.4-1.98c1.74-0.09,3.55-0.05,5.42-0.06", start: [36.4, 92.8], end: [77.2, 90.7], direction: "left-right" }
     ]
   },
   "地": {
     readings: { on: ["チ", "ジ"], kun: [] },
     strokes: [
-      { path: "M 15,20 L 40,20", start: [15, 20], end: [40, 20], direction: "left-right" },
-      { path: "M 28,10 L 28,95", start: [28, 10], end: [28, 95], direction: "top-bottom" },
-      { path: "M 15,55 L 40,55", start: [15, 55], end: [40, 55], direction: "left-right" },
-      { path: "M 55,18 L 55,65 C 55,72 52,78 48,82", start: [55, 18], end: [48, 82], direction: "complex" },
-      { path: "M 55,42 L 92,30", start: [55, 42], end: [92, 30], direction: "complex" },
-      { path: "M 72,42 C 78,58 85,75 92,92", start: [72, 42], end: [92, 92], direction: "top-left-to-bottom-right" }
+      { path: "M11.5,49.5c1.71,0.69,3.51,0.56,5.24,0.2c5.76-1.2,13.37-2.96,19.65-4.7c1.6-0.44,3.08-0.5,4.12-0.25", start: [11.5, 49.5], end: [40.5, 44.8], direction: "left-right" },
+      { path: "M25.37,26.25c1.09,0.5,1.74,2.25,1.96,3.25c0.18,0.82-0.18,43.4-0.22,44.5", start: [25.4, 26.2], end: [27.1, 74.0], direction: "top-bottom" },
+      { path: "M11,82.02c1.25,1.23,3.36,1.32,6-0.37c1.56-1,15.12-9.36,21.75-14.15", start: [11.0, 82.0], end: [38.8, 67.5], direction: "top-left-to-bottom-right" },
+      { path: "M41,53.06c2.12,0.69,4.88,0.69,7.38-0.04c11.34-3.34,29.47-9.63,37.12-12.26c3.51-1.21,5.25,0.75,4.76,3.61c-0.93,5.4-3.34,11.85-5.26,15.89c-2.5,5.25-5.62,2.75-7.75,0", start: [41.0, 53.1], end: [77.2, 60.3], direction: "left-right" },
+      { path: "M66.25,18c1.19,1.19,2,2.88,2,4.5c0,8.5,0.07,29.73-0.12,43.25c-0.04,2.91-0.09,4.64-0.13,5.75", start: [66.2, 18.0], end: [68.0, 71.5], direction: "top-bottom" },
+      { path: "M49.49,37.62c1.26,1.26,2.02,3.13,2.02,4.85c0,8.57-0.38,20.78-0.38,28.03c0,16.5,0.87,19,22.37,19c20,0,20.64-1.75,20.64-13.07", start: [49.5, 37.6], end: [94.1, 76.4], direction: "top-left-to-bottom-right" }
     ]
   },
   "池": {
     readings: { on: ["チ"], kun: ["いけ"] },
     strokes: [
-      { path: "M 12,22 L 12,32", start: [12, 22], end: [12, 32], direction: "top-bottom" },
-      { path: "M 12,42 L 12,52", start: [12, 42], end: [12, 52], direction: "top-bottom" },
-      { path: "M 12,62 L 12,72", start: [12, 62], end: [12, 72], direction: "top-bottom" },
-      { path: "M 45,18 L 45,65 C 45,72 42,78 38,82", start: [45, 18], end: [38, 82], direction: "complex" },
-      { path: "M 45,42 L 92,30", start: [45, 42], end: [92, 30], direction: "complex" },
-      { path: "M 68,42 C 75,58 82,75 92,92", start: [68, 42], end: [92, 92], direction: "top-left-to-bottom-right" }
+      { path: "M21.75,19.75c3.88,1.5,10.03,6.17,11,8.5", start: [21.8, 19.8], end: [32.8, 28.2], direction: "top-left-to-bottom-right" },
+      { path: "M16.75,42.38c3.62,1.48,9.34,6.08,10.25,8.38", start: [16.8, 42.4], end: [27.0, 50.8], direction: "top-left-to-bottom-right" },
+      { path: "M15.5,89.98c2,0.52,3.81-0.19,4.75-1.74c2.07-3.41,4.09-7.55,7.25-14.84", start: [15.5, 90.0], end: [27.5, 73.4], direction: "top-left-to-bottom-right" },
+      { path: "M35,54.06c2.96,0.91,5.47,0.57,8.39-0.27C54.1,50.68,80.11,40.95,85.5,39c2.63-0.95,5.25,0,4.76,2.86c-0.93,5.4-4.5,18.28-6.26,22.39c-2.25,5.25-4.25,3.75-7.25,0", start: [35.0, 54.1], end: [76.8, 64.2], direction: "left-right" },
+      { path: "M65,19c0.94,0.94,1.75,2.62,1.75,3.75c0,5.12-0.18,29.87-0.37,43.5c-0.04,2.8-0.08,4.93-0.13,6", start: [65.0, 19.0], end: [66.2, 72.2], direction: "top-bottom" },
+      { path: "M45.99,40.12c1.26,1.26,1.77,3.13,1.77,4.85c0,7.07-0.63,18.39-0.63,26.79c0,17.5,1.62,19.75,24.37,19.75s24.39-2,24.39-13.07", start: [46.0, 40.1], end: [95.9, 78.4], direction: "top-left-to-bottom-right" }
     ]
   },
   "知": {
     readings: { on: ["チ"], kun: ["し.る"] },
     strokes: [
-      { path: "M 10,20 L 10,55", start: [10, 20], end: [10, 55], direction: "top-bottom" },
-      { path: "M 10,20 L 38,20", start: [10, 20], end: [38, 20], direction: "left-right" },
-      { path: "M 25,20 L 25,55", start: [25, 20], end: [25, 55], direction: "top-bottom" },
-      { path: "M 10,55 L 45,55", start: [10, 55], end: [45, 55], direction: "left-right" },
-      { path: "M 25,55 C 25,72 22,85 15,95", start: [25, 55], end: [15, 95], direction: "curve-left" },
-      { path: "M 55,12 L 95,12", start: [55, 12], end: [95, 12], direction: "left-right" },
-      { path: "M 75,12 L 75,90 C 75,95 72,98 68,98", start: [75, 12], end: [68, 98], direction: "complex" },
-      { path: "M 55,45 L 95,45", start: [55, 45], end: [95, 45], direction: "left-right" }
+      { path: "M30.39,16.21c0.61,1.29,0.5,2.73,0.07,4.09C28.5,26.5,25,35.25,18.01,44.16", start: [30.4, 16.2], end: [18.0, 44.2], direction: "top-right-to-bottom-left" },
+      { path: "M28.91,33.73c1.79,0,2.19,0.14,3.08,0c4.13-0.63,8.18-1.52,14.78-2.89c1.91-0.39,3.86-0.47,5.48-0.1", start: [28.9, 33.7], end: [52.2, 30.7], direction: "left-right" },
+      { path: "M12.22,57.18c2.49,0.51,4.9,0.46,7.41,0.15c7.62-0.95,19.62-2.58,29.51-3.78c1.72-0.21,3.85-0.05,5.35,0.26", start: [12.2, 57.2], end: [54.5, 53.8], direction: "left-right" },
+      { path: "M37.98,36c0.4,1.32,0.59,2.61,0.58,4.24c-0.18,25.01-8.68,42.88-24.75,51.93", start: [38.0, 36.0], end: [13.8, 92.2], direction: "top-right-to-bottom-left" },
+      { path: "M39.25,65.75c6,4.25,11.62,10.88,14.25,16.75", start: [39.2, 65.8], end: [53.5, 82.5], direction: "top-left-to-bottom-right" },
+      { path: "M59,44.94c0.97,0.97,1.74,1.85,2.09,3.35c1.19,4.97,2.18,15.35,3.25,24.19c0.16,1.32,0.31,2.58,0.45,3.77", start: [59.0, 44.9], end: [64.8, 76.2], direction: "top-bottom" },
+      { path: "M61.73,46.38c8.56-1.22,21.16-2.76,27.52-3.48c2.02-0.23,4.12,0.97,3.69,3.33c-0.86,4.66-3.05,17.02-4.36,23.59", start: [61.7, 46.4], end: [88.6, 69.8], direction: "top-left-to-bottom-right" },
+      { path: "M65,73.56c6.55-0.93,14.12-1.62,22.04-2.45c1.14-0.12,2.29-0.24,3.46-0.37", start: [65.0, 73.6], end: [90.5, 70.7], direction: "left-right" }
     ]
   },
   "茶": {
     readings: { on: ["チャ", "サ"], kun: [] },
     strokes: [
-      { path: "M 15,12 L 48,12", start: [15, 12], end: [48, 12], direction: "left-right" },
-      { path: "M 60,12 L 95,12", start: [60, 12], end: [95, 12], direction: "left-right" },
-      { path: "M 10,28 L 98,28", start: [10, 28], end: [98, 28], direction: "left-right" },
-      { path: "M 55,28 L 25,48", start: [55, 28], end: [25, 48], direction: "top-right-to-bottom-left" },
-      { path: "M 55,28 L 85,48", start: [55, 28], end: [85, 48], direction: "top-left-to-bottom-right" },
-      { path: "M 35,52 L 75,52", start: [35, 52], end: [75, 52], direction: "left-right" },
-      { path: "M 55,52 L 55,95", start: [55, 52], end: [55, 95], direction: "top-bottom" },
-      { path: "M 55,72 C 45,82 30,90 15,95", start: [55, 72], end: [15, 95], direction: "curve-left" },
-      { path: "M 55,72 C 65,82 80,90 95,95", start: [55, 72], end: [95, 95], direction: "curve-right" }
+      { path: "M18.5,27.02c2.2,0.53,4.76,0.73,6.96,0.53C41.88,26,68,23.62,82.68,23.01c3.66-0.15,5.87,0.25,7.7,0.51", start: [18.5, 27.0], end: [90.4, 23.5], direction: "left-right" },
+      { path: "M36.75,15.5c1.05,1.18,1.51,1.78,1.76,3.44c1.05,6.91,1.94,13.8,2.24,16.31", start: [36.8, 15.5], end: [40.8, 35.2], direction: "top-bottom" },
+      { path: "M67.75,12.25c0.41,1.59,0.43,2.77,0.06,4.37c-1.62,7.05-2.18,9.88-4.06,18.13", start: [67.8, 12.2], end: [63.8, 34.8], direction: "top-bottom" },
+      { path: "M51.5,34.75c0.35,1.84-0.35,3.08-1.28,4.64c-4.89,8.2-14.99,21.54-32.97,31.11", start: [51.5, 34.8], end: [17.2, 70.5], direction: "top-right-to-bottom-left" },
+      { path: "M52.5,38.25c5.9,4.37,23.65,17.47,32.05,23.16c3.11,2.1,5.98,3.44,9.7,4.09", start: [52.5, 38.2], end: [94.2, 65.5], direction: "top-left-to-bottom-right" },
+      { path: "M34.53,68.21c1.1,0.15,4.05,0.54,6.95,0.19c7.4-0.9,18.9-2.4,28.02-3.17c2.9-0.24,3.66-0.15,5.48,0", start: [34.5, 68.2], end: [75.0, 65.2], direction: "left-right" },
+      { path: "M52.32,53.94c1.18,1.31,1.81,3.06,1.81,6.15c0,0.46,0,19.56-0.06,30.66c-0.02,3.5-0.05,6.13-0.08,7", start: [52.3, 53.9], end: [54.0, 97.8], direction: "top-bottom" },
+      { path: "M38.52,79.14c0.11,1-0.1,1.94-0.64,2.8c-1.7,3.35-6.13,7.94-12.38,12.31", start: [38.5, 79.1], end: [25.5, 94.2], direction: "top-right-to-bottom-left" },
+      { path: "M68.5,78.75c4.79,2.51,12.36,10.32,13.56,14.22", start: [68.5, 78.8], end: [82.1, 93.0], direction: "top-left-to-bottom-right" }
     ]
   },
   "昼": {
     readings: { on: ["チュウ"], kun: ["ひる"] },
     strokes: [
-      { path: "M 28,10 L 80,10", start: [28, 10], end: [80, 10], direction: "left-right" },
-      { path: "M 28,10 L 28,42", start: [28, 10], end: [28, 42], direction: "top-bottom" },
-      { path: "M 80,10 L 80,42", start: [80, 10], end: [80, 42], direction: "top-bottom" },
-      { path: "M 35,25 L 72,25", start: [35, 25], end: [72, 25], direction: "left-right" },
-      { path: "M 28,42 L 80,42", start: [28, 42], end: [80, 42], direction: "left-right" },
-      { path: "M 55,42 L 55,62", start: [55, 42], end: [55, 62], direction: "top-bottom" },
-      { path: "M 22,62 L 88,62", start: [22, 62], end: [88, 62], direction: "left-right" },
-      { path: "M 35,78 L 75,78", start: [35, 78], end: [75, 78], direction: "left-right" },
-      { path: "M 15,95 L 95,95", start: [15, 95], end: [95, 95], direction: "left-right" }
+      { path: "M29.75,17.19c1.44,0.62,3.73,0.67,5.26,0.54c8.25-0.69,28.36-3.73,36.79-4.35c2.84-0.21,4.75,1.81,4.31,3.63c-0.76,3.15-1.86,5.86-3.08,10.08", start: [29.8, 17.2], end: [73.0, 27.1], direction: "left-right" },
+      { path: "M33.25,32.5c5.64-0.6,27.15-2.94,37.53-3.94c2.49-0.24,4.34-0.4,5.18-0.44", start: [33.2, 32.5], end: [76.0, 28.1], direction: "left-right" },
+      { path: "M32.25,18.04c0.73,0.73,1.1,1.77,1.06,2.97C32.5,41.38,27.25,62.25,15,70.58", start: [32.2, 18.0], end: [15.0, 70.6], direction: "top-bottom" },
+      { path: "M62,32.38C68.78,43,78.05,52.08,86.45,58.67c2.46,1.93,4.88,3.69,7.93,4.46", start: [62.0, 32.4], end: [94.4, 63.1], direction: "top-left-to-bottom-right" },
+      { path: "M33.77,54.39c0.92,0.92,1.55,2.02,1.7,3.34c0.55,4.94,2.28,22.35,2.28,22.73c0,0.43,0.14,2.18,0.27,3.05", start: [33.8, 54.4], end: [38.0, 83.5], direction: "top-bottom" },
+      { path: "M36.03,55.57c8.32-0.86,29.01-3.23,30.67-3.33c2.46-0.15,3.54,1.46,3.32,3.29c-0.5,4.24-1.65,16.21-2.24,22.99c-0.08,0.97-0.14,1.41-0.14,2.05", start: [36.0, 55.6], end: [67.6, 80.6], direction: "top-left-to-bottom-right" },
+      { path: "M37.75,67.21c5.25-0.34,24.13-2.34,29.72-2.57", start: [37.8, 67.2], end: [67.5, 64.6], direction: "left-right" },
+      { path: "M38.97,79.82c6.44-0.47,19.72-1.71,27.71-2.11", start: [39.0, 79.8], end: [66.7, 77.7], direction: "left-right" },
+      { path: "M19.88,92.17c2.37,0.83,5.12,1.08,7.81,0.86c16.94-1.41,35.18-3.53,54.01-3.6c3.18-0.01,5.8,0.32,7.68,1.09", start: [19.9, 92.2], end: [89.4, 90.5], direction: "left-right" }
     ]
   },
   "長": {
     readings: { on: ["チョウ"], kun: ["なが.い"] },
     strokes: [
-      { path: "M 30,12 L 30,95", start: [30, 12], end: [30, 95], direction: "top-bottom" },
-      { path: "M 30,12 L 90,12", start: [30, 12], end: [90, 12], direction: "left-right" },
-      { path: "M 35,30 L 85,30", start: [35, 30], end: [85, 30], direction: "left-right" },
-      { path: "M 35,48 L 85,48", start: [35, 48], end: [85, 48], direction: "left-right" },
-      { path: "M 35,65 L 85,65", start: [35, 65], end: [85, 65], direction: "left-right" },
-      { path: "M 85,12 L 85,65", start: [85, 12], end: [85, 65], direction: "top-bottom" },
-      { path: "M 30,82 L 15,95", start: [30, 82], end: [15, 95], direction: "top-right-to-bottom-left" },
-      { path: "M 30,82 C 45,92 65,95 90,88", start: [30, 82], end: [90, 88], direction: "curve-right" }
+      { path: "M34,14.75C35.25,16,36,18,36,19.5s0,33.5,0,35.75", start: [34.0, 14.8], end: [36.0, 55.2], direction: "top-bottom" },
+      { path: "M37.75,16c9.6-0.15,21.73-3.26,26.63-4.2c1.97-0.38,3.9-0.41,5.87,0.06", start: [37.8, 16.0], end: [70.2, 11.9], direction: "left-right" },
+      { path: "M37.25,29.5C48.12,28.25,57,27,64,25.72c1.96-0.36,3.76-0.25,5.25,0.06", start: [37.2, 29.5], end: [69.2, 25.8], direction: "left-right" },
+      { path: "M37.5,42.5c8.88-0.86,21.62-2.62,26.75-3.53c1.97-0.35,3.88-0.32,5.75,0", start: [37.5, 42.5], end: [70.0, 39.0], direction: "left-right" },
+      { path: "M10.88,58.23c3.14,0.86,6.44,0.68,9.62,0.29c19.73-2.35,44.86-6.1,65-7.61c2.97-0.22,5.7-0.08,8.63,0.4", start: [10.9, 58.2], end: [94.1, 51.3], direction: "left-right" },
+      { path: "M31.25,60.25c0.94,0.94,1.39,2.38,1.39,4c0,11.82-0.7,28.19-0.7,30.19s1.65,3.14,3.74,1.64c2.09-1.5,17.25-11.09,20.03-12.59", start: [31.2, 60.2], end: [55.7, 83.5], direction: "top-left-to-bottom-right" },
+      { path: "M76.52,55.25c0.23,1.25-0.33,2.45-1.05,3.41C73.5,61.25,69.62,65,64.62,68.75", start: [76.5, 55.2], end: [64.6, 68.8], direction: "top-right-to-bottom-left" },
+      { path: "M46.5,62.25c8.21,0,34.52,25.9,44.28,29.5C93.12,92.61,94.51,93,97,93.5", start: [46.5, 62.2], end: [97.0, 93.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "鳥": {
     readings: { on: ["チョウ"], kun: ["とり"] },
     strokes: [
-      { path: "M 22,12 L 55,12", start: [22, 12], end: [55, 12], direction: "left-right" },
-      { path: "M 55,12 L 55,35", start: [55, 12], end: [55, 35], direction: "top-bottom" },
-      { path: "M 40,22 L 40,28", start: [40, 22], end: [40, 28], direction: "top-bottom" },
-      { path: "M 15,35 L 90,35", start: [15, 35], end: [90, 35], direction: "left-right" },
-      { path: "M 22,35 L 22,78", start: [22, 35], end: [22, 78], direction: "top-bottom" },
-      { path: "M 88,35 L 88,78", start: [88, 35], end: [88, 78], direction: "top-bottom" },
-      { path: "M 28,50 L 82,50", start: [28, 50], end: [82, 50], direction: "left-right" },
-      { path: "M 28,62 L 82,62", start: [28, 62], end: [82, 62], direction: "left-right" },
-      { path: "M 55,50 L 55,62", start: [55, 50], end: [55, 62], direction: "top-bottom" },
-      { path: "M 22,78 L 88,78", start: [22, 78], end: [88, 78], direction: "left-right" },
-      { path: "M 15,95 L 95,95", start: [15, 95], end: [95, 95], direction: "left-right" }
+      { path: "M49.72,10.68c0.03,0.27,0.07,0.7-0.06,1.08c-0.76,2.28-5.15,7.3-11.15,10.37", start: [49.7, 10.7], end: [38.5, 22.1], direction: "top-right-to-bottom-left" },
+      { path: "M32.88,23.32c0.96,0.8,1.57,2.55,1.57,3.69c0,6.86,0.02,24.01-0.12,35.24c-0.03,2.27-0.06,4.3-0.11,5.95", start: [32.9, 23.3], end: [34.2, 68.2], direction: "top-bottom" },
+      { path: "M35.8,25.86c9.2-1.73,23.7-4.36,29.64-4.87c3.06-0.26,4.32,2.26,4.04,3.99c-0.15,0.92-1.49,7.58-3.2,14.78c-0.26,1.09-0.52,2.18-0.78,3.24", start: [35.8, 25.9], end: [65.5, 43.0], direction: "top-left-to-bottom-right" },
+      { path: "M35.86,35.44c3.64-0.69,26.27-4.19,30.87-4.38", start: [35.9, 35.4], end: [66.7, 31.1], direction: "left-right" },
+      { path: "M35.49,45.53c7.01-1.03,21.26-3.53,29.23-4.2", start: [35.5, 45.5], end: [64.7, 41.3], direction: "left-right" },
+      { path: "M35.78,56.05c11.22-1.3,37.15-4.84,41.97-5.55c1.68-0.25,4.53-0.28,5.38-0.1", start: [35.8, 56.0], end: [83.1, 50.4], direction: "left-right" },
+      { path: "M34.75,68.27c15.75-2.64,42-5.64,49.75-6.27c4.51-0.36,6.81,2.33,6,5.75c-2.25,9.5-5.82,18.96-9.5,25C77.5,98.5,74.75,96,71,93", start: [34.8, 68.3], end: [71.0, 93.0], direction: "top-left-to-bottom-right" },
+      { path: "M20.81,80.25c0.44,6-0.31,13.25-1.6,17", start: [20.8, 80.2], end: [19.2, 97.2], direction: "top-bottom" },
+      { path: "M34.38,78.38c2.97,1.96,5.79,7.37,6.54,10.43", start: [34.4, 78.4], end: [40.9, 88.8], direction: "top-left-to-bottom-right" },
+      { path: "M48.88,75.12c2.34,1.57,6.04,6.44,6.62,8.88", start: [48.9, 75.1], end: [55.5, 84.0], direction: "top-left-to-bottom-right" },
+      { path: "M62.88,72c2.69,1.68,6.95,6.89,7.62,9.5", start: [62.9, 72.0], end: [70.5, 81.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "朝": {
     readings: { on: ["チョウ"], kun: ["あさ"] },
     strokes: [
-      { path: "M 10,15 L 48,15", start: [10, 15], end: [48, 15], direction: "left-right" },
-      { path: "M 10,15 L 10,52", start: [10, 15], end: [10, 52], direction: "top-bottom" },
-      { path: "M 48,15 L 48,52", start: [48, 15], end: [48, 52], direction: "top-bottom" },
-      { path: "M 15,32 L 42,32", start: [15, 32], end: [42, 32], direction: "left-right" },
-      { path: "M 10,52 L 48,52", start: [10, 52], end: [48, 52], direction: "left-right" },
-      { path: "M 28,52 L 28,72", start: [28, 52], end: [28, 72], direction: "top-bottom" },
-      { path: "M 15,72 L 48,72", start: [15, 72], end: [48, 72], direction: "left-right" },
-      { path: "M 28,72 L 28,95", start: [28, 72], end: [28, 95], direction: "top-bottom" },
-      { path: "M 60,15 L 60,92 C 60,97 58,98 55,98", start: [60, 15], end: [55, 98], direction: "complex" },
-      { path: "M 60,15 L 95,15", start: [60, 15], end: [95, 15], direction: "left-right" },
-      { path: "M 65,42 L 92,42", start: [65, 42], end: [92, 42], direction: "left-right" },
-      { path: "M 65,72 L 92,72", start: [65, 72], end: [92, 72], direction: "left-right" }
+      { path: "M16.88,27.13c1.87,0.37,4.34,0.34,5.62,0.12c7.35-1.23,18.38-2.86,24.74-3.37c1.6-0.13,4.33-0.68,5.89-0.07", start: [16.9, 27.1], end: [53.1, 23.8], direction: "left-right" },
+      { path: "M33.9,11.75c1.1,1,1.76,2.5,1.76,3.7c0,0.68,0.2,16.33,0.12,20.55", start: [33.9, 11.8], end: [35.8, 36.0], direction: "top-bottom" },
+      { path: "M17.77,38.44c1.23,0.81,2.01,2.14,2.2,3.32c0.72,4.38,3.12,18.94,3.12,19.29c0,0.4,0.13,1.4,0.26,2.2", start: [17.8, 38.4], end: [23.4, 63.2], direction: "top-bottom" },
+      { path: "M20.76,39.32c8.12-1.32,23.99-3.44,29.06-3.83c2.06-0.16,3.43,1.26,3.15,3.7C52.45,43.78,51,52.5,50,57.5c-0.18,0.89-0.49,2.6-0.49,3.2", start: [20.8, 39.3], end: [49.5, 60.7], direction: "top-left-to-bottom-right" },
+      { path: "M22.87,50.38c6.5-0.88,23-3.25,27.66-3.65", start: [22.9, 50.4], end: [50.5, 46.7], direction: "left-right" },
+      { path: "M24.51,61c6.86-0.75,16.99-2.25,24.07-2.95", start: [24.5, 61.0], end: [48.6, 58.0], direction: "left-right" },
+      { path: "M10.13,75.13c2.12,0.75,5.25,0.78,6.99,0.5C31,73.38,42.55,71.25,52.62,70.5c1.8-0.13,4.61-0.19,5.51,0.06", start: [10.1, 75.1], end: [58.1, 70.6], direction: "left-right" },
+      { path: "M34.65,62c1.11,1.11,1.51,2.5,1.51,3.95c0,5.55-0.01,16.22-0.08,24.8c-0.02,2.07-0.03,3.68-0.05,4.5", start: [34.6, 62.0], end: [36.0, 95.2], direction: "top-bottom" },
+      { path: "M65.6,20.73c0.9,0.9,1.68,2.25,1.73,3.28C69,59.5,64.75,81.5,54.75,93", start: [65.6, 20.7], end: [54.8, 93.0], direction: "top-bottom" },
+      { path: "M67.86,21.83c5.79-1.02,19.48-3.54,20.83-3.83c2.32-0.5,4.58,0.62,4.58,3.29c0,2.46-0.11,49.96-0.11,70.41c0,10.8-6.41,1.8-8.44-0.23", start: [67.9, 21.8], end: [84.7, 91.5], direction: "top-bottom" },
+      { path: "M69.05,40.67c6.45-0.92,15.95-1.92,22.79-2.73", start: [69.0, 40.7], end: [91.8, 37.9], direction: "left-right" },
+      { path: "M67.66,60.85c6.53-0.76,16.72-1.72,24.27-2.23", start: [67.7, 60.9], end: [91.9, 58.6], direction: "left-right" }
     ]
   },
   "直": {
-    readings: { on: ["チョク", "ジキ"], kun: ["なお.す", "なお.る", "ただ.ちに"] },
+    readings: { on: ["チョク", "ジキ"], kun: ["ただ.ちに", "なお.す"] },
     strokes: [
-      { path: "M 15,12 L 95,12", start: [15, 12], end: [95, 12], direction: "left-right" },
-      { path: "M 55,12 L 55,30", start: [55, 12], end: [55, 30], direction: "top-bottom" },
-      { path: "M 22,30 L 88,30", start: [22, 30], end: [88, 30], direction: "left-right" },
-      { path: "M 22,30 L 22,78", start: [22, 30], end: [22, 78], direction: "top-bottom" },
-      { path: "M 88,30 L 88,78", start: [88, 30], end: [88, 78], direction: "top-bottom" },
-      { path: "M 28,52 L 82,52", start: [28, 52], end: [82, 52], direction: "left-right" },
-      { path: "M 22,78 L 88,78", start: [22, 78], end: [88, 78], direction: "left-right" },
-      { path: "M 15,95 L 95,95", start: [15, 95], end: [95, 95], direction: "left-right" }
+      { path: "M25.15,27.9c1.92,0.35,5.43,0.36,7.35,0.19c16.72-1.53,29.48-2.6,46.27-3.74c3.19-0.22,5.11,0.04,6.71,0.2", start: [25.1, 27.9], end: [85.5, 24.6], direction: "left-right" },
+      { path: "M53.73,12.51c1.38,1.38,2.01,3.12,2.01,4.89c0,3.35,0.09,8.6,0.09,19.6", start: [53.7, 12.5], end: [55.8, 37.0], direction: "top-bottom" },
+      { path: "M36.56,37.49c1.19,1.26,1.66,3.14,1.66,4.57c0,1.2,0.39,24.33,0.19,37.94c-0.02,1.46-0.04,2.82-0.07,4.01", start: [36.6, 37.5], end: [38.3, 84.0], direction: "top-bottom" },
+      { path: "M39.52,39.91c8.14-0.78,28.45-3.08,30.99-3.25c2.46-0.17,3.99,1.59,4.19,4.16c0.11,1.44-0.12,22.29-0.19,36.93c-0.01,1.37-0.01,2.69-0.01,3.94", start: [39.5, 39.9], end: [74.5, 81.7], direction: "top-left-to-bottom-right" },
+      { path: "M39.61,52.51c8.01-0.63,27.51-2.38,33.61-2.61", start: [39.6, 52.5], end: [73.2, 49.9], direction: "left-right" },
+      { path: "M39.63,65.91c8.64-0.56,24.87-2.16,33.96-2.49", start: [39.6, 65.9], end: [73.6, 63.4], direction: "left-right" },
+      { path: "M39.75,80.42c6.02-0.5,29.3-2.32,33.63-2.32", start: [39.8, 80.4], end: [73.4, 78.1], direction: "left-right" },
+      { path: "M19.75,50.5c1,1.25,1.75,2.75,1.75,5.25s-1.12,29.88-1.75,35.75c-0.28,2.6,0.27,4.15,3.25,3.75c20.5-2.75,41.5-4,63.75-4c2.75,0,5.5,0.5,7.5,1.25", start: [19.8, 50.5], end: [94.2, 92.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "通": {
-    readings: { on: ["ツウ", "ツ"], kun: ["とお.る", "かよ.う"] },
+    readings: { on: ["ツウ"], kun: ["とお.る", "かよ.う"] },
     strokes: [
-      { path: "M 38,12 L 38,38", start: [38, 12], end: [38, 38], direction: "top-bottom" },
-      { path: "M 55,12 C 55,12 58,25 60,32", start: [55, 12], end: [60, 32], direction: "curve-right" },
-      { path: "M 42,38 L 90,38", start: [42, 38], end: [90, 38], direction: "left-right" },
-      { path: "M 50,38 L 50,70", start: [50, 38], end: [50, 70], direction: "top-bottom" },
-      { path: "M 82,38 L 82,70", start: [82, 38], end: [82, 70], direction: "top-bottom" },
-      { path: "M 55,52 L 78,52", start: [55, 52], end: [78, 52], direction: "left-right" },
-      { path: "M 50,70 L 82,70", start: [50, 70], end: [82, 70], direction: "left-right" },
-      { path: "M 12,30 L 28,22", start: [12, 30], end: [28, 22], direction: "complex" },
-      { path: "M 12,30 L 12,72 L 28,62", start: [12, 30], end: [28, 62], direction: "complex" },
-      { path: "M 8,88 C 30,82 60,85 95,78", start: [8, 88], end: [95, 78], direction: "curve-right" }
+      { path: "M42.26,16.34c2.02,1.05,3.83,1.18,6.02,0.82c4.89-0.81,17.88-2.68,24.07-3.87c5.4-1.04,5.65,0.21,2.48,3.24c-1.27,1.22-10.89,9.19-12.62,10.4", start: [42.3, 16.3], end: [62.2, 26.9], direction: "top-left-to-bottom-right" },
+      { path: "M53.25,24.5c2.46,0.84,8.84,4.06,10,6.25", start: [53.2, 24.5], end: [63.2, 30.8], direction: "top-left-to-bottom-right" },
+      { path: "M42.91,33.72c1,1,1.06,2.28,1.08,3.53c0.1,5.12,0.12,25.25,0.12,34.75c0,2.93,0,4.9,0,5.18", start: [42.9, 33.7], end: [44.1, 77.2], direction: "top-bottom" },
+      { path: "M45.08,35.4c9.66-1.15,31.03-4.16,32.28-4.28c2.39-0.24,4.44,1.51,4.44,3.58c0,2.68-0.02,28.32-0.02,40.41c0,6.64-3.78,3.39-6.48,0.77", start: [45.1, 35.4], end: [75.3, 75.9], direction: "top-left-to-bottom-right" },
+      { path: "M45.23,48.8c10.02-1.55,28.02-3.55,35.12-3.88", start: [45.2, 48.8], end: [80.3, 44.9], direction: "left-right" },
+      { path: "M45.23,61.89c8.02-1.14,28.9-3.34,35.27-3.64", start: [45.2, 61.9], end: [80.5, 58.2], direction: "left-right" },
+      { path: "M60.46,35.46c1.04,1.04,1.51,2.54,1.51,4.04c0,5.06,0,24.15-0.09,34c-0.02,2.63-0.05,4.53-0.08,5.22", start: [60.5, 35.5], end: [61.8, 78.7], direction: "top-bottom" },
+      { path: "M15.21,18.75c3.81,1.32,9.84,5.44,10.79,7.5", start: [15.2, 18.8], end: [26.0, 26.2], direction: "top-left-to-bottom-right" },
+      { path: "M10.75,52c2.25,1,3.75,0.5,4.75,0.25s6-3.5,8.75-5.25c2.2-1.4,4.55-0.71,1.75,4c-5.5,9.25-5.72,9.46,0.75,14.75c4.12,3.38,3.99,4.09,0.25,6.5c-3.88,2.5-8,5.25-12.5,8.5", start: [10.8, 52.0], end: [14.5, 80.8], direction: "top-bottom" },
+      { path: "M10.75,83.91c4.5-1.66,9.53-1.34,14.17-1.19c8.83,0.28,30.46,6.62,34.94,7.81c12.15,3.23,21.52,4.15,30.64,2.54", start: [10.8, 83.9], end: [90.5, 93.1], direction: "left-right" }
     ]
   },
   "弟": {
-    readings: { on: ["テイ", "ダイ", "デ"], kun: ["おとうと"] },
+    readings: { on: ["テイ", "ダイ"], kun: ["おとうと"] },
     strokes: [
-      { path: "M 30,10 L 80,10", start: [30, 10], end: [80, 10], direction: "left-right" },
-      { path: "M 55,10 L 55,35", start: [55, 10], end: [55, 35], direction: "top-bottom" },
-      { path: "M 25,35 L 88,35", start: [25, 35], end: [88, 35], direction: "left-right" },
-      { path: "M 55,35 L 55,95", start: [55, 35], end: [55, 95], direction: "top-bottom" },
-      { path: "M 35,50 C 35,50 30,68 22,78", start: [35, 50], end: [22, 78], direction: "curve-left" },
-      { path: "M 55,62 L 88,55", start: [55, 62], end: [88, 55], direction: "complex" },
-      { path: "M 55,82 C 62,88 72,92 85,88", start: [55, 82], end: [85, 88], direction: "curve-right" }
+      { path: "M33.5,15c3.29,1.85,8.49,7.59,9.31,10.47", start: [33.5, 15.0], end: [42.8, 25.5], direction: "top-left-to-bottom-right" },
+      { path: "M67.75,11.5c0.08,0.89-0.06,1.73-0.43,2.54C66.1,17.24,62.6,22.58,58,26", start: [67.8, 11.5], end: [58.0, 26.0], direction: "top-right-to-bottom-left" },
+      { path: "M23.62,32.04c2.38,0.83,5.8,0.77,8.26,0.44C45,30.75,59,28.88,76.36,26.72c2.89-0.36,4.04,2.4,3.3,4.3c-0.76,1.96-2.56,7.92-3.16,10.73", start: [23.6, 32.0], end: [76.5, 41.8], direction: "left-right" },
+      { path: "M24,47.5c1.5,0.38,3.38,0.43,5.25,0.3c11.25-0.8,31.63-2.92,45.15-4.55c1.54-0.19,3.11-0.25,4.36,0", start: [24.0, 47.5], end: [78.8, 43.2], direction: "left-right" },
+      { path: "M25.43,48.42c0.82,0.82,0.75,2.42,0,3.71c-1.68,2.87-3.6,6.04-4.12,6.84c-1.8,2.78-1.3,4.69,1.32,4.38c2.5-0.29,59.11-6.03,65.75-6.62c6.64-0.6,5.02,3.99,4.54,5.42C92,64.89,87.73,73.5,84.92,78.44c-4.17,7.31-6.92,1.31-8.67-0.98", start: [25.4, 48.4], end: [76.2, 77.5], direction: "top-left-to-bottom-right" },
+      { path: "M52.9,32.41c1.06,0.63,1.91,2.34,1.91,4.12c0,10.03,0.09,40.05-0.09,56.48c-0.03,2.78-0.07,5.16-0.12,7", start: [52.9, 32.4], end: [54.6, 100.0], direction: "top-bottom" },
+      { path: "M52.69,60.75c0.09,0.64,0.19,1.64-0.19,2.56c-2.22,5.39-16.5,20.21-34,27.44", start: [52.7, 60.8], end: [18.5, 90.8], direction: "top-right-to-bottom-left" }
     ]
   },
   "店": {
     readings: { on: ["テン"], kun: ["みせ"] },
     strokes: [
-      { path: "M 25,10 L 25,15", start: [25, 10], end: [25, 15], direction: "top-bottom" },
-      { path: "M 15,22 L 95,22", start: [15, 22], end: [95, 22], direction: "left-right" },
-      { path: "M 22,22 L 22,95", start: [22, 22], end: [22, 95], direction: "top-bottom" },
-      { path: "M 22,22 C 22,22 50,30 80,22", start: [22, 22], end: [80, 22], direction: "curve-right" },
-      { path: "M 38,42 L 85,42", start: [38, 42], end: [85, 42], direction: "left-right" },
-      { path: "M 55,42 L 55,68", start: [55, 42], end: [55, 68], direction: "top-bottom" },
-      { path: "M 38,68 L 85,68", start: [38, 68], end: [85, 68], direction: "left-right" },
-      { path: "M 38,42 L 38,68", start: [38, 42], end: [38, 68], direction: "top-bottom" }
+      { path: "M56.81,11.13c1.28,1.28,2.01,2.74,2.01,4.15c0,0.79,0.08,4.65-0.07,9.46", start: [56.8, 11.1], end: [58.8, 24.7], direction: "top-bottom" },
+      { path: "M25.63,27.23c2.62,0.77,4.72,0.67,6.39,0.54C48,26.5,63.11,24.75,84.3,23.04c2.76-0.22,4.44,0.26,5.83,0.53", start: [25.6, 27.2], end: [90.1, 23.6], direction: "left-right" },
+      { path: "M28.99,28.5c0.88,0.88,1.18,2,1.16,3.38C29.88,54.88,27.25,78.75,14.5,91", start: [29.0, 28.5], end: [14.5, 91.0], direction: "top-bottom" },
+      { path: "M57.87,32.88c0.93,0.93,1.62,2.62,1.62,4.09c0,3.03-0.21,27.9-0.21,32.77", start: [57.9, 32.9], end: [59.3, 69.7], direction: "top-bottom" },
+      { path: "M60.28,50.84c8.22-0.96,16.22-1.96,22.11-2.82c1.04-0.15,2.96,0,3.8,0.21", start: [60.3, 50.8], end: [86.2, 48.2], direction: "left-right" },
+      { path: "M39.49,71.71c1,0.98,1.37,1.56,1.64,3c1.24,6.54,2.21,13.16,3.22,20.24c0.17,1.21,0.33,2.37,0.48,3.45", start: [39.5, 71.7], end: [44.8, 98.4], direction: "top-bottom" },
+      { path: "M41.78,73.18c12.31-1.73,32.97-3.68,39.91-4.33c3.3-0.31,4.47,2.39,4.16,3.79c-1.04,4.67-3.04,13.25-4.41,18.9", start: [41.8, 73.2], end: [81.4, 91.5], direction: "top-left-to-bottom-right" },
+      { path: "M45.8,95.62C51.66,95,67.7,93.74,78,92.83c1.96-0.17,3.7-0.32,5.11-0.44", start: [45.8, 95.6], end: [83.1, 92.4], direction: "left-right" }
     ]
   },
   "点": {
-    readings: { on: ["テン"], kun: ["つ.ける", "つ.く"] },
+    readings: { on: ["テン"], kun: [] },
     strokes: [
-      { path: "M 25,10 L 55,10", start: [25, 10], end: [55, 10], direction: "left-right" },
-      { path: "M 55,10 L 55,38", start: [55, 10], end: [55, 38], direction: "top-bottom" },
-      { path: "M 25,22 L 25,38", start: [25, 22], end: [25, 38], direction: "top-bottom" },
-      { path: "M 20,38 L 90,38", start: [20, 38], end: [90, 38], direction: "left-right" },
-      { path: "M 25,52 L 85,52", start: [25, 52], end: [85, 52], direction: "left-right" },
-      { path: "M 55,38 L 55,68", start: [55, 38], end: [55, 68], direction: "top-bottom" },
-      { path: "M 25,68 L 85,68", start: [25, 68], end: [85, 68], direction: "left-right" },
-      { path: "M 30,80 L 35,92", start: [30, 80], end: [35, 92], direction: "top-left-to-bottom-right" },
-      { path: "M 72,80 L 78,92", start: [72, 80], end: [78, 92], direction: "top-left-to-bottom-right" }
+      { path: "M52.7,10.88c1.21,1.21,1.9,2.87,1.9,4.21c0,0.69-0.07,26.53-0.19,30.76", start: [52.7, 10.9], end: [54.4, 45.9], direction: "top-bottom" },
+      { path: "M56.3,29.5c5.96-1,12.48-2.25,17.01-3.08c0.97-0.18,2.76,0,3.55,0.19", start: [56.3, 29.5], end: [76.9, 26.6], direction: "left-right" },
+      { path: "M32.11,48.83c0.82,0.7,1.31,1.58,1.48,2.64c1.2,3.95,2.99,11.69,3.98,17.77c0.19,1.18,0.37,2.33,0.51,3.41", start: [32.1, 48.8], end: [38.1, 72.6], direction: "top-bottom" },
+      { path: "M34.51,50.65c14.24-2.65,35.75-5.73,40.93-6.1c2.56-0.18,3.84,2.43,3.54,3.86c-0.68,3.25-2.51,10.97-3.63,15.49", start: [34.5, 50.6], end: [75.4, 63.9], direction: "left-right" },
+      { path: "M38.5,69.44c5.17-0.54,23.33-2.7,33.76-3.87c2.12-0.24,3.92-0.43,5.25-0.54", start: [38.5, 69.4], end: [77.5, 65.0], direction: "left-right" },
+      { path: "M23.25,83c0,5.79-6.74,14.34-8.5,16", start: [23.2, 83.0], end: [14.8, 99.0], direction: "top-right-to-bottom-left" },
+      { path: "M40.02,82.08c2.61,2.95,4.58,10.07,5.23,14.67", start: [40.0, 82.1], end: [45.2, 96.8], direction: "top-bottom" },
+      { path: "M61.5,80.5c2.4,2.73,5.71,10.72,6.31,14.97", start: [61.5, 80.5], end: [67.8, 95.5], direction: "top-left-to-bottom-right" },
+      { path: "M82.25,79c3.81,2.82,9.85,12.08,10.81,16.47", start: [82.2, 79.0], end: [93.1, 95.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "電": {
     readings: { on: ["デン"], kun: [] },
     strokes: [
-      { path: "M 15,10 L 95,10", start: [15, 10], end: [95, 10], direction: "left-right" },
-      { path: "M 22,10 L 22,42", start: [22, 10], end: [22, 42], direction: "top-bottom" },
-      { path: "M 55,10 L 55,42 C 55,48 50,48 48,42", start: [55, 10], end: [48, 42], direction: "complex" },
-      { path: "M 88,10 L 88,42", start: [88, 10], end: [88, 42], direction: "top-bottom" },
-      { path: "M 22,42 L 88,42", start: [22, 42], end: [88, 42], direction: "left-right" },
-      { path: "M 35,18 L 38,28", start: [35, 18], end: [38, 28], direction: "top-bottom" },
-      { path: "M 68,18 L 72,28", start: [68, 18], end: [72, 28], direction: "top-bottom" },
-      { path: "M 78,18 L 75,28", start: [78, 18], end: [75, 28], direction: "top-bottom" },
-      { path: "M 22,55 L 88,55", start: [22, 55], end: [88, 55], direction: "left-right" },
-      { path: "M 22,55 L 22,82", start: [22, 55], end: [22, 82], direction: "top-bottom" },
-      { path: "M 88,55 L 88,82", start: [88, 55], end: [88, 82], direction: "top-bottom" },
-      { path: "M 22,82 L 88,82", start: [22, 82], end: [88, 82], direction: "left-right" },
-      { path: "M 55,82 C 55,88 50,95 42,98 C 55,95 70,92 85,98", start: [55, 82], end: [85, 98], direction: "complex" }
+      { path: "M34.66,16.19c2.31,0.7,4.78,0.25,7.11-0.04c6.03-0.75,16.15-1.97,23.49-2.76c2.19-0.23,4.03-0.14,6.05,0.1", start: [34.7, 16.2], end: [71.3, 13.5], direction: "left-right" },
+      { path: "M19.51,29.11c-0.2,5.55-1.93,11.7-3.21,17.3", start: [19.5, 29.1], end: [16.3, 46.4], direction: "top-bottom" },
+      { path: "M20.85,32.18C37.62,30.38,70,25.62,86.4,25.2c9.1-0.24,2.35,6.05-0.78,9.53", start: [20.9, 32.2], end: [85.6, 34.7], direction: "left-right" },
+      { path: "M50.92,17.26c1.1,1.1,1.83,2.49,1.83,3.76c0,3.98-0.16,17.08-0.23,23.73c-0.02,2.1-0.04,3.56-0.04,3.89", start: [50.9, 17.3], end: [52.5, 48.6], direction: "top-bottom" },
+      { path: "M32.75,36.46c3.42,0.53,8.09,2.12,9.96,3", start: [32.8, 36.5], end: [42.7, 39.5], direction: "left-right" },
+      { path: "M31.25,45c3.16,0.57,8.05,2.68,9.77,3.64", start: [31.2, 45.0], end: [41.0, 48.6], direction: "left-right" },
+      { path: "M65.5,33.47c3.66,0.79,7.81,2.37,9.28,3.03", start: [65.5, 33.5], end: [74.8, 36.5], direction: "left-right" },
+      { path: "M65.54,41.89c2.82,0.77,6.67,3.06,8.21,4.34", start: [65.5, 41.9], end: [73.8, 46.2], direction: "top-left-to-bottom-right" },
+      { path: "M25.86,55.87c0.89,1.04,1.07,1.52,1.21,2.88c0.47,4.62,2.55,21.84,2.55,22.22c0,0.43,0.19,1.93,0.37,2.79", start: [25.9, 55.9], end: [30.0, 83.8], direction: "top-bottom" },
+      { path: "M28.04,57.11c10.79-1,41.49-4.23,43.85-4.37c4.11-0.24,5.36,1.76,4.73,4.82c-0.27,1.31-2.37,9.94-4.05,17.74c-0.2,0.95-0.69,2.39-0.69,3.04", start: [28.0, 57.1], end: [71.9, 78.3], direction: "top-left-to-bottom-right" },
+      { path: "M29.46,68.34c7.42-0.97,36.17-3.47,44.14-3.8", start: [29.5, 68.3], end: [73.6, 64.5], direction: "left-right" },
+      { path: "M31.02,80.34C42.25,79,59.5,77.75,71.25,76.75", start: [31.0, 80.3], end: [71.2, 76.8], direction: "left-right" },
+      { path: "M48.42,57.62c1.08,1.13,1.45,2.8,1.45,4.78c0,4.85-0.1,12.75-0.1,18.85c0,12.75,1.48,14.5,20.5,14.5c19.23,0,20.18-2.75,20.18-10.82", start: [48.4, 57.6], end: [90.5, 84.9], direction: "top-left-to-bottom-right" }
     ]
   },
   "刀": {
     readings: { on: ["トウ"], kun: ["かたな"] },
     strokes: [
-      { path: "M 55,15 L 55,80 C 55,90 50,95 42,95", start: [55, 15], end: [42, 95], direction: "complex" },
-      { path: "M 88,10 L 88,95", start: [88, 10], end: [88, 95], direction: "top-bottom" }
+      { path: "M23.34,27.56c2.19,0.76,4.95,0.62,6.87,0.41c15.78-1.72,41.52-5.94,50.19-6.72c5.64-0.51,8.15,2.77,7.83,6.31c-0.83,9.35-7.98,45.4-15.67,56.15C67,91.5,63.75,89,59.54,83.94", start: [23.3, 27.6], end: [59.5, 83.9], direction: "top-left-to-bottom-right" },
+      { path: "M49.81,29.06c0.7,2.01,0.74,3.8,0.37,5.63C46.59,52,36.12,73,16.62,86.88", start: [49.8, 29.1], end: [16.6, 86.9], direction: "top-right-to-bottom-left" }
     ]
   },
   "冬": {
     readings: { on: ["トウ"], kun: ["ふゆ"] },
     strokes: [
-      { path: "M 55,8 L 20,42", start: [55, 8], end: [20, 42], direction: "top-right-to-bottom-left" },
-      { path: "M 55,8 L 90,42", start: [55, 8], end: [90, 42], direction: "top-left-to-bottom-right" },
-      { path: "M 55,42 L 15,78", start: [55, 42], end: [15, 78], direction: "top-right-to-bottom-left" },
-      { path: "M 38,78 L 42,90", start: [38, 78], end: [42, 90], direction: "top-left-to-bottom-right" },
-      { path: "M 68,72 L 72,85", start: [68, 72], end: [72, 85], direction: "top-left-to-bottom-right" }
+      { path: "M44.62,15.25c0.14,1.46-0.19,2.53-0.9,3.84c-4.05,7.46-11.32,16.3-21.98,23.66", start: [44.6, 15.2], end: [21.7, 42.8], direction: "top-right-to-bottom-left" },
+      { path: "M45.86,21.96c0.81,0.29,2.21,0.43,3.89,0.18c5.75-0.88,9.61-1.32,13.36-2.17c4.04-0.92,4.68,1.79,2.97,4.69C58.5,37.5,42.25,59.38,13.75,70.75", start: [45.9, 22.0], end: [13.8, 70.8], direction: "top-right-to-bottom-left" },
+      { path: "M38.38,32.25c6.13,4.66,30.42,20.84,42.71,27.89c3.8,2.18,8.54,4.17,12.91,4.86", start: [38.4, 32.2], end: [94.0, 65.0], direction: "top-left-to-bottom-right" },
+      { path: "M47.25,65c5.56,1.41,14.36,5.8,15.75,8", start: [47.2, 65.0], end: [63.0, 73.0], direction: "top-left-to-bottom-right" },
+      { path: "M40.5,81.75c8.91,2.65,22.25,9.62,25.5,14", start: [40.5, 81.8], end: [66.0, 95.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "当": {
-    readings: { on: ["トウ"], kun: ["あ.たる", "あ.てる"] },
+    readings: { on: ["トウ"], kun: ["あ.たる"] },
     strokes: [
-      { path: "M 30,10 L 35,22", start: [30, 10], end: [35, 22], direction: "top-left-to-bottom-right" },
-      { path: "M 55,8 L 55,22", start: [55, 8], end: [55, 22], direction: "top-bottom" },
-      { path: "M 78,10 L 72,22", start: [78, 10], end: [72, 22], direction: "top-right-to-bottom-left" },
-      { path: "M 25,38 L 85,38", start: [25, 38], end: [85, 38], direction: "left-right" },
-      { path: "M 25,58 L 85,58", start: [25, 58], end: [85, 58], direction: "left-right" },
-      { path: "M 55,38 L 55,95", start: [55, 38], end: [55, 95], direction: "top-bottom" }
+      { path: "M52.28,12.87c1.47,0.9,2.62,2.15,2.62,4.17c0,14.34-0.11,19.12-0.11,31.96", start: [52.3, 12.9], end: [54.8, 49.0], direction: "top-bottom" },
+      { path: "M24.27,24.83c3.99,2.76,10.3,11.34,11.29,15.63", start: [24.3, 24.8], end: [35.6, 40.5], direction: "top-left-to-bottom-right" },
+      { path: "M83.99,19c0.09,1.19-0.39,2.8-1,3.83c-3.49,5.92-7.74,11.42-12.69,16.63", start: [84.0, 19.0], end: [70.3, 39.5], direction: "top-right-to-bottom-left" },
+      { path: "M24.2,50.18c2.18,0.57,4.62,0.72,7.34,0.54C50.25,49.5,76,47.75,81.15,47.25c3.82-0.37,5.35,2.53,4.91,5.48c-1.28,8.48-2.87,22.66-4.04,33.52c-0.25,2.29-0.48,4.45-0.68,6.39", start: [24.2, 50.2], end: [81.3, 92.6], direction: "top-left-to-bottom-right" },
+      { path: "M25.25,69.74c2.71,0.45,4.74,0.61,7.68,0.4C45,69.25,72.25,67,83.12,67.18", start: [25.2, 69.7], end: [83.1, 67.2], direction: "left-right" },
+      { path: "M24.22,92.41c2.48,0.71,4.99,0.68,7.53,0.44c13.2-1.24,33.36-2.85,47.92-2.82", start: [24.2, 92.4], end: [79.7, 90.0], direction: "left-right" }
     ]
   },
   "東": {
     readings: { on: ["トウ"], kun: ["ひがし"] },
     strokes: [
-      { path: "M 15,18 L 95,18", start: [15, 18], end: [95, 18], direction: "left-right" },
-      { path: "M 55,8 L 55,95", start: [55, 8], end: [55, 95], direction: "top-bottom" },
-      { path: "M 22,18 L 22,62", start: [22, 18], end: [22, 62], direction: "top-bottom" },
-      { path: "M 88,18 L 88,62", start: [88, 18], end: [88, 62], direction: "top-bottom" },
-      { path: "M 28,40 L 82,40", start: [28, 40], end: [82, 40], direction: "left-right" },
-      { path: "M 22,62 L 88,62", start: [22, 62], end: [88, 62], direction: "left-right" },
-      { path: "M 55,62 L 18,95", start: [55, 62], end: [18, 95], direction: "top-right-to-bottom-left" },
-      { path: "M 55,62 C 65,75 80,88 95,92", start: [55, 62], end: [95, 92], direction: "top-left-to-bottom-right" }
+      { path: "M30.63,25.23c2.36,0.62,4.86,0.47,7.25,0.22c8.24-0.86,22.7-2.7,32.4-3.57c2.38-0.21,4.51-0.14,6.85,0.22", start: [30.6, 25.2], end: [77.1, 22.1], direction: "left-right" },
+      { path: "M26.77,37.86c1.03,1.03,1.78,2.05,2.07,3.44c0.86,4.14,3.61,16.02,4.97,21.91c0.43,1.87,0.72,3.14,0.76,3.36", start: [26.8, 37.9], end: [34.6, 66.6], direction: "top-bottom" },
+      { path: "M29.55,39.31c14.7-2.12,34.45-4.37,48.18-5.5c2.89-0.24,4.02,2.01,3.49,4.2c-1.33,5.48-2.84,12.21-5.27,19.87c-0.52,1.65-1.08,3.3-1.7,4.94", start: [29.6, 39.3], end: [74.2, 62.8], direction: "top-left-to-bottom-right" },
+      { path: "M32.25,51.07c8.12-0.88,37.75-4.12,45.57-4.4", start: [32.2, 51.1], end: [77.8, 46.7], direction: "left-right" },
+      { path: "M35.76,63.99c8.99-1.05,28.37-2.68,38.3-3.23", start: [35.8, 64.0], end: [74.1, 60.8], direction: "left-right" },
+      { path: "M51.25,12.32c1.5,1.5,2.25,3.5,2.25,5.25c0,4.5,0.06,55.21-0.14,75.75c-0.04,3.7-0.07,5.29-0.11,6.25", start: [51.2, 12.3], end: [53.2, 99.6], direction: "top-bottom" },
+      { path: "M51.62,63.94c-0.24,1.91-0.81,2.76-1.27,3.45c-6.59,9.83-20.19,21.12-31.6,26.42", start: [51.6, 63.9], end: [18.7, 93.8], direction: "top-right-to-bottom-left" },
+      { path: "M55,64.44c7.5,7.2,21.77,17.49,29.78,22.16c2.81,1.64,6.1,3.51,9.34,4.09", start: [55.0, 64.4], end: [94.1, 90.7], direction: "top-left-to-bottom-right" }
     ]
   },
-"答": {
+  "答": {
     readings: { on: ["トウ"], kun: ["こた.える", "こた.え"] },
     strokes: [
-      // bamboo radical top-left
-      { path: "M 28,7 L 38,22", start: [28, 7], end: [38, 22], direction: "top-bottom" },
-      { path: "M 38,12 L 28,26", start: [38, 12], end: [28, 26], direction: "top-right-to-bottom-left" },
-      // bamboo radical top-right
-      { path: "M 62,7 L 72,22", start: [62, 7], end: [72, 22], direction: "top-bottom" },
-      { path: "M 72,12 L 62,26", start: [72, 12], end: [62, 26], direction: "top-right-to-bottom-left" },
-      // mouth box (口) top
-      { path: "M 30,33 L 78,33", start: [30, 33], end: [78, 33], direction: "left-right" },
-      // mouth box left
-      { path: "M 30,33 L 30,52", start: [30, 33], end: [30, 52], direction: "top-bottom" },
-      // mouth box right + bottom turn
-      { path: "M 78,33 L 78,52 L 30,52", start: [78, 33], end: [30, 52], direction: "complex" },
-      // 合 top stroke (人 part)
-      { path: "M 54,55 L 30,72", start: [54, 55], end: [30, 72], direction: "top-right-to-bottom-left" },
-      { path: "M 54,55 L 78,72", start: [54, 55], end: [78, 72], direction: "top-left-to-bottom-right" },
-      // 合 horizontal
-      { path: "M 25,76 L 83,76", start: [25, 76], end: [83, 76], direction: "left-right" },
-      // 口 bottom box top
-      { path: "M 36,82 L 72,82", start: [36, 82], end: [72, 82], direction: "left-right" },
-      // 口 bottom box left+bottom
-      { path: "M 36,82 L 36,100 L 72,100", start: [36, 82], end: [72, 100], direction: "complex" },
-      // 口 bottom box right
-      { path: "M 72,82 L 72,100", start: [72, 82], end: [72, 100], direction: "top-bottom" }
+      { path: "M29.08,12.17c0.08,1.18-0.06,2.21-0.41,3.34c-1.49,4.75-5.86,12.65-12.3,17.99", start: [29.1, 12.2], end: [16.4, 33.5], direction: "top-right-to-bottom-left" },
+      { path: "M29.23,23.29c2.78,0,9.92-1.57,15.2-2.35c1.76-0.26,3.07-0.44,4.32-0.19", start: [29.2, 23.3], end: [48.8, 20.7], direction: "left-right" },
+      { path: "M32.25,25.75c2.29,1.76,5.93,7.26,6.5,10", start: [32.2, 25.8], end: [38.8, 35.8], direction: "top-left-to-bottom-right" },
+      { path: "M65.59,11.33c0.12,1.01-0.09,1.96-0.62,2.84c-1.59,3.58-4.84,8.18-8.97,12.2", start: [65.6, 11.3], end: [56.0, 26.4], direction: "top-right-to-bottom-left" },
+      { path: "M63.98,22.16c3.8,0,15.47-1.56,22.26-2.46c1.66-0.22,3-0.19,4.13,0.14", start: [64.0, 22.2], end: [90.4, 19.8], direction: "left-right" },
+      { path: "M75.08,24.08c0.06,0.8-0.08,1.56-0.43,2.28c-0.92,2.38-3.15,6.01-6.02,8.39", start: [75.1, 24.1], end: [68.6, 34.8], direction: "top-right-to-bottom-left" },
+      { path: "M51.41,31.58c0.1,0.89-0.11,2.88-0.7,4.08c-4.85,9.78-14.34,21.24-33.33,33.83", start: [51.4, 31.6], end: [17.4, 69.5], direction: "top-right-to-bottom-left" },
+      { path: "M52.5,34.25c5.35,3.93,21.23,16.97,33.57,25.51c3.02,2.09,5.79,3.54,9.43,4.24", start: [52.5, 34.2], end: [95.5, 64.0], direction: "top-left-to-bottom-right" },
+      { path: "M39.43,60.93c1.45,0.44,2.84,0.5,4.98,0.21C53,60,59.25,59.25,64.52,58.72c1.24-0.12,3.05-0.15,3.67-0.04", start: [39.4, 60.9], end: [68.2, 58.7], direction: "left-right" },
+      { path: "M34.57,74.92c0.6,0.57,1.33,1.92,1.49,2.67c1.68,8.04,2.08,12.98,2.79,18.65c0.15,1.17,0.3,1.89,0.49,3.21", start: [34.6, 74.9], end: [39.3, 99.5], direction: "top-bottom" },
+      { path: "M37.02,76.14c11.35-1.57,27.42-2.85,34.41-3.64c2.93-0.33,4.69,2.2,4.26,4.13c-1.42,6.56-2.39,9.4-4.57,16.29", start: [37.0, 76.1], end: [71.1, 92.9], direction: "top-left-to-bottom-right" },
+      { path: "M40.37,96.12c8.38-0.49,17.89-1.17,28.65-1.75c1.32-0.07,2.65-0.14,3.98-0.21", start: [40.4, 96.1], end: [73.0, 94.2], direction: "left-right" }
     ]
   },
   "頭": {
-    readings: { on: ["トウ", "ズ", "ト"], kun: ["あたま", "かしら"] },
+    readings: { on: ["トウ", "ズ"], kun: ["あたま"] },
     strokes: [
-      // 豆 left part - top horizontal
-      { path: "M 8,14 L 42,14", start: [8, 14], end: [42, 14], direction: "left-right" },
-      // short vertical from top horizontal
-      { path: "M 25,14 L 25,28", start: [25, 14], end: [25, 28], direction: "top-bottom" },
-      // second horizontal
-      { path: "M 10,28 L 42,28", start: [10, 28], end: [42, 28], direction: "left-right" },
-      // 口 top
-      { path: "M 12,36 L 38,36", start: [12, 36], end: [38, 36], direction: "left-right" },
-      // 口 left+bottom
-      { path: "M 12,36 L 12,52 L 38,52", start: [12, 36], end: [38, 52], direction: "complex" },
-      // 口 right
-      { path: "M 38,36 L 38,52", start: [38, 36], end: [38, 52], direction: "top-bottom" },
-      // bottom-left leg
-      { path: "M 15,52 L 6,68", start: [15, 52], end: [6, 68], direction: "top-right-to-bottom-left" },
-      // bottom middle
-      { path: "M 25,52 L 25,68", start: [25, 52], end: [25, 68], direction: "top-bottom" },
-      // bottom-right leg
-      { path: "M 35,52 L 46,68", start: [35, 52], end: [46, 68], direction: "top-left-to-bottom-right" },
-      // 頁 right side - top horizontal
-      { path: "M 55,14 L 100,14", start: [55, 14], end: [100, 14], direction: "left-right" },
-      // center vertical through 頁
-      { path: "M 77,14 L 77,52", start: [77, 14], end: [77, 52], direction: "top-bottom" },
-      // 目 top
-      { path: "M 58,28 L 96,28", start: [58, 28], end: [96, 28], direction: "left-right" },
-      // 目 left
-      { path: "M 58,28 L 58,62", start: [58, 28], end: [58, 62], direction: "top-bottom" },
-      // 目 mid1
-      { path: "M 58,40 L 96,40", start: [58, 40], end: [96, 40], direction: "left-right" },
-      // 目 mid2
-      { path: "M 58,52 L 96,52", start: [58, 52], end: [96, 52], direction: "left-right" },
-      // 目 right+bottom
-      { path: "M 96,28 L 96,62 L 58,62", start: [96, 28], end: [58, 62], direction: "complex" },
-      // left leg of 八
-      { path: "M 70,66 L 55,82", start: [70, 66], end: [55, 82], direction: "top-right-to-bottom-left" },
-      // right leg of 八
-      { path: "M 82,66 L 100,82", start: [82, 66], end: [100, 82], direction: "top-left-to-bottom-right" }
+      { path: "M15.13,22.97c1.2,0.24,3.41,0.36,4.61,0.24C26.5,22.5,34,21,41.54,20.47c2-0.14,3.21,0.11,4.21,0.23", start: [15.1, 23.0], end: [45.8, 20.7], direction: "left-right" },
+      { path: "M15.75,35.34c0.8,0.43,1.34,1.3,1.53,2.15c0.96,4.16,1.84,8.43,2.68,12.77c0.22,1.16,0.44,2.32,0.66,3.49", start: [15.8, 35.3], end: [20.6, 53.8], direction: "top-bottom" },
+      { path: "M18.3,36.44c8.95-1.56,20.18-3.2,25.07-3.7c2.02-0.2,3.38,0.81,2.94,3.03c-0.78,3.99-1.65,7.07-2.68,11.89", start: [18.3, 36.4], end: [43.6, 47.7], direction: "top-left-to-bottom-right" },
+      { path: "M20.85,51.31c5.59-0.43,12.99-1.87,20.63-2.75c1.24-0.14,2.49-0.27,3.73-0.38", start: [20.9, 51.3], end: [45.2, 48.2], direction: "left-right" },
+      { path: "M22.12,61.38c1.9,2.18,4.9,8.98,5.38,12.38", start: [22.1, 61.4], end: [27.5, 73.8], direction: "top-left-to-bottom-right" },
+      { path: "M42.24,55c0.45,1.22,0.5,1.99,0.27,2.95c-1.4,5.81-2.76,9.21-5.25,15.05", start: [42.2, 55.0], end: [37.3, 73.0], direction: "top-bottom" },
+      { path: "M14,84.87c1.75,0.88,3.25,1.13,5.46,0.07c8.18-3.91,18.88-9.38,26.79-13.94", start: [14.0, 84.9], end: [46.2, 71.0], direction: "top-left-to-bottom-right" },
+      { path: "M53.63,19.14c2.62,0.36,4.82,0.33,7.14,0.14c9.25-0.78,21.23-2.78,30.22-2.74c2.45,0.01,3.92,0.24,5.14,0.49", start: [53.6, 19.1], end: [96.1, 17.0], direction: "left-right" },
+      { path: "M72.75,20.5c0.05,0.71-0.03,1.4-0.26,2.08c-0.73,2.41-2.84,6.26-4.67,8.76", start: [72.8, 20.5], end: [67.8, 31.3], direction: "top-right-to-bottom-left" },
+      { path: "M58.52,32.73c0.88,0.88,1.45,2.02,1.45,3.36c0,1.06,0.05,23.69-0.04,33.66c-0.02,2.71-0.04,4.48-0.04,4.63", start: [58.5, 32.7], end: [59.9, 74.4], direction: "top-bottom" },
+      { path: "M60.75,34.24c6.9-0.73,24.04-2.64,26.06-2.8c2.09-0.17,3.57,1.86,3.57,3.12c0,3.19-0.07,21.33-0.06,36.18c0,1.53,0.09,2.44,0.09,3.45", start: [60.8, 34.2], end: [90.4, 74.2], direction: "top-left-to-bottom-right" },
+      { path: "M60.98,47.15c6.02-0.9,22.34-2.3,28.25-2.67", start: [61.0, 47.1], end: [89.2, 44.5], direction: "left-right" },
+      { path: "M61.21,59.31c10.67-1.06,20.19-1.73,27.74-2.2", start: [61.2, 59.3], end: [89.0, 57.1], direction: "left-right" },
+      { path: "M61.17,71.95c6.36-1,19.95-1.88,27.98-2.38", start: [61.2, 72.0], end: [89.2, 69.6], direction: "left-right" },
+      { path: "M66.97,78.69c0.03,1.06-0.49,2.27-1.25,3.14c-2.3,2.62-9.38,8.82-13.97,11.93", start: [67.0, 78.7], end: [51.8, 93.8], direction: "top-right-to-bottom-left" },
+      { path: "M83.5,80.75c5.09,3.8,11.11,10.68,12.5,14", start: [83.5, 80.8], end: [96.0, 94.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "同": {
     readings: { on: ["ドウ"], kun: ["おな.じ"] },
     strokes: [
-      // top horizontal
-      { path: "M 14,13 L 95,13", start: [14, 13], end: [95, 13], direction: "left-right" },
-      // left vertical (enclosure)
-      { path: "M 14,13 L 14,97", start: [14, 13], end: [14, 97], direction: "top-bottom" },
-      // bottom horizontal
-      { path: "M 14,97 L 95,97", start: [14, 97], end: [95, 97], direction: "left-right" },
-      // right vertical (enclosure)
-      { path: "M 95,13 L 95,97", start: [95, 13], end: [95, 97], direction: "top-bottom" },
-      // inner top short stroke
-      { path: "M 43,30 L 43,42", start: [43, 30], end: [43, 42], direction: "top-bottom" },
-      // 口 top
-      { path: "M 33,48 L 75,48", start: [33, 48], end: [75, 48], direction: "left-right" },
-      // 口 left+bottom
-      { path: "M 33,48 L 33,76 L 75,76", start: [33, 48], end: [75, 76], direction: "complex" },
-      // 口 right
-      { path: "M 75,48 L 75,76", start: [75, 48], end: [75, 76], direction: "top-bottom" }
+      { path: "M21.67,16.73c1.08,1.27,1.69,3.02,1.69,5.32c0,4.15-0.19,49.87-0.25,67.2c-0.01,3.37-0.02,5.63-0.02,6.25", start: [21.7, 16.7], end: [23.1, 95.5], direction: "top-bottom" },
+      { path: "M24.04,19.17c15.63-1.45,57.69-4.83,59.24-5c3.88-0.42,5.19,1.58,5.19,4.37c0,2.54-0.26,65.26-0.26,71.1c0,12.6-5.08,4.85-7.96,2.05", start: [24.0, 19.2], end: [80.2, 91.7], direction: "top-left-to-bottom-right" },
+      { path: "M37.38,33.92c1.35,0.38,3.82,0.54,5.16,0.38c6.96-0.8,18.96-2.05,25.62-2.63c2.23-0.2,3.59,0.18,4.71,0.37", start: [37.4, 33.9], end: [72.9, 32.0], direction: "left-right" },
+      { path: "M38.83,48.39c0.82,0.55,1.53,1.56,1.76,2.49c1.15,4.62,2.13,10.46,3.01,16.32c0.27,1.8,0.52,2.78,0.76,4.3", start: [38.8, 48.4], end: [44.4, 71.5], direction: "top-bottom" },
+      { path: "M41.44,49.72c9.31-1.22,20.85-2.46,26.25-3.06c2.2-0.24,3.53,1.44,3.21,2.87c-1.09,4.92-2.33,9.95-3.83,16.33", start: [41.4, 49.7], end: [67.1, 65.9], direction: "top-left-to-bottom-right" },
+      { path: "M45.09,69.33c5.52-0.48,12.6-1.51,20.15-2.26c1.19-0.12,2.51-0.07,3.84-0.1", start: [45.1, 69.3], end: [69.1, 67.0], direction: "left-right" }
     ]
   },
   "道": {
-    readings: { on: ["ドウ", "トウ"], kun: ["みち"] },
+    readings: { on: ["ドウ"], kun: ["みち"] },
     strokes: [
-      // しんにょう dot
-      { path: "M 18,18 L 22,24", start: [18, 18], end: [22, 24], direction: "top-bottom" },
-      // しんにょう first curve
-      { path: "M 10,42 C 15,42 28,50 20,60", start: [10, 42], end: [20, 60], direction: "complex" },
-      // 首 top - first dot left
-      { path: "M 50,10 L 46,18", start: [50, 10], end: [46, 18], direction: "top-right-to-bottom-left" },
-      // 首 top - second dot right
-      { path: "M 60,10 L 64,18", start: [60, 10], end: [64, 18], direction: "top-left-to-bottom-right" },
-      // 首 horizontal 1
-      { path: "M 38,24 L 90,24", start: [38, 24], end: [90, 24], direction: "left-right" },
-      // 首 horizontal 2
-      { path: "M 38,36 L 90,36", start: [38, 36], end: [90, 36], direction: "left-right" },
-      // 首 horizontal 3
-      { path: "M 38,48 L 90,48", start: [38, 48], end: [90, 48], direction: "left-right" },
-      // 目 left
-      { path: "M 38,48 L 38,82", start: [38, 48], end: [38, 82], direction: "top-bottom" },
-      // 目 horizontal mid1
-      { path: "M 38,60 L 88,60", start: [38, 60], end: [88, 60], direction: "left-right" },
-      // 目 horizontal mid2
-      { path: "M 38,72 L 88,72", start: [38, 72], end: [88, 72], direction: "left-right" },
-      // 目 right+bottom
-      { path: "M 88,48 L 88,82 L 38,82", start: [88, 48], end: [38, 82], direction: "complex" },
-      // しんにょう bottom sweep
-      { path: "M 8,80 C 30,80 60,90 100,80", start: [8, 80], end: [100, 80], direction: "complex" }
+      { path: "M49.38,14.88c2.61,1.78,6.73,7.3,7.38,10.06", start: [49.4, 14.9], end: [56.8, 24.9], direction: "top-left-to-bottom-right" },
+      { path: "M77.25,12.5c0.06,0.84-0.03,1.66-0.37,2.42c-1.38,3.08-3.38,6.7-6.63,10.2", start: [77.2, 12.5], end: [70.2, 25.1], direction: "top-right-to-bottom-left" },
+      { path: "M42.06,32.6c1.75,0.45,4.97,0.38,6.7,0.2c9.99-1.05,25.86-2.93,36.82-3.2c2.91-0.07,4.8,0.15,6.12,0.44", start: [42.1, 32.6], end: [91.7, 30.0], direction: "left-right" },
+      { path: "M64.26,33.62c0.25,0.1-0.23,1.75-0.39,2.04c-1.03,1.93-2.08,4.55-4.5,7.09", start: [64.3, 33.6], end: [59.4, 42.8], direction: "top-right-to-bottom-left" },
+      { path: "M51.06,43.52c0.77,0.77,1.13,1.71,1.13,2.82c0,0.9-0.1,22.98-0.06,31.9c0.01,2.08,0.03,3.45,0.06,3.66", start: [51.1, 43.5], end: [52.2, 81.9], direction: "top-bottom" },
+      { path: "M53.01,45.09c6.24-0.71,22.66-2.75,24.6-2.88c1.96-0.14,3.35,0.55,3.35,2.81c0,1.08-0.57,23.4-0.8,32.24c-0.05,2-0.09,3.28-0.12,3.43", start: [53.0, 45.1], end: [80.0, 80.7], direction: "top-left-to-bottom-right" },
+      { path: "M52.9,55.9c6.1-0.4,20.85-2.15,26.64-2.34", start: [52.9, 55.9], end: [79.5, 53.6], direction: "left-right" },
+      { path: "M53.11,67.65c6.85-0.47,19.47-1.75,26.13-1.75", start: [53.1, 67.7], end: [79.2, 65.9], direction: "left-right" },
+      { path: "M53.36,79.25c5.14,0,18.66-1.07,25.31-1.07", start: [53.4, 79.2], end: [78.7, 78.2], direction: "left-right" },
+      { path: "M19.75,20c3.38,1.75,8,6.12,9.5,8.75", start: [19.8, 20.0], end: [29.2, 28.8], direction: "top-left-to-bottom-right" },
+      { path: "M13,51.53c2.25,0.86,3.75,0.43,4.75,0.22s9-3.47,10.5-3.9c2.96-0.85,4.22,0.21,2.44,3.03c-6.56,10.38-6.81,8.5-0.11,14.4c2.39,2.1,2.15,3.52-0.57,5.48C25.5,74,21.75,76.25,17.5,79.04", start: [13.0, 51.5], end: [17.5, 79.0], direction: "top-bottom" },
+      { path: "M12.5,81.71c3.11-0.47,9.22-0.87,13.97-0.71c7.15,0.25,31.13,8.25,35.71,9.46C74.61,93.76,81.62,95.5,91,96.05", start: [12.5, 81.7], end: [91.0, 96.0], direction: "left-right" }
     ]
   },
   "読": {
-    readings: { on: ["ドク", "トク", "トウ"], kun: ["よ.む"] },
+    readings: { on: ["ドク", "トク"], kun: ["よ.む"] },
     strokes: [
-      // 言 top dot
-      { path: "M 14,10 L 22,10", start: [14, 10], end: [22, 10], direction: "left-right" },
-      // 言 horizontal 1
-      { path: "M 5,22 L 40,22", start: [5, 22], end: [40, 22], direction: "left-right" },
-      // 言 horizontal 2
-      { path: "M 5,34 L 40,34", start: [5, 34], end: [40, 34], direction: "left-right" },
-      // 言 horizontal 3
-      { path: "M 5,46 L 40,46", start: [5, 46], end: [40, 46], direction: "left-right" },
-      // 口1 top
-      { path: "M 8,56 L 36,56", start: [8, 56], end: [36, 56], direction: "left-right" },
-      // 口1 left+bottom
-      { path: "M 8,56 L 8,72 L 36,72", start: [8, 56], end: [36, 72], direction: "complex" },
-      // 口1 right
-      { path: "M 36,56 L 36,72", start: [36, 56], end: [36, 72], direction: "top-bottom" },
-      // 売 right side - top 士
-      { path: "M 50,14 L 100,14", start: [50, 14], end: [100, 14], direction: "left-right" },
-      // 士 vertical
-      { path: "M 75,14 L 75,30", start: [75, 14], end: [75, 30], direction: "top-bottom" },
-      // 四 top
-      { path: "M 50,36 L 100,36", start: [50, 36], end: [100, 36], direction: "left-right" },
-      // 四 left
-      { path: "M 50,36 L 50,64", start: [50, 36], end: [50, 64], direction: "top-bottom" },
-      // 四 inner left vertical
-      { path: "M 64,38 L 62,58", start: [64, 38], end: [62, 58], direction: "top-bottom" },
-      // 四 inner right vertical curve
-      { path: "M 82,38 C 82,50 84,58 78,62", start: [82, 38], end: [78, 62], direction: "complex" },
-      // 四 right+bottom
-      { path: "M 100,36 L 100,64 L 50,64", start: [100, 36], end: [50, 64], direction: "complex" },
-      // 八 left
-      { path: "M 68,68 L 50,90", start: [68, 68], end: [50, 90], direction: "top-right-to-bottom-left" },
-      // 八 right
-      { path: "M 78,68 L 100,90", start: [78, 68], end: [100, 90], direction: "top-left-to-bottom-right" }
+      { path: "M22.38,14.75c2.25,1.63,5.81,6.71,6.37,9.25", start: [22.4, 14.8], end: [28.8, 24.0], direction: "top-left-to-bottom-right" },
+      { path: "M10.37,33.08c1.61,0.48,3.62,0.35,5.27,0.14c5.96-0.76,13.52-1.42,20.1-2.38c1.5-0.22,3.09-0.43,4.6-0.16", start: [10.4, 33.1], end: [40.3, 30.7], direction: "left-right" },
+      { path: "M16.23,46.31c1.17,0.37,2.73,0.18,3.93-0.01c3.99-0.62,8.33-1.2,11.58-1.97c1.35-0.32,3.26-0.58,4.65-0.58", start: [16.2, 46.3], end: [36.4, 43.8], direction: "left-right" },
+      { path: "M16.73,58.58c1.02,0.35,2.46,0.15,3.53,0.04c3.8-0.4,9.57-1.17,12.55-1.77c1.45-0.29,2.94-0.48,4.22-0.14", start: [16.7, 58.6], end: [37.0, 56.7], direction: "left-right" },
+      { path: "M15.64,70.4c0.71,0.61,1.08,1.37,1.12,2.29c0.79,3.76,1.71,9.85,2.52,15.05c0.16,1.05,0.32,2.06,0.48,3", start: [15.6, 70.4], end: [19.8, 90.7], direction: "top-bottom" },
+      { path: "M17.75,72.05c6.09-0.91,11.59-1.7,17.42-2.67c1.7-0.28,2.73,1.3,2.49,2.58c-0.85,4.46-1.61,6.91-2.88,12.78", start: [17.8, 72.0], end: [34.8, 84.7], direction: "top-left-to-bottom-right" },
+      { path: "M20.47,88.3c4.06-0.46,7.76-1.19,12.79-1.92c0.92-0.13,1.88-0.26,2.9-0.39", start: [20.5, 88.3], end: [36.2, 86.0], direction: "left-right" },
+      { path: "M46.37,26.71c2.31,0.59,4.67,0.42,7,0.15c9.97-1.14,21.82-2.23,29.77-3.06c2.36-0.25,4.38-0.21,6.71,0.14", start: [46.4, 26.7], end: [89.8, 23.9], direction: "left-right" },
+      { path: "M65.76,13.25c1.06,1.06,1.59,2.08,1.59,3.25c0,8.5-0.07,17.03-0.19,20.46", start: [65.8, 13.2], end: [67.2, 37.0], direction: "top-bottom" },
+      { path: "M52.53,38.58c2.22,0.42,4.15,0.3,5.98,0.08C64,38,71.21,37.1,78,36.47c1.61-0.15,3.63-0.29,5.23,0.04", start: [52.5, 38.6], end: [83.2, 36.5], direction: "left-right" },
+      { path: "M46.14,48.1c-0.11,3.93-1.7,12-2.6,14.35", start: [46.1, 48.1], end: [43.5, 62.5], direction: "top-bottom" },
+      { path: "M47,49.96c11.42-1.27,28-3.71,41.35-4.28c9.15-0.39,0.43,7.14-0.74,8.35", start: [47.0, 50.0], end: [87.6, 54.0], direction: "left-right" },
+      { path: "M59.49,59.25c0.5,1.52,0.71,3.09,0.29,4.83c-2.76,11.61-6.54,22.94-15.26,30.61", start: [59.5, 59.2], end: [44.5, 94.7], direction: "top-right-to-bottom-left" },
+      { path: "M71.64,56.26c1.11,1.24,1.65,2.67,1.69,4.37c0.11,4.62-0.13,16.99-0.13,24.62c0,9.5,0.8,10.52,11.3,10.52c11,0,11.38-1.02,11.38-7.31", start: [71.6, 56.3], end: [95.9, 88.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "内": {
     readings: { on: ["ナイ", "ダイ"], kun: ["うち"] },
     strokes: [
-      // left short stroke
-      { path: "M 20,12 L 12,30", start: [20, 12], end: [12, 30], direction: "top-right-to-bottom-left" },
-      // enclosure top + right
-      { path: "M 24,12 L 95,12 L 95,95", start: [24, 12], end: [95, 95], direction: "complex" },
-      // inner left stroke (人 left)
-      { path: "M 52,28 L 30,80", start: [52, 28], end: [30, 80], direction: "top-right-to-bottom-left" },
-      // inner right stroke (人 right)
-      { path: "M 55,28 L 78,80", start: [55, 28], end: [78, 80], direction: "top-left-to-bottom-right" }
+      { path: "M22.54,33.27c0.96,1.3,1.27,2.79,1.27,5.15c0,4.81-0.05,33.43,0.03,47.33c0.02,3.68,0.04,6.29,0.04,7.11", start: [22.5, 33.3], end: [23.9, 92.9], direction: "top-bottom" },
+      { path: "M24.5,35.25c15.76-1.46,57.65-5.15,59.14-5.15c3.11,0,5.42,1.9,5.42,6.05c0,1.91-0.93,42.61-1.51,54.43c-0.51,10.41-6.79,2.92-9.19,0.54", start: [24.5, 35.2], end: [78.4, 91.1], direction: "top-left-to-bottom-right" },
+      { path: "M53.71,11.88c0.77,0.76,1.65,2.41,1.64,4.49C55.25,36.5,50.5,59.5,29.64,72.9", start: [53.7, 11.9], end: [29.6, 72.9], direction: "top-bottom" },
+      { path: "M55.5,45.5c7.7,3.74,19.88,15.39,21.81,21.22", start: [55.5, 45.5], end: [77.3, 66.7], direction: "top-left-to-bottom-right" }
     ]
   },
   "南": {
-    readings: { on: ["ナン", "ナ"], kun: ["みなみ"] },
+    readings: { on: ["ナン"], kun: ["みなみ"] },
     strokes: [
-      // top horizontal
-      { path: "M 10,12 L 98,12", start: [10, 12], end: [98, 12], direction: "left-right" },
-      // center vertical from top
-      { path: "M 54,12 L 54,98", start: [54, 12], end: [54, 98], direction: "top-bottom" },
-      // enclosure top
-      { path: "M 18,28 L 90,28", start: [18, 28], end: [90, 28], direction: "left-right" },
-      // enclosure left
-      { path: "M 18,28 L 18,94", start: [18, 28], end: [18, 94], direction: "top-bottom" },
-      // enclosure right
-      { path: "M 90,28 L 90,94", start: [90, 28], end: [90, 94], direction: "top-bottom" },
-      // inner top horizontal
-      { path: "M 30,44 L 78,44", start: [30, 44], end: [78, 44], direction: "left-right" },
-      // inner 干 left vertical curve
-      { path: "M 38,44 C 38,56 32,68 26,78", start: [38, 44], end: [26, 78], direction: "complex" },
-      // inner 干 right vertical curve
-      { path: "M 70,44 C 70,56 76,68 82,78", start: [70, 44], end: [82, 78], direction: "complex" },
-      // inner bottom horizontal
-      { path: "M 30,68 L 78,68", start: [30, 68], end: [78, 68], direction: "left-right" }
+      { path: "M27.38,28.25c1.82,0.38,4.2,0.45,7.22,0.2c11.52-0.95,28.37-3.2,40.58-3.7c3.03-0.12,4.92-0.23,6.82,0", start: [27.4, 28.2], end: [82.0, 24.8], direction: "left-right" },
+      { path: "M52.35,10.75c0.95,0.95,1.55,2.86,1.55,3.96c0,7.3,0,19.47,0,28.54", start: [52.4, 10.8], end: [53.9, 43.2], direction: "top-bottom" },
+      { path: "M20.25,45.75c1.25,1.25,1.89,2.74,2,5c0.19,4.06,0.83,27.03,1.12,37.99c0.08,3.23,0.13,5.48,0.13,6.01", start: [20.2, 45.8], end: [23.5, 94.8], direction: "top-bottom" },
+      { path: "M22.78,47.6c16.31-1.76,59.32-6.35,60.97-6.35c5,0,6.25,1.62,6.25,6.75c0,5.25-0.25,37.3-0.25,43.05c0,7.7-3.5,6.45-9.5,0.95", start: [22.8, 47.6], end: [80.2, 92.0], direction: "top-left-to-bottom-right" },
+      { path: "M38.5,49.38c2.58,1.74,6.66,7.14,7.31,9.84", start: [38.5, 49.4], end: [45.8, 59.2], direction: "top-left-to-bottom-right" },
+      { path: "M66.25,45.5c0.05,0.89-0.07,1.75-0.37,2.59c-0.8,2.73-2.75,6.92-5.26,9.66", start: [66.2, 45.5], end: [60.6, 57.8], direction: "top-right-to-bottom-left" },
+      { path: "M34.78,61.67c1.81,0.39,4.55,0.55,6.36,0.39c9.11-0.8,18.63-1.54,27.63-2.39c2.99-0.28,4.83-0.32,6.33-0.12", start: [34.8, 61.7], end: [75.1, 59.6], direction: "left-right" },
+      { path: "M33.13,74.19c1.81,0.49,4.55,0.83,6.38,0.74c10.73-0.56,22.66-1.94,31.04-2.66c3-0.26,4.82-0.02,6.33,0.23", start: [33.1, 74.2], end: [76.9, 72.5], direction: "left-right" },
+      { path: "M53.5,62.5c0.75,0.75,1,2.14,0.99,3.5c-0.04,6.22-0.15,18.46-0.21,25.26c-0.02,2.19-0.03,3.81-0.03,4.49", start: [53.5, 62.5], end: [54.2, 95.8], direction: "top-bottom" }
     ]
   },
   "肉": {
     readings: { on: ["ニク"], kun: [] },
     strokes: [
-      // outer enclosure top + left
-      { path: "M 82,8 L 18,8 L 18,100", start: [82, 8], end: [18, 100], direction: "complex" },
-      // outer right + bottom
-      { path: "M 82,8 L 82,100 L 18,100", start: [82, 8], end: [18, 100], direction: "complex" },
-      // inner 人 left stroke top
-      { path: "M 50,24 L 32,52", start: [50, 24], end: [32, 52], direction: "top-right-to-bottom-left" },
-      // inner 人 right stroke top
-      { path: "M 50,24 L 68,52", start: [50, 24], end: [68, 52], direction: "top-left-to-bottom-right" },
-      // inner 人 left stroke bottom
-      { path: "M 50,56 L 32,84", start: [50, 56], end: [32, 84], direction: "top-right-to-bottom-left" },
-      // inner 人 right stroke bottom
-      { path: "M 50,56 L 68,84", start: [50, 56], end: [68, 84], direction: "top-left-to-bottom-right" }
+      { path: "M19,30.27c1.11,1.11,1.44,2.82,1.44,4.56c0,5.46,0.16,39.85,0.21,53.67c0.01,3.04,0.02,5.09,0.02,5.61", start: [19.0, 30.3], end: [20.7, 94.1], direction: "top-bottom" },
+      { path: "M21.01,32.11c16.09-1.31,61.86-4.76,63.38-4.76c3.86,0,5.92,1.9,5.92,5.3c0,1.91,0.24,54.28,0.24,58.68c0,9.67-6.04,2.42-9.44-0.71", start: [21.0, 32.1], end: [81.1, 90.6], direction: "top-left-to-bottom-right" },
+      { path: "M53.28,12.75C54,14,54.03,15.33,54.1,16.79c0.65,13.46-8.35,34.46-24.6,38.71", start: [53.3, 12.8], end: [29.5, 55.5], direction: "top-right-to-bottom-left" },
+      { path: "M54.5,37.25c8.56,3.18,22.11,13.06,24.25,18", start: [54.5, 37.2], end: [78.8, 55.2], direction: "top-left-to-bottom-right" },
+      { path: "M52,51.38c0.12,1.22,0.05,2.34-0.47,3.45c-3.28,7.05-11.03,17.05-21.23,22.4", start: [52.0, 51.4], end: [30.3, 77.2], direction: "top-right-to-bottom-left" },
+      { path: "M52,62.25C60.47,65.03,73.88,73.68,76,78", start: [52.0, 62.2], end: [76.0, 78.0], direction: "top-left-to-bottom-right" }
     ]
   },
   "馬": {
-    readings: { on: ["バ"], kun: ["うま", "ま"] },
+    readings: { on: ["バ"], kun: ["うま"] },
     strokes: [
-      // top horizontal
-      { path: "M 18,10 L 90,10", start: [18, 10], end: [90, 10], direction: "left-right" },
-      // left vertical
-      { path: "M 18,10 L 18,70", start: [18, 10], end: [18, 70], direction: "top-bottom" },
-      // horizontal 2
-      { path: "M 18,26 L 80,26", start: [18, 26], end: [80, 26], direction: "left-right" },
-      // horizontal 3
-      { path: "M 18,42 L 80,42", start: [18, 42], end: [80, 42], direction: "left-right" },
-      // horizontal 4
-      { path: "M 18,58 L 80,58", start: [18, 58], end: [80, 58], direction: "left-right" },
-      // right vertical + bottom turn
-      { path: "M 80,10 L 80,70 L 18,70", start: [80, 10], end: [18, 70], direction: "complex" },
-      // bottom horizontal
-      { path: "M 10,82 L 98,82", start: [10, 82], end: [98, 82], direction: "left-right" },
-      // bottom four dots - dot 1
-      { path: "M 18,88 L 22,98", start: [18, 88], end: [22, 98], direction: "top-bottom" },
-      // dot 2
-      { path: "M 38,88 L 42,98", start: [38, 88], end: [42, 98], direction: "top-bottom" },
-      // dot 3
-      { path: "M 58,88 L 62,98", start: [58, 88], end: [62, 98], direction: "top-bottom" },
-      // dot 4
-      { path: "M 78,88 L 82,98", start: [78, 88], end: [82, 98], direction: "top-bottom" }
+      { path: "M28.5,17c0.75,1,1.2,2.25,1.2,3.62c0,5.72,0.04,26.84-0.13,39.38c-0.03,2-0.06,3.76-0.1,5.2", start: [28.5, 17.0], end: [29.5, 65.2], direction: "top-bottom" },
+      { path: "M31.03,19.3c11.22-1.3,37.4-4.84,42.22-5.55c1.68-0.25,4.53-0.53,5.38-0.35", start: [31.0, 19.3], end: [78.6, 13.4], direction: "left-right" },
+      { path: "M53.13,17.82c0.62,1.18,0.82,2.18,0.82,3.55c0,6.64-0.23,28.88-0.23,39.08", start: [53.1, 17.8], end: [53.7, 60.5], direction: "top-bottom" },
+      { path: "M30.78,33.8C42,32.5,66.44,29.71,71.25,29c1.68-0.25,4.53-0.53,5.38-0.35", start: [30.8, 33.8], end: [76.6, 28.6], direction: "left-right" },
+      { path: "M30.78,48.05C42,46.75,66.69,43.71,71.5,43c1.68-0.25,4.53-0.53,5.38-0.35", start: [30.8, 48.0], end: [76.9, 42.6], direction: "left-right" },
+      { path: "M30.73,63.53C44,62,78.04,57.88,85.9,57.01c5.12-0.57,7.34,2.58,6.82,6.53c-1.48,11.21-4.23,19.71-7.48,27.21c-4.45,10.27-6.5,5.5-11.7,0.2", start: [30.7, 63.5], end: [73.5, 91.0], direction: "top-left-to-bottom-right" },
+      { path: "M17.31,76.25c0.44,6-0.31,13.25-1.6,17", start: [17.3, 76.2], end: [15.7, 93.2], direction: "top-bottom" },
+      { path: "M33.75,74.25c2.55,2.65,4.98,9.93,5.62,14.05", start: [33.8, 74.2], end: [39.4, 88.3], direction: "top-bottom" },
+      { path: "M51,71c2.03,2.22,5.25,9.12,5.76,12.58", start: [51.0, 71.0], end: [56.8, 83.6], direction: "top-left-to-bottom-right" },
+      { path: "M68.25,67.75c2.74,2.14,7.07,8.78,7.75,12.1", start: [68.2, 67.8], end: [76.0, 79.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "売": {
-    readings: { on: ["バイ"], kun: ["う.る", "う.れる"] },
+    readings: { on: ["バイ"], kun: ["う.る"] },
     strokes: [
-      // 士 top horizontal
-      { path: "M 20,10 L 88,10", start: [20, 10], end: [88, 10], direction: "left-right" },
-      // 士 vertical
-      { path: "M 54,10 L 54,28", start: [54, 10], end: [54, 28], direction: "top-bottom" },
-      // 士 bottom horizontal
-      { path: "M 28,28 L 80,28", start: [28, 28], end: [80, 28], direction: "left-right" },
-      // 冖 top
-      { path: "M 14,42 L 94,42", start: [14, 42], end: [94, 42], direction: "left-right" },
-      // 冖 left
-      { path: "M 14,42 L 14,56", start: [14, 42], end: [14, 56], direction: "top-bottom" },
-      // 冖 right
-      { path: "M 94,42 L 94,56", start: [94, 42], end: [94, 56], direction: "top-bottom" },
-      // inner horizontal
-      { path: "M 24,58 L 84,58", start: [24, 58], end: [84, 58], direction: "left-right" },
-      // 儿 left
-      { path: "M 40,62 L 24,90", start: [40, 62], end: [24, 90], direction: "top-right-to-bottom-left" },
-      // 儿 right
-      { path: "M 68,62 C 68,76 78,86 90,90", start: [68, 62], end: [90, 90], direction: "complex" }
+      { path: "M28.63,24.35c1.4,0.29,2.87,0.9,5.36,0.79C44.78,24.68,60,22.5,72.74,21.61c2.32-0.16,3.97-0.11,5.14,0.04", start: [28.6, 24.4], end: [77.9, 21.6], direction: "left-right" },
+      { path: "M52.42,9.25c1.1,1.1,1.93,2.75,1.93,4.52c0,6.51-0.05,16.19-0.05,23.58", start: [52.4, 9.2], end: [54.3, 37.3], direction: "top-bottom" },
+      { path: "M31.98,38.99c2.15,0.51,4.46,0.83,6.03,0.68c8.25-0.77,20.27-2.27,31.74-3.54c2.41-0.26,4.62-0.4,7.01-0.23", start: [32.0, 39.0], end: [76.8, 35.9], direction: "left-right" },
+      { path: "M18.62,52.5c-0.15,3.86-3.63,14.45-4.88,16.75", start: [18.6, 52.5], end: [13.7, 69.2], direction: "top-bottom" },
+      { path: "M19.75,54.73C40.38,52,69,49,86.69,48.5C99.5,48.14,88.5,57.88,85.5,60", start: [19.8, 54.7], end: [85.5, 60.0], direction: "left-right" },
+      { path: "M41.25,62.5c0.37,1.12,0.29,2.43,0.16,3.65C40.25,77,35,90.25,25.64,97.65", start: [41.2, 62.5], end: [25.6, 97.7], direction: "top-right-to-bottom-left" },
+      { path: "M59.49,58.87c1.07,1.07,1.38,2.59,1.38,4.43c0,6.08-0.2,12.57-0.2,19.45c0,14,2.09,14.77,13.59,14.77c13,0,13.63-1.39,13.63-9.62", start: [59.5, 58.9], end: [87.9, 87.9], direction: "top-left-to-bottom-right" }
     ]
   },
   "買": {
     readings: { on: ["バイ"], kun: ["か.う"] },
     strokes: [
-      // 目 top horizontal
-      { path: "M 28,8 L 80,8", start: [28, 8], end: [80, 8], direction: "left-right" },
-      // 目 left
-      { path: "M 28,8 L 28,50", start: [28, 8], end: [28, 50], direction: "top-bottom" },
-      // 目 horizontal mid1
-      { path: "M 28,22 L 80,22", start: [28, 22], end: [80, 22], direction: "left-right" },
-      // 目 horizontal mid2
-      { path: "M 28,36 L 80,36", start: [28, 36], end: [80, 36], direction: "left-right" },
-      // 目 right+bottom
-      { path: "M 80,8 L 80,50 L 28,50", start: [80, 8], end: [28, 50], direction: "complex" },
-      // 貝 enclosure top
-      { path: "M 18,56 L 90,56", start: [18, 56], end: [90, 56], direction: "left-right" },
-      // 貝 left
-      { path: "M 18,56 L 18,86", start: [18, 56], end: [18, 86], direction: "top-bottom" },
-      // 貝 horizontal mid
-      { path: "M 18,70 L 90,70", start: [18, 70], end: [90, 70], direction: "left-right" },
-      // 貝 right+bottom
-      { path: "M 90,56 L 90,86 L 18,86", start: [90, 56], end: [18, 86], direction: "complex" },
-      // 八 left
-      { path: "M 42,88 L 22,102", start: [42, 88], end: [22, 102], direction: "top-right-to-bottom-left" },
-      // 八 right
-      { path: "M 66,88 L 86,102", start: [66, 88], end: [86, 102], direction: "top-left-to-bottom-right" }
+      { path: "M20.5,14.64c0.49,0.49,1.44,1.59,1.66,2.43c1.09,4.17,1.51,6.88,2.4,11.91c0.2,1.15,0.39,2.26,0.55,3.26", start: [20.5, 14.6], end: [25.1, 32.2], direction: "top-bottom" },
+      { path: "M23.25,16.2c15.2-1.38,58.15-3.72,64.01-4.22c2.74-0.23,4.12,1.39,3.32,3.95c-1.08,3.44-1.82,5.56-3.62,10.4c-0.38,1.02-0.87,1.99-1.32,2.94", start: [23.2, 16.2], end: [85.6, 29.3], direction: "left-right" },
+      { path: "M43.25,16.5c0.75,0.75,0.68,1.25,0.85,2.27c0.6,3.64,1.21,7.47,1.4,9.23", start: [43.2, 16.5], end: [45.5, 28.0], direction: "top-bottom" },
+      { path: "M66.25,14.5c0.5,0.75,0.42,2.03,0.29,3.01c-0.54,4.37-0.79,6.62-1.29,9.24", start: [66.2, 14.5], end: [65.2, 26.8], direction: "top-bottom" },
+      { path: "M26.3,30.62c8.83-0.74,51.2-3.49,59.17-3.65", start: [26.3, 30.6], end: [85.5, 27.0], direction: "left-right" },
+      { path: "M34.7,38.87c1.09,1.09,1.57,2.82,1.57,4.01c0,1.2,0.07,32.68,0.07,33.28s-0.07,2.47-0.07,3.8", start: [34.7, 38.9], end: [36.3, 80.0], direction: "top-bottom" },
+      { path: "M37.02,40.77c8.15-0.63,32.05-3.03,34.84-3.03c2.89,0,4.19,1.26,4.19,3.7c0,2.44-0.08,19.9-0.06,33.08c0,1.35,0.04,2.86,0.04,4.34", start: [37.0, 40.8], end: [76.0, 78.9], direction: "top-left-to-bottom-right" },
+      { path: "M37.53,52.38c5.97-0.26,31.44-2.43,37.25-2.43", start: [37.5, 52.4], end: [74.8, 50.0], direction: "left-right" },
+      { path: "M37.5,64.75C46.25,64,65,62.5,74.59,62.1", start: [37.5, 64.8], end: [74.6, 62.1], direction: "left-right" },
+      { path: "M37.76,76.86c8.24-0.48,27.49-1.73,36.87-2.04", start: [37.8, 76.9], end: [74.6, 74.8], direction: "left-right" },
+      { path: "M43.77,83c0.23,1.5-0.38,2.82-1.5,3.83C38.75,90,30.5,95.5,21.5,99", start: [43.8, 83.0], end: [21.5, 99.0], direction: "top-right-to-bottom-left" },
+      { path: "M69.84,83.97C75,87.91,80.38,94.38,82.5,98.5", start: [69.8, 84.0], end: [82.5, 98.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "麦": {
     readings: { on: ["バク"], kun: ["むぎ"] },
     strokes: [
-      // top horizontal
-      { path: "M 10,14 L 98,14", start: [10, 14], end: [98, 14], direction: "left-right" },
-      // second horizontal
-      { path: "M 20,30 L 88,30", start: [20, 30], end: [88, 30], direction: "left-right" },
-      // vertical
-      { path: "M 54,14 L 54,68", start: [54, 14], end: [54, 68], direction: "top-bottom" },
-      // left short stroke
-      { path: "M 34,42 L 26,55", start: [34, 42], end: [26, 55], direction: "top-right-to-bottom-left" },
-      // right short stroke
-      { path: "M 74,42 L 82,55", start: [74, 42], end: [82, 55], direction: "top-left-to-bottom-right" },
-      // bottom horizontal
-      { path: "M 16,68 L 92,68", start: [16, 68], end: [92, 68], direction: "left-right" },
-      // 夂 left stroke
-      { path: "M 54,68 L 18,100", start: [54, 68], end: [18, 100], direction: "top-right-to-bottom-left" },
-      // 夂 right stroke
-      { path: "M 54,68 L 94,100", start: [54, 68], end: [94, 100], direction: "top-left-to-bottom-right" }
+      { path: "M30.13,26.32c1.93,0.43,4.47,0.81,6.7,0.65c12.45-0.92,25.68-2.77,36.8-3.67c2.31-0.19,4.81-0.45,7.12-0.16", start: [30.1, 26.3], end: [80.8, 23.1], direction: "left-right" },
+      { path: "M53,11.25c1.25,1.25,1.5,2.75,1.5,4.25c0,2.75-0.25,23.5-0.25,34.5", start: [53.0, 11.2], end: [54.2, 50.0], direction: "top-bottom" },
+      { path: "M28.88,39.32c1.86,0.3,4.64,0.58,6.28,0.48c12.79-0.8,24.19-2.68,39.48-4.14c2.71-0.26,4.37,0.11,5.74,0.22", start: [28.9, 39.3], end: [80.4, 35.9], direction: "left-right" },
+      { path: "M21.88,53.82c2.67,0.55,5.71,0.47,7.7,0.23c15.92-1.93,35.67-4.55,53.26-5.39c3.34-0.16,5.2-0.04,7.03,0.47", start: [21.9, 53.8], end: [89.9, 49.1], direction: "left-right" },
+      { path: "M46,55c0.17,1.43-0.54,3.16-1.33,4.4C41.12,65,33.14,74.61,20.62,80.88", start: [46.0, 55.0], end: [20.6, 80.9], direction: "top-right-to-bottom-left" },
+      { path: "M47.25,62.25c2,0.25,3.52,0.25,5,0.02c4.75-0.76,11.06-2.42,14.68-3.13c3.04-0.6,3.7,1.58,2.35,3.97c-5.19,9.2-29.04,31.36-49.36,36.27", start: [47.2, 62.2], end: [19.9, 99.4], direction: "top-right-to-bottom-left" },
+      { path: "M40.5,67.75C48.53,72.31,74,90.5,83.9,95.39c2.96,1.46,5.34,2.17,8.22,2.61", start: [40.5, 67.8], end: [92.1, 98.0], direction: "top-left-to-bottom-right" }
     ]
   },
   "半": {
     readings: { on: ["ハン"], kun: ["なか.ば"] },
     strokes: [
-      // left dot
-      { path: "M 28,16 L 22,30", start: [28, 16], end: [22, 30], direction: "top-right-to-bottom-left" },
-      // right dot
-      { path: "M 78,16 L 84,30", start: [78, 16], end: [84, 30], direction: "top-left-to-bottom-right" },
-      // top horizontal
-      { path: "M 14,40 L 94,40", start: [14, 40], end: [94, 40], direction: "left-right" },
-      // bottom horizontal
-      { path: "M 14,62 L 94,62", start: [14, 62], end: [94, 62], direction: "left-right" },
-      // center vertical
-      { path: "M 54,18 L 54,98", start: [54, 18], end: [54, 98], direction: "top-bottom" }
+      { path: "M26.02,22.58c3.9,2.41,10.07,9.89,11.04,13.63", start: [26.0, 22.6], end: [37.1, 36.2], direction: "top-left-to-bottom-right" },
+      { path: "M82.75,18.75c0.16,1.19-0.39,2.25-1.01,3.2c-2.57,3.96-7.16,8.76-12.62,12.92", start: [82.8, 18.8], end: [69.1, 34.9], direction: "top-right-to-bottom-left" },
+      { path: "M28.3,48.57c1.78,0.38,5.07,0.21,6.83,0.03c10.62-1.09,29.12-2.99,38.5-3.67c2.97-0.22,4.75-0.17,6.24,0.02", start: [28.3, 48.6], end: [79.9, 45.0], direction: "left-right" },
+      { path: "M13.5,67.22c2.25,0.91,6.85,1.03,9.22,0.78c18.28-1.87,40.4-3.58,62.61-4.38c4-0.14,6.41,0.25,8.42,0.52", start: [13.5, 67.2], end: [93.8, 64.1], direction: "left-right" },
+      { path: "M52.67,11.5c1.23,1.23,1.85,3.17,1.85,4.4c0,7.6,0.1,54.35,0.1,75.1c0,3.18-0.07,5.46-0.11,6.5", start: [52.7, 11.5], end: [54.5, 97.5], direction: "top-bottom" }
     ]
   },
   "番": {
-    readings: { on: ["バン"], kun: ["つが.い"] },
+    readings: { on: ["バン"], kun: [] },
     strokes: [
-      // 釆 left-falling stroke
-      { path: "M 54,6 L 18,40", start: [54, 6], end: [18, 40], direction: "top-right-to-bottom-left" },
-      // 釆 right-falling stroke
-      { path: "M 54,6 L 90,40", start: [54, 6], end: [90, 40], direction: "top-left-to-bottom-right" },
-      // 釆 horizontal 1
-      { path: "M 20,18 L 88,18", start: [20, 18], end: [88, 18], direction: "left-right" },
-      // vertical through
-      { path: "M 54,6 L 54,48", start: [54, 6], end: [54, 48], direction: "top-bottom" },
-      // 釆 horizontal 2
-      { path: "M 26,32 L 82,32", start: [26, 32], end: [82, 32], direction: "left-right" },
-      // 田 top
-      { path: "M 18,52 L 90,52", start: [18, 52], end: [90, 52], direction: "left-right" },
-      // 田 left
-      { path: "M 18,52 L 18,96", start: [18, 52], end: [18, 96], direction: "top-bottom" },
-      // 田 middle horizontal
-      { path: "M 18,74 L 90,74", start: [18, 74], end: [90, 74], direction: "left-right" },
-      // 田 middle vertical
-      { path: "M 54,52 L 54,96", start: [54, 52], end: [54, 96], direction: "top-bottom" },
-      // 田 right+bottom
-      { path: "M 90,52 L 90,96 L 18,96", start: [90, 52], end: [18, 96], direction: "complex" }
+      { path: "M64.75,10c-0.26,1.6-1.33,2.37-2.17,2.79c-6.78,3.34-17.37,6.5-32.58,9.46", start: [64.8, 10.0], end: [30.0, 22.2], direction: "right-left" },
+      { path: "M30.89,25.79c2.84,1.6,7.12,6.1,7.83,8.59", start: [30.9, 25.8], end: [38.7, 34.4], direction: "top-left-to-bottom-right" },
+      { path: "M73.5,18.5c0.08,1.12-0.09,1.64-0.53,2.72c-1.51,3.69-3.87,7.95-8.25,12.84", start: [73.5, 18.5], end: [64.7, 34.1], direction: "top-right-to-bottom-left" },
+      { path: "M18.52,40.91c2.23,0.59,4.63,0.55,7.77,0.22c17.46-1.88,40.76-4.38,53.01-4.97c3.16-0.15,5.95,0.09,7.89,0.5", start: [18.5, 40.9], end: [87.2, 36.7], direction: "left-right" },
+      { path: "M52.15,20.25c0.99,0.99,1.5,2.25,1.5,3.63c0,4.99-0.15,20.55-0.2,30.12c-0.01,2.16-0.02,4.02-0.02,5.38", start: [52.1, 20.2], end: [53.4, 59.4], direction: "top-bottom" },
+      { path: "M48.62,39.38c0,1.24-0.45,2.08-1.07,2.86C40.66,50.82,32.7,59.03,20.5,64.75", start: [48.6, 39.4], end: [20.5, 64.8], direction: "top-right-to-bottom-left" },
+      { path: "M55.88,38.6c4.5,3.4,19.87,14.4,28.9,19.63c2.44,1.42,4.6,2.77,7.72,3.65", start: [55.9, 38.6], end: [92.5, 61.9], direction: "top-left-to-bottom-right" },
+      { path: "M29.06,65.67c0.88,0.88,1.56,2.08,1.74,3.82c0.87,8.49,1.48,17.69,2.25,26.98c0.09,1.13,0.18,2.23,0.27,3.28", start: [29.1, 65.7], end: [33.3, 99.8], direction: "top-bottom" },
+      { path: "M31.27,67.39c15.35-1.64,32.1-3.77,42.13-4.25c3.27-0.16,4.97,1.73,4.75,4.07c-0.55,5.89-2.5,18.49-4.69,28.49c-0.23,1.07-0.47,2.09-0.71,3.05", start: [31.3, 67.4], end: [72.8, 98.8], direction: "top-left-to-bottom-right" },
+      { path: "M52.54,66.89C53.25,68,53.5,68.45,53.5,70c-0.02,7.31-0.03,22.09-0.03,24.47", start: [52.5, 66.9], end: [53.5, 94.5], direction: "top-bottom" },
+      { path: "M33.28,81.4c5.6-0.77,36.1-3.02,42.22-3.15", start: [33.3, 81.4], end: [75.5, 78.2], direction: "left-right" },
+      { path: "M34.2,96.97c10.3-0.72,25.93-1.85,38.05-2.22", start: [34.2, 97.0], end: [72.2, 94.8], direction: "left-right" }
     ]
   },
   "父": {
     readings: { on: ["フ"], kun: ["ちち"] },
     strokes: [
-      // top left dot
-      { path: "M 30,14 L 42,26", start: [30, 14], end: [42, 26], direction: "top-left-to-bottom-right" },
-      // top right dot
-      { path: "M 78,14 L 66,26", start: [78, 14], end: [66, 26], direction: "top-right-to-bottom-left" },
-      // left falling stroke (ノ)
-      { path: "M 54,30 L 14,95", start: [54, 30], end: [14, 95], direction: "top-right-to-bottom-left" },
-      // right falling stroke
-      { path: "M 54,30 L 94,95", start: [54, 30], end: [94, 95], direction: "top-left-to-bottom-right" }
+      { path: "M38.49,18.25c0.39,1.38,0.07,2.89-0.59,4.16C32,33.91,26.32,39.13,18.75,45.62", start: [38.5, 18.2], end: [18.8, 45.6], direction: "top-right-to-bottom-left" },
+      { path: "M69.38,19.5c7.25,4,14.29,9.68,18.88,15.5", start: [69.4, 19.5], end: [88.3, 35.0], direction: "top-left-to-bottom-right" },
+      { path: "M67.7,39.68c0.55,1.57,0.31,3.8-0.42,5.92C60.63,64.87,48,80.25,23,90.25", start: [67.7, 39.7], end: [23.0, 90.2], direction: "top-right-to-bottom-left" },
+      { path: "M34.25,47c4.83,0,29,25.38,45.99,37.02c3.54,2.43,7.39,4.55,11.51,5.77", start: [34.2, 47.0], end: [91.8, 89.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "風": {
-    readings: { on: ["フウ", "フ"], kun: ["かぜ", "かざ"] },
+    readings: { on: ["フウ", "フ"], kun: ["かぜ"] },
     strokes: [
-      // enclosure top
-      { path: "M 10,12 L 90,12", start: [10, 12], end: [90, 12], direction: "left-right" },
-      // enclosure left
-      { path: "M 10,12 L 10,88 C 10,95 18,100 28,95", start: [10, 12], end: [28, 95], direction: "complex" },
-      // inner first horizontal
-      { path: "M 26,30 L 78,30", start: [26, 30], end: [78, 30], direction: "left-right" },
-      // inner left of 虫
-      { path: "M 36,30 L 36,60", start: [36, 30], end: [36, 60], direction: "top-bottom" },
-      // inner horizontal middle
-      { path: "M 36,48 L 72,48", start: [36, 48], end: [72, 48], direction: "left-right" },
-      // inner right+bottom
-      { path: "M 72,30 L 72,60 L 36,60", start: [72, 30], end: [36, 60], direction: "complex" },
-      // 虫 dot
-      { path: "M 52,62 L 56,72", start: [52, 62], end: [56, 72], direction: "top-bottom" },
-      // enclosure right slanting
-      { path: "M 90,12 L 80,88 C 78,96 84,100 94,96", start: [90, 12], end: [94, 96], direction: "complex" },
-      // ノ inside bottom
-      { path: "M 58,72 L 34,90", start: [58, 72], end: [34, 90], direction: "top-right-to-bottom-left" }
+      { path: "M24.55,22.25c0.95,1.25,1.37,3.05,1.37,5.36c0,22.76,1.59,50.26-10.66,62.39", start: [24.6, 22.2], end: [15.3, 90.0], direction: "top-bottom" },
+      { path: "M26.75,23.5c1.48-0.24,3.35-0.52,5.49-0.84C46.03,20.62,63,17.75,74,17.25c4-0.18,6.09,0.97,5.5,4.75C76.25,42.75,77.25,71.75,92,87.75c6.95,7.54,5.75,1,6-5.5", start: [26.8, 23.5], end: [98.0, 82.2], direction: "top-left-to-bottom-right" },
+      { path: "M63.5,24.75C63.25,26,62.62,27,61.32,27.8C57.3,30.23,48.46,34.95,35.88,38", start: [63.5, 24.8], end: [35.9, 38.0], direction: "top-right-to-bottom-left" },
+      { path: "M33.23,49.47c0.71,0.71,1.46,1.63,1.56,2.1c0.6,2.87,1.22,5.5,2.01,10.42c0.15,0.93,0.3,1.91,0.47,2.94", start: [33.2, 49.5], end: [37.3, 64.9], direction: "top-bottom" },
+      { path: "M35.85,50.73c11.9-1.98,23.66-3.81,29.48-4.1c2.56-0.13,3.98,0.77,3.42,3.09c-0.81,3.38-1.49,4.52-2.56,8.52", start: [35.9, 50.7], end: [66.2, 58.2], direction: "left-right" },
+      { path: "M38.3,62.81c5.71-0.6,17.05-2.28,26.2-3.3c1.27-0.14,2.47-0.25,3.58-0.33", start: [38.3, 62.8], end: [68.1, 59.2], direction: "left-right" },
+      { path: "M50.07,36.5c1.09,1.09,1.35,2.25,1.35,3.64c0,3.86-0.26,30.86-0.26,37.81", start: [50.1, 36.5], end: [51.2, 78.0], direction: "top-bottom" },
+      { path: "M32.92,82.16c1.2,0.71,2.64,0.8,3.36,0.59c6.59-1.88,24.47-7.13,30.34-8.88", start: [32.9, 82.2], end: [66.6, 73.9], direction: "left-right" },
+      { path: "M63.75,67.85c3.5,3.52,7.62,10.15,9.36,15.31", start: [63.8, 67.8], end: [73.1, 83.2], direction: "top-left-to-bottom-right" }
     ]
   },
   "分": {
-    readings: { on: ["ブン", "フン", "ブ"], kun: ["わ.ける", "わ.かれる", "わ.かる", "わ.かつ"] },
+    readings: { on: ["ブン", "フン"], kun: ["わ.ける", "わ.かる"] },
     strokes: [
-      // top left dot (八 left)
-      { path: "M 48,10 L 18,38", start: [48, 10], end: [18, 38], direction: "top-right-to-bottom-left" },
-      // top right dot (八 right)
-      { path: "M 56,10 L 90,38", start: [56, 10], end: [90, 38], direction: "top-left-to-bottom-right" },
-      // 刀 left ノ
-      { path: "M 66,42 L 22,96", start: [66, 42], end: [22, 96], direction: "top-right-to-bottom-left" },
-      // 刀 top + right
-      { path: "M 36,50 L 82,50 L 82,96", start: [36, 50], end: [82, 96], direction: "complex" }
+      { path: "M41.12,19.38c0.25,1.24-0.44,3.01-1.1,4.08C34.31,32.72,27.13,40.62,13,51.25", start: [41.1, 19.4], end: [13.0, 51.2], direction: "top-right-to-bottom-left" },
+      { path: "M54.69,13.75c7.56-0.12,20.68,19.17,29.41,25.95c3.07,2.39,6.02,4.05,10.4,5.3", start: [54.7, 13.8], end: [94.5, 45.0], direction: "top-left-to-bottom-right" },
+      { path: "M29.35,55.37c2.42,0.83,4.97,0.75,7.42,0.37c11.06-1.7,28.87-5.3,34.1-5.76c3.69-0.33,5.08,1.48,4.88,3.77c-0.54,6.05-5.94,29.03-10.5,36.3c-4.99,7.96-5.74,4.21-9.84-0.49", start: [29.4, 55.4], end: [55.4, 89.6], direction: "top-left-to-bottom-right" },
+      { path: "M49.12,57.25c0.15,1.49,0.06,2.72-0.56,4.08C43.5,72.5,35.75,82,22.5,90.75", start: [49.1, 57.2], end: [22.5, 90.8], direction: "top-right-to-bottom-left" }
     ]
   },
   "聞": {
-    readings: { on: ["ブン", "モン"], kun: ["き.く", "き.こえる"] },
+    readings: { on: ["ブン", "モン"], kun: ["き.く"] },
     strokes: [
-      // 門 left side - top
-      { path: "M 10,8 L 10,98", start: [10, 8], end: [10, 98], direction: "top-bottom" },
-      // 門 left side - top horizontal
-      { path: "M 10,8 L 34,8", start: [10, 8], end: [34, 8], direction: "left-right" },
-      // 門 left inner strokes
-      { path: "M 20,20 L 20,62", start: [20, 20], end: [20, 62], direction: "top-bottom" },
-      { path: "M 20,20 L 34,20 L 34,62", start: [20, 20], end: [34, 62], direction: "complex" },
-      // 門 right side - top
-      { path: "M 46,8 L 98,8", start: [46, 8], end: [98, 8], direction: "left-right" },
-      // 門 right side - vertical
-      { path: "M 98,8 L 98,98", start: [98, 8], end: [98, 98], direction: "top-bottom" },
-      // 門 right inner strokes
-      { path: "M 56,20 L 56,62", start: [56, 20], end: [56, 62], direction: "top-bottom" },
-      { path: "M 56,20 L 88,20 L 88,62", start: [56, 20], end: [88, 62], direction: "complex" },
-      // 耳 inside - top horizontal
-      { path: "M 40,38 L 68,38", start: [40, 38], end: [68, 38], direction: "left-right" },
-      // 耳 left vertical
-      { path: "M 40,38 L 40,90", start: [40, 38], end: [40, 90], direction: "top-bottom" },
-      // 耳 mid horizontal 1
-      { path: "M 40,52 L 68,52", start: [40, 52], end: [68, 52], direction: "left-right" },
-      // 耳 mid horizontal 2
-      { path: "M 40,66 L 68,66", start: [40, 66], end: [68, 66], direction: "left-right" },
-      // 耳 right vertical
-      { path: "M 68,38 L 68,78", start: [68, 38], end: [68, 78], direction: "top-bottom" },
-      // 耳 bottom horizontal
-      { path: "M 34,80 L 78,80", start: [34, 80], end: [78, 80], direction: "left-right" }
+      { path: "M16.14,17.97c0.94,0.94,1.51,2.16,1.51,3.25c0,0.77-0.03,48.45-0.18,66.29c-0.03,3.16-0.05,5.37-0.07,6.21", start: [16.1, 18.0], end: [17.4, 93.7], direction: "top-bottom" },
+      { path: "M19.01,19.6c6.86-1.22,18.49-3.1,21.08-3.39c1.9-0.21,3.03,0.79,3,2.46c-0.04,1.84-0.59,10.46-1.44,20.02c-0.09,1.04-0.15,2-0.15,2.69", start: [19.0, 19.6], end: [41.5, 41.4], direction: "top-left-to-bottom-right" },
+      { path: "M18.81,30.43c6.94-1.05,15.82-2.55,22.41-2.9", start: [18.8, 30.4], end: [41.2, 27.5], direction: "left-right" },
+      { path: "M17.86,42.57C26.25,41.25,33,40,40.42,39.4", start: [17.9, 42.6], end: [40.4, 39.4], direction: "left-right" },
+      { path: "M66.21,14.22c0.66,0.66,1.17,1.78,1.17,2.93c0,0.56,0.12,13.19,0.17,19.1c0.02,1.71,0.03,2.83,0.03,2.91", start: [66.2, 14.2], end: [67.6, 39.2], direction: "top-bottom" },
+      { path: "M68.51,16.1c6.89-1.1,19.28-3.26,21.17-3.36c1.96-0.1,3.57,1.38,3.57,2.98c0,18.78-0.26,60.28-0.26,73.89c0,11.13-6.37,2.13-8.21,0.25", start: [68.5, 16.1], end: [84.8, 89.9], direction: "top-bottom" },
+      { path: "M68.59,25.94c5.16-0.69,18.16-2.44,23-2.71", start: [68.6, 25.9], end: [91.6, 23.2], direction: "left-right" },
+      { path: "M69.13,36.75c6.37-0.75,15.12-2,22.15-2.53", start: [69.1, 36.8], end: [91.3, 34.2], direction: "left-right" },
+      { path: "M33.5,51.24c1.71,0.31,4.02,0.25,5.71,0.06c9.6-1.05,20.21-3.05,30.66-4.05c2.83-0.27,4.57-0.1,6,0.05", start: [33.5, 51.2], end: [75.9, 47.3], direction: "left-right" },
+      { path: "M42.71,53c0.89,0.89,1.3,2.26,1.3,3.51S44,79.31,44,83.84", start: [42.7, 53.0], end: [44.0, 83.8], direction: "top-bottom" },
+      { path: "M45.13,61.43c4.49-0.43,13.74-2.05,19.78-2.36", start: [45.1, 61.4], end: [64.9, 59.1], direction: "left-right" },
+      { path: "M44.81,71.67c5.72-0.67,12.31-1.92,20.12-2.95", start: [44.8, 71.7], end: [64.9, 68.7], direction: "left-right" },
+      { path: "M32.51,85.14c0.99,0.86,2.2,1.23,3.25,0.92c4.87-1.43,28.2-7.83,34.76-9.39", start: [32.5, 85.1], end: [70.5, 76.7], direction: "left-right" },
+      { path: "M64.84,49.66c0.62,0.63,1.05,1.71,1.05,2.99c0,0.66,0.12,27.55,0.15,39.1c0.01,1.88,0.01,3.36,0.01,4.25", start: [64.8, 49.7], end: [66.1, 96.0], direction: "top-bottom" }
     ]
   },
   "米": {
     readings: { on: ["ベイ", "マイ"], kun: ["こめ"] },
     strokes: [
-      // left dot
-      { path: "M 30,20 L 20,36", start: [30, 20], end: [20, 36], direction: "top-right-to-bottom-left" },
-      // right dot
-      { path: "M 78,20 L 88,36", start: [78, 20], end: [88, 36], direction: "top-left-to-bottom-right" },
-      // horizontal
-      { path: "M 8,54 L 100,54", start: [8, 54], end: [100, 54], direction: "left-right" },
-      // center vertical
-      { path: "M 54,10 L 54,100", start: [54, 10], end: [54, 100], direction: "top-bottom" },
-      // bottom-left falling stroke
-      { path: "M 54,54 L 12,95", start: [54, 54], end: [12, 95], direction: "top-right-to-bottom-left" },
-      // bottom-right falling stroke
-      { path: "M 54,54 L 96,95", start: [54, 54], end: [96, 95], direction: "top-left-to-bottom-right" }
+      { path: "M26.64,25.46c4.03,2.47,10.1,9.45,11.11,13.29", start: [26.6, 25.5], end: [37.8, 38.8], direction: "top-left-to-bottom-right" },
+      { path: "M78.52,19.64c0.1,0.85-0.21,2.19-0.63,2.91C75.25,27,72.25,30.5,66.56,35.22", start: [78.5, 19.6], end: [66.6, 35.2], direction: "top-right-to-bottom-left" },
+      { path: "M18,49.25c2.25,0.62,4.8,0.83,8.24,0.5c19.67-1.88,38.77-4.5,52.75-5.25c3.46-0.19,6.13-0.12,8.51,0.5", start: [18.0, 49.2], end: [87.5, 45.0], direction: "left-right" },
+      { path: "M51.75,13.25C53.06,14.56,54,17,54,18.75c0,4.75,0.06,50.93-0.14,70.51c-0.04,3.54-0.07,5.54-0.11,6.49", start: [51.8, 13.2], end: [53.8, 95.8], direction: "top-bottom" },
+      { path: "M49.38,48.25c0,1.47-0.81,3.5-1.26,4.29C41,64.89,27.22,78.84,13.5,85.75", start: [49.4, 48.2], end: [13.5, 85.8], direction: "top-right-to-bottom-left" },
+      { path: "M55.75,48.25C60,53,75.38,68.74,83.7,76.96c2.8,2.77,5.74,5.16,9.43,6.79", start: [55.8, 48.2], end: [93.1, 83.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "歩": {
-    readings: { on: ["ホ", "ブ", "フ"], kun: ["ある.く", "あゆ.む"] },
+    readings: { on: ["ホ", "ブ"], kun: ["ある.く", "あゆ.む"] },
     strokes: [
-      // 止 top - top horizontal
-      { path: "M 20,10 L 88,10", start: [20, 10], end: [88, 10], direction: "left-right" },
-      // 止 left vertical
-      { path: "M 28,10 L 28,48", start: [28, 10], end: [28, 48], direction: "top-bottom" },
-      // 止 middle horizontal
-      { path: "M 28,30 L 72,30", start: [28, 30], end: [72, 30], direction: "left-right" },
-      // 止 right short vertical
-      { path: "M 72,10 L 72,30", start: [72, 10], end: [72, 30], direction: "top-bottom" },
-      // 止 bottom horizontal
-      { path: "M 12,48 L 96,48", start: [12, 48], end: [96, 48], direction: "left-right" },
-      // 少 left short slash
-      { path: "M 36,56 L 20,72", start: [36, 56], end: [20, 72], direction: "top-right-to-bottom-left" },
-      // 少 right short dot
-      { path: "M 72,56 L 86,68", start: [72, 56], end: [86, 68], direction: "top-left-to-bottom-right" },
-      // center vertical
-      { path: "M 54,52 L 54,98", start: [54, 52], end: [54, 98], direction: "top-bottom" }
+      { path: "M54.39,10.75c1.37,1.12,2.13,2.5,2.13,4.14c0,4.86,0.22,13.86,0.22,22.97", start: [54.4, 10.8], end: [56.7, 37.9], direction: "top-bottom" },
+      { path: "M57.65,24.41c8.23-1.41,12.73-2.16,19.44-3.17c1.66-0.25,3.1-0.24,4.15-0.04", start: [57.6, 24.4], end: [81.2, 21.2], direction: "left-right" },
+      { path: "M32.24,21.98c0.76,0.77,1.81,1.92,1.91,2.81c0.35,3.2,0.6,9.08,0.77,15.17", start: [32.2, 22.0], end: [34.9, 40.0], direction: "top-bottom" },
+      { path: "M18,41.5c2.84,0.69,5.62,0.68,8.51,0.4c14.37-1.4,40.92-4.27,56.01-5.59c3.09-0.27,6.08-0.29,9.16,0.19", start: [18.0, 41.5], end: [91.7, 36.5], direction: "left-right" },
+      { path: "M56.13,42c0.75,0.75,1.22,1.99,1.22,3.5c0,8.5,0,18.47,0,20.94c0,7.06-3.73,3.18-7.1-0.19", start: [56.1, 42.0], end: [50.2, 66.2], direction: "top-bottom" },
+      { path: "M38.75,50.75c0.12,1.1-0.06,1.76-0.62,2.73C35.6,57.9,29.25,63.5,22,68.75", start: [38.8, 50.8], end: [22.0, 68.8], direction: "top-right-to-bottom-left" },
+      { path: "M77,45.5c5.88,2.29,11.62,6.88,14.5,11.51", start: [77.0, 45.5], end: [91.5, 57.0], direction: "top-left-to-bottom-right" },
+      { path: "M76.65,55.64c0.14,0.97-0.09,2.53-0.78,3.91C70.15,70.94,48.14,89.35,25.81,97", start: [76.7, 55.6], end: [25.8, 97.0], direction: "top-right-to-bottom-left" }
     ]
   },
   "母": {
     readings: { on: ["ボ"], kun: ["はは"] },
     strokes: [
-      // enclosure left curve
-      { path: "M 54,6 C 20,6 10,30 10,54 C 10,78 20,100 54,100", start: [54, 6], end: [54, 100], direction: "complex" },
-      // enclosure right curve
-      { path: "M 54,6 C 88,6 98,30 98,54 C 98,78 88,100 54,100", start: [54, 6], end: [54, 100], direction: "complex" },
-      // horizontal through middle
-      { path: "M 16,40 L 92,40", start: [16, 40], end: [92, 40], direction: "left-right" },
-      // vertical center
-      { path: "M 54,6 L 54,100", start: [54, 6], end: [54, 100], direction: "top-bottom" },
-      // dot left
-      { path: "M 34,58 L 30,70", start: [34, 58], end: [30, 70], direction: "top-right-to-bottom-left" },
-      // horizontal lower
-      { path: "M 16,72 L 92,72", start: [16, 72], end: [92, 72], direction: "left-right" },
-      // dot right
-      { path: "M 72,58 L 78,70", start: [72, 58], end: [78, 70], direction: "top-left-to-bottom-right" }
+      { path: "M34.82,19.37c1.14,1.02,1.72,3.42,1.41,6.09c-1.46,12.62-8.22,32.3-13.04,44.1c-1.47,3.6-0.44,5.27,3.63,5.2c11.37-0.18,27.52,2.13,40.68,7.24c4.98,1.93,9.54,4.26,13.25,7.01", start: [34.8, 19.4], end: [80.8, 89.0], direction: "top-left-to-bottom-right" },
+      { path: "M37.32,22.07c4.81,0.56,13.81-1.32,39.18-6.07c4-0.75,5.92,0.77,5.5,4.25c-2.25,18.62-7,49-16.06,69.18c-3.36,7.49-9.86,1.68-11.42,0", start: [37.3, 22.1], end: [54.5, 89.4], direction: "top-bottom" },
+      { path: "M49,28.5c3.88,1.98,10.03,8.16,11,11.25", start: [49.0, 28.5], end: [60.0, 39.8], direction: "top-left-to-bottom-right" },
+      { path: "M45.25,57.62c3.79,1.96,9.8,8.07,10.75,11.12", start: [45.2, 57.6], end: [56.0, 68.7], direction: "top-left-to-bottom-right" },
+      { path: "M9.88,51.45c2.21,0.63,6.26,0.87,8.46,0.63C46.77,49,67.12,47,90.65,46.07c3.68-0.15,5.89,0.3,7.72,0.61", start: [9.9, 51.5], end: [98.4, 46.7], direction: "left-right" }
     ]
   },
   "方": {
     readings: { on: ["ホウ"], kun: ["かた"] },
     strokes: [
-      // top dot
-      { path: "M 42,10 L 54,10", start: [42, 10], end: [54, 10], direction: "left-right" },
-      // horizontal
-      { path: "M 10,30 L 98,30", start: [10, 30], end: [98, 30], direction: "left-right" },
-      // left falling stroke
-      { path: "M 54,30 L 10,98", start: [54, 30], end: [10, 98], direction: "top-right-to-bottom-left" },
-      // top of hook + right + hook down
-      { path: "M 40,44 L 82,44 L 82,94", start: [40, 44], end: [82, 94], direction: "complex" }
+      { path: "M52.86,12c1.07,1.07,1.73,2.5,1.73,4.41c0,4.84-0.15,7.84-0.15,11.65", start: [52.9, 12.0], end: [54.4, 28.1], direction: "top-bottom" },
+      { path: "M15.5,31.61c2.5,0.64,6.38,0.89,10.02,0.55C43.97,30.41,67.12,28,85.87,27.2c3.88-0.16,6.36,0.05,9.25,0.7", start: [15.5, 31.6], end: [95.1, 27.9], direction: "left-right" },
+      { path: "M53.48,47.2c6.64,1.17,13.39,0.92,18.51,0.41c3.41-0.34,5.18,1.75,4.67,4.36c-2.03,10.4-10.53,33.53-16.54,41.1c-4.79,6.04-7.12,1.17-10.09-2.07", start: [53.5, 47.2], end: [50.0, 91.0], direction: "top-bottom" },
+      { path: "M54.51,32.75c0.49,1.5,0.39,3.19-0.19,4.88C50.3,49.29,38.68,72.85,20.62,83.88", start: [54.5, 32.8], end: [20.6, 83.9], direction: "top-right-to-bottom-left" }
     ]
   },
   "北": {
     readings: { on: ["ホク"], kun: ["きた"] },
     strokes: [
-      // left part - vertical
-      { path: "M 28,10 L 28,96", start: [28, 10], end: [28, 96], direction: "top-bottom" },
-      // left part - horizontal right
-      { path: "M 28,48 L 50,48", start: [28, 48], end: [50, 48], direction: "left-right" },
-      // left part - falling stroke
-      { path: "M 28,48 L 8,82", start: [28, 48], end: [8, 82], direction: "top-right-to-bottom-left" },
-      // right part - vertical
-      { path: "M 60,16 L 60,68", start: [60, 16], end: [60, 68], direction: "top-bottom" },
-      // right part - falling stroke right
-      { path: "M 60,42 L 98,96", start: [60, 42], end: [98, 96], direction: "top-left-to-bottom-right" }
+      { path: "M13.25,48.75c2.61,0.5,3.52,0.51,6.12,0.25c3.76-0.38,14.13-3.38,17.63-3.75", start: [13.2, 48.8], end: [37.0, 45.2], direction: "left-right" },
+      { path: "M37.25,21.5c1.19,1.19,2,3.25,2,4.75c0,1,0.25,48,0.25,50.75", start: [37.2, 21.5], end: [39.5, 77.0], direction: "top-bottom" },
+      { path: "M12.75,88.75c1.88,1.12,4.29,0.87,6.5-0.25C32.5,81.75,36.5,80,43.5,76.25", start: [12.8, 88.8], end: [43.5, 76.2], direction: "left-right" },
+      { path: "M90.25,33c-0.25,1.75-1.13,3.26-2.19,4.07C82.12,41.62,73.75,46.5,65,49.75", start: [90.2, 33.0], end: [65.0, 49.8], direction: "top-right-to-bottom-left" },
+      { path: "M60.37,19.5c1.38,1.5,1.91,3.25,1.91,5.3c0,1.12-0.28,33.71-0.28,47.7c0,14,2,15.75,17.25,15.75c15.5,0,16.5-1.5,16.5-12.49", start: [60.4, 19.5], end: [95.8, 75.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "毎": {
-    readings: { on: ["マイ"], kun: ["ごと"] },
+    readings: { on: ["マイ"], kun: [] },
     strokes: [
-      // top ノ stroke
-      { path: "M 60,6 L 28,28", start: [60, 6], end: [28, 28], direction: "top-right-to-bottom-left" },
-      // horizontal 1
-      { path: "M 10,28 L 98,28", start: [10, 28], end: [98, 28], direction: "left-right" },
-      // center vertical
-      { path: "M 54,28 L 54,52", start: [54, 28], end: [54, 52], direction: "top-bottom" },
-      // 母-like enclosure top (left curve)
-      { path: "M 54,40 C 28,40 18,54 18,68 C 18,82 28,96 54,96", start: [54, 40], end: [54, 96], direction: "complex" },
-      // 母-like enclosure right curve
-      { path: "M 54,40 C 80,40 90,54 90,68 C 90,82 80,96 54,96", start: [54, 40], end: [54, 96], direction: "complex" },
-      // inner horizontal
-      { path: "M 24,62 L 84,62", start: [24, 62], end: [84, 62], direction: "left-right" },
-      // dot left
-      { path: "M 40,72 L 36,82", start: [40, 72], end: [36, 82], direction: "top-right-to-bottom-left" },
-      // inner horizontal lower
-      { path: "M 24,82 L 84,82", start: [24, 82], end: [84, 82], direction: "left-right" },
-      // dot right
-      { path: "M 68,72 L 74,82", start: [68, 72], end: [74, 82], direction: "top-left-to-bottom-right" }
+      { path: "M44.13,10.62c0.11,1.39-0.04,2.48-0.54,3.78c-2.23,5.81-9.37,16.73-16.84,22.34", start: [44.1, 10.6], end: [26.8, 36.7], direction: "top-right-to-bottom-left" },
+      { path: "M43.77,23.04c1.73,0.08,3.68,0.03,4.73-0.04c6.88-0.46,19.87-3.02,27.66-4.42c2.11-0.38,3.74-0.39,5.84-0.14", start: [43.8, 23.0], end: [82.0, 18.4], direction: "left-right" },
+      { path: "M41.55,34.87c1.1,0.91,1.96,3.97,1.36,6.3C40.25,51.5,33.25,67,29.45,72.74c-1.98,2.99-0.52,4.58,1.57,4.62c11.98,0.26,25.1,1.88,37.95,5.72c5.92,1.77,11.28,4.6,15.77,7.92", start: [41.5, 34.9], end: [84.7, 91.0], direction: "top-left-to-bottom-right" },
+      { path: "M44.26,37.32c9.17-1.07,22.11-2.57,28.58-3.32c3.9-0.45,6.36,2.01,6.1,5.12c-1.44,17.51-4.81,42.51-11.32,56.07c-2.99,6.22-6.5-1.15-7.52-2.27", start: [44.3, 37.3], end: [60.1, 92.9], direction: "top-bottom" },
+      { path: "M58.71,39.5c0.51,1,0.75,2.74,0.53,4c-1.53,8.5-7.11,27-9.92,35", start: [58.7, 39.5], end: [49.3, 78.5], direction: "top-bottom" },
+      { path: "M10.88,58.99c2.46,0.56,6.98,0.49,9.45,0.31c21.05-1.54,44.8-3.42,69.3-3.88c4.11-0.08,6.57,0.26,8.62,0.54", start: [10.9, 59.0], end: [98.2, 56.0], direction: "left-right" }
     ]
   },
   "妹": {
     readings: { on: ["マイ"], kun: ["いもうと"] },
     strokes: [
-      // 女 left part - first stroke ノ
-      { path: "M 28,16 L 8,68", start: [28, 16], end: [8, 68], direction: "top-right-to-bottom-left" },
-      // 女 left part - 乀 stroke
-      { path: "M 6,38 L 42,60", start: [6, 38], end: [42, 60], direction: "top-left-to-bottom-right" },
-      // 女 left part - horizontal
-      { path: "M 4,74 L 42,74", start: [4, 74], end: [42, 74], direction: "left-right" },
-      // 未 right part - top horizontal
-      { path: "M 48,18 L 98,18", start: [48, 18], end: [98, 18], direction: "left-right" },
-      // 未 second horizontal
-      { path: "M 50,38 L 100,38", start: [50, 38], end: [100, 38], direction: "left-right" },
-      // 未 vertical
-      { path: "M 72,8 L 72,98", start: [72, 8], end: [72, 98], direction: "top-bottom" },
-      // 未 left falling
-      { path: "M 72,42 L 48,90", start: [72, 42], end: [48, 90], direction: "top-right-to-bottom-left" },
-      // 未 right falling
-      { path: "M 72,42 L 100,90", start: [72, 42], end: [100, 90], direction: "top-left-to-bottom-right" }
+      { path: "M26.55,18.62c0.33,1.11,0.69,2.93,0.51,4.54c-1.3,11.72-3.8,28.84-6.37,38.68c-0.52,1.98,0.34,2.68,0.76,2.81c4.84,1.55,10.03,4.05,14,7.92c1.41,1.38,2.7,3.36,3.81,4.94", start: [26.6, 18.6], end: [39.3, 77.5], direction: "top-bottom" },
+      { path: "M39.73,34.75c0.77,1.78,0.65,3.07,0.36,5.01C37.71,55.44,30.1,78.2,13.12,89.88", start: [39.7, 34.8], end: [13.1, 89.9], direction: "top-right-to-bottom-left" },
+      { path: "M10,47.71c0.88,1.29,2.27,1.68,4.25,1.29c9-1.75,22.33-4.73,33.25-7.03", start: [10.0, 47.7], end: [47.5, 42.0], direction: "left-right" },
+      { path: "M51.84,34.46c1.19,0.2,3.14,0.08,4.33-0.05c6.08-0.66,16.08-2.15,22.4-2.91c1.96-0.23,3.18,0.1,4.18,0.19", start: [51.8, 34.5], end: [82.8, 31.7], direction: "left-right" },
+      { path: "M44.25,51.25c2.26,0.5,3.88,0.61,6.8,0.25c8.2-1,24.32-3.25,34.64-3.89c2.7-0.17,4.56,0.14,6.33,0.75", start: [44.2, 51.2], end: [92.0, 48.4], direction: "left-right" },
+      { path: "M65.14,13.25C66.38,14.49,67,16,67,17.72c0,4.53,0.07,51.14-0.14,71.53c-0.04,4.02-0.08,6.81-0.13,7.75", start: [65.1, 13.2], end: [66.7, 97.0], direction: "top-bottom" },
+      { path: "M64.75,51c0,1.5-0.42,2.54-0.8,3.33C57.88,66.75,48.5,80,36.25,87.5", start: [64.8, 51.0], end: [36.2, 87.5], direction: "top-right-to-bottom-left" },
+      { path: "M68,51c4.56,8.8,13.2,20.09,20.34,27.47c2.02,2.09,4.91,4.41,7.54,6.03", start: [68.0, 51.0], end: [95.9, 84.5], direction: "top-left-to-bottom-right" }
     ]
   },
   "万": {
     readings: { on: ["マン", "バン"], kun: [] },
     strokes: [
-      // top horizontal
-      { path: "M 10,16 L 98,16", start: [10, 16], end: [98, 16], direction: "left-right" },
-      // left falling stroke ノ
-      { path: "M 64,16 L 10,96", start: [64, 16], end: [10, 96], direction: "top-right-to-bottom-left" },
-      // right side turning stroke
-      { path: "M 38,40 L 84,40 L 84,92", start: [38, 40], end: [84, 92], direction: "complex" }
+      { path: "M14.38,24.73c2.3,0.54,6.52,0.78,8.81,0.54c21.57-2.27,44.44-5.64,64.9-5.98c3.83-0.06,6.12,0.26,8.04,0.53", start: [14.4, 24.7], end: [96.1, 19.8], direction: "left-right" },
+      { path: "M51,41.5c1.45,0.7,3.19,1.43,5.19,1.74c7.31,1.14,17.05,1.94,22.64,1.5c4.64-0.37,6.38,1.08,5.17,4.73C77.88,68,72.75,78.75,63.87,90.4c-7.6,9.97-10.12,3.22-12.62,0.2", start: [51.0, 41.5], end: [51.2, 90.6], direction: "top-bottom" },
+      { path: "M51.75,25.5c0.5,2,0.22,3.78-0.21,5.89C48.95,43.8,34.75,73.38,13.56,87.97", start: [51.8, 25.5], end: [13.6, 88.0], direction: "top-right-to-bottom-left" }
     ]
   },
   "明": {
-    readings: { on: ["メイ", "ミョウ"], kun: ["あ.かり", "あか.るい", "あ.ける"] },
+    readings: { on: ["メイ", "ミョウ"], kun: ["あか.るい", "あ.ける"] },
     strokes: [
-      // 日 left part - top
-      { path: "M 6,22 L 44,22", start: [6, 22], end: [44, 22], direction: "left-right" },
-      // 日 left
-      { path: "M 6,22 L 6,80", start: [6, 22], end: [6, 80], direction: "top-bottom" },
-      // 日 middle horizontal
-      { path: "M 6,50 L 44,50", start: [6, 50], end: [44, 50], direction: "left-right" },
-      // 日 right + bottom
-      { path: "M 44,22 L 44,80 L 6,80", start: [44, 22], end: [6, 80], direction: "complex" },
-      // 月 right part - top + left
-      { path: "M 82,10 L 58,10 L 58,98", start: [82, 10], end: [58, 98], direction: "complex" },
-      // 月 right
-      { path: "M 82,10 L 82,82", start: [82, 10], end: [82, 82], direction: "top-bottom" },
-      // 月 horizontal 1
-      { path: "M 58,40 L 82,40", start: [58, 40], end: [82, 40], direction: "left-right" },
-      // 月 horizontal 2
-      { path: "M 58,62 L 82,62", start: [58, 62], end: [82, 62], direction: "left-right" }
+      { path: "M16.75,25.22c0.89,0.89,1.32,2.29,1.32,3.66c0,1.11,0.07,27.44,0,37.63c-0.02,2.32-0.02,3.78-0.02,3.91", start: [16.8, 25.2], end: [18.1, 70.4], direction: "top-bottom" },
+      { path: "M19.29,27.75c5.66-0.81,19.54-2.59,21.22-2.75c1.76-0.17,2.89,1.89,2.75,2.91c-0.23,1.7-0.45,27.34-0.52,36.6c-0.01,1.9-0.02,3.11-0.02,3.29", start: [19.3, 27.8], end: [42.7, 67.8], direction: "top-left-to-bottom-right" },
+      { path: "M19.16,46.97C23.5,46.5,37,45.12,41.77,44.76", start: [19.2, 47.0], end: [41.8, 44.8], direction: "left-right" },
+      { path: "M19,66.59c8.5-0.97,14.37-1.59,22.49-2.11", start: [19.0, 66.6], end: [41.5, 64.5], direction: "left-right" },
+      { path: "M57.55,16c0.95,1.25,1.09,2.48,1.11,3.5c1.09,49.25-4.41,64.75-17.41,75.75", start: [57.5, 16.0], end: [41.2, 95.2], direction: "top-bottom" },
+      { path: "M59.5,17.98c6.56-1.04,21.76-3.51,23.07-3.73c2.97-0.5,5.21,0.62,5.21,4.5c0,1.49,0.19,50.25,0.19,70.5c0,11.88-7.22,3.5-8.3,2.5", start: [59.5, 18.0], end: [79.7, 91.8], direction: "top-bottom" },
+      { path: "M59.77,39c7.85-1,19.73-2.25,26.95-2.75", start: [59.8, 39.0], end: [86.7, 36.2], direction: "left-right" },
+      { path: "M59.25,57.75c6.62-0.62,20-1.5,27.36-2", start: [59.2, 57.8], end: [86.6, 55.8], direction: "left-right" }
     ]
   },
   "鳴": {
-    readings: { on: ["メイ"], kun: ["な.く", "な.る", "な.らす"] },
+    readings: { on: ["メイ"], kun: ["な.く", "な.る"] },
     strokes: [
-      // 口 left part - top
-      { path: "M 4,22 L 34,22", start: [4, 22], end: [34, 22], direction: "left-right" },
-      // 口 left
-      { path: "M 4,22 L 4,48", start: [4, 22], end: [4, 48], direction: "top-bottom" },
-      // 口 right + bottom
-      { path: "M 34,22 L 34,48 L 4,48", start: [34, 22], end: [4, 48], direction: "complex" },
-      // 鳥 right part - top ノ
-      { path: "M 66,6 L 56,20", start: [66, 6], end: [56, 20], direction: "top-right-to-bottom-left" },
-      // 鳥 top horizontal
-      { path: "M 44,24 L 100,24", start: [44, 24], end: [100, 24], direction: "left-right" },
-      // 鳥 enclosure left
-      { path: "M 50,24 L 50,62", start: [50, 24], end: [50, 62], direction: "top-bottom" },
-      // 鳥 horizontal 2
-      { path: "M 50,38 L 92,38", start: [50, 38], end: [92, 38], direction: "left-right" },
-      // 鳥 horizontal 3
-      { path: "M 50,50 L 92,50", start: [50, 50], end: [92, 50], direction: "left-right" },
-      // 鳥 right + bottom
-      { path: "M 92,24 L 92,62 L 50,62", start: [92, 24], end: [50, 62], direction: "complex" },
-      // 灬 dot 1
-      { path: "M 42,68 L 38,80", start: [42, 68], end: [38, 80], direction: "top-right-to-bottom-left" },
-      // 鳥 dot inside
-      { path: "M 72,28 L 74,34", start: [72, 28], end: [74, 34], direction: "top-bottom" },
-      // bottom horizontal
-      { path: "M 36,76 L 98,76", start: [36, 76], end: [98, 76], direction: "left-right" },
-      // 灬 dot 2
-      { path: "M 52,80 L 48,92", start: [52, 80], end: [48, 92], direction: "top-right-to-bottom-left" },
-      // 灬 dot 3
-      { path: "M 66,80 L 70,92", start: [66, 80], end: [70, 92], direction: "top-left-to-bottom-right" },
-      // 灬 dot 4
-      { path: "M 82,80 L 92,92", start: [82, 80], end: [92, 92], direction: "top-left-to-bottom-right" }
+      { path: "M13.17,38.73c0.93,0.93,1.5,1.9,1.62,2.77c0.92,3.74,1.68,10.13,2.44,16.01c0.18,1.37,0.34,2.72,0.48,4", start: [13.2, 38.7], end: [17.7, 61.5], direction: "top-bottom" },
+      { path: "M15.29,40.19c6.83-1.31,15.8-3.06,19.14-3.7c1.94-0.37,3.32,1.01,2.9,3.16c-0.89,4.51-1.58,8.97-3.28,15.48", start: [15.3, 40.2], end: [34.0, 55.1], direction: "top-left-to-bottom-right" },
+      { path: "M17.86,58.94c3.8-0.48,9.58-1.5,14.88-2.26c1.29-0.19,2.59-0.37,3.87-0.55", start: [17.9, 58.9], end: [36.6, 56.1], direction: "left-right" },
+      { path: "M64.2,9.62c0.08,0.79-0.07,1.54-0.43,2.25c-1.1,2.6-4.06,6.73-7.91,9.27", start: [64.2, 9.6], end: [55.9, 21.1], direction: "top-right-to-bottom-left" },
+      { path: "M49.06,20.86c0.85,0.85,1.42,1.76,1.42,3.23c0,6.34-0.18,29.3-0.87,42.42c-0.1,1.81-0.2,3.45-0.32,4.86", start: [49.1, 20.9], end: [49.3, 71.4], direction: "top-bottom" },
+      { path: "M51.81,23.72c6.73-0.87,22.73-3.18,24.02-3.1c2.51,0.16,3.73,2.15,3.51,4.01c-0.12,0.99-0.84,7.61-1.91,15.86c-0.17,1.32-0.35,2.68-0.54,4.06", start: [51.8, 23.7], end: [76.9, 44.5], direction: "top-left-to-bottom-right" },
+      { path: "M51.22,34c4.03-0.37,23.87-2.75,26.28-2.6", start: [51.2, 34.0], end: [77.5, 31.4], direction: "left-right" },
+      { path: "M51.12,45.51c6.25-0.63,18.88-2.01,24.74-2.5", start: [51.1, 45.5], end: [75.9, 43.0], direction: "left-right" },
+      { path: "M51.36,57.22c10.98-0.84,30.89-3.61,35.6-4.14c1.65-0.18,4.68-0.35,5.52-0.1", start: [51.4, 57.2], end: [92.5, 53.0], direction: "left-right" },
+      { path: "M49.3,71.59c11.95-2.09,35.4-4.92,41.04-5.41c3.67-0.32,6,1.99,4.9,5.55c-2.62,8.51-5.62,16.76-9.01,22.7C83.92,98.52,80.5,98,76.5,93.5", start: [49.3, 71.6], end: [76.5, 93.5], direction: "top-left-to-bottom-right" },
+      { path: "M32.9,81.88c-0.52,5.37-2.07,10.78-4.38,13.57", start: [32.9, 81.9], end: [28.5, 95.4], direction: "top-bottom" },
+      { path: "M44.62,79.75c2.08,2.35,4.06,8.54,4.58,12", start: [44.6, 79.8], end: [49.2, 91.8], direction: "top-bottom" },
+      { path: "M59,78.38c1.94,1.75,5.01,7.04,5.5,9.62", start: [59.0, 78.4], end: [64.5, 88.0], direction: "top-left-to-bottom-right" },
+      { path: "M72.5,74.88c2.29,1.72,5.92,6.86,6.5,9.38", start: [72.5, 74.9], end: [79.0, 84.3], direction: "top-left-to-bottom-right" }
     ]
   },
   "毛": {
     readings: { on: ["モウ"], kun: ["け"] },
     strokes: [
-      // top horizontal
-      { path: "M 18,18 L 80,18", start: [18, 18], end: [80, 18], direction: "left-right" },
-      // second horizontal
-      { path: "M 18,40 L 80,40", start: [18, 40], end: [80, 40], direction: "left-right" },
-      // third horizontal
-      { path: "M 18,62 L 90,62", start: [18, 62], end: [90, 62], direction: "left-right" },
-      // vertical + bottom curve
-      { path: "M 54,18 L 54,78 C 54,92 64,98 90,92", start: [54, 18], end: [90, 92], direction: "complex" }
+      { path: "M61.75,13.25c-0.25,1.5-1.06,2.76-2.04,3.5c-5.33,4-17.21,9.62-36.46,14.25", start: [61.8, 13.2], end: [23.2, 31.0], direction: "top-right-to-bottom-left" },
+      { path: "M20.5,47.79c2.75,0.84,5.69,0.44,8.37,0.08c11.84-1.61,26.38-4.99,40.15-6.93c2.46-0.35,5.15-0.81,7.6-0.11", start: [20.5, 47.8], end: [76.6, 40.8], direction: "left-right" },
+      { path: "M13,69.12c3.09,0.77,6.77,0.77,9.89,0.23c20.11-3.47,34.49-6.6,53.84-9.2c2.76-0.37,7-0.09,8.39,0.11", start: [13.0, 69.1], end: [85.1, 60.3], direction: "left-right" },
+      { path: "M44.24,28.87c1.13,1.13,1.35,2.55,1.36,4.62C45.67,43.65,45,75.98,45,80.75c0,11,2.5,13.78,24.74,13.78c20.76,0,23.76-1.78,23.76-13.28", start: [44.2, 28.9], end: [93.5, 81.2], direction: "top-left-to-bottom-right" }
     ]
   },
   "門": {
     readings: { on: ["モン"], kun: ["かど"] },
     strokes: [
-      // left side - vertical
-      { path: "M 10,8 L 10,98", start: [10, 8], end: [10, 98], direction: "top-bottom" },
-      // left side - top horizontal
-      { path: "M 10,8 L 36,8", start: [10, 8], end: [36, 8], direction: "left-right" },
-      // left inner vertical
-      { path: "M 22,22 L 22,72", start: [22, 22], end: [22, 72], direction: "top-bottom" },
-      // left inner - horizontal + right vertical
-      { path: "M 22,22 L 36,22 L 36,72", start: [22, 22], end: [36, 72], direction: "complex" },
-      // right side - top horizontal
-      { path: "M 48,8 L 98,8", start: [48, 8], end: [98, 8], direction: "left-right" },
-      // right side - vertical
-      { path: "M 98,8 L 98,98", start: [98, 8], end: [98, 98], direction: "top-bottom" },
-      // right inner vertical
-      { path: "M 60,22 L 60,72", start: [60, 22], end: [60, 72], direction: "top-bottom" },
-      // right inner - horizontal + right vertical
-      { path: "M 60,22 L 88,22 L 88,72", start: [60, 22], end: [88, 72], direction: "complex" }
+      { path: "M17.39,14.97c0.94,0.94,1.26,2.28,1.26,4c0,0.77-0.18,49.78-0.18,69.28c0,3.3-0.04,4.11-0.07,4.97", start: [17.4, 15.0], end: [18.4, 93.2], direction: "top-bottom" },
+      { path: "M19.77,17.18c6.04-0.81,20.02-2.86,21.83-2.97c1.91-0.12,2.9,1.04,3,1.96c0.11,1.07-1.17,15.69-1.78,22.84c-0.19,2.21-0.31,3.71-0.31,3.87", start: [19.8, 17.2], end: [42.5, 42.9], direction: "top-left-to-bottom-right" },
+      { path: "M20.06,30.18C27,29,36.5,27.75,42.46,27.02", start: [20.1, 30.2], end: [42.5, 27.0], direction: "left-right" },
+      { path: "M19.61,43.82c8.39-1.32,14.14-2.57,21.55-3.17", start: [19.6, 43.8], end: [41.2, 40.6], direction: "left-right" },
+      { path: "M61.96,13.47c0.89,1.19,0.92,2.64,0.91,4.04c-0.02,3.82-0.08,14.92-0.05,20.49c0.01,1.84,0.03,3.07,0.06,3.25", start: [62.0, 13.5], end: [62.9, 41.2], direction: "top-bottom" },
+      { path: "M63.98,15.09c6.63-0.9,21.65-3.51,23.46-3.6c1.96-0.1,3.82,1.63,3.82,2.98c0,18.78-0.52,61.53-0.51,75.14c0.01,11.13-5.24,3.63-9.49-0.12", start: [64.0, 15.1], end: [81.3, 89.5], direction: "top-bottom" },
+      { path: "M64.34,26.89c6.16-0.89,20.29-2.39,25.5-2.67", start: [64.3, 26.9], end: [89.8, 24.2], direction: "left-right" },
+      { path: "M64.13,39.63c8.99-1,15.87-1.63,25.9-2.47", start: [64.1, 39.6], end: [90.0, 37.2], direction: "left-right" }
     ]
   },
   "夜": {
-    readings: { on: ["ヤ"], kun: ["よ", "よる"] },
+    readings: { on: ["ヤ"], kun: ["よる", "よ"] },
     strokes: [
-      // top dot
-      { path: "M 42,8 L 48,18", start: [42, 8], end: [48, 18], direction: "top-bottom" },
-      // main horizontal
-      { path: "M 8,24 L 96,24", start: [8, 24], end: [96, 24], direction: "left-right" },
-      // main vertical
-      { path: "M 48,24 L 48,96", start: [48, 24], end: [48, 96], direction: "top-bottom" },
-      // inner top left ノ
-      { path: "M 48,38 L 22,60", start: [48, 38], end: [22, 60], direction: "top-right-to-bottom-left" },
-      // inner horizontal
-      { path: "M 50,46 L 82,46", start: [50, 46], end: [82, 46], direction: "left-right" },
-      // right side: 乀 with extension
-      { path: "M 62,46 L 54,64", start: [62, 46], end: [54, 64], direction: "top-right-to-bottom-left" },
-      // inner ノ right
-      { path: "M 62,46 L 76,72", start: [62, 46], end: [76, 72], direction: "top-left-to-bottom-right" },
-      // bottom left long stroke
-      { path: "M 48,62 L 8,96", start: [48, 62], end: [8, 96], direction: "top-right-to-bottom-left" },
-      // bottom right falling
-      { path: "M 68,68 L 98,96", start: [68, 68], end: [98, 96], direction: "top-left-to-bottom-right" }
+      { path: "M52.27,10.5c1.24,1.24,1.92,2.75,1.92,4.26c0,4.29-0.12,5.13-0.12,8.81", start: [52.3, 10.5], end: [54.1, 23.6], direction: "top-bottom" },
+      { path: "M20,27.47c2.58,0.33,5.52,0.3,9.16-0.04c17.5-1.67,34.28-3.92,51.31-4.98c3.54-0.22,5.63-0.21,8.28,0.33", start: [20.0, 27.5], end: [88.8, 22.8], direction: "left-right" },
+      { path: "M34.26,36c0.31,2-0.06,3.89-0.76,5.34c-4.44,9.2-10.07,17.85-20.25,29.05", start: [34.3, 36.0], end: [13.2, 70.4], direction: "top-right-to-bottom-left" },
+      { path: "M27.73,55.9c0.77,1.1,1.26,2.51,1.26,3.84c0,8.77,0.17,23.89,0.04,32.77C29,94.78,28.97,96.68,28.97,98", start: [27.7, 55.9], end: [29.0, 98.0], direction: "top-bottom" },
+      { path: "M60.5,32c0.13,1.12,0.18,2.04-0.15,2.89C57.86,41.41,52.87,50.32,45,57", start: [60.5, 32.0], end: [45.0, 57.0], direction: "top-right-to-bottom-left" },
+      { path: "M62.21,39.36c1.04,0.14,2.54,0.26,3.52,0.12c4.52-0.61,8.27-1.61,11.9-3.12c3-1.25,4.38,0.75,3.47,3.02C74.75,55.25,61,78.88,38.25,90", start: [62.2, 39.4], end: [38.2, 90.0], direction: "top-right-to-bottom-left" },
+      { path: "M56.75,49.12c2.73,1.25,7.04,5.14,7.73,7.08", start: [56.8, 49.1], end: [64.5, 56.2], direction: "top-left-to-bottom-right" },
+      { path: "M45,62.75c7.38,0.75,28.23,18.89,38.64,25.59c3.13,2.01,6.66,4,10.36,4.66", start: [45.0, 62.8], end: [94.0, 93.0], direction: "top-left-to-bottom-right" }
     ]
   },
   "野": {
     readings: { on: ["ヤ"], kun: ["の"] },
     strokes: [
-      // 里 left part - top horizontal
-      { path: "M 6,14 L 48,14", start: [6, 14], end: [48, 14], direction: "left-right" },
-      // 里 left vertical
-      { path: "M 6,14 L 6,56", start: [6, 14], end: [6, 56], direction: "top-bottom" },
-      // 里 horizontal 2
-      { path: "M 6,30 L 48,30", start: [6, 30], end: [48, 30], direction: "left-right" },
-      // 里 horizontal 3
-      { path: "M 6,46 L 48,46", start: [6, 46], end: [48, 46], direction: "left-right" },
-      // 里 center vertical
-      { path: "M 27,14 L 27,80", start: [27, 14], end: [27, 80], direction: "top-bottom" },
-      // 里 right + bottom
-      { path: "M 48,14 L 48,56 L 6,56", start: [48, 14], end: [6, 56], direction: "complex" },
-      // 里 bottom horizontal 1
-      { path: "M 6,68 L 48,68", start: [6, 68], end: [48, 68], direction: "left-right" },
-      // 里 bottom horizontal 2
-      { path: "M 6,80 L 48,80", start: [6, 80], end: [48, 80], direction: "left-right" },
-      // 予 right part - top horizontal
-      { path: "M 56,20 L 100,20", start: [56, 20], end: [100, 20], direction: "left-right" },
-      // 予 ノ
-      { path: "M 88,20 L 58,52", start: [88, 20], end: [58, 52], direction: "top-right-to-bottom-left" },
-      // 予 horizontal + hook
-      { path: "M 56,48 L 92,48 L 92,96", start: [56, 48], end: [92, 96], direction: "complex" }
+      { path: "M12.5,18.54c1.25,0.96,1.45,2.21,1.62,3.18c0.98,5.66,2.66,16.78,3.4,25.76c0.08,1,0.15,1.98,0.21,2.93", start: [12.5, 18.5], end: [17.7, 50.4], direction: "top-bottom" },
+      { path: "M15.03,20.17c10.69-1.68,25.59-3.93,31.58-4.62c2.5-0.29,3.63,1.82,3.4,3.34c-0.89,5.98-2.33,16.31-3.89,25.13c-0.23,1.31-0.45,2.06-0.65,3.21", start: [15.0, 20.2], end: [45.5, 47.2], direction: "top-left-to-bottom-right" },
+      { path: "M16.74,34.44c2.97-0.38,29.08-3.9,31.53-3.98", start: [16.7, 34.4], end: [48.3, 30.5], direction: "left-right" },
+      { path: "M17.7,48.43c6.57-0.22,18.7-2.92,27.77-3.37", start: [17.7, 48.4], end: [45.5, 45.1], direction: "left-right" },
+      { path: "M30.97,19.87c0.78,1.13,1.06,1.76,1.08,3.13c0.21,12.86,0.06,50.65,0.06,55.01", start: [31.0, 19.9], end: [32.1, 78.0], direction: "top-bottom" },
+      { path: "M15.75,62.75c1.72,0.5,3.79,0.44,4.95,0.25c7.75-1.25,14.9-3.05,23.1-4.25c1.7-0.25,3.83-0.25,5.45,0", start: [15.8, 62.8], end: [49.2, 58.8], direction: "left-right" },
+      { path: "M12.25,82.31c1.38,1.19,3.39,1.61,6.09,0.69c5.53-1.87,21.25-7.06,30.16-10", start: [12.2, 82.3], end: [48.5, 73.0], direction: "left-right" },
+      { path: "M57.51,16.84c2.11,0.66,4.23,0.51,6.25,0.19c7.36-1.16,19.6-3.31,21.94-3.78c2.6-0.52,3.74,1.71,2.19,3.42c-2.66,2.94-12.79,14.29-14.43,16.39", start: [57.5, 16.8], end: [73.5, 33.1], direction: "top-left-to-bottom-right" },
+      { path: "M63.88,28.5c2.86,1.21,10.28,5.85,11.62,9", start: [63.9, 28.5], end: [75.5, 37.5], direction: "top-left-to-bottom-right" },
+      { path: "M54.42,43.13c1.71,0.62,3.32,0.59,5.58,0.12c4.83-0.99,24.38-4.62,28.75-5.5c10.94-2.19,3.5,5.25-0.75,10.5", start: [54.4, 43.1], end: [88.0, 48.2], direction: "left-right" },
+      { path: "M73.51,48c1.12,1.12,1.57,2.38,1.57,4.41c0,2.04-0.31,35.1-0.31,38.84c0,10.75-7.08,1.18-9.5-0.52", start: [73.5, 48.0], end: [65.3, 90.7], direction: "top-bottom" }
     ]
   },
   "友": {
     readings: { on: ["ユウ"], kun: ["とも"] },
     strokes: [
-      // top left ノ
-      { path: "M 44,10 L 20,38", start: [44, 10], end: [20, 38], direction: "top-right-to-bottom-left" },
-      // horizontal
-      { path: "M 16,30 L 94,30", start: [16, 30], end: [94, 30], direction: "left-right" },
-      // left falling 乀
-      { path: "M 48,30 L 10,96", start: [48, 30], end: [10, 96], direction: "top-right-to-bottom-left" },
-      // right falling stroke
-      { path: "M 48,30 C 58,52 78,78 96,92", start: [48, 30], end: [96, 92], direction: "complex" }
+      { path: "M17.88,37.23c2.13,0.54,5.78,0.58,7.89,0.29c17.48-2.39,35.98-4.39,54.65-5.48c3.54-0.21,5.68,0.01,7.46,0.28", start: [17.9, 37.2], end: [87.9, 32.3], direction: "left-right" },
+      { path: "M48.22,14.14c0.53,2.11,0.53,4.3,0.31,6.73C47,38,33,72.5,15.5,85.25", start: [48.2, 14.1], end: [15.5, 85.2], direction: "top-right-to-bottom-left" },
+      { path: "M42.66,54.86c1.09,0.27,2.51,0.28,3.59,0.14c6.88-0.88,16.62-3.25,22.43-4.88c3.45-0.97,4.6,1.45,3.11,4.55C66.5,65.62,48.12,87.75,24,96.5", start: [42.7, 54.9], end: [24.0, 96.5], direction: "top-right-to-bottom-left" },
+      { path: "M41.25,63.5c5.15,0.45,27.5,18.62,40.93,26.36c3.2,1.84,6.65,3.76,10.32,4.39", start: [41.2, 63.5], end: [92.5, 94.2], direction: "top-left-to-bottom-right" }
     ]
   },
   "用": {
     readings: { on: ["ヨウ"], kun: ["もち.いる"] },
     strokes: [
-      // center vertical (extends up and down through whole character)
-      { path: "M 54,6 L 54,100", start: [54, 6], end: [54, 100], direction: "top-bottom" },
-      // enclosure top
-      { path: "M 14,22 L 92,22", start: [14, 22], end: [92, 22], direction: "left-right" },
-      // enclosure left
-      { path: "M 14,22 L 14,90", start: [14, 22], end: [14, 90], direction: "top-bottom" },
-      // horizontal middle
-      { path: "M 14,54 L 92,54", start: [14, 54], end: [92, 54], direction: "left-right" },
-      // right + bottom
-      { path: "M 92,22 L 92,90 L 14,90", start: [92, 22], end: [14, 90], direction: "complex" }
+      { path: "M25.44,16.14c0.83,1.04,1.1,2.36,1.15,3.86C28.12,65.5,24.5,82,13.75,95", start: [25.4, 16.1], end: [13.8, 95.0], direction: "top-bottom" },
+      { path: "M27.8,18.84C43.75,17,71.5,14,81.92,13.47c4.07-0.21,5.75,2.03,5.75,5.18c0,6.1-0.32,50.35-0.32,71.37c0,14.98-8.09,2.23-9.84,1.34", start: [27.8, 18.8], end: [77.5, 91.4], direction: "top-left-to-bottom-right" },
+      { path: "M27.99,40.91c16.26-1.66,41.51-3.66,58.25-4.7", start: [28.0, 40.9], end: [86.2, 36.2], direction: "left-right" },
+      { path: "M27.25,62c14.88-1.38,43-3.25,59-4.25", start: [27.2, 62.0], end: [86.2, 57.8], direction: "left-right" },
+      { path: "M53.62,19.5c1.13,1,1.96,2.5,1.96,4.25c0,3.66,0,42.87-0.12,60.75c-0.03,4.11-0.06,7.09-0.1,8.25", start: [53.6, 19.5], end: [55.4, 92.8], direction: "top-bottom" }
     ]
   },
   "曜": {
     readings: { on: ["ヨウ"], kun: [] },
     strokes: [
-      // 日 left part - top
-      { path: "M 4,18 L 32,18", start: [4, 18], end: [32, 18], direction: "left-right" },
-      // 日 left
-      { path: "M 4,18 L 4,60", start: [4, 18], end: [4, 60], direction: "top-bottom" },
-      // 日 middle horizontal
-      { path: "M 4,38 L 32,38", start: [4, 38], end: [32, 38], direction: "left-right" },
-      // 日 right + bottom
-      { path: "M 32,18 L 32,60 L 4,60", start: [32, 18], end: [4, 60], direction: "complex" },
-      // right side 隹 - ヨ top horizontal
-      { path: "M 48,8 L 78,8", start: [48, 8], end: [78, 8], direction: "left-right" },
-      // ヨ left short
-      { path: "M 50,8 L 50,32", start: [50, 8], end: [50, 32], direction: "top-bottom" },
-      // ヨ middle horizontal
-      { path: "M 50,20 L 78,20", start: [50, 20], end: [78, 20], direction: "left-right" },
-      // ヨ right + bottom
-      { path: "M 78,8 L 78,32 L 50,32", start: [78, 8], end: [50, 32], direction: "complex" },
-      // 隹 center vertical
-      { path: "M 68,32 L 68,52", start: [68, 32], end: [68, 52], direction: "top-bottom" },
-      // 隹 left ノ
-      { path: "M 68,38 L 44,52", start: [68, 38], end: [44, 52], direction: "top-right-to-bottom-left" },
-      // 隹 right dot
-      { path: "M 68,38 L 98,52", start: [68, 38], end: [98, 52], direction: "top-left-to-bottom-right" },
-      // bottom 隹 legs - left ノ
-      { path: "M 56,56 L 38,76", start: [56, 56], end: [38, 76], direction: "top-right-to-bottom-left" },
-      // bottom center vertical
-      { path: "M 68,56 L 68,100", start: [68, 56], end: [68, 100], direction: "top-bottom" },
-      // bottom right falling
-      { path: "M 56,68 L 38,90", start: [56, 68], end: [38, 90], direction: "top-right-to-bottom-left" },
-      // right short leg
-      { path: "M 80,56 L 100,76", start: [80, 56], end: [100, 76], direction: "top-left-to-bottom-right" },
-      // horizontal near bottom
-      { path: "M 40,82 L 98,82", start: [40, 82], end: [98, 82], direction: "left-right" },
-      // right bottom leg
-      { path: "M 80,68 L 100,90", start: [80, 68], end: [100, 90], direction: "top-left-to-bottom-right" },
-      // bottom spread horizontal
-      { path: "M 40,98 L 98,98", start: [40, 98], end: [98, 98], direction: "left-right" }
+      { path: "M15.5,29.81c1,0.69,1.61,2.1,1.61,3.52c0,1.42-0.2,40.33-0.2,41.04c0,0.71-0.05,1.76-0.05,2.88", start: [15.5, 29.8], end: [16.9, 77.2], direction: "top-bottom" },
+      { path: "M18.06,31.1c4.41-0.66,14.19-2.61,15.41-2.61c1.78,0,2.54,1.75,2.54,3.02c0,2.14-0.31,25.27-0.3,40.9c0,1.61-0.1,2.31-0.1,3.38", start: [18.1, 31.1], end: [35.6, 75.8], direction: "top-bottom" },
+      { path: "M18.42,51.59c3.71-0.46,11.71-1.59,15.98-2.03", start: [18.4, 51.6], end: [34.4, 49.6], direction: "left-right" },
+      { path: "M18.12,74.29c4.38-0.42,10.63-1.67,16.08-2.17", start: [18.1, 74.3], end: [34.2, 72.1], direction: "left-right" },
+      { path: "M41.5,16.5c1.5,0.75,2.5,0.75,4.75,0.5S56.5,15.5,58,15.25s3.5,1.5,3.5,3c0,1.22-0.17,14.07-0.23,20c-0.01,1.35-0.02,2.33-0.02,2.75", start: [41.5, 16.5], end: [61.2, 41.0], direction: "top-left-to-bottom-right" },
+      { path: "M43.75,28.25c1.25,0.38,2.98,0.16,4,0c2.38-0.38,9.75-2,12-2.25", start: [43.8, 28.2], end: [59.8, 26.0], direction: "left-right" },
+      { path: "M45,38.75c1.25,0.38,2.5,0.25,3.5,0s9.25-2,11.5-2.25", start: [45.0, 38.8], end: [60.0, 36.5], direction: "left-right" },
+      { path: "M70.75,14.75c1.5,0.75,2.75,1,5,0.75s12.5-1.75,14-2s3.5,1.5,3.5,3c0,1.19-0.16,13.38-0.22,19.5C93.01,37.6,93,38.78,93,39.25", start: [70.8, 14.8], end: [93.0, 39.2], direction: "top-left-to-bottom-right" },
+      { path: "M74.25,24.5c1.25,0.5,2.99,0.45,4,0.25c2.5-0.5,11.25-2,13.5-2.25", start: [74.2, 24.5], end: [91.8, 22.5], direction: "left-right" },
+      { path: "M74,35.75c1.5,0.38,3,0.25,4,0s11.5-2,13.75-2.25", start: [74.0, 35.8], end: [91.8, 33.5], direction: "left-right" },
+      { path: "M54.25,45c0.15,1.27-0.04,2.93-0.52,4.02c-3.07,6.93-6.95,12.8-13.98,21.23", start: [54.2, 45.0], end: [39.8, 70.2], direction: "top-right-to-bottom-left" },
+      { path: "M50.55,57.79c0.45,0.96,0.65,1.7,0.7,2.95c0.24,7.07-0.2,22.81-0.27,31.26c-0.02,2.51-0.01,4.47,0.06,5.5", start: [50.5, 57.8], end: [51.0, 97.5], direction: "top-bottom" },
+      { path: "M74.25,42.75c0.05,0.54-0.01,1.25-0.17,1.72c-1,2.96-2.27,5.25-4.57,8.86", start: [74.2, 42.8], end: [69.5, 53.3], direction: "top-right-to-bottom-left" },
+      { path: "M50.98,56.53c5.87-0.68,25.46-2.41,34.02-3.27c1.92-0.19,3.25-0.26,4.86,0.08", start: [51.0, 56.5], end: [89.9, 53.3], direction: "left-right" },
+      { path: "M69.83,55.88c0.67,1.12,1.12,2.27,1.12,2.83c0,5.71,0.29,22.65,0.08,31.64", start: [69.8, 55.9], end: [71.0, 90.3], direction: "top-bottom" },
+      { path: "M52.51,68.36c5.25-0.53,21.05-2.1,29.5-2.84c2-0.17,3.25-0.02,4.91,0.03", start: [52.5, 68.4], end: [86.9, 65.5], direction: "left-right" },
+      { path: "M52.18,79.71c5.66-0.46,22.39-1.91,31.08-2.66c2.3-0.2,3.23-0.05,4.61,0.09", start: [52.2, 79.7], end: [87.9, 77.1], direction: "left-right" },
+      { path: "M52.11,93.02c5.61-0.65,26.25-2.06,36.63-2.86c2.93-0.23,4.26-0.16,5.7,0", start: [52.1, 93.0], end: [94.4, 90.2], direction: "left-right" }
     ]
   },
   "来": {
-    readings: { on: ["ライ"], kun: ["く.る", "きた.る", "きた.す"] },
+    readings: { on: ["ライ"], kun: ["く.る", "きた.る"] },
     strokes: [
-      // top horizontal (short)
-      { path: "M 28,12 L 80,12", start: [28, 12], end: [80, 12], direction: "left-right" },
-      // left dot going down-left
-      { path: "M 38,26 L 14,48", start: [38, 26], end: [14, 48], direction: "top-right-to-bottom-left" },
-      // right dot going down-right
-      { path: "M 70,26 L 94,48", start: [70, 26], end: [94, 48], direction: "top-left-to-bottom-right" },
-      // second horizontal (wide)
-      { path: "M 8,52 L 100,52", start: [8, 52], end: [100, 52], direction: "left-right" },
-      // center vertical
-      { path: "M 54,12 L 54,100", start: [54, 12], end: [54, 100], direction: "top-bottom" },
-      // bottom-left falling stroke (木)
-      { path: "M 54,56 L 12,96", start: [54, 56], end: [12, 96], direction: "top-right-to-bottom-left" },
-      // bottom-right falling stroke (木)
-      { path: "M 54,56 L 96,96", start: [54, 56], end: [96, 96], direction: "top-left-to-bottom-right" }
+      { path: "M25.54,28.33c1.61,0.39,4.58,0.53,6.19,0.39c16.32-1.46,27.01-3.46,43.69-3.67c2.69-0.03,4.31,0.18,5.65,0.38", start: [25.5, 28.3], end: [81.1, 25.4], direction: "left-right" },
+      { path: "M30.12,37.62c2.85,2.07,7.16,7.91,7.88,11.12", start: [30.1, 37.6], end: [38.0, 48.7], direction: "top-left-to-bottom-right" },
+      { path: "M74.52,33c0.08,0.98-0.11,1.9-0.58,2.77c-1.33,3.04-4.7,7.77-9.06,10.86", start: [74.5, 33.0], end: [64.9, 46.6], direction: "top-right-to-bottom-left" },
+      { path: "M16.62,57c2.28,0.5,4.9,0.74,8.42,0.5c14.81-1,39.08-3.5,58.03-4.25c3.54-0.14,6.33,0.25,8.55,0.5", start: [16.6, 57.0], end: [91.6, 53.8], direction: "left-right" },
+      { path: "M51.67,10.75c1.33,1,2.18,2.75,2.18,4.5c0,0.9,0.06,58.96-0.17,78c-0.03,2.77-0.07,4.71-0.1,5.5", start: [51.7, 10.8], end: [53.6, 98.8], direction: "top-bottom" },
+      { path: "M49.75,56.5c0,1.5-0.44,2.48-0.82,3.11C42.37,70.49,29,83.75,15.75,90.5", start: [49.8, 56.5], end: [15.8, 90.5], direction: "top-right-to-bottom-left" },
+      { path: "M55,56.25c4.38,3.88,19.75,19,29.73,26.28c2.82,2.06,6.52,4.5,10.02,5.22", start: [55.0, 56.2], end: [94.8, 87.8], direction: "top-left-to-bottom-right" }
     ]
   },
   "里": {
     readings: { on: ["リ"], kun: ["さと"] },
     strokes: [
-      // 田 top horizontal
-      { path: "M 14,10 L 94,10", start: [14, 10], end: [94, 10], direction: "left-right" },
-      // 田 left
-      { path: "M 14,10 L 14,56", start: [14, 10], end: [14, 56], direction: "top-bottom" },
-      // 田 horizontal mid
-      { path: "M 14,33 L 94,33", start: [14, 33], end: [94, 33], direction: "left-right" },
-      // 田 center vertical
-      { path: "M 54,10 L 54,86", start: [54, 10], end: [54, 86], direction: "top-bottom" },
-      // 田 right + bottom
-      { path: "M 94,10 L 94,56 L 14,56", start: [94, 10], end: [14, 56], direction: "complex" },
-      // 土 horizontal 1
-      { path: "M 14,70 L 94,70", start: [14, 70], end: [94, 70], direction: "left-right" },
-      // 土 bottom horizontal
-      { path: "M 8,86 L 100,86", start: [8, 86], end: [100, 86], direction: "left-right" }
+      { path: "M24.83,19.94c0.93,0.93,1.42,2.06,1.66,3.15c1.53,6.96,3,17.79,4.16,28.14c0.16,1.43,0.31,2.82,0.46,4.14", start: [24.8, 19.9], end: [31.1, 55.4], direction: "top-bottom" },
+      { path: "M27.51,22.11c15.08-1.48,37.74-4.36,51.76-5.05c4.06-0.2,6.23,1.44,5.9,4.24c-0.86,7.17-2.71,17.2-5.09,26.29c-0.38,1.45-0.76,2.87-1.15,4.26", start: [27.5, 22.1], end: [78.9, 51.8], direction: "top-left-to-bottom-right" },
+      { path: "M30.05,36.97c8.7-0.97,38.08-3.47,51.66-3.99", start: [30.1, 37.0], end: [81.7, 33.0], direction: "left-right" },
+      { path: "M32.12,53.04C44,52,63.25,50.62,78.43,49.8", start: [32.1, 53.0], end: [78.4, 49.8], direction: "left-right" },
+      { path: "M52.33,21.63c1.21,1.21,1.62,2.88,1.66,5.12c0.3,15.62,0.1,56.86,0.1,61.25", start: [52.3, 21.6], end: [54.1, 88.0], direction: "top-bottom" },
+      { path: "M27.38,70.45c1.92,0.46,5.43,0.69,7.34,0.46c11.03-1.29,28.41-2.9,37.21-3.61c3.18-0.26,5.36-0.03,6.95,0.2", start: [27.4, 70.5], end: [78.9, 67.5], direction: "left-right" },
+      { path: "M15.38,90.31c2.43,0.69,6.89,0.88,9.31,0.69C45.75,89.38,66,87.62,84,87.54c4.05-0.02,6.48,0.33,8.5,0.68", start: [15.4, 90.3], end: [92.5, 88.2], direction: "left-right" }
     ]
   },
   "理": {
-    readings: { on: ["リ"], kun: ["ことわり"] },
+    readings: { on: ["リ"], kun: [] },
     strokes: [
-      // 王 left part - top horizontal
-      { path: "M 6,18 L 42,18", start: [6, 18], end: [42, 18], direction: "left-right" },
-      // 王 left vertical
-      { path: "M 6,18 L 6,52", start: [6, 18], end: [6, 52], direction: "top-bottom" },
-      // 王 horizontal mid
-      { path: "M 6,35 L 42,35", start: [6, 35], end: [42, 35], direction: "left-right" },
-      // 王 center vertical
-      { path: "M 24,18 L 24,80", start: [24, 18], end: [24, 80], direction: "top-bottom" },
-      // 王 right + bottom
-      { path: "M 42,18 L 42,52 L 6,52", start: [42, 18], end: [6, 52], direction: "complex" },
-      // 王 bottom horizontal 1
-      { path: "M 6,66 L 42,66", start: [6, 66], end: [42, 66], direction: "left-right" },
-      // 王 bottom horizontal 2
-      { path: "M 6,80 L 42,80", start: [6, 80], end: [42, 80], direction: "left-right" },
-      // 里 right part - top horizontal
-      { path: "M 52,14 L 100,14", start: [52, 14], end: [100, 14], direction: "left-right" },
-      // center vertical right
-      { path: "M 76,14 L 76,50", start: [76, 14], end: [76, 50], direction: "top-bottom" },
-      // horizontal 2
-      { path: "M 52,34 L 100,34", start: [52, 34], end: [100, 34], direction: "left-right" },
-      // horizontal 3
-      { path: "M 52,50 L 100,50", start: [52, 50], end: [100, 50], direction: "left-right" },
-      // 土 bottom - vertical
-      { path: "M 76,56 L 76,96", start: [76, 56], end: [76, 96], direction: "top-bottom" },
-      // 土 short horizontal
-      { path: "M 56,72 L 96,72", start: [56, 72], end: [96, 72], direction: "left-right" },
-      // 土 bottom horizontal
-      { path: "M 50,92 L 102,92", start: [50, 92], end: [102, 92], direction: "left-right" }
+      { path: "M11.75,27.75c1.87,0.5,3.23,0.52,5.1,0.25c6.9-1,13.82-2.25,19.42-3.25c1.21-0.22,2.49,0,3.73,0", start: [11.8, 27.8], end: [40.0, 24.8], direction: "left-right" },
+      { path: "M26.25,30.25c1,1,1.75,2.5,1.75,3.75s0,40.25,0,43", start: [26.2, 30.2], end: [28.0, 77.0], direction: "top-bottom" },
+      { path: "M15.25,52.09c1.25,0.19,1.98,0.58,4.25,0.19c5.88-1.02,14.39-3.36,16.75-4.09c1-0.31,1.88-0.44,3-0.44", start: [15.2, 52.1], end: [39.2, 47.8], direction: "left-right" },
+      { path: "M12.75,82.75c1.25,1,3.3,0.91,4.25,0.5c5.75-2.5,17.25-8,22-10.5", start: [12.8, 82.8], end: [39.0, 72.8], direction: "left-right" },
+      { path: "M46,18.5c1.12,1.12,1.78,2.13,2,3.2c1.33,6.47,2.58,18.93,3.5,29.28c0.12,1.32,0.23,2.62,0.34,3.88", start: [46.0, 18.5], end: [51.8, 54.9], direction: "top-bottom" },
+      { path: "M48.79,20.78c12.46-2.03,30.96-4.78,39.73-5.5c3.15-0.26,4.73,1.65,4.57,3.26c-0.48,4.81-2.23,18.91-3.61,28.04c-0.31,2.05-0.6,3.86-0.86,5.25", start: [48.8, 20.8], end: [88.6, 51.8], direction: "top-left-to-bottom-right" },
+      { path: "M51.2,35.59c6.05-0.84,31.05-3.47,39.14-3.53", start: [51.2, 35.6], end: [90.3, 32.1], direction: "left-right" },
+      { path: "M52.67,52.28c9.58-0.78,22.08-2.28,35.19-3.02", start: [52.7, 52.3], end: [87.9, 49.3], direction: "left-right" },
+      { path: "M67.75,20.75c0.88,0.88,1.41,1.99,1.44,3.01c0.3,12.89,0.12,59.3,0.12,63.99", start: [67.8, 20.8], end: [69.3, 87.8], direction: "top-bottom" },
+      { path: "M52.15,69.29c1.38,0.39,3.91,0.49,5.3,0.39c9.02-0.67,15.56-1.92,24.52-3.17c2.27-0.32,3.66-0.26,6.03-0.26", start: [52.1, 69.3], end: [88.0, 66.2], direction: "left-right" },
+      { path: "M40.13,91c1.57,0.54,4.47,0.73,6.04,0.54c16.83-2.05,35.08-4.3,47.45-4.27c2.62,0.01,4.2,0.26,5.51,0.53", start: [40.1, 91.0], end: [99.1, 87.8], direction: "left-right" }
     ]
   },
   "話": {
     readings: { on: ["ワ"], kun: ["はな.す", "はなし"] },
     strokes: [
-      // 言 top dot
-      { path: "M 14,10 L 22,10", start: [14, 10], end: [22, 10], direction: "left-right" },
-      // 言 horizontal 1
-      { path: "M 5,24 L 40,24", start: [5, 24], end: [40, 24], direction: "left-right" },
-      // 言 horizontal 2
-      { path: "M 5,36 L 40,36", start: [5, 36], end: [40, 36], direction: "left-right" },
-      // 言 horizontal 3
-      { path: "M 5,48 L 40,48", start: [5, 48], end: [40, 48], direction: "left-right" },
-      // 口 top
-      { path: "M 8,58 L 36,58", start: [8, 58], end: [36, 58], direction: "left-right" },
-      // 口 left + bottom
-      { path: "M 8,58 L 8,78 L 36,78", start: [8, 58], end: [36, 78], direction: "complex" },
-      // 口 right
-      { path: "M 36,58 L 36,78", start: [36, 58], end: [36, 78], direction: "top-bottom" },
-      // 舌 right part - top 千 horizontal
-      { path: "M 48,14 L 100,14", start: [48, 14], end: [100, 14], direction: "left-right" },
-      // 千 left falling
-      { path: "M 68,14 L 52,34", start: [68, 14], end: [52, 34], direction: "top-right-to-bottom-left" },
-      // 千 vertical
-      { path: "M 76,6 L 76,42", start: [76, 6], end: [76, 42], direction: "top-bottom" },
-      // 口 bottom - top
-      { path: "M 50,46 L 98,46", start: [50, 46], end: [98, 46], direction: "left-right" },
-      // 口 left
-      { path: "M 50,46 L 50,84", start: [50, 46], end: [50, 84], direction: "top-bottom" },
-      // 口 right + bottom
-      { path: "M 98,46 L 98,84 L 50,84", start: [98, 46], end: [50, 84], direction: "complex" }
+      { path: "M24.99,14c2.36,1.5,6.1,6.17,6.7,8.5", start: [25.0, 14.0], end: [31.7, 22.5], direction: "top-left-to-bottom-right" },
+      { path: "M11.37,32.83c1.41,0.42,3.07,0.29,4.51,0.17c8.29-0.7,16.95-1.9,23.59-2.81c1.28-0.17,3.22,0.11,3.87,0.23", start: [11.4, 32.8], end: [43.3, 30.4], direction: "left-right" },
+      { path: "M17.78,47.06c1.05,0.32,2.15,0.35,3.23,0.29c4.11-0.23,10.69-1.59,14.43-1.97c1.31-0.13,2.68-0.13,4.04-0.13", start: [17.8, 47.1], end: [39.5, 45.2], direction: "left-right" },
+      { path: "M18.58,59.33c1.2,0.36,2.8,0.13,4.04,0.08c3.71-0.16,8.38-0.79,12.92-1.36c1.43-0.18,2.85-0.34,4.3-0.08", start: [18.6, 59.3], end: [39.8, 58.0], direction: "left-right" },
+      { path: "M17.4,71.9c0.81,0.68,1.33,1.82,1.49,2.87c0.73,4.61,1.4,8.31,2.2,13.18c0.22,1.33,0.43,2.62,0.63,3.8", start: [17.4, 71.9], end: [21.7, 91.8], direction: "top-bottom" },
+      { path: "M19.64,73.54c6.67-1.14,13.31-2.75,19.46-3.66c1.85-0.27,2.96,1.26,2.7,2.51c-0.89,4.19-2.46,8.16-4.05,14.07", start: [19.6, 73.5], end: [37.8, 86.5], direction: "top-left-to-bottom-right" },
+      { path: "M22.49,89.55c4.76-0.55,8.86-1.17,14.02-1.72c0.93-0.1,1.91,0.04,2.97-0.09", start: [22.5, 89.5], end: [39.5, 87.7], direction: "left-right" },
+      { path: "M81.75,13.75c-0.12,1.25-0.79,2.39-1.66,3.06c-4.84,3.69-15.34,9.94-29.34,14.94", start: [81.8, 13.8], end: [50.8, 31.8], direction: "top-right-to-bottom-left" },
+      { path: "M45.39,45.8c1.55,0.34,4.36,0.62,6.73,0.34C62.8,44.9,76.37,43.07,91,42.23c2.28-0.13,4.49-0.01,6.75,0.29", start: [45.4, 45.8], end: [97.8, 42.5], direction: "left-right" },
+      { path: "M68.87,27.19c1.4,1.4,1.85,3.06,1.85,4.88c0,1.44-0.21,28.18-0.21,35.16", start: [68.9, 27.2], end: [70.5, 67.2], direction: "top-bottom" },
+      { path: "M52.07,67.83c0.93,1.17,1.22,1.76,1.35,2.34c1.38,6.2,2.13,12.33,3.08,20.33c0.13,1.14,0.27,2.31,0.42,3.53", start: [52.1, 67.8], end: [56.9, 94.0], direction: "top-bottom" },
+      { path: "M54.62,69.29c12.9-1.37,25.41-2.73,32.68-3.31c2.94-0.24,3.79,2.4,3.37,3.8c-1.47,4.87-3.03,11.64-5.04,18.35", start: [54.6, 69.3], end: [85.6, 88.1], direction: "top-left-to-bottom-right" },
+      { path: "M56.64,91.74c7.5-0.57,16.99-1.13,27.14-1.93c1.37-0.11,2.75-0.22,4.13-0.34", start: [56.6, 91.7], end: [87.9, 89.5], direction: "left-right" }
     ]
   }
 };
