@@ -10,20 +10,20 @@ class StrokeValidator {
       easy: {
         startDistance: 0.20,   // キャンバスサイズの20%
         endDistance: 0.25,
-        directionAngle: 60,    // 度
-        pathScore: 0.3,        // DTWスコア閾値（低いほど厳しい）
+        directionAngle: 75,    // 度（左方向ストローク対策で緩和）
+        pathScore: 0.35,
       },
       normal: {
         startDistance: 0.15,
         endDistance: 0.20,
-        directionAngle: 45,
-        pathScore: 0.4,
+        directionAngle: 60,
+        pathScore: 0.45,
       },
       hard: {
         startDistance: 0.12,
         endDistance: 0.15,
-        directionAngle: 35,
-        pathScore: 0.5,
+        directionAngle: 45,
+        pathScore: 0.55,
       }
     };
     this.mode = 'easy';
@@ -73,14 +73,22 @@ class StrokeValidator {
       };
     }
 
-    // 2. 方向チェック
+    // 2. 方向チェック（セントロイド角度と始点→終点角度の両方を考慮）
     const userAngle = this.getStrokeAngle(userPoints);
     const expAngle = this.getStrokeAngle(expectedPoints);
     const angleDiff = this.angleDifference(userAngle, expAngle);
 
-    if (angleDiff > threshold.directionAngle) {
+    // 始点→終点の直線角度も補助的にチェック
+    const userDirectAngle = Math.atan2(userEnd.y - userStart.y, userEnd.x - userStart.x) * 180 / Math.PI;
+    const expDirectAngle = Math.atan2(expEnd.y - expStart.y, expEnd.x - expStart.x) * 180 / Math.PI;
+    const directAngleDiff = this.angleDifference(userDirectAngle, expDirectAngle);
+
+    // 両方の角度のうち良い方を採用（曲線ストロークの安定性向上）
+    const bestAngleDiff = Math.min(angleDiff, directAngleDiff);
+
+    if (bestAngleDiff > threshold.directionAngle) {
       // 逆方向かチェック（180度差）
-      const reverseDiff = Math.abs(angleDiff - 180);
+      const reverseDiff = Math.abs(bestAngleDiff - 180);
       if (reverseDiff < threshold.directionAngle) {
         return {
           valid: false,
@@ -339,31 +347,49 @@ class StrokeValidator {
 
   /**
    * ストロークの全体的な方向角度（度）
+   * 短いストロークは始点→終点、長いストロークは始点30%→終点30%のセントロイド使用
    */
   getStrokeAngle(points) {
     if (points.length < 2) return 0;
-    // 最初の1/4と最後の1/4の中心点間の角度を使う（ノイズ軽減）
-    const q1End = Math.max(1, Math.floor(points.length * 0.25));
-    const q4Start = Math.floor(points.length * 0.75);
+
+    // 短いストロークは始点→終点をそのまま使用（ノイズ軽減不要）
+    if (points.length < 8) {
+      const s = points[0];
+      const e = points[points.length - 1];
+      return Math.atan2(e.y - s.y, e.x - s.x) * 180 / Math.PI;
+    }
+
+    // 最初の30%と最後の30%の中心点間の角度を使う
+    const startEnd = Math.max(2, Math.floor(points.length * 0.3));
+    const endStart = Math.min(points.length - 2, Math.floor(points.length * 0.7));
 
     let sx = 0, sy = 0;
-    for (let i = 0; i < q1End; i++) {
+    for (let i = 0; i < startEnd; i++) {
       sx += points[i].x;
       sy += points[i].y;
     }
-    sx /= q1End;
-    sy /= q1End;
+    sx /= startEnd;
+    sy /= startEnd;
 
     let ex = 0, ey = 0;
-    const q4Count = points.length - q4Start;
-    for (let i = q4Start; i < points.length; i++) {
+    const endCount = points.length - endStart;
+    for (let i = endStart; i < points.length; i++) {
       ex += points[i].x;
       ey += points[i].y;
     }
-    ex /= q4Count;
-    ey /= q4Count;
+    ex /= endCount;
+    ey /= endCount;
 
-    return Math.atan2(ey - sy, ex - sx) * 180 / Math.PI;
+    // セントロイド間の距離が短すぎる場合は始点→終点を使用
+    const dx = ex - sx;
+    const dy = ey - sy;
+    if (Math.sqrt(dx * dx + dy * dy) < 3) {
+      const s = points[0];
+      const e = points[points.length - 1];
+      return Math.atan2(e.y - s.y, e.x - s.x) * 180 / Math.PI;
+    }
+
+    return Math.atan2(dy, dx) * 180 / Math.PI;
   }
 
   /**

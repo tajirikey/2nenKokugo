@@ -251,18 +251,34 @@ html, body {
   transform: scale(0.9);
 }
 
-/* キャンバスコンテナ */
+/* 正解時の読み方表示 */
+.reading-display {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #4A90D9;
+  padding: 8px 0 0;
+  transition: opacity 0.3s;
+}
+.reading-display.hidden {
+  display: none;
+}
+
+/* キャンバスコンテナ（正方形） */
 .canvas-container {
-  flex: 1;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #fff;
-  margin: 12px;
+  margin: 8px auto;
   border-radius: 16px;
   border: 3px solid #d0c8c0;
   overflow: hidden;
+  aspect-ratio: 1;
+  flex: 1 1 0;
+  min-height: 0;
+  max-width: calc(100vw - 24px);
 }
 .guide-svg {
   position: absolute;
@@ -503,7 +519,7 @@ html, body {
     font-size: 36px;
   }
   .canvas-container {
-    margin: 16px 40px;
+    margin: 8px auto;
   }
   .feedback {
     font-size: 24px;

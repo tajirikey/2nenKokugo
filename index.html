@@ -61,17 +61,18 @@
       </div>
     </header>
 
+    <!-- 正解時の読み方表示 -->
+    <div id="reading-display" class="reading-display hidden"></div>
+
     <div class="canvas-container">
       <!-- ガイド表示用SVG -->
       <svg id="guide-svg" class="guide-svg" viewBox="0 0 109 109"></svg>
       <!-- 描画用キャンバス -->
       <canvas id="draw-canvas" class="draw-canvas"></canvas>
-      <!-- グリッド線（田字格） -->
+      <!-- グリッド線（十字のみ） -->
       <svg class="grid-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
         <line x1="50" y1="0" x2="50" y2="100" stroke="#ddd" stroke-width="0.5" stroke-dasharray="2,2"/>
         <line x1="0" y1="50" x2="100" y2="50" stroke="#ddd" stroke-width="0.5" stroke-dasharray="2,2"/>
-        <line x1="0" y1="0" x2="100" y2="100" stroke="#eee" stroke-width="0.3" stroke-dasharray="2,2"/>
-        <line x1="100" y1="0" x2="0" y2="100" stroke="#eee" stroke-width="0.3" stroke-dasharray="2,2"/>
       </svg>
     </div>
 

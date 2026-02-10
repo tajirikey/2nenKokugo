@@ -37,6 +37,7 @@
     currentKanjiLabel: document.getElementById('current-kanji-label'),
     strokeProgress: document.getElementById('stroke-progress'),
     readingLabel: document.getElementById('reading-label'),
+    readingDisplay: document.getElementById('reading-display'),
     feedback: document.getElementById('feedback'),
     feedbackText: document.getElementById('feedback-text'),
     completionOverlay: document.getElementById('completion-overlay'),
@@ -188,7 +189,9 @@
     els.screenPractice.classList.add('active');
 
     els.currentKanjiLabel.textContent = kanjiChar;
-    updateReadingLabel();
+    els.readingLabel.textContent = '';  // 回答中は読み方非表示
+    els.readingDisplay.classList.add('hidden');
+    els.readingDisplay.textContent = '';
     updateStrokeProgress();
     hideCompletion();
     hideFeedback();
@@ -196,14 +199,6 @@
     drawingCanvas.clear();
     drawingCanvas.resize();
     renderGuide();
-  }
-
-  function updateReadingLabel() {
-    const data = state.currentKanji;
-    const readings = [];
-    if (data.readings.on.length > 0) readings.push(data.readings.on.join('・'));
-    if (data.readings.kun.length > 0) readings.push(data.readings.kun.join('・'));
-    els.readingLabel.textContent = readings.join(' / ');
   }
 
   function updateStrokeProgress() {
@@ -416,6 +411,17 @@
 
     state.completedKanji.add(state.currentKanjiChar);
     saveJSON('completedKanji', [...state.completedKanji]);
+
+    // 読み方を大きく表示
+    const data = state.currentKanji;
+    const readings = [];
+    if (data.readings.on.length > 0) readings.push(data.readings.on.join('・'));
+    if (data.readings.kun.length > 0) readings.push(data.readings.kun.join('・'));
+    els.readingDisplay.textContent = readings.join(' / ');
+    els.readingDisplay.classList.remove('hidden');
+
+    // ヘッダーにも表示
+    els.readingLabel.textContent = readings.join(' / ');
 
     // ガイドを極薄に（筆跡が目立つ）
     renderGuide();

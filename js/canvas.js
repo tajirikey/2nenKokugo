@@ -14,8 +14,7 @@ class DrawingCanvas {
 
     // スタイル設定
     this.strokeColor = '#000000';
-    this.minWidth = 8;
-    this.maxWidth = 28;
+    this.strokeWidth = 18; // 一定の太さ（筆圧不使用）
 
     this.setupEvents();
     this.resize();
@@ -52,8 +51,6 @@ class DrawingCanvas {
     return {
       x: e.clientX - rect.left,
       y: e.clientY - rect.top,
-      pressure: e.pressure || 0.5,
-      pointerType: e.pointerType
     };
   }
 
@@ -81,10 +78,7 @@ class DrawingCanvas {
       const pt = this.getPoint(evt);
       this.currentStrokePoints.push(pt);
 
-      // 筆圧で線の太さを変える
-      const width = this.minWidth + (this.maxWidth - this.minWidth) * pt.pressure;
-
-      this.ctx.lineWidth = width;
+      this.ctx.lineWidth = this.strokeWidth;
       this.ctx.lineCap = 'round';
       this.ctx.lineJoin = 'round';
       this.ctx.strokeStyle = this.strokeColor;
@@ -142,12 +136,11 @@ class DrawingCanvas {
       this.ctx.beginPath();
       this.ctx.moveTo(stroke[0].x, stroke[0].y);
 
+      this.ctx.lineWidth = this.strokeWidth;
+      this.ctx.lineCap = 'round';
+      this.ctx.lineJoin = 'round';
+      this.ctx.strokeStyle = this.strokeColor;
       for (let i = 1; i < stroke.length; i++) {
-        const width = this.minWidth + (this.maxWidth - this.minWidth) * (stroke[i].pressure || 0.5);
-        this.ctx.lineWidth = width;
-        this.ctx.lineCap = 'round';
-        this.ctx.lineJoin = 'round';
-        this.ctx.strokeStyle = this.strokeColor;
         this.ctx.lineTo(stroke[i].x, stroke[i].y);
       }
       this.ctx.stroke();
