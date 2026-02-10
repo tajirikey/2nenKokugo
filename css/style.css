@@ -162,12 +162,15 @@ html, body {
   -webkit-overflow-scrolling: touch;
   padding: 12px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  grid-template-columns: repeat(auto-fill, 76px);
+  grid-auto-rows: 76px;
   gap: 8px;
   align-content: start;
+  justify-content: center;
 }
 .kanji-cell {
-  aspect-ratio: 1;
+  width: 76px;
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,9 +182,6 @@ html, body {
   transition: all 0.15s;
   position: relative;
   overflow: hidden;
-  min-width: 0;
-  min-height: 0;
-  contain: layout style;
 }
 .kanji-cell:hover {
   border-color: #4A90D9;
@@ -214,9 +214,6 @@ html, body {
 .kanji-text {
   font-size: inherit;
   line-height: 1;
-  max-width: 100%;
-  max-height: 100%;
-  overflow: hidden;
 }
 .kanji-text.faint {
   opacity: 0.12;
@@ -652,12 +649,15 @@ html, body {
 /* ========== レスポンシブ（iPad最適化） ========== */
 @media (min-width: 768px) {
   .kanji-grid {
-    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+    grid-template-columns: repeat(auto-fill, 92px);
+    grid-auto-rows: 92px;
     gap: 10px;
     padding: 16px;
   }
   .kanji-cell {
-    font-size: 40px;
+    width: 92px;
+    height: 92px;
+    font-size: 42px;
   }
   .app-header h1 {
     font-size: 36px;
