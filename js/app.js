@@ -197,9 +197,9 @@
         img.alt = kanji;
         cell.appendChild(img);
       } else {
-        // 書いていない文字は薄くデフォルト表示
+        // 書いていない文字のデフォルト表示
         const kanjiText = document.createElement('span');
-        kanjiText.className = 'kanji-text faint';
+        kanjiText.className = state.viewMode === 'browse' ? 'kanji-text faint' : 'kanji-text';
         kanjiText.textContent = kanji;
         cell.appendChild(kanjiText);
       }
@@ -465,11 +465,11 @@
     state.completedKanji.add(state.currentKanjiChar);
     saveJSON('completedKanji', [...state.completedKanji]);
 
-    // 読み方を大きく表示（ヘッダーではなくキャンバス上部）
+    // 読み方を解答欄の中に表示（訓読み → 音読み）
     const data = state.currentKanji;
     const readings = [];
-    if (data.readings.on.length > 0) readings.push(data.readings.on.join('・'));
     if (data.readings.kun.length > 0) readings.push(data.readings.kun.join('・'));
+    if (data.readings.on.length > 0) readings.push(data.readings.on.join('・'));
     els.readingDisplay.textContent = readings.join(' / ');
     els.readingDisplay.classList.remove('hidden');
 
@@ -595,10 +595,10 @@
 
     state.galleryKanji = kanjiChar;
 
-    // 読み方
+    // 読み方（訓読み → 音読み）
     const readings = [];
-    if (data.readings.on.length > 0) readings.push(data.readings.on.join('・'));
     if (data.readings.kun.length > 0) readings.push(data.readings.kun.join('・'));
+    if (data.readings.on.length > 0) readings.push(data.readings.on.join('・'));
     els.galleryReading.textContent = readings.join(' / ');
 
     // メイン画像（最新）
