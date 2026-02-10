@@ -26,6 +26,10 @@
     </div>
 
     <div class="grid-controls">
+      <div class="view-group">
+        <button class="view-btn active" data-view="practice">れんしゅう</button>
+        <button class="view-btn" data-view="browse">みる</button>
+      </div>
       <div class="sort-group">
         <button class="sort-btn active" data-sort="default">じゅんばん</button>
         <button class="sort-btn" data-sort="random">ランダム</button>
@@ -34,6 +38,7 @@
         <button class="filter-btn active" data-filter="all">ぜんぶ</button>
         <button class="filter-btn" data-filter="mistake">にがて</button>
       </div>
+      <button id="btn-reset" class="reset-btn">リセット</button>
     </div>
 
     <div class="search-bar">
@@ -41,7 +46,6 @@
     </div>
 
     <div id="kanji-grid" class="kanji-grid">
-      <!-- 漢字ボタンがJSで生成される -->
     </div>
   </div>
 
@@ -52,7 +56,6 @@
       <div class="practice-info">
         <span id="current-kanji-label" class="current-kanji-label">字</span>
         <span id="stroke-progress" class="stroke-progress">1/6 かくめ</span>
-        <span id="reading-label" class="reading-label"></span>
       </div>
       <div class="practice-actions">
         <button id="btn-demo" class="icon-btn" aria-label="おてほん">▶</button>
@@ -94,12 +97,29 @@
     </div>
   </div>
 
+  <!-- ギャラリーモーダル（閲覧モード） -->
+  <div id="gallery-modal" class="gallery-modal hidden">
+    <div class="gallery-content">
+      <button id="btn-gallery-close" class="gallery-close-btn">✕</button>
+      <div id="gallery-reading" class="gallery-reading"></div>
+      <div class="gallery-main">
+        <img id="gallery-main-img" class="gallery-main-img" alt="">
+      </div>
+      <div class="gallery-meta">
+        <span id="gallery-kanji" class="gallery-kanji-label"></span>
+        <span id="gallery-date" class="gallery-date"></span>
+      </div>
+      <div id="gallery-history" class="gallery-history"></div>
+      <button id="btn-gallery-delete" class="gallery-delete-btn">このかんじのデータをけす</button>
+    </div>
+  </div>
+
   <script src="js/kanji-data.js"></script>
   <script src="js/stroke-validator.js"></script>
   <script src="js/canvas.js"></script>
+  <script src="js/storage.js"></script>
   <script src="js/app.js"></script>
   <script>
-    // Service Worker登録
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js');
     }

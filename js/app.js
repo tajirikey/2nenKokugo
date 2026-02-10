@@ -19,11 +19,14 @@
     currentStrokeIndex: 0,
     totalStrokes: 0,
     completedKanji: new Set(loadJSON('completedKanji', [])),
-    mistakeKanji: new Set(loadJSON('mistakeKanji', [])),   // 苦手漢字
-    attemptCounts: loadJSON('attemptCounts', {}),           // 取り組み回数
+    mistakeKanji: new Set(loadJSON('mistakeKanji', [])),
+    attemptCounts: loadJSON('attemptCounts', {}),
     kanjiList: [],
-    sortOrder: localStorage.getItem('sortOrder') || 'default', // default | random
-    filterMode: 'all', // all | mistake
+    sortOrder: localStorage.getItem('sortOrder') || 'default',
+    filterMode: 'all',
+    viewMode: 'practice',  // practice | browse
+    writingsCache: {},      // { kanji: { imageDataURL, timestamp } }
+    galleryKanji: '',
   };
 
   // ========== DOM要素 ==========
@@ -36,7 +39,6 @@
     drawCanvas: document.getElementById('draw-canvas'),
     currentKanjiLabel: document.getElementById('current-kanji-label'),
     strokeProgress: document.getElementById('stroke-progress'),
-    readingLabel: document.getElementById('reading-label'),
     readingDisplay: document.getElementById('reading-display'),
     feedback: document.getElementById('feedback'),
     feedbackText: document.getElementById('feedback-text'),
@@ -47,19 +49,38 @@
     btnUndo: document.getElementById('btn-undo'),
     btnClear: document.getElementById('btn-clear'),
     btnNextKanji: document.getElementById('btn-next-kanji'),
+    btnReset: document.getElementById('btn-reset'),
     modeBtns: document.querySelectorAll('.mode-btn'),
     sortBtns: document.querySelectorAll('.sort-btn'),
     filterBtns: document.querySelectorAll('.filter-btn'),
+    viewBtns: document.querySelectorAll('.view-btn'),
     particleCanvas: document.getElementById('particle-canvas'),
+    // ギャラリー
+    galleryModal: document.getElementById('gallery-modal'),
+    galleryMainImg: document.getElementById('gallery-main-img'),
+    galleryKanji: document.getElementById('gallery-kanji'),
+    galleryReading: document.getElementById('gallery-reading'),
+    galleryDate: document.getElementById('gallery-date'),
+    galleryHistory: document.getElementById('gallery-history'),
+    btnGalleryClose: document.getElementById('btn-gallery-close'),
+    btnGalleryDelete: document.getElementById('btn-gallery-delete'),
   };
 
   let drawingCanvas;
   let validator;
 
-  function init() {
+  async function init() {
     validator = new StrokeValidator();
     drawingCanvas = new DrawingCanvas(els.drawCanvas);
     drawingCanvas.onStrokeComplete = onUserStrokeComplete;
+
+    // IndexedDB を開いてキャッシュ読み込み
+    try {
+      await KanjiStorage.open();
+      state.writingsCache = await KanjiStorage.getAllLatest();
+    } catch (e) {
+      console.warn('IndexedDB unavailable:', e);
+    }
 
     setupEventListeners();
     renderKanjiGrid();
@@ -79,7 +100,6 @@
       });
     });
 
-    // 並び順
     els.sortBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         els.sortBtns.forEach(b => b.classList.remove('active'));
@@ -90,12 +110,21 @@
       });
     });
 
-    // フィルタ（にがて）
     els.filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         els.filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         state.filterMode = btn.dataset.filter;
+        renderKanjiGrid(els.kanjiSearch.value);
+      });
+    });
+
+    // 表示モード切替
+    els.viewBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        els.viewBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.viewMode = btn.dataset.view;
         renderKanjiGrid(els.kanjiSearch.value);
       });
     });
@@ -106,6 +135,16 @@
     els.btnUndo.addEventListener('click', undoStroke);
     els.btnClear.addEventListener('click', clearAndReset);
     els.btnNextKanji.addEventListener('click', goToNextKanji);
+
+    // リセット
+    els.btnReset.addEventListener('click', deleteAllData);
+
+    // ギャラリー
+    els.btnGalleryClose.addEventListener('click', closeGallery);
+    els.btnGalleryDelete.addEventListener('click', () => deleteKanjiData(state.galleryKanji));
+    els.galleryModal.addEventListener('click', (e) => {
+      if (e.target === els.galleryModal) closeGallery();
+    });
   }
 
   function restoreMode() {
@@ -126,12 +165,10 @@
     els.kanjiGrid.innerHTML = '';
     let allKanji = Object.keys(KANJI_DATA);
 
-    // にがてフィルタ
     if (state.filterMode === 'mistake') {
       allKanji = allKanji.filter(k => state.mistakeKanji.has(k));
     }
 
-    // テキスト検索
     state.kanjiList = filter
       ? allKanji.filter(k => {
           const data = KANJI_DATA[k];
@@ -141,7 +178,6 @@
         })
       : allKanji;
 
-    // 並び替え
     if (state.sortOrder === 'random') {
       state.kanjiList = [...state.kanjiList].sort(() => Math.random() - 0.5);
     }
@@ -151,11 +187,22 @@
       cell.className = 'kanji-cell';
       if (state.completedKanji.has(kanji)) cell.classList.add('completed');
 
-      // 漢字テキスト
-      const kanjiText = document.createElement('span');
-      kanjiText.className = 'kanji-text';
-      kanjiText.textContent = kanji;
-      cell.appendChild(kanjiText);
+      const cached = state.writingsCache[kanji];
+
+      if (cached) {
+        // ユーザーの筆跡画像を表示
+        const img = document.createElement('img');
+        img.className = 'kanji-img';
+        img.src = cached.imageDataURL;
+        img.alt = kanji;
+        cell.appendChild(img);
+      } else {
+        // 書いていない文字は薄くデフォルト表示
+        const kanjiText = document.createElement('span');
+        kanjiText.className = 'kanji-text faint';
+        kanjiText.textContent = kanji;
+        cell.appendChild(kanjiText);
+      }
 
       // 取り組み回数バッジ
       const count = state.attemptCounts[kanji] || 0;
@@ -166,7 +213,17 @@
         cell.appendChild(badge);
       }
 
-      cell.addEventListener('click', () => startPractice(kanji));
+      // クリック動作: 閲覧モード vs 練習モード
+      if (state.viewMode === 'browse') {
+        if (cached) {
+          cell.addEventListener('click', () => openGallery(kanji));
+        } else {
+          cell.classList.add('disabled');
+        }
+      } else {
+        cell.addEventListener('click', () => startPractice(kanji));
+      }
+
       els.kanjiGrid.appendChild(cell);
     }
   }
@@ -181,7 +238,6 @@
     state.currentStrokeIndex = 0;
     state.totalStrokes = data.strokes.length;
 
-    // 取り組み回数を記録
     state.attemptCounts[kanjiChar] = (state.attemptCounts[kanjiChar] || 0) + 1;
     saveJSON('attemptCounts', state.attemptCounts);
 
@@ -189,7 +245,6 @@
     els.screenPractice.classList.add('active');
 
     els.currentKanjiLabel.textContent = kanjiChar;
-    els.readingLabel.textContent = '';  // 回答中は読み方非表示
     els.readingDisplay.classList.add('hidden');
     els.readingDisplay.textContent = '';
     updateStrokeProgress();
@@ -221,7 +276,6 @@
       path.setAttribute('d', stroke.path);
 
       if (allDone) {
-        // 全画完了: お手本を極薄に
         path.setAttribute('class', 'stroke-all-done');
       } else if (i < state.currentStrokeIndex) {
         path.setAttribute('class', 'stroke-done');
@@ -234,7 +288,6 @@
       svg.appendChild(path);
     }
 
-    // 始点マーカー
     if (state.mode !== 'hard' && !allDone && state.currentStrokeIndex < strokes.length) {
       const currentStroke = strokes[state.currentStrokeIndex];
       if (currentStroke.start) {
@@ -264,7 +317,8 @@
 
     if (result.valid) {
       state.currentStrokeIndex++;
-      showFeedback(result.message || 'いいね！', 'success');
+      // 成功時はフィードバック表示しない
+      hideFeedback();
       renderGuide();
       updateStrokeProgress();
 
@@ -279,7 +333,6 @@
   function handleIncorrectStroke(result) {
     drawingCanvas.undoLastStroke();
 
-    // 苦手漢字として記録
     state.mistakeKanji.add(state.currentKanjiChar);
     saveJSON('mistakeKanji', [...state.mistakeKanji]);
 
@@ -404,15 +457,15 @@
     els.feedback.className = 'feedback hidden';
   }
 
-  // ========== 完成表示 + パーティクル ==========
-  function showCompletion() {
+  // ========== 完成表示 + パーティクル + 保存 ==========
+  async function showCompletion() {
     els.completionKanji.textContent = state.currentKanjiChar;
     els.completionOverlay.classList.remove('hidden');
 
     state.completedKanji.add(state.currentKanjiChar);
     saveJSON('completedKanji', [...state.completedKanji]);
 
-    // 読み方を大きく表示
+    // 読み方を大きく表示（ヘッダーではなくキャンバス上部）
     const data = state.currentKanji;
     const readings = [];
     if (data.readings.on.length > 0) readings.push(data.readings.on.join('・'));
@@ -420,11 +473,24 @@
     els.readingDisplay.textContent = readings.join(' / ');
     els.readingDisplay.classList.remove('hidden');
 
-    // ヘッダーにも表示
-    els.readingLabel.textContent = readings.join(' / ');
-
     // ガイドを極薄に（筆跡が目立つ）
     renderGuide();
+
+    // 書いた文字を画像として保存
+    try {
+      if (KanjiStorage.isReady()) {
+        const imageDataURL = drawingCanvas.exportImage(300);
+        if (imageDataURL) {
+          await KanjiStorage.save(state.currentKanjiChar, imageDataURL);
+          state.writingsCache[state.currentKanjiChar] = {
+            imageDataURL,
+            timestamp: Date.now()
+          };
+        }
+      }
+    } catch (e) {
+      console.warn('Failed to save writing:', e);
+    }
 
     // パーティクル発射
     launchParticles();
@@ -476,7 +542,7 @@
         alive = true;
         p.x += p.vx;
         p.y += p.vy;
-        p.vy += 0.25; // gravity
+        p.vy += 0.25;
         p.life -= p.decay;
         p.rotation += p.rotSpeed;
         ctx.globalAlpha = Math.max(0, p.life);
@@ -511,6 +577,108 @@
     if (els.particleCanvas) els.particleCanvas.classList.add('hidden');
   }
 
+  // ========== ギャラリー（閲覧モード） ==========
+  async function openGallery(kanjiChar) {
+    const data = KANJI_DATA[kanjiChar];
+    if (!data) return;
+
+    let writings = [];
+    try {
+      if (KanjiStorage.isReady()) {
+        writings = await KanjiStorage.getByKanji(kanjiChar);
+      }
+    } catch (e) {
+      console.warn('Failed to load writings:', e);
+    }
+
+    if (writings.length === 0) return;
+
+    state.galleryKanji = kanjiChar;
+
+    // 読み方
+    const readings = [];
+    if (data.readings.on.length > 0) readings.push(data.readings.on.join('・'));
+    if (data.readings.kun.length > 0) readings.push(data.readings.kun.join('・'));
+    els.galleryReading.textContent = readings.join(' / ');
+
+    // メイン画像（最新）
+    els.galleryMainImg.src = writings[0].imageDataURL;
+    els.galleryKanji.textContent = kanjiChar;
+    els.galleryDate.textContent = formatDate(writings[0].timestamp);
+
+    // 履歴サムネイル
+    els.galleryHistory.innerHTML = '';
+    for (const w of writings) {
+      const thumb = document.createElement('img');
+      thumb.className = 'gallery-thumb';
+      thumb.src = w.imageDataURL;
+      thumb.title = formatDate(w.timestamp);
+      thumb.addEventListener('click', () => {
+        els.galleryMainImg.src = w.imageDataURL;
+        els.galleryDate.textContent = formatDate(w.timestamp);
+        els.galleryHistory.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('selected'));
+        thumb.classList.add('selected');
+      });
+      if (w === writings[0]) thumb.classList.add('selected');
+      els.galleryHistory.appendChild(thumb);
+    }
+
+    els.galleryModal.classList.remove('hidden');
+  }
+
+  function closeGallery() {
+    els.galleryModal.classList.add('hidden');
+  }
+
+  function formatDate(ts) {
+    const d = new Date(ts);
+    return `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()} ${d.getHours()}:${String(d.getMinutes()).padStart(2, '0')}`;
+  }
+
+  // ========== データ削除 ==========
+  async function deleteKanjiData(kanjiChar) {
+    if (!confirm(`「${kanjiChar}」のデータをすべてけしますか？`)) return;
+
+    try {
+      if (KanjiStorage.isReady()) await KanjiStorage.deleteByKanji(kanjiChar);
+    } catch (e) {
+      console.warn('Failed to delete:', e);
+    }
+
+    delete state.writingsCache[kanjiChar];
+    state.completedKanji.delete(kanjiChar);
+    state.mistakeKanji.delete(kanjiChar);
+    delete state.attemptCounts[kanjiChar];
+
+    saveJSON('completedKanji', [...state.completedKanji]);
+    saveJSON('mistakeKanji', [...state.mistakeKanji]);
+    saveJSON('attemptCounts', state.attemptCounts);
+
+    closeGallery();
+    renderKanjiGrid(els.kanjiSearch.value);
+  }
+
+  async function deleteAllData() {
+    if (!confirm('すべてのデータをけしますか？\nがくしゅうじょうきょう・かいたもじをぜんぶリセットします。')) return;
+
+    try {
+      if (KanjiStorage.isReady()) await KanjiStorage.deleteAll();
+    } catch (e) {
+      console.warn('Failed to delete all:', e);
+    }
+
+    state.writingsCache = {};
+    state.completedKanji = new Set();
+    state.mistakeKanji = new Set();
+    state.attemptCounts = {};
+
+    localStorage.removeItem('completedKanji');
+    localStorage.removeItem('mistakeKanji');
+    localStorage.removeItem('attemptCounts');
+
+    renderKanjiGrid(els.kanjiSearch.value);
+  }
+
   // ========== ナビゲーション ==========
   function goToNextKanji() {
     hideCompletion();
@@ -527,7 +695,7 @@
 
   // ========== 起動 ==========
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', () => init());
   } else {
     init();
   }

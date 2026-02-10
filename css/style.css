@@ -74,19 +74,21 @@ html, body {
   color: white;
 }
 
-/* 並び替え・フィルタ */
+/* 並び替え・フィルタ・表示モード */
 .grid-controls {
   display: flex;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 6px;
   padding: 8px 16px;
   background: #fff;
   border-bottom: 1px solid #e0d8d0;
+  align-items: center;
 }
-.sort-group, .filter-group {
+.view-group, .sort-group, .filter-group {
   display: flex;
   gap: 4px;
 }
-.sort-btn, .filter-btn {
+.sort-btn, .filter-btn, .view-btn {
   padding: 6px 12px;
   border: 2px solid #ccc;
   border-radius: 10px;
@@ -97,10 +99,15 @@ html, body {
   cursor: pointer;
   transition: all 0.2s;
 }
-.sort-btn.active {
+.sort-btn.active, .view-btn.active {
   border-color: #4A90D9;
   background: #EBF3FB;
   color: #4A90D9;
+}
+.view-btn[data-view="browse"].active {
+  border-color: #9B59B6;
+  background: #F3E8FA;
+  color: #9B59B6;
 }
 .filter-btn.active {
   border-color: #E74C3C;
@@ -111,6 +118,22 @@ html, body {
   border-color: #4A90D9;
   background: #EBF3FB;
   color: #4A90D9;
+}
+.reset-btn {
+  margin-left: auto;
+  padding: 6px 12px;
+  border: 2px solid #E74C3C;
+  border-radius: 10px;
+  background: white;
+  color: #E74C3C;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.reset-btn:active {
+  background: #E74C3C;
+  color: white;
 }
 
 /* 検索バー */
@@ -154,6 +177,8 @@ html, body {
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.15s;
+  position: relative;
+  overflow: hidden;
 }
 .kanji-cell:hover {
   border-color: #4A90D9;
@@ -175,11 +200,25 @@ html, body {
   top: 2px;
   right: 6px;
 }
-.kanji-cell {
-  position: relative;
+.kanji-cell.disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.kanji-cell.disabled:hover {
+  transform: none;
+  border-color: #e0d8d0;
 }
 .kanji-text {
   font-size: inherit;
+}
+.kanji-text.faint {
+  opacity: 0.12;
+}
+.kanji-img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  pointer-events: none;
 }
 .attempt-badge {
   position: absolute;
@@ -224,10 +263,6 @@ html, body {
 .stroke-progress {
   font-size: 14px;
   color: #888;
-}
-.reading-label {
-  font-size: 13px;
-  color: #4A90D9;
 }
 .practice-actions {
   display: flex;
@@ -304,7 +339,6 @@ html, body {
 
 /* ========== ストロークガイドスタイル ========== */
 
-/* 完了した画 */
 .stroke-done {
   fill: none;
   stroke: #333;
@@ -313,8 +347,6 @@ html, body {
   stroke-linejoin: round;
   transition: stroke 0.3s;
 }
-
-/* 現在の画（ナビゲーション対象） */
 .stroke-current {
   fill: none;
   stroke: #E74C3C;
@@ -323,8 +355,6 @@ html, body {
   stroke-linejoin: round;
   animation: pulse-stroke 1.2s ease-in-out infinite;
 }
-
-/* 未来の画 */
 .stroke-future {
   fill: none;
   stroke: #ddd;
@@ -333,8 +363,6 @@ html, body {
   stroke-linejoin: round;
   opacity: 0.3;
 }
-
-/* 全画完了時（極薄にしてユーザー筆跡を目立たせる） */
 .stroke-all-done {
   fill: none;
   stroke: #ddd;
@@ -343,8 +371,6 @@ html, body {
   stroke-linejoin: round;
   opacity: 0.1;
 }
-
-/* 始点マーカー */
 .start-marker {
   fill: #E74C3C;
   animation: pulse-marker 1.2s ease-in-out infinite;
@@ -354,7 +380,6 @@ html, body {
   0%, 100% { opacity: 0.6; }
   50% { opacity: 1; }
 }
-
 @keyframes pulse-marker {
   0%, 100% { r: 5; opacity: 0.7; }
   50% { r: 8; opacity: 1; }
@@ -379,11 +404,6 @@ html, body {
   pointer-events: none;
   transform: translateX(-50%) translateY(20px);
 }
-.feedback.success {
-  background: #D4EDDA;
-  color: #155724;
-  border: 2px solid #5CB85C;
-}
 .feedback.warning {
   background: #FFF3CD;
   color: #856404;
@@ -393,20 +413,6 @@ html, body {
   background: #F8D7DA;
   color: #721C24;
   border: 2px solid #E74C3C;
-}
-
-/* 方向矢印アニメーション */
-.direction-arrow {
-  position: absolute;
-  z-index: 5;
-  pointer-events: none;
-}
-.direction-arrow svg {
-  animation: arrow-move 1s ease-in-out infinite;
-}
-@keyframes arrow-move {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(10px); }
 }
 
 /* ========== パーティクルキャンバス ========== */
@@ -503,6 +509,130 @@ html, body {
 }
 @keyframes draw-stroke {
   to { stroke-dashoffset: 0; }
+}
+
+/* ========== ギャラリーモーダル ========== */
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  transition: opacity 0.3s;
+}
+.gallery-modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.gallery-content {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  width: min(90vw, 500px);
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  animation: pop-in 0.3s ease;
+}
+@keyframes pop-in {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.gallery-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #f0f0f0;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-close-btn:active {
+  background: #ddd;
+}
+.gallery-reading {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4A90D9;
+}
+.gallery-main {
+  width: min(70vw, 350px);
+  height: min(70vw, 350px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #d0c8c0;
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+}
+.gallery-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.gallery-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.gallery-kanji-label {
+  font-size: 28px;
+  font-weight: 700;
+}
+.gallery-date {
+  font-size: 14px;
+  color: #888;
+}
+.gallery-history {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 0;
+  width: 100%;
+}
+.gallery-thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+.gallery-thumb.selected {
+  border-color: #4A90D9;
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.3);
+}
+.gallery-delete-btn {
+  padding: 8px 20px;
+  border: 2px solid #E74C3C;
+  border-radius: 10px;
+  background: white;
+  color: #E74C3C;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.gallery-delete-btn:active {
+  background: #E74C3C;
+  color: white;
 }
 
 /* ========== レスポンシブ（iPad最適化） ========== */

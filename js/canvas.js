@@ -163,4 +163,36 @@ class DrawingCanvas {
     const offsetY = (this.canvasHeight - size) / 2;
     return { size, offsetX, offsetY, scale: size / 109 };
   }
+
+  /**
+   * ストロークを小さいキャンバスに描き直して画像として書き出す
+   */
+  exportImage(size = 300) {
+    const offscreen = document.createElement('canvas');
+    offscreen.width = size;
+    offscreen.height = size;
+    const ctx = offscreen.getContext('2d');
+
+    const canvasSize = Math.max(this.canvasWidth, this.canvasHeight);
+    if (canvasSize === 0) return null;
+    const scale = size / canvasSize;
+    const ox = (size - this.canvasWidth * scale) / 2;
+    const oy = (size - this.canvasHeight * scale) / 2;
+
+    for (const stroke of this.allStrokes) {
+      if (stroke.length < 2) continue;
+      ctx.beginPath();
+      ctx.moveTo(stroke[0].x * scale + ox, stroke[0].y * scale + oy);
+      for (let i = 1; i < stroke.length; i++) {
+        ctx.lineTo(stroke[i].x * scale + ox, stroke[i].y * scale + oy);
+      }
+      ctx.lineWidth = this.strokeWidth * scale;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = this.strokeColor;
+      ctx.stroke();
+    }
+
+    return offscreen.toDataURL('image/png');
+  }
 }

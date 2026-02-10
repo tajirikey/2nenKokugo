@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kanji-practice-v1';
+const CACHE_NAME = 'kanji-practice-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -6,6 +6,7 @@ const ASSETS = [
   './js/kanji-data.js',
   './js/stroke-validator.js',
   './js/canvas.js',
+  './js/storage.js',
   './js/app.js',
   './manifest.json',
   './icons/icon-192.svg',
