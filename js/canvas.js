@@ -13,9 +13,9 @@ class DrawingCanvas {
     this.onStrokeComplete = null; // コールバック
 
     // スタイル設定
-    this.strokeColor = '#1a1a2e';
-    this.minWidth = 2;
-    this.maxWidth = 8;
+    this.strokeColor = '#000000';
+    this.minWidth = 4;
+    this.maxWidth = 14;
 
     this.setupEvents();
     this.resize();

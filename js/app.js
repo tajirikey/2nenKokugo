@@ -212,20 +212,8 @@
       }
     }
 
-    // かんたんモード：画番号表示
-    if (state.mode === 'easy' && state.currentStrokeIndex < strokes.length) {
-      const currentStroke = strokes[state.currentStrokeIndex];
-      if (currentStroke.start) {
-        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        text.setAttribute('x', currentStroke.start[0] + 10);
-        text.setAttribute('y', currentStroke.start[1] - 5);
-        text.setAttribute('font-size', '10');
-        text.setAttribute('fill', '#E74C3C');
-        text.setAttribute('font-weight', 'bold');
-        text.textContent = `${state.currentStrokeIndex + 1}`;
-        svg.appendChild(text);
-      }
-    }
+    // かんたんモード：画番号をSVG外（上部ラベル横）に表示
+    // 文字に被らないよう、ヘッダーのstroke-progressに統合済み
   }
 
   // ========== ストローク完了時の処理 ==========
@@ -318,21 +306,40 @@
     const stroke = state.currentKanji.strokes[state.currentStrokeIndex];
     const svg = els.guideSvg;
 
-    // 期待パスに沿ったアニメーション円
+    // 既存のデモ要素を削除
+    svg.querySelectorAll('.hint-anim').forEach(el => el.remove());
+
+    // パスに沿って動くアニメーション（mpath参照で正確な位置に）
+    // まず参照用の非表示パスを追加
+    const refPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    refPath.setAttribute('d', stroke.path);
+    refPath.setAttribute('id', 'hint-ref-path');
+    refPath.setAttribute('fill', 'none');
+    refPath.setAttribute('stroke', 'none');
+    refPath.classList.add('hint-anim');
+    svg.appendChild(refPath);
+
     const animCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    animCircle.setAttribute('r', '5');
+    animCircle.setAttribute('r', '4');
     animCircle.setAttribute('fill', '#4A90D9');
+    animCircle.setAttribute('opacity', '0.8');
+    animCircle.classList.add('hint-anim');
 
     const animateMotion = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
     animateMotion.setAttribute('dur', '1s');
     animateMotion.setAttribute('repeatCount', '2');
-    animateMotion.setAttribute('path', stroke.path);
+    animateMotion.setAttribute('fill', 'freeze');
+
+    // mpath参照を使い、SVG内の実際のパス座標に沿って動かす
+    const mpath = document.createElementNS('http://www.w3.org/2000/svg', 'mpath');
+    mpath.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#hint-ref-path');
+    animateMotion.appendChild(mpath);
 
     animCircle.appendChild(animateMotion);
     svg.appendChild(animCircle);
 
     setTimeout(() => {
-      if (animCircle.parentNode) animCircle.parentNode.removeChild(animCircle);
+      svg.querySelectorAll('.hint-anim').forEach(el => el.remove());
     }, 2200);
   }
 

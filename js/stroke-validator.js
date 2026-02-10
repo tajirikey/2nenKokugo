@@ -197,38 +197,110 @@ class StrokeValidator {
   }
 
   /**
-   * SVGパスコマンドをパース
+   * SVGパスコマンドをパース（相対コマンド c/s/q/l/m 対応）
    */
   parseSVGPath(d) {
     const commands = [];
-    // コマンド文字と数値のペアに分解
-    const regex = /([MLCQZ])\s*([\d\s,.\-e]*)/gi;
-    let match;
+    // 数値トークンの正規表現（負数・小数・科学記数法対応）
+    const numRe = /-?(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?/gi;
+    // コマンドごとに分割
+    const cmdRe = /([MmLlCcQqSsHhVvTtAaZz])/;
+    const parts = d.split(cmdRe).filter(s => s.length > 0);
 
-    while ((match = regex.exec(d)) !== null) {
-      const type = match[1].toUpperCase();
-      const args = match[2].trim().split(/[\s,]+/).filter(s => s.length > 0).map(Number);
+    let cx = 0, cy = 0; // 現在位置
+
+    let i = 0;
+    while (i < parts.length) {
+      const cmd = parts[i];
+      const isCommand = /^[MmLlCcQqSsHhVvTtAaZz]$/.test(cmd);
+      if (!isCommand) { i++; continue; }
+
+      const argsStr = (i + 1 < parts.length && !/^[MmLlCcQqSsHhVvTtAaZz]$/.test(parts[i + 1]))
+        ? parts[i + 1] : '';
+      const nums = [];
+      let m;
+      const re = new RegExp(numRe.source, 'gi');
+      while ((m = re.exec(argsStr)) !== null) nums.push(parseFloat(m[0]));
+
+      const isRelative = cmd === cmd.toLowerCase();
+      const type = cmd.toUpperCase();
 
       switch (type) {
-        case 'M':
-        case 'L':
-          for (let i = 0; i < args.length; i += 2) {
-            commands.push({ type: type === 'M' && i > 0 ? 'L' : type, x: args[i], y: args[i + 1] });
+        case 'M': {
+          for (let j = 0; j < nums.length; j += 2) {
+            const x = isRelative ? cx + nums[j] : nums[j];
+            const y = isRelative ? cy + nums[j + 1] : nums[j + 1];
+            commands.push({ type: j === 0 ? 'M' : 'L', x, y });
+            cx = x; cy = y;
           }
           break;
-        case 'C':
-          for (let i = 0; i < args.length; i += 6) {
-            commands.push({ type, x1: args[i], y1: args[i + 1], x2: args[i + 2], y2: args[i + 3], x: args[i + 4], y: args[i + 5] });
+        }
+        case 'L': {
+          for (let j = 0; j < nums.length; j += 2) {
+            const x = isRelative ? cx + nums[j] : nums[j];
+            const y = isRelative ? cy + nums[j + 1] : nums[j + 1];
+            commands.push({ type: 'L', x, y });
+            cx = x; cy = y;
           }
           break;
-        case 'Q':
-          for (let i = 0; i < args.length; i += 4) {
-            commands.push({ type, x1: args[i], y1: args[i + 1], x: args[i + 2], y: args[i + 3] });
+        }
+        case 'H': {
+          for (let j = 0; j < nums.length; j++) {
+            const x = isRelative ? cx + nums[j] : nums[j];
+            commands.push({ type: 'L', x, y: cy });
+            cx = x;
           }
           break;
+        }
+        case 'V': {
+          for (let j = 0; j < nums.length; j++) {
+            const y = isRelative ? cy + nums[j] : nums[j];
+            commands.push({ type: 'L', x: cx, y });
+            cy = y;
+          }
+          break;
+        }
+        case 'C': {
+          for (let j = 0; j + 5 < nums.length; j += 6) {
+            const x1 = isRelative ? cx + nums[j] : nums[j];
+            const y1 = isRelative ? cy + nums[j + 1] : nums[j + 1];
+            const x2 = isRelative ? cx + nums[j + 2] : nums[j + 2];
+            const y2 = isRelative ? cy + nums[j + 3] : nums[j + 3];
+            const x = isRelative ? cx + nums[j + 4] : nums[j + 4];
+            const y = isRelative ? cy + nums[j + 5] : nums[j + 5];
+            commands.push({ type: 'C', x1, y1, x2, y2, x, y });
+            cx = x; cy = y;
+          }
+          break;
+        }
+        case 'S': {
+          for (let j = 0; j + 3 < nums.length; j += 4) {
+            const x2 = isRelative ? cx + nums[j] : nums[j];
+            const y2 = isRelative ? cy + nums[j + 1] : nums[j + 1];
+            const x = isRelative ? cx + nums[j + 2] : nums[j + 2];
+            const y = isRelative ? cy + nums[j + 3] : nums[j + 3];
+            // S は前のCの反射制御点を使う（簡易的にx2,y2を両方の制御点に）
+            commands.push({ type: 'C', x1: x2, y1: y2, x2, y2, x, y });
+            cx = x; cy = y;
+          }
+          break;
+        }
+        case 'Q': {
+          for (let j = 0; j + 3 < nums.length; j += 4) {
+            const x1 = isRelative ? cx + nums[j] : nums[j];
+            const y1 = isRelative ? cy + nums[j + 1] : nums[j + 1];
+            const x = isRelative ? cx + nums[j + 2] : nums[j + 2];
+            const y = isRelative ? cy + nums[j + 3] : nums[j + 3];
+            commands.push({ type: 'Q', x1, y1, x, y });
+            cx = x; cy = y;
+          }
+          break;
+        }
         case 'Z':
           break;
       }
+
+      i += argsStr ? 2 : 1;
     }
 
     return commands;
