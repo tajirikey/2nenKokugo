@@ -1,20 +1,39 @@
 /* ========================================
    IndexedDB ストレージ
    書いた文字の画像データを永続保存
+
+   スキーマ変更時:
+   1. DB_VERSION を +1 する
+   2. migrate() 内に新バージョンのマイグレーションを追加
+   既存データは保持されたまま構造だけ更新される
    ======================================== */
 
 const KanjiStorage = (() => {
+  const DB_NAME = 'kanjiApp';
+  const DB_VERSION = 1;
   let db = null;
+
+  // スキーママイグレーション（バージョンごとに差分適用）
+  function migrate(d, oldVersion) {
+    if (oldVersion < 1) {
+      const store = d.createObjectStore('writings', { keyPath: 'id', autoIncrement: true });
+      store.createIndex('kanji', 'kanji', { unique: false });
+    }
+    // 将来の例:
+    // if (oldVersion < 2) {
+    //   d.createObjectStore('settings', { keyPath: 'key' });
+    // }
+    // if (oldVersion < 3) {
+    //   const store = e.target.transaction.objectStore('writings');
+    //   store.createIndex('timestamp', 'timestamp', { unique: false });
+    // }
+  }
 
   async function open() {
     return new Promise((resolve, reject) => {
-      const req = indexedDB.open('kanjiApp', 1);
+      const req = indexedDB.open(DB_NAME, DB_VERSION);
       req.onupgradeneeded = (e) => {
-        const d = e.target.result;
-        if (!d.objectStoreNames.contains('writings')) {
-          const store = d.createObjectStore('writings', { keyPath: 'id', autoIncrement: true });
-          store.createIndex('kanji', 'kanji', { unique: false });
-        }
+        migrate(e.target.result, e.oldVersion);
       };
       req.onsuccess = (e) => { db = e.target.result; resolve(); };
       req.onerror = (e) => reject(e.target.error);
