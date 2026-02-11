@@ -56,6 +56,7 @@
     viewBtns: document.querySelectorAll('.view-btn'),
     particleCanvas: document.getElementById('particle-canvas'),
     canvasSize: document.getElementById('canvas-size'),
+    penSize: document.getElementById('pen-size'),
     canvasContainer: document.querySelector('.canvas-container'),
     // ギャラリー
     galleryModal: document.getElementById('gallery-modal'),
@@ -89,6 +90,7 @@
     restoreMode();
     restoreSort();
     restoreCanvasSize();
+    restorePenSize();
   }
 
   // ========== イベントリスナー ==========
@@ -148,6 +150,14 @@
       localStorage.setItem('canvasSize', els.canvasSize.value);
     });
 
+    // ペン太さ調整
+    els.penSize.addEventListener('input', () => {
+      setPenSize(els.penSize.value);
+    });
+    els.penSize.addEventListener('change', () => {
+      localStorage.setItem('penSize', els.penSize.value);
+    });
+
     // リセット
     els.btnReset.addEventListener('click', deleteAllData);
 
@@ -176,11 +186,22 @@
     els.canvasContainer.style.setProperty('--canvas-size', px + 'px');
   }
 
+  function setPenSize(val) {
+    drawingCanvas.strokeWidth = Number(val);
+  }
+
   function restoreCanvasSize() {
     const saved = localStorage.getItem('canvasSize');
     const size = saved ? parseInt(saved, 10) : 360;
     els.canvasSize.value = size;
     setCanvasSize(size);
+  }
+
+  function restorePenSize() {
+    const saved = localStorage.getItem('penSize');
+    const size = saved ? parseInt(saved, 10) : 18;
+    els.penSize.value = size;
+    drawingCanvas.strokeWidth = size;
   }
 
   // ========== 漢字グリッド表示 ==========

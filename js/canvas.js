@@ -14,7 +14,6 @@ class DrawingCanvas {
 
     // スタイル設定
     this.strokeColor = '#000000';
-    this.baseStrokeRatio = 0.05; // キャンバスサイズの5%がペン太さ
     this.strokeWidth = 18;
 
     this.setupEvents();
@@ -31,7 +30,6 @@ class DrawingCanvas {
     this.ctx.scale(dpr, dpr);
     this.canvasWidth = rect.width;
     this.canvasHeight = rect.height;
-    this.strokeWidth = Math.max(4, Math.min(rect.width, rect.height) * this.baseStrokeRatio);
     this.redraw();
   }
 
