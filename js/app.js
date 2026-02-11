@@ -238,9 +238,6 @@
     state.currentStrokeIndex = 0;
     state.totalStrokes = data.strokes.length;
 
-    state.attemptCounts[kanjiChar] = (state.attemptCounts[kanjiChar] || 0) + 1;
-    saveJSON('attemptCounts', state.attemptCounts);
-
     els.screenSelect.classList.remove('active');
     els.screenPractice.classList.add('active');
 
@@ -464,6 +461,10 @@
 
     state.completedKanji.add(state.currentKanjiChar);
     saveJSON('completedKanji', [...state.completedKanji]);
+
+    // 正解回数をカウント
+    state.attemptCounts[state.currentKanjiChar] = (state.attemptCounts[state.currentKanjiChar] || 0) + 1;
+    saveJSON('attemptCounts', state.attemptCounts);
 
     // 読み方を解答欄の中に表示（訓読み → 音読み）
     const data = state.currentKanji;
