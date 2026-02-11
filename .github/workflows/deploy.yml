@@ -1,12 +1,12 @@
 # GitHub Pages 自動デプロイ
-# main ブランチに push するたびに同じ URL にデプロイされる
+# どのブランチに push しても同じ URL にデプロイされる
 # URL: https://<username>.github.io/2nenKokugo/
 
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: ['**']
 
 permissions:
   contents: read
