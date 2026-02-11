@@ -142,10 +142,10 @@
     // キャンバスサイズ調整
     els.canvasSize.addEventListener('input', () => {
       setCanvasSize(els.canvasSize.value);
+      drawingCanvas.resize();
     });
     els.canvasSize.addEventListener('change', () => {
       localStorage.setItem('canvasSize', els.canvasSize.value);
-      drawingCanvas.resize();
     });
 
     // リセット
