@@ -13,11 +13,12 @@
     return ACCOUNTS.includes(saved) ? saved : ACCOUNTS[0];
   }
 
-  // 既存データ（プレフィックスなし）を「しろ」に一度だけ移行
+  // 既存データを「しろ」に帰属させるマイグレーション
   function migrateOldData() {
-    if (localStorage.getItem('dataMigrated')) return;
+    if (localStorage.getItem('dataMigratedV2')) return;
     const target = 'しろ';
     const keys = ['completedKanji', 'mistakeKanji', 'attemptCounts'];
+    // プレフィックスなし → しろ:
     for (const key of keys) {
       const val = localStorage.getItem(key);
       if (val !== null) {
@@ -25,7 +26,19 @@
         localStorage.removeItem(key);
       }
     }
-    localStorage.setItem('dataMigrated', '1');
+    // かわ: に誤って移行済みのデータ → しろ: に移動
+    for (const key of keys) {
+      const old = localStorage.getItem('かわ:' + key);
+      if (old !== null) {
+        // しろ: にまだなければ移動、あればマージしない（かわ側を削除）
+        if (localStorage.getItem(target + ':' + key) === null) {
+          localStorage.setItem(target + ':' + key, old);
+        }
+        localStorage.removeItem('かわ:' + key);
+      }
+    }
+    localStorage.removeItem('dataMigrated');
+    localStorage.setItem('dataMigratedV2', '1');
   }
 
   // ========== 永続データ（アカウント別プレフィックス） ==========
@@ -104,9 +117,13 @@
     drawingCanvas = new DrawingCanvas(els.drawCanvas);
     drawingCanvas.onStrokeComplete = onUserStrokeComplete;
 
-    // IndexedDB を開く
+    // IndexedDB を開く + 既存データ移行
     try {
       await KanjiStorage.open();
+      if (!localStorage.getItem('idbMigratedToShiro')) {
+        await KanjiStorage.migrateUser('かわ', 'しろ');
+        localStorage.setItem('idbMigratedToShiro', '1');
+      }
     } catch (e) {
       console.warn('IndexedDB unavailable:', e);
     }

@@ -111,7 +111,29 @@ const KanjiStorage = (() => {
     });
   }
 
+  // user='かわ' または未設定のレコードを 'しろ' に一括更新
+  async function migrateUser(fromUser, toUser) {
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction('writings', 'readwrite');
+      const store = tx.objectStore('writings');
+      const req = store.openCursor();
+      req.onsuccess = (e) => {
+        const cursor = e.target.result;
+        if (cursor) {
+          const r = cursor.value;
+          if (!r.user || r.user === fromUser) {
+            r.user = toUser;
+            cursor.update(r);
+          }
+          cursor.continue();
+        }
+      };
+      tx.oncomplete = () => resolve();
+      tx.onerror = (e) => reject(e.target.error);
+    });
+  }
+
   function isReady() { return db !== null; }
 
-  return { open, save, getByKanji, getAllLatest, deleteByKanji, deleteAll, isReady };
+  return { open, save, getByKanji, getAllLatest, deleteByKanji, deleteAll, migrateUser, isReady };
 })();
