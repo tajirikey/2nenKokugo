@@ -14,7 +14,7 @@ const KanjiStorage = (() => {
   let db = null;
 
   // user フィールドが未設定の既存データ用デフォルト
-  const DEFAULT_USER = 'かわ';
+  const DEFAULT_USER = 'しろ';
 
   function userOf(record) {
     return record.user || DEFAULT_USER;

@@ -6,11 +6,26 @@
   'use strict';
 
   // ========== アカウント ==========
-  const ACCOUNTS = ['かわ', 'しろ'];
+  const ACCOUNTS = ['しろ', 'かわ'];
 
   function getCurrentAccount() {
     const saved = localStorage.getItem('currentAccount');
     return ACCOUNTS.includes(saved) ? saved : ACCOUNTS[0];
+  }
+
+  // 既存データ（プレフィックスなし）を「しろ」に一度だけ移行
+  function migrateOldData() {
+    if (localStorage.getItem('dataMigrated')) return;
+    const target = 'しろ';
+    const keys = ['completedKanji', 'mistakeKanji', 'attemptCounts'];
+    for (const key of keys) {
+      const val = localStorage.getItem(key);
+      if (val !== null) {
+        localStorage.setItem(target + ':' + key, val);
+        localStorage.removeItem(key);
+      }
+    }
+    localStorage.setItem('dataMigrated', '1');
   }
 
   // ========== 永続データ（アカウント別プレフィックス） ==========
@@ -84,6 +99,7 @@
   let validator;
 
   async function init() {
+    migrateOldData();
     validator = new StrokeValidator();
     drawingCanvas = new DrawingCanvas(els.drawCanvas);
     drawingCanvas.onStrokeComplete = onUserStrokeComplete;
