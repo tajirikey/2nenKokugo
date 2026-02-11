@@ -310,21 +310,54 @@ html, body {
   display: none;
 }
 
-/* キャンバスコンテナ（正方形） */
+/* サイズ調整スライダー */
+.canvas-size-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 16px;
+  flex-shrink: 0;
+}
+.size-label {
+  font-size: 12px;
+  color: #999;
+  flex-shrink: 0;
+}
+.canvas-slider {
+  width: 120px;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #ddd;
+  border-radius: 2px;
+  outline: none;
+}
+.canvas-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4A90D9;
+  cursor: pointer;
+}
+
+/* キャンバスコンテナ（正方形・サイズ可変） */
 .canvas-container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #fff;
-  margin: 8px auto;
+  margin: 0 auto;
   border-radius: 16px;
   border: 3px solid #d0c8c0;
   overflow: hidden;
-  aspect-ratio: 1;
-  flex: 1 1 0;
-  min-height: 0;
+  width: var(--canvas-size, 360px);
+  height: var(--canvas-size, 360px);
+  flex-shrink: 0;
   max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 160px);
 }
 .guide-svg {
   position: absolute;

@@ -55,6 +55,8 @@
     filterBtns: document.querySelectorAll('.filter-btn'),
     viewBtns: document.querySelectorAll('.view-btn'),
     particleCanvas: document.getElementById('particle-canvas'),
+    canvasSize: document.getElementById('canvas-size'),
+    canvasContainer: document.querySelector('.canvas-container'),
     // ギャラリー
     galleryModal: document.getElementById('gallery-modal'),
     galleryMainImg: document.getElementById('gallery-main-img'),
@@ -86,6 +88,7 @@
     renderKanjiGrid();
     restoreMode();
     restoreSort();
+    restoreCanvasSize();
   }
 
   // ========== イベントリスナー ==========
@@ -136,6 +139,15 @@
     els.btnClear.addEventListener('click', clearAndReset);
     els.btnNextKanji.addEventListener('click', goToNextKanji);
 
+    // キャンバスサイズ調整
+    els.canvasSize.addEventListener('input', () => {
+      setCanvasSize(els.canvasSize.value);
+    });
+    els.canvasSize.addEventListener('change', () => {
+      localStorage.setItem('canvasSize', els.canvasSize.value);
+      drawingCanvas.resize();
+    });
+
     // リセット
     els.btnReset.addEventListener('click', deleteAllData);
 
@@ -158,6 +170,17 @@
 
   function restoreSort() {
     els.sortBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.sort === state.sortOrder));
+  }
+
+  function setCanvasSize(px) {
+    els.canvasContainer.style.setProperty('--canvas-size', px + 'px');
+  }
+
+  function restoreCanvasSize() {
+    const saved = localStorage.getItem('canvasSize');
+    const size = saved ? parseInt(saved, 10) : 360;
+    els.canvasSize.value = size;
+    setCanvasSize(size);
   }
 
   // ========== 漢字グリッド表示 ==========
