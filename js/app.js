@@ -5,27 +5,37 @@
 (function () {
   'use strict';
 
-  // ========== 永続データ ==========
-  function loadJSON(key, fallback) {
-    try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch { return fallback; }
+  // ========== アカウント ==========
+  const ACCOUNTS = ['かわ', 'しろ'];
+
+  function getCurrentAccount() {
+    const saved = localStorage.getItem('currentAccount');
+    return ACCOUNTS.includes(saved) ? saved : ACCOUNTS[0];
   }
-  function saveJSON(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
+
+  // ========== 永続データ（アカウント別プレフィックス） ==========
+  function accountKey(key) { return state.currentAccount + ':' + key; }
+  function loadJSON(key, fallback) {
+    try { return JSON.parse(localStorage.getItem(accountKey(key))) || fallback; } catch { return fallback; }
+  }
+  function saveJSON(key, val) { localStorage.setItem(accountKey(key), JSON.stringify(val)); }
 
   // ========== 状態管理 ==========
   const state = {
+    currentAccount: getCurrentAccount(),
     mode: 'easy',
     currentKanji: null,
     currentKanjiChar: '',
     currentStrokeIndex: 0,
     totalStrokes: 0,
-    completedKanji: new Set(loadJSON('completedKanji', [])),
-    mistakeKanji: new Set(loadJSON('mistakeKanji', [])),
-    attemptCounts: loadJSON('attemptCounts', {}),
+    completedKanji: new Set(),
+    mistakeKanji: new Set(),
+    attemptCounts: {},
     kanjiList: [],
     sortOrder: localStorage.getItem('sortOrder') || 'default',
     filterMode: 'all',
-    viewMode: 'practice',  // practice | browse
-    writingsCache: {},      // { kanji: { imageDataURL, timestamp } }
+    viewMode: 'practice',
+    writingsCache: {},
     galleryKanji: '',
   };
 
@@ -50,6 +60,7 @@
     btnClear: document.getElementById('btn-clear'),
     btnNextKanji: document.getElementById('btn-next-kanji'),
     btnReset: document.getElementById('btn-reset'),
+    accountBtns: document.querySelectorAll('.account-btn'),
     modeBtns: document.querySelectorAll('.mode-btn'),
     sortBtns: document.querySelectorAll('.sort-btn'),
     filterBtns: document.querySelectorAll('.filter-btn'),
@@ -77,24 +88,62 @@
     drawingCanvas = new DrawingCanvas(els.drawCanvas);
     drawingCanvas.onStrokeComplete = onUserStrokeComplete;
 
-    // IndexedDB を開いてキャッシュ読み込み
+    // IndexedDB を開く
     try {
       await KanjiStorage.open();
-      state.writingsCache = await KanjiStorage.getAllLatest();
     } catch (e) {
       console.warn('IndexedDB unavailable:', e);
     }
 
     setupEventListeners();
-    renderKanjiGrid();
+    await loadAccountData();
     restoreMode();
     restoreSort();
     restoreCanvasSize();
     restorePenSize();
+    restoreAccountUI();
+  }
+
+  // アカウント別データ読み込み
+  async function loadAccountData() {
+    state.completedKanji = new Set(loadJSON('completedKanji', []));
+    state.mistakeKanji = new Set(loadJSON('mistakeKanji', []));
+    state.attemptCounts = loadJSON('attemptCounts', {});
+
+    try {
+      if (KanjiStorage.isReady()) {
+        state.writingsCache = await KanjiStorage.getAllLatest(state.currentAccount);
+      }
+    } catch (e) {
+      console.warn('Failed to load writings:', e);
+      state.writingsCache = {};
+    }
+
+    renderKanjiGrid();
+  }
+
+  // アカウント切替
+  async function switchAccount(account) {
+    if (account === state.currentAccount) return;
+    state.currentAccount = account;
+    localStorage.setItem('currentAccount', account);
+    restoreAccountUI();
+    await loadAccountData();
+  }
+
+  function restoreAccountUI() {
+    els.accountBtns.forEach(btn =>
+      btn.classList.toggle('active', btn.dataset.account === state.currentAccount)
+    );
   }
 
   // ========== イベントリスナー ==========
   function setupEventListeners() {
+    // アカウント切替
+    els.accountBtns.forEach(btn => {
+      btn.addEventListener('click', () => switchAccount(btn.dataset.account));
+    });
+
     els.modeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         els.modeBtns.forEach(b => b.classList.remove('active'));
@@ -526,7 +575,7 @@
       if (KanjiStorage.isReady()) {
         const imageDataURL = drawingCanvas.exportImage(300);
         if (imageDataURL) {
-          await KanjiStorage.save(state.currentKanjiChar, imageDataURL);
+          await KanjiStorage.save(state.currentKanjiChar, imageDataURL, state.currentAccount);
           state.writingsCache[state.currentKanjiChar] = {
             imageDataURL,
             timestamp: Date.now()
@@ -630,7 +679,7 @@
     let writings = [];
     try {
       if (KanjiStorage.isReady()) {
-        writings = await KanjiStorage.getByKanji(kanjiChar);
+        writings = await KanjiStorage.getByKanji(kanjiChar, state.currentAccount);
       }
     } catch (e) {
       console.warn('Failed to load writings:', e);
@@ -685,7 +734,7 @@
     if (!confirm(`「${kanjiChar}」のデータをすべてけしますか？`)) return;
 
     try {
-      if (KanjiStorage.isReady()) await KanjiStorage.deleteByKanji(kanjiChar);
+      if (KanjiStorage.isReady()) await KanjiStorage.deleteByKanji(kanjiChar, state.currentAccount);
     } catch (e) {
       console.warn('Failed to delete:', e);
     }
@@ -704,10 +753,10 @@
   }
 
   async function deleteAllData() {
-    if (!confirm('すべてのデータをけしますか？\nがくしゅうじょうきょう・かいたもじをぜんぶリセットします。')) return;
+    if (!confirm(`「${state.currentAccount}」のデータをすべてけしますか？\nがくしゅうじょうきょう・かいたもじをぜんぶリセットします。`)) return;
 
     try {
-      if (KanjiStorage.isReady()) await KanjiStorage.deleteAll();
+      if (KanjiStorage.isReady()) await KanjiStorage.deleteAll(state.currentAccount);
     } catch (e) {
       console.warn('Failed to delete all:', e);
     }
@@ -717,9 +766,9 @@
     state.mistakeKanji = new Set();
     state.attemptCounts = {};
 
-    localStorage.removeItem('completedKanji');
-    localStorage.removeItem('mistakeKanji');
-    localStorage.removeItem('attemptCounts');
+    localStorage.removeItem(accountKey('completedKanji'));
+    localStorage.removeItem(accountKey('mistakeKanji'));
+    localStorage.removeItem(accountKey('attemptCounts'));
 
     renderKanjiGrid(els.kanjiSearch.value);
   }

@@ -43,10 +43,28 @@ html, body {
   font-weight: 700;
   letter-spacing: 2px;
 }
-.subtitle {
+/* アカウント選択 */
+.account-selector {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+}
+.account-btn {
+  padding: 6px 24px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  background: transparent;
+  color: rgba(255,255,255,0.7);
   font-size: 16px;
-  opacity: 0.85;
-  margin-top: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.account-btn.active {
+  background: white;
+  color: #4A90D9;
+  border-color: white;
 }
 
 /* モード選択 */

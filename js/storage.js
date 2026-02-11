@@ -1,6 +1,6 @@
 /* ========================================
    IndexedDB ストレージ
-   書いた文字の画像データを永続保存
+   書いた文字の画像データを永続保存（アカウント別）
 
    スキーマ変更時:
    1. DB_VERSION を +1 する
@@ -13,20 +13,18 @@ const KanjiStorage = (() => {
   const DB_VERSION = 1;
   let db = null;
 
-  // スキーママイグレーション（バージョンごとに差分適用）
+  // user フィールドが未設定の既存データ用デフォルト
+  const DEFAULT_USER = 'かわ';
+
+  function userOf(record) {
+    return record.user || DEFAULT_USER;
+  }
+
   function migrate(d, oldVersion) {
     if (oldVersion < 1) {
       const store = d.createObjectStore('writings', { keyPath: 'id', autoIncrement: true });
       store.createIndex('kanji', 'kanji', { unique: false });
     }
-    // 将来の例:
-    // if (oldVersion < 2) {
-    //   d.createObjectStore('settings', { keyPath: 'key' });
-    // }
-    // if (oldVersion < 3) {
-    //   const store = e.target.transaction.objectStore('writings');
-    //   store.createIndex('timestamp', 'timestamp', { unique: false });
-    // }
   }
 
   async function open() {
@@ -40,31 +38,35 @@ const KanjiStorage = (() => {
     });
   }
 
-  async function save(kanji, imageDataURL) {
+  async function save(kanji, imageDataURL, user) {
     return new Promise((resolve, reject) => {
       const tx = db.transaction('writings', 'readwrite');
-      tx.objectStore('writings').add({ kanji, imageDataURL, timestamp: Date.now() });
+      tx.objectStore('writings').add({ kanji, imageDataURL, user, timestamp: Date.now() });
       tx.oncomplete = () => resolve();
       tx.onerror = (e) => reject(e.target.error);
     });
   }
 
-  async function getByKanji(kanji) {
+  async function getByKanji(kanji, user) {
     return new Promise((resolve, reject) => {
       const tx = db.transaction('writings', 'readonly');
       const req = tx.objectStore('writings').index('kanji').getAll(kanji);
-      req.onsuccess = () => resolve(req.result.sort((a, b) => b.timestamp - a.timestamp));
+      req.onsuccess = () => {
+        const filtered = req.result.filter(r => userOf(r) === user);
+        resolve(filtered.sort((a, b) => b.timestamp - a.timestamp));
+      };
       req.onerror = (e) => reject(e.target.error);
     });
   }
 
-  async function getAllLatest() {
+  async function getAllLatest(user) {
     return new Promise((resolve, reject) => {
       const tx = db.transaction('writings', 'readonly');
       const req = tx.objectStore('writings').getAll();
       req.onsuccess = () => {
         const map = {};
         for (const item of req.result) {
+          if (userOf(item) !== user) continue;
           if (!map[item.kanji] || item.timestamp > map[item.kanji].timestamp) {
             map[item.kanji] = item;
           }
@@ -75,24 +77,35 @@ const KanjiStorage = (() => {
     });
   }
 
-  async function deleteByKanji(kanji) {
+  async function deleteByKanji(kanji, user) {
     return new Promise((resolve, reject) => {
       const tx = db.transaction('writings', 'readwrite');
       const index = tx.objectStore('writings').index('kanji');
       const req = index.openCursor(kanji);
       req.onsuccess = (e) => {
         const cursor = e.target.result;
-        if (cursor) { cursor.delete(); cursor.continue(); }
+        if (cursor) {
+          if (userOf(cursor.value) === user) cursor.delete();
+          cursor.continue();
+        }
       };
       tx.oncomplete = () => resolve();
       tx.onerror = (e) => reject(e.target.error);
     });
   }
 
-  async function deleteAll() {
+  async function deleteAll(user) {
     return new Promise((resolve, reject) => {
       const tx = db.transaction('writings', 'readwrite');
-      tx.objectStore('writings').clear();
+      const store = tx.objectStore('writings');
+      const req = store.openCursor();
+      req.onsuccess = (e) => {
+        const cursor = e.target.result;
+        if (cursor) {
+          if (userOf(cursor.value) === user) cursor.delete();
+          cursor.continue();
+        }
+      };
       tx.oncomplete = () => resolve();
       tx.onerror = (e) => reject(e.target.error);
     });
