@@ -51,6 +51,7 @@
   // ========== 状態管理 ==========
   const state = {
     currentAccount: getCurrentAccount(),
+    grade: parseInt(localStorage.getItem('grade'), 10) || 2,
     mode: 'easy',
     currentKanji: null,
     currentKanjiChar: '',
@@ -88,6 +89,7 @@
     btnClear: document.getElementById('btn-clear'),
     btnNextKanji: document.getElementById('btn-next-kanji'),
     btnReset: document.getElementById('btn-reset'),
+    gradeSelect: document.getElementById('grade-select'),
     accountBtns: document.querySelectorAll('.account-btn'),
     modeBtns: document.querySelectorAll('.mode-btn'),
     sortBtns: document.querySelectorAll('.sort-btn'),
@@ -132,6 +134,7 @@
     await loadAccountData();
     restoreMode();
     restoreSort();
+    restoreGrade();
     restoreCanvasSize();
     restorePenSize();
     restoreAccountUI();
@@ -172,6 +175,13 @@
 
   // ========== イベントリスナー ==========
   function setupEventListeners() {
+    // 学年切替
+    els.gradeSelect.addEventListener('change', () => {
+      state.grade = parseInt(els.gradeSelect.value, 10);
+      localStorage.setItem('grade', state.grade);
+      renderKanjiGrid(els.kanjiSearch.value);
+    });
+
     // アカウント切替
     els.accountBtns.forEach(btn => {
       btn.addEventListener('click', () => switchAccount(btn.dataset.account));
@@ -264,6 +274,10 @@
     els.sortBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.sort === state.sortOrder));
   }
 
+  function restoreGrade() {
+    els.gradeSelect.value = state.grade;
+  }
+
   function setCanvasSize(px) {
     els.canvasContainer.style.setProperty('--canvas-size', px + 'px');
   }
@@ -289,7 +303,7 @@
   // ========== 漢字グリッド表示 ==========
   function renderKanjiGrid(filter = '') {
     els.kanjiGrid.innerHTML = '';
-    let allKanji = Object.keys(KANJI_DATA);
+    let allKanji = Object.keys(KANJI_DATA).filter(k => KANJI_DATA[k].grade === state.grade);
 
     if (state.filterMode === 'mistake') {
       allKanji = allKanji.filter(k => state.mistakeKanji.has(k));

@@ -6,7 +6,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#4A90D9">
-  <title>かんじれんしゅう - 2ねんせい</title>
+  <title>かんじれんしゅう</title>
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.svg">
   <link rel="stylesheet" href="css/style.css">
@@ -16,9 +16,15 @@
   <div id="screen-select" class="screen active">
     <header class="app-header">
       <h1>かんじれんしゅう</h1>
-      <div class="account-selector">
-        <button class="account-btn active" data-account="しろ">しろ</button>
-        <button class="account-btn" data-account="かわ">かわ</button>
+      <div class="header-controls">
+        <select id="grade-select" class="grade-select">
+          <option value="1">1ねんせい</option>
+          <option value="2" selected>2ねんせい</option>
+        </select>
+        <div class="account-selector">
+          <button class="account-btn active" data-account="しろ">しろ</button>
+          <button class="account-btn" data-account="かわ">かわ</button>
+        </div>
       </div>
     </header>
 
