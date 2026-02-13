@@ -61,6 +61,7 @@
     mistakeKanji: new Set(),
     attemptCounts: {},
     kanjiList: [],
+    sessionCount: 0,
     sortOrder: localStorage.getItem('sortOrder') || 'default',
     filterMode: 'all',
     viewMode: 'practice',
@@ -78,6 +79,7 @@
     drawCanvas: document.getElementById('draw-canvas'),
     currentKanjiLabel: document.getElementById('current-kanji-label'),
     strokeProgress: document.getElementById('stroke-progress'),
+    sessionCounter: document.getElementById('session-counter'),
     readingDisplay: document.getElementById('reading-display'),
     feedback: document.getElementById('feedback'),
     feedbackText: document.getElementById('feedback-text'),
@@ -369,9 +371,11 @@
   }
 
   // ========== 練習画面 ==========
-  function startPractice(kanjiChar) {
+  function startPractice(kanjiChar, fromNext) {
     const data = KANJI_DATA[kanjiChar];
     if (!data) return;
+
+    if (!fromNext) state.sessionCount = 0;
 
     state.currentKanji = data;
     state.currentKanjiChar = kanjiChar;
@@ -385,6 +389,7 @@
     els.readingDisplay.classList.add('hidden');
     els.readingDisplay.textContent = '';
     updateStrokeProgress();
+    updateSessionCounter();
     hideCompletion();
     hideFeedback();
 
@@ -397,6 +402,15 @@
     const idx = state.currentStrokeIndex + 1;
     const total = state.totalStrokes;
     els.strokeProgress.textContent = `${idx}/${total} かくめ`;
+  }
+
+  function updateSessionCounter() {
+    if (state.sessionCount > 0) {
+      els.sessionCounter.textContent = `${state.sessionCount}もじめ`;
+      els.sessionCounter.classList.remove('hidden');
+    } else {
+      els.sessionCounter.classList.add('hidden');
+    }
   }
 
   // ========== ガイドSVG描画 ==========
@@ -823,9 +837,10 @@
   // ========== ナビゲーション ==========
   function goToNextKanji() {
     hideCompletion();
+    state.sessionCount++;
     const currentIndex = state.kanjiList.indexOf(state.currentKanjiChar);
     const nextIndex = (currentIndex + 1) % state.kanjiList.length;
-    startPractice(state.kanjiList[nextIndex]);
+    startPractice(state.kanjiList[nextIndex], true);
   }
 
   function goToSelect() {
