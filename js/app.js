@@ -375,7 +375,8 @@
     const data = KANJI_DATA[kanjiChar];
     if (!data) return;
 
-    if (!fromNext) state.sessionCount = 0;
+    if (!fromNext) state.sessionCount = 1;
+    else state.sessionCount++;
 
     state.currentKanji = data;
     state.currentKanjiChar = kanjiChar;
@@ -405,12 +406,8 @@
   }
 
   function updateSessionCounter() {
-    if (state.sessionCount > 0) {
-      els.sessionCounter.textContent = `${state.sessionCount}もじめ`;
-      els.sessionCounter.classList.remove('hidden');
-    } else {
-      els.sessionCounter.classList.add('hidden');
-    }
+    els.sessionCounter.textContent = `${state.sessionCount}もじめ`;
+    els.sessionCounter.classList.remove('hidden');
   }
 
   // ========== ガイドSVG描画 ==========
@@ -837,7 +834,6 @@
   // ========== ナビゲーション ==========
   function goToNextKanji() {
     hideCompletion();
-    state.sessionCount++;
     const currentIndex = state.kanjiList.indexOf(state.currentKanjiChar);
     const nextIndex = (currentIndex + 1) % state.kanjiList.length;
     startPractice(state.kanjiList[nextIndex], true);
