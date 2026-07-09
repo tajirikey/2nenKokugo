@@ -1,11 +1,12 @@
 /* ========================================
-   Service Worker - Stale-While-Revalidate
+   Service Worker - Network-First
    ========================================
    戦略:
-   - キャッシュがあれば即座に返す（高速表示）
-   - バックグラウンドで最新版をネットワーク取得し、キャッシュを更新
-   - 次回アクセス時に最新版が反映される
-   - オフラインではキャッシュ版が動作
+   - ネットワーク優先: 常に最新版を取得して表示・キャッシュ更新
+     （cache: 'no-cache' でブラウザHTTPキャッシュをバイパスし、
+       サーバーに条件付きリクエスト。未変更なら304で高速）
+   - オフライン/取得失敗時のみキャッシュ版で動作
+   - 1回のリロードで最新デプロイが反映される
    - キャッシュ名にバージョン番号不要（コード変更時の手動更新不要）
    - ユーザーデータ（IndexedDB/localStorage）には一切触れない
    ======================================== */
@@ -27,7 +28,7 @@ const SHELL_ASSETS = [
   './icons/icon-512.svg'
 ];
 
-// インストール時: アプリシェルをプリキャッシュ
+// インストール時: アプリシェルをプリキャッシュ（オフライン用の初期セット）
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(SHELL_ASSETS))
@@ -46,29 +47,30 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Stale-While-Revalidate: キャッシュ即返し + バックグラウンド更新
+// ネットワーク優先 + キャッシュフォールバック
 self.addEventListener('fetch', (event) => {
   const { request } = event;
 
-  // ナビゲーション以外のクロスオリジンリクエストはスルー
-  if (!request.url.startsWith(self.location.origin)) {
+  // クロスオリジンや GET 以外はスルー
+  if (request.method !== 'GET' || !request.url.startsWith(self.location.origin)) {
     return;
   }
 
   event.respondWith(
     caches.open(CACHE_NAME).then(async (cache) => {
-      const cached = await cache.match(request);
-
-      // バックグラウンドで最新版を取得してキャッシュ更新
-      const fetchPromise = fetch(request).then((response) => {
+      try {
+        // no-cache: ブラウザHTTPキャッシュを信用せず、サーバーへ条件付き確認
+        const response = await fetch(request, { cache: 'no-cache' });
         if (response.ok) {
           cache.put(request, response.clone());
         }
         return response;
-      }).catch(() => null);
-
-      // キャッシュがあれば即返す、なければネットワーク待ち
-      return cached || fetchPromise;
+      } catch (e) {
+        // オフライン等: キャッシュ版で動作
+        const cached = await cache.match(request);
+        if (cached) return cached;
+        throw e;
+      }
     })
   );
 });

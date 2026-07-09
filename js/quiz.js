@@ -45,6 +45,20 @@
     localStorage.setItem('quizGrades', JSON.stringify(arr));
   }
 
+  // ========== 永続化: よみかた選択（全アカウント共通） ==========
+  function loadReadingType() {
+    const t = localStorage.getItem('quizReadingType');
+    return ['both', 'on', 'kun'].includes(t) ? t : 'both';
+  }
+  function saveReadingType(t) {
+    localStorage.setItem('quizReadingType', t);
+  }
+
+  // 出題タイプが選択に合うか（'both' は音訓どちらもOK）
+  function matchesReadingType(type) {
+    return state.readingType === 'both' || state.readingType === type;
+  }
+
   function mistakeKey(item) { return item.kanji + '|' + item.reading; }
 
   // ========== 出題用: 全440字ぶんの読み一覧（ダミー選択肢の材料） ==========
@@ -69,6 +83,7 @@
   // ========== 状態 ==========
   const state = {
     grades: loadGrades(),
+    readingType: loadReadingType(), // 'both' | 'on' | 'kun'
     quizMode: 'all', // 'all' | 'mistake'
     mistakes: {},
     stats: { total: 0, correct: 0, bestStreak: 0 },
@@ -96,6 +111,7 @@
     screenQuizSetup: document.getElementById('screen-quiz-setup'),
     btnQuizSetupBack: document.getElementById('btn-quiz-setup-back'),
     gradeChips: document.querySelectorAll('.grade-chip'),
+    readingTypeBtns: document.querySelectorAll('.reading-type-btn'),
     quizModeBtns: document.querySelectorAll('.quiz-mode-btn'),
     btnModeMistake: document.getElementById('btn-mode-mistake'),
     mistakeCount: document.getElementById('mistake-count'),
@@ -133,6 +149,7 @@
     state.mistakes = loadMistakes();
     state.stats = loadStats();
     setupGradeChipsUI();
+    setupReadingTypeUI();
     updateMistakeModeAvailability();
     showScreen(els.screenQuizSetup);
   }
@@ -166,6 +183,20 @@
     updateMistakeModeAvailability();
   }
 
+  // ========== セットアップ画面: よみかた選択 ==========
+  function setupReadingTypeUI() {
+    els.readingTypeBtns.forEach(btn =>
+      btn.classList.toggle('active', btn.dataset.rtype === state.readingType)
+    );
+  }
+
+  function setReadingType(t) {
+    state.readingType = t;
+    saveReadingType(t);
+    setupReadingTypeUI();
+    updateMistakeModeAvailability();
+  }
+
   // ========== セットアップ画面: モード選択 ==========
   function setActiveQuizMode(mode) {
     state.quizMode = mode;
@@ -177,7 +208,7 @@
     for (const key in state.mistakes) {
       const m = state.mistakes[key];
       const data = KANJI_DATA[m.k];
-      if (data && state.grades.includes(data.grade)) count++;
+      if (data && state.grades.includes(data.grade) && matchesReadingType(m.t)) count++;
     }
     els.mistakeCount.textContent = count;
     els.btnModeMistake.disabled = count === 0;
@@ -194,7 +225,7 @@
       for (const key in state.mistakes) {
         const m = state.mistakes[key];
         const data = KANJI_DATA[m.k];
-        if (data && state.grades.includes(data.grade)) {
+        if (data && state.grades.includes(data.grade) && matchesReadingType(m.t)) {
           pool.push({ kanji: m.k, reading: m.r, type: m.t });
         }
       }
@@ -202,8 +233,12 @@
       for (const kanji in KANJI_DATA) {
         const data = KANJI_DATA[kanji];
         if (!state.grades.includes(data.grade)) continue;
-        for (const r of data.readings.on) pool.push({ kanji, reading: r, type: 'on' });
-        for (const r of data.readings.kun) pool.push({ kanji, reading: r, type: 'kun' });
+        if (matchesReadingType('on')) {
+          for (const r of data.readings.on) pool.push({ kanji, reading: r, type: 'on' });
+        }
+        if (matchesReadingType('kun')) {
+          for (const r of data.readings.kun) pool.push({ kanji, reading: r, type: 'kun' });
+        }
       }
     }
     return pool;
@@ -585,6 +620,10 @@
 
     els.gradeChips.forEach(chip => {
       chip.addEventListener('click', () => toggleGrade(parseInt(chip.dataset.grade, 10)));
+    });
+
+    els.readingTypeBtns.forEach(btn => {
+      btn.addEventListener('click', () => setReadingType(btn.dataset.rtype));
     });
 
     els.quizModeBtns.forEach(btn => {

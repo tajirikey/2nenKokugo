@@ -821,11 +821,13 @@ html, body {
   background: #F39C12;
   color: white;
 }
-.quiz-mode-group {
+.quiz-mode-group,
+.reading-type-group {
   display: flex;
   gap: 10px;
 }
-.quiz-mode-btn {
+.quiz-mode-btn,
+.reading-type-btn {
   flex: 1;
   padding: 12px 8px;
   border: 2px solid #ccc;
@@ -837,7 +839,8 @@ html, body {
   cursor: pointer;
   transition: all 0.2s;
 }
-.quiz-mode-btn.active {
+.quiz-mode-btn.active,
+.reading-type-btn.active {
   border-color: #F39C12;
   background: #FFF3E0;
   color: #F39C12;
