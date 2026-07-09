@@ -21,6 +21,7 @@ const SHELL_ASSETS = [
   './js/canvas.js',
   './js/storage.js',
   './js/app.js',
+  './js/quiz.js',
   './manifest.json',
   './icons/icon-192.svg',
   './icons/icon-512.svg'

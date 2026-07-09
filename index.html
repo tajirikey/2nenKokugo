@@ -36,6 +36,7 @@
     </div>
 
     <div class="grid-controls">
+      <button id="btn-quiz" class="quiz-btn">🎯 よみかたクイズ</button>
       <div class="view-group">
         <button class="view-btn active" data-view="practice">れんしゅう</button>
         <button class="view-btn" data-view="browse">みる</button>
@@ -118,6 +119,77 @@
     </div>
   </div>
 
+  <!-- よみかたクイズ: セットアップ画面 -->
+  <div id="screen-quiz-setup" class="screen">
+    <header class="quiz-header">
+      <button id="btn-quiz-setup-back" class="icon-btn" aria-label="もどる">←</button>
+      <h2 class="quiz-title">よみかたクイズ</h2>
+    </header>
+    <div class="quiz-setup-body">
+      <div class="quiz-setup-card">
+        <div class="setup-section">
+          <div class="setup-label">がくねん</div>
+          <div class="grade-chips">
+            <button class="grade-chip" data-grade="1">1ねんせい</button>
+            <button class="grade-chip" data-grade="2">2ねんせい</button>
+            <button class="grade-chip" data-grade="3">3ねんせい</button>
+          </div>
+        </div>
+        <div class="setup-section">
+          <div class="setup-label">モード</div>
+          <div class="quiz-mode-group">
+            <button class="quiz-mode-btn active" data-quizmode="all">ぜんぶ</button>
+            <button id="btn-mode-mistake" class="quiz-mode-btn" data-quizmode="mistake">にがてだけ（<span id="mistake-count">0</span>）</button>
+          </div>
+        </div>
+        <button id="btn-quiz-start" class="quiz-start-btn">スタート！</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- よみかたクイズ: クイズ画面 -->
+  <div id="screen-quiz" class="screen">
+    <header class="quiz-play-header">
+      <button id="btn-quiz-back" class="icon-btn" aria-label="もどる">←</button>
+      <div class="quiz-progress-info">
+        <span id="quiz-question-count" class="quiz-question-count">1もんめ</span>
+        <span id="quiz-streak" class="quiz-streak hidden"></span>
+      </div>
+    </header>
+
+    <div class="quiz-question-area">
+      <div id="quiz-type-badge" class="quiz-type-badge"></div>
+      <div id="quiz-kanji-display" class="quiz-kanji-display"></div>
+      <div id="quiz-correct-mark" class="quiz-correct-mark hidden">○</div>
+    </div>
+
+    <div class="quiz-choices">
+      <button class="quiz-choice-btn" type="button"></button>
+      <button class="quiz-choice-btn" type="button"></button>
+      <button class="quiz-choice-btn" type="button"></button>
+    </div>
+
+    <!-- 10問ごとのお祝いオーバーレイ -->
+    <div id="quiz-celebration-overlay" class="quiz-celebration-overlay hidden">
+      <canvas id="quiz-celebration-canvas" class="quiz-celebration-canvas"></canvas>
+      <div class="quiz-celebration-content">
+        <div id="quiz-celebration-emoji" class="quiz-celebration-emoji">🎉</div>
+        <div id="quiz-celebration-count" class="quiz-celebration-count"></div>
+        <div id="quiz-celebration-message" class="quiz-celebration-message"></div>
+        <div id="quiz-celebration-set-score" class="quiz-celebration-set-score"></div>
+        <div id="quiz-celebration-mistakes" class="quiz-celebration-mistakes hidden">
+          <div class="quiz-celebration-mistakes-label">にがてなじ:</div>
+          <div id="quiz-celebration-mistakes-chips" class="quiz-celebration-mistakes-chips"></div>
+        </div>
+        <div id="quiz-celebration-best-streak" class="quiz-celebration-best-streak"></div>
+        <div class="quiz-celebration-actions">
+          <button id="btn-celebration-continue" class="quiz-start-btn">つづける</button>
+          <button id="btn-celebration-end" class="quiz-celebration-end-btn">おわる</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ギャラリーモーダル（閲覧モード） -->
   <div id="gallery-modal" class="gallery-modal hidden">
     <div class="gallery-content">
@@ -140,6 +212,7 @@
   <script src="js/canvas.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/quiz.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js');
