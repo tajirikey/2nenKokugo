@@ -951,15 +951,20 @@ html, body {
 
 .quiz-choices {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
   gap: 12px;
   padding: 16px;
   flex-shrink: 0;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
 }
 .quiz-choice-btn {
-  width: min(480px, 90vw);
-  min-height: 64px;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 72px;
   border: 2px solid #4A90D9;
   border-radius: 16px;
   background: white;
@@ -968,6 +973,7 @@ html, body {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.15s;
+  padding: 8px;
 }
 .quiz-choice-btn:active {
   transform: scale(0.97);
